@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21754" systemVersion="22G74" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="AiachyGalaxyEntity" representedClassName="AiachyGalaxyEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="image" optional="YES" attributeType="Binary"/>
+        <attribute name="tune" optional="YES" attributeType="Binary"/>
+    </entity>
+    <entity name="ZodiacEntity" representedClassName="ZodiacEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="ascendiant" optional="YES" attributeType="Binary"/>
+        <attribute name="compatibilityZodiacs" optional="YES" attributeType="Binary"/>
+        <attribute name="dailyComment" optional="YES" attributeType="String"/>
+        <attribute name="dailySpecialComment" optional="YES" attributeType="String"/>
+        <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="zodiac" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="zodiacDataVersion" optional="YES" attributeType="String"/>
+        <attribute name="zodiacStatus" optional="YES" attributeType="Binary"/>
+    </entity>
+</model>
