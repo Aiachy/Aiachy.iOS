@@ -19,12 +19,12 @@ struct ACYTitleAndDescriptionText: View {
             //MARK: authTitleAndDescription - Title for all Auth
             Text(titleText.locale())
                 .font(.aiachyFont(.cinzelBlack20))
-                .foregroundColor(Color.AiachyColor(aiachyState, aiachyColor: .firstColor))
+                .foregroundColor(Color.makeAiachyColor(aiachyState, aiachyColor: .firstColor))
             if isHaveDescription {
                 //MARK: authTitleAndDescription - Description for all Auth
                 Text(descriptionText!.locale())
                     .font(.aiachyFont(.oldItalic14))
-                    .foregroundColor(Color.AiachyColor(aiachyState, aiachyColor: .secondColor))
+                    .foregroundColor(Color.makeAiachyColor(aiachyState, aiachyColor: .secondColor))
             }
         }
         .multilineTextAlignment(.center)

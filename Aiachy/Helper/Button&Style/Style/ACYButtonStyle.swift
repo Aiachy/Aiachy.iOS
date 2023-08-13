@@ -15,14 +15,14 @@ struct ACYButtonStyle: ButtonStyle {
         let pressed = configuration.isPressed
         ZStack {
             RoundedRectangle(cornerRadius: 10)
-                .stroke(Color.AiachyColor(aiachyState,
+                .stroke(Color.makeAiachyColor(aiachyState,
                                           aiachyColor: .secondColor),lineWidth: 1)
             configuration.label
-                .foregroundColor(.AiachyColor(aiachyState,
+                .foregroundColor(.makeAiachyColor(aiachyState,
                                               aiachyColor: .backgroundColor))
                 .font(.aiachyFont(.roundedBold14))
         }
-        .background(Color.AiachyColor(aiachyState,
+        .background(Color.makeAiachyColor(aiachyState,
                                       aiachyColor: .firstColor).cornerRadius(10))
         .offset(x: 0,
                 y: pressed ? 2 : 0)

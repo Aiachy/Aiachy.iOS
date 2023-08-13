@@ -8,24 +8,27 @@
 import SwiftUI
 
 struct AttentionView: View {
-
+    
     @EnvironmentObject var aiachyState: AiachyState
     @ObservedObject var presenter = AttentionPresenter()
     let router: AuthRouterPresenter
     
     var body: some View {
         VStack(spacing: 20) {
-            //MARK: AttentionView - Image
-            attentionImage
-            VStack(spacing: 20) {
-                //MARK: AttentionView - Title And Description
-                titleAndDescription
-                //MARK: AttentionView - Twitter
-                twitterDescription
+            //NextPatchTODO: Fix this 
+            HStack {
+                Spacer()
             }
-            .padding(.vertical)
+            //MARK: AttentionView - Attention Image
+            attentionImage
+            //MARK: AttentionView - Title And Description
+            titleAndDescription
+            //MARK: AttentionView - Twitter
+            twitterDescription
+            Spacer()
             //MARK: AttentionView - Button
             button
+            Spacer()
         }
         .overlay {
             if presenter.isShowingACYAlert {
@@ -41,18 +44,13 @@ struct AttentionView: View {
         .makeAccessibilitysForUITest(identifier: "AttentionViewID")
     }
 }
-
-struct AttentionView_Previews: PreviewProvider {
-    static var previews: some View {
-        ZStack {
-            AuthBackground()
-            AttentionView(router: AuthRouterPresenter())
-        }
+//MARK: AttentionView - Preview
+#Preview {
+    AttentionView(router: AuthRouterPresenter())
+        .background(AuthBackground())
         .environmentObject(ACY_PREVIEWS_STATE)
-    }
 }
-
-
+//MARK: AttentionView - extension
 extension AttentionView {
     //MARK: AttentionView - Image
     private var attentionImage: some View {
@@ -66,11 +64,11 @@ extension AttentionView {
     private var titleAndDescription: some View {
         VStack(spacing: 20) {
             Text(ACYTextHelper.ACYAuthText.ACYauthTitleText.AttentionViewTitle.rawValue.locale())
-                .foregroundColor(.AiachyColor(aiachyState, aiachyColor: .firstColor))
+                .foregroundColor(.makeAiachyColor(aiachyState, aiachyColor: .firstColor))
                 .font(.aiachyFont(.cinzelBlack20))
             
             Text(ACYTextHelper.ACYAuthText.ACYauthDescriptionText.AttentionViewDescription.rawValue.locale())
-                .foregroundColor(.AiachyColor(aiachyState, aiachyColor: .firstColor))
+                .foregroundColor(.makeAiachyColor(aiachyState, aiachyColor: .firstColor))
                 .font(.aiachyFont(.oldBold14))
         }
         .multilineTextAlignment(.center)
@@ -79,7 +77,7 @@ extension AttentionView {
     //MARK: AttentionView - Twitter
     private var twitterDescription: some View {
         Text(ACYTextHelper.ACYAuthText.ACYauthDescriptionText.AttentionViewDescriptionLink.rawValue.locale())
-            .foregroundColor(.AiachyColor(aiachyState, aiachyColor: .secondColor))
+            .foregroundColor(.makeAiachyColor(aiachyState, aiachyColor: .secondColor))
             .font(.aiachyFont(.roundedBold16))
             .multilineTextAlignment(.center)
             .padding(.horizontal)

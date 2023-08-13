@@ -22,7 +22,7 @@ struct ACYAlertView: View {
     var body: some View {
         ZStack {
             //MARK: ACYAlert - Blurbackground
-            Color.AiachyColor(aiachyState,
+            Color.makeAiachyColor(aiachyState,
                               aiachyColor: .backgroundBlurColor)
             .ignoresSafeArea()
             Group{
@@ -143,10 +143,10 @@ extension ACYAlertView {
     //MARK: ACYAlert - Alert View background
     private var alertViewBackground: some View {
         RoundedRectangle(cornerRadius: 15)
-            .stroke(Color.AiachyColor(aiachyState,
+            .stroke(Color.makeAiachyColor(aiachyState,
                                       aiachyColor: .secondColor),lineWidth: 1)
             .background {
-                Color.AiachyColor(aiachyState, aiachyColor: .backgroundColor)
+                Color.makeAiachyColor(aiachyState, aiachyColor: .backgroundColor)
                     .padding(.all,1)
                     .cornerRadius(15)
             }

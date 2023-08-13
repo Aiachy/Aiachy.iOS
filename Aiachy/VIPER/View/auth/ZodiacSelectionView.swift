@@ -31,14 +31,11 @@ struct ZodiacSelectionView: View {
     }
 }
 //MARK: ZodiacSelectionView - Previews
-struct ZodiacSelectionView_Previews: PreviewProvider {
-    static var previews: some View {
-        ZStack {
-            AuthBackground()
-            ZodiacSelectionView(router: AuthRouterPresenter())
-        }
+#Preview {
+    ZodiacSelectionView(router: AuthRouterPresenter())
+        .padding(.vertical)
+        .background(AuthBackground())
         .environmentObject(ACY_PREVIEWS_STATE)
-    }
 }
 //MARK: ZodiacSelectionView - extension
 extension ZodiacSelectionView {

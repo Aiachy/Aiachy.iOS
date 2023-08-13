@@ -49,6 +49,7 @@
 		343C17F82A16912F000F1E28 /* AiachyState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 343C17F72A16912F000F1E28 /* AiachyState.swift */; };
 		343FAEFE2A6340A50084DEAD /* ACYMinorButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 343FAEFD2A6340A50084DEAD /* ACYMinorButton.swift */; };
 		343FAF012A6340D60084DEAD /* ACYMinorButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 343FAF002A6340D60084DEAD /* ACYMinorButtonStyle.swift */; };
+		34470E382A87FC58005A9040 /* ACYTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34470E372A87FC58005A9040 /* ACYTabBar.swift */; };
 		344994342A17606A0042CF01 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 344994332A17606A0042CF01 /* HomeView.swift */; };
 		344994362A17608C0042CF01 /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 344994352A17608C0042CF01 /* HomeRouter.swift */; };
 		344BDFA32A645A3F001738B9 /* ACYPassButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 344BDFA22A645A3F001738B9 /* ACYPassButton.swift */; };
@@ -213,6 +214,7 @@
 		343C17F72A16912F000F1E28 /* AiachyState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AiachyState.swift; sourceTree = "<group>"; };
 		343FAEFD2A6340A50084DEAD /* ACYMinorButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ACYMinorButton.swift; sourceTree = "<group>"; };
 		343FAF002A6340D60084DEAD /* ACYMinorButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ACYMinorButtonStyle.swift; sourceTree = "<group>"; };
+		34470E372A87FC58005A9040 /* ACYTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ACYTabBar.swift; sourceTree = "<group>"; };
 		344994332A17606A0042CF01 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		344994352A17608C0042CF01 /* HomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
 		344BDFA22A645A3F001738B9 /* ACYPassButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ACYPassButton.swift; sourceTree = "<group>"; };
@@ -396,6 +398,7 @@
 			children = (
 				34DB97C52A61DA8600CAB87C /* backgrounds */,
 				345D56DB2A1670960037F92B /* auth */,
+				34470E362A87FC35005A9040 /* home */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -599,11 +602,12 @@
 			path = Button;
 			sourceTree = "<group>";
 		};
-		345C8FBF2A7B456200987FBB /* Frameworks */ = {
+		34470E362A87FC35005A9040 /* home */ = {
 			isa = PBXGroup;
 			children = (
+				34470E372A87FC58005A9040 /* ACYTabBar.swift */,
 			);
-			name = Frameworks;
+			path = home;
 			sourceTree = "<group>";
 		};
 		345D56C82A14A4770037F92B /* auth */ = {
@@ -737,7 +741,6 @@
 				3407548F2A10990700E6B8D4 /* AiachyUITests */,
 				3407549E2A10993100E6B8D4 /* AiachyTests */,
 				34828032296BB56000D3BA9F /* Products */,
-				345C8FBF2A7B456200987FBB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -1209,6 +1212,7 @@
 				34AFB0622A77CE3100BBCC9C /* galaxyPresenter.swift in Sources */,
 				34AFB0542A77CDE400BBCC9C /* GalaxyView.swift in Sources */,
 				34EA33792A18CD450042C1D6 /* PrivacyPolicyView.swift in Sources */,
+				34470E382A87FC58005A9040 /* ACYTabBar.swift in Sources */,
 				345EBE912A64212700E3895D /* ACYAlternativeButton.swift in Sources */,
 				34AFB0422A77CC7400BBCC9C /* ZodiacServerManager.swift in Sources */,
 				3401C8712A117C1300BD368A /* Image+Extension.swift in Sources */,
@@ -1547,7 +1551,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.1;
+				MARKETING_VERSION = 0.051;
 				PRODUCT_BUNDLE_IDENTIFIER = Azman.Aiachy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -1583,7 +1587,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.1;
+				MARKETING_VERSION = 0.051;
 				PRODUCT_BUNDLE_IDENTIFIER = Azman.Aiachy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";

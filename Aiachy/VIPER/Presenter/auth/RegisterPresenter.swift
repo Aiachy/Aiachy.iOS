@@ -16,7 +16,7 @@ private protocol RegisterPresenterAiachyStateProtocol {
 //MARK: AscendantSelectionPresenter - Presenter
 class RegisterPresenter: ObservableObject {
     
-    @Published var userFirstName: String
+    @Published var userName: String
     @Published var userSurname: String
     @Published var userMail: String
     @Published var userPassword: String
@@ -45,45 +45,12 @@ class RegisterPresenter: ObservableObject {
         self.userMailErrorType = userMailErrorType
         self.userPasswordErrorType = userPasswordErrorType
         self.userPasswordAgainErrorType = userPasswordAgainErrorType
-        self.userFirstName = userName
+        self.userName = userName
         self.userSurname = userSurname
         self.userMail = userMail
         self.userPassword = userPassword
         self.userPasswordAgain = userPasswordAgain
         self.interactor = interactor
-    }
-    /// Taking zodiac number value and converting it to picture in anarchy state.
-    /// - Parameter zodiac: To specify a picture by theme.
-    /// - Returns: Picture rotates.
-    func getZodiacIntReturnImage(aiachy aiachyState: AiachyState, zodiac: Int) -> Image {
-        switch zodiac {
-        case 0:
-            return Image.setACYZodiacAltImage(aiachyState, zodiacAlt: .altAries)
-        case 1:
-            return Image.setACYZodiacAltImage(aiachyState, zodiacAlt: .altTaurus)
-        case 2:
-            return Image.setACYZodiacAltImage(aiachyState, zodiacAlt: .altGemini)
-        case 3:
-            return Image.setACYZodiacAltImage(aiachyState, zodiacAlt: .altCancer)
-        case 4:
-            return Image.setACYZodiacAltImage(aiachyState, zodiacAlt: .altLeo)
-        case 5:
-            return Image.setACYZodiacAltImage(aiachyState, zodiacAlt: .altVirgo)
-        case 6:
-            return Image.setACYZodiacAltImage(aiachyState, zodiacAlt: .altLibra)
-        case 7:
-            return Image.setACYZodiacAltImage(aiachyState, zodiacAlt: .altScorpion)
-        case 8:
-            return Image.setACYZodiacAltImage(aiachyState, zodiacAlt: .altSagittarius)
-        case 9:
-            return Image.setACYZodiacAltImage(aiachyState, zodiacAlt: .altCapricorn)
-        case 10:
-            return Image.setACYZodiacAltImage(aiachyState, zodiacAlt: .altAquarius)
-        case 11:
-            return Image.setACYZodiacAltImage(aiachyState, zodiacAlt: .altPisces)
-        default:
-            return Image.setACYZodiacAltImage(aiachyState, zodiacAlt: .altLeo)
-        }
     }
 }
 //MARK: AscendantSelectionPresenter - extension - RegisterPresenterAiachyStateProtocol
@@ -92,7 +59,7 @@ extension RegisterPresenter: RegisterPresenterAiachyStateProtocol {
     /// - Parameter completion: when all cheking values complate that
     func checkValues(aiachy aiachyState: AiachyState, completion: @escaping () -> ()) {
         
-        let name = userFirstName
+        let name = userName
         let surname = userSurname
         let mail = userMail
         let password = userPassword
@@ -150,7 +117,7 @@ extension RegisterPresenter: RegisterPresenterAiachyStateProtocol {
     /// Here we load all the values on the page aiachyState
     /// - Parameter aiachyState: thats for upload values
     func uploadValuesToState(aiachyState: AiachyState){
-        aiachyState.user.userInfo.fullName.firstName = userFirstName
+        aiachyState.user.userInfo.fullName.firstName = userName
         aiachyState.user.userInfo.fullName.lastName = userSurname
         aiachyState.user.userLoginInfo.email = userMail
         aiachyState.user.userLoginInfo.password = userPassword
@@ -158,7 +125,7 @@ extension RegisterPresenter: RegisterPresenterAiachyStateProtocol {
     /// If values have already been given, we reflect them to the values on the page
     /// - Parameter aiachyState: We get the stored values
     func updateValuesFromState(aiachyState: AiachyState) {
-        self.userFirstName = aiachyState.user.userInfo.fullName.firstName ?? ""
+        self.userName = aiachyState.user.userInfo.fullName.firstName ?? ""
         self.userSurname = aiachyState.user.userInfo.fullName.lastName ?? ""
         self.userMail = aiachyState.user.userLoginInfo.email ?? ""
         self.userPassword = aiachyState.user.userLoginInfo.password ?? ""

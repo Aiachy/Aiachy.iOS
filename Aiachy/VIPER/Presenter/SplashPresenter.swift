@@ -52,10 +52,8 @@ class SplashPresenter: ObservableObject {
     ///   - colorScheme: We want learn colorScheme for change theme.
     ///   - aiachyState: We update aiachyState.
     func startApp(colorScheme: ColorScheme,aiachy aiachyState: AiachyState) {
+        setterCompletion(color: colorScheme, aiachy: aiachyState)
         indicator.checkNetwork { [self] isCheckedNetwork in
-
-            setterCompletion(color: colorScheme, aiachy: aiachyState)
-            
             self.indicator.controlSplashProcess(aiachy: aiachyState) { [self] result in
                 if result {
                     isCurrentUser = true

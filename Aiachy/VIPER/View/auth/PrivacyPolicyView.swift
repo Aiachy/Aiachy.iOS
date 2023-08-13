@@ -74,7 +74,7 @@ private struct privacyPolicyTemplate: View {
     
     var body: some View {
         ZStack {
-            Color.AiachyColor(aiachyState, aiachyColor: .backgroundColor)
+            Color.makeAiachyColor(aiachyState, aiachyColor: .backgroundColor)
                 .ignoresSafeArea()
             VStack {
                 Spacer()
@@ -86,7 +86,7 @@ private struct privacyPolicyTemplate: View {
                     .padding(.horizontal)
                 Spacer()
             }
-            .foregroundColor(.AiachyColor(aiachyState, aiachyColor: .firstColor))
+            .foregroundColor(.makeAiachyColor(aiachyState, aiachyColor: .firstColor))
             .multilineTextAlignment(.center)
         }
     }

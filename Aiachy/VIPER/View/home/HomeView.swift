@@ -9,6 +9,7 @@ import SwiftUI
 
 struct HomeView: View {
     
+    @EnvironmentObject var aiachyState: AiachyState
     @ObservedObject var presenter = HomePresenter()
     let router: HomeRouterPresenter
     
@@ -23,5 +24,6 @@ struct HomeView: View {
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
         HomeView(router: HomeRouterPresenter())
+            .environmentObject(ACY_PREVIEWS_STATE)
     }
 }

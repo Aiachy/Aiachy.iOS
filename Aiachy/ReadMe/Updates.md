@@ -111,3 +111,275 @@
 ** Privacy Policy File Completions will destroyed
 - The user can see the Privacy Policy screen.
 - The user can go to the onboarding view as a back page.
+
+/---------------------------------------------------------------------------------------------------------------------------------------------------------/
+
+# ACY Version 0.051 Update (Fixed UI Problems for iPhone 6S)
+
+## Auth Completions 
+
+** Splash File Completions
+=> Feature 
+- None
+
+=> Deficiencies
+- None
+
+=> UI Test
+- None
+
+=> Unit Test
+- None
+
+=> Refator
+- None
+--------------------------------------------------------
+** Onboarding File Completions 
+=> Feature 
+- None
+
+=> Deficiencies
+- None
+
+=> UI Test
+- None
+
+=> Unit Test
+- None
+
+=> Refator
+- None
+--------------------------------------------------------
+** Login File Completions 
+=> Feature 
+- None
+
+=> Deficiencies
+- None
+
+=> UI Test
+- None
+
+=> Unit Test
+- None
+
+=> Refator
+- None
+--------------------------------------------------------
+** Zodiac Selection File Completions 
+=> Feature 
+- Fixed Zodiac Template sizes
+
+=> Deficiencies
+- None
+
+=> UI Test
+- None
+
+=> Unit Test
+- None
+
+=> Refator
+- None
+--------------------------------------------------------
+** Register File Completions 
+=> Feature 
+- None
+
+=> Deficiencies
+- None
+
+=> UI Test
+- None
+
+=> Unit Test
+- None
+
+=> Refator
+- Add new Preview
+- changed makeImageWithZodiacInt. Its universal func. 
+--------------------------------------------------------
+** Ascendant Selection File Completions 
+=> Feature 
+- Changed datePicker. 
+
+=> Deficiencies
+- None
+
+=> UI Test
+- None
+
+=> Unit Test
+- None
+
+=> Refator
+- None
+
+** Attention Selection File Completions 
+=> Feature
+- View add Hstack for fill screen backgrond
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Template //
+## Auth Completions 
+
+** Splash File Completions
+=> Feature 
+- None
+
+=> Deficiencies
+- None
+
+=> UI Test
+- None
+
+=> Unit Test
+- None
+
+=> Refator
+- None
+--------------------------------------------------------
+** Onboarding File Completions 
+=> Feature 
+- None
+
+=> Deficiencies
+- None
+
+=> UI Test
+- None
+
+=> Unit Test
+- None
+
+=> Refator
+- None
+--------------------------------------------------------
+** Login File Completions 
+=> Feature 
+- None
+
+=> Deficiencies
+- None
+
+=> UI Test
+- None
+
+=> Unit Test
+- None
+
+=> Refator
+- None
+--------------------------------------------------------
+** Zodiac Selection File Completions 
+=> Feature 
+- None
+
+=> Deficiencies
+- None
+
+=> UI Test
+- None
+
+=> Unit Test
+- None
+
+=> Refator
+- None
+--------------------------------------------------------
+** Register File Completions 
+=> Feature 
+- None
+
+=> Deficiencies
+- None
+
+=> UI Test
+- None
+
+=> Unit Test
+- None
+
+=> Refator
+- None
+--------------------------------------------------------
+** Ascendant Selection File Completions 
+=> Feature 
+- None
+
+=> Deficiencies
+- None
+
+=> UI Test
+- None
+
+=> Unit Test
+- None
+
+=> Refator
+- None

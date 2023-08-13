@@ -31,7 +31,6 @@
 - \(zodiacSelection)SelectionTemplateID
 - hourAndMinutePickerMINUTEID
 - hourAndMinutePickerHOURID
-- datePickersID
 
 ## Include Files 
 - ACYTextHelper

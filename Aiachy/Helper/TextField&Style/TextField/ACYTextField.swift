@@ -34,7 +34,7 @@ struct ACYTextField: View {
                 if isShowingError == true {
                     Text(errorText!.rawValue.locale())
                         .font(.aiachyFont(.roundedMedium10))
-                        .foregroundColor(.AiachyColor(aiachyState, aiachyColor: .fourthColor))
+                        .foregroundColor(.makeAiachyColor(aiachyState, aiachyColor: .fourthColor))
                 }
                 Spacer()
                 //button
@@ -48,7 +48,7 @@ struct ACYTextField: View {
                 }
             }
             .padding(.horizontal,5)
-            .foregroundColor(.AiachyColor(aiachyState, aiachyColor: .firstColor))
+            .foregroundColor(.makeAiachyColor(aiachyState, aiachyColor: .firstColor))
         }
         .frame(width: ACYdw(aiachyState, d: isHalfTextField ? 0.4 : 0.9 ))
         .onChange(of: errorType) { type in

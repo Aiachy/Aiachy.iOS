@@ -27,7 +27,7 @@ class AuthRouterPresenter: ObservableObject, RouterProtocol {
     @Published var currentView: AuthViews
     
     init(isUserComplateAuthCompletion: Bool = false,
-        currentView: AuthViews = .onboardingView) {
+         currentView: AuthViews = .onboardingView) {
         self.isUserComplateAuthCompletion = isUserComplateAuthCompletion
         self.currentView = currentView
     }
@@ -46,7 +46,6 @@ struct AuthRouter: View {
     
     var body: some View {
         ZStack {
-            AuthBackground()
             switch authRouter.currentView {
             case .onboardingView:
                 OnboardingView(router: authRouter)
@@ -64,6 +63,8 @@ struct AuthRouter: View {
                 AttentionView(router: authRouter)
             }
         }
+        .padding(.vertical)
+        .background(AuthBackground())
         .fullScreenCover(isPresented: $authRouter.isUserComplateAuthCompletion, content: {
             HomeRouter()
         })

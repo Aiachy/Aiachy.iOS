@@ -15,10 +15,10 @@ struct RegisterView: View {
     
     var body: some View {
         ZStack {
-            presenter.getZodiacIntReturnImage(aiachy: aiachyState,zodiac: aiachyState.user.userZodiac.zodiac!)
+            makeImageWithZodiacInt(aiachy: aiachyState)
                 .resizable()
                 .scaledToFit()
-                .opacity(0.3)
+                .opacity(0.5)
                 .padding(.all,15)
             VStack {
                 //MARK: RegisterView - Back Button
@@ -34,30 +34,32 @@ struct RegisterView: View {
                                            descriptionText: ACYTextHelper.ACYAuthText.ACYauthDescriptionText.RegisterViewDescription.rawValue)
                 //MARK: RegisterView - Name & Surname Textfields
                 namesTextFields
-                //MARK: RegisterView - Mail Textfields
-                ACYTextField(textfieldString: $presenter.userMail,
-                             errorType: $presenter.userMailErrorType,
-                             isNeedPreferenceButton: false,
-                             isHalfTextField: false,
-                             isSecureField: false,
-                             textFieldTitle: .MailTextField)
-                .keyboardType(.emailAddress)
+                //MARK: RegisterView - Mail Textfield
+                mailTextField
                 //MARK: RegisterView - Password & Password Again Textfields
                 passwordTextFields
                 Spacer()
-                //MARK: RegisterView - Register Button
-                registerButton
+                //MARK: RegisterView - Continue Button
+                continueButton
             }
         }
+        .onAppear(perform: {
+            presenter.userName = "1234"
+            presenter.userSurname = "12345"
+            presenter.userPassword = "1234567"
+            presenter.userPasswordAgain = "1234567"
+            presenter.userMail = "nomotetes.onetrue@gmail.com"
+        })
         .environmentObject(aiachyState)
         .makeAccessibilitysForUITest(identifier: "RegisterViewID")
     }
 }
-
+//MARK: RegisterView -  Previews
 struct RegisterView_Previews: PreviewProvider {
     static var previews: some View {
         RegisterView(router: AuthRouterPresenter())
             .environmentObject(ACY_PREVIEWS_STATE)
+            .preferredColorScheme(.light)
     }
 }
 //MARK: RegisterView - Extension
@@ -65,7 +67,7 @@ extension RegisterView {
     //MARK: RegisterView - Name & Surname Textfields
     private var namesTextFields: some View {
         HStack {
-            ACYTextField(textfieldString: $presenter.userFirstName,
+            ACYTextField(textfieldString: $presenter.userName,
                          errorType: $presenter.userNameErrorType,
                          isNeedPreferenceButton: false,
                          isHalfTextField: true ,
@@ -80,6 +82,16 @@ extension RegisterView {
                          textFieldTitle: .SurnameTextField )
         }
         .frame(width: ACYdw(aiachyState, d: 0.9))
+    }
+    //MARK: RegisterView - Mail Textfield
+    private var mailTextField: some View {
+        ACYTextField(textfieldString: $presenter.userMail,
+                     errorType: $presenter.userMailErrorType,
+                     isNeedPreferenceButton: false,
+                     isHalfTextField: false,
+                     isSecureField: false,
+                     textFieldTitle: .MailTextField)
+        .keyboardType(.emailAddress)
     }
     //MARK: RegisterView - Password & Password Again Textfields
     private var passwordTextFields: some View {
@@ -101,8 +113,8 @@ extension RegisterView {
         .frame(width: ACYdw(aiachyState, d: 0.9))
     }
 
-    //MARK: RegisterView - registerButton
-    private var registerButton: some View {
+    //MARK: RegisterView - Continue Button
+    private var continueButton: some View {
         ACYButton(text: ACYTextHelper.ACYAppText.ACYappButtonText.ContinueButton.rawValue) {
             presenter.checkValues(aiachy: aiachyState) {
                 router.navigate(to: .ascendantSelectionView)

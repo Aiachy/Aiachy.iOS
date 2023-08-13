@@ -28,6 +28,7 @@ struct ZodiacSelectionTemplate: View {
             }
         }
         .environmentObject(aiachyState)
+        .frame(height: ACYdh(aiachyState, d: 0.14))
         .makeAccessibilitysForUITest(identifier: "\(entity.zodiacName)SelectionTemplateID")
     }
 }
@@ -40,7 +41,7 @@ struct ZodiacSelection_Previews: PreviewProvider {
     
     static var previews: some View {
         ZStack {
-            Color.AiachyColor(ACY_PREVIEWS_STATE, aiachyColor: .backgroundColor)
+            Color.makeAiachyColor(ACY_PREVIEWS_STATE, aiachyColor: .backgroundColor)
                 .ignoresSafeArea()
             HStack(spacing: 25, content: {
                 ZodiacSelectionTemplate(selected: .constant(ACYTextHelper.ACYZodiacText.ACYzodiacNameText.PiscesZodiac.rawValue), entity: data.first!)
@@ -55,7 +56,7 @@ extension ZodiacSelectionTemplate {
     @ViewBuilder
     private var circledImage: some View {
         Circle()
-            .foregroundColor(.AiachyColor(aiachyState,
+            .foregroundColor(.makeAiachyColor(aiachyState,
                                           aiachyColor: (selected != entity.zodiacName.rawValue) ? .backgroundAlternativeColor : .firstColor))
             .overlay {
                 convertSelectedImage
@@ -65,8 +66,6 @@ extension ZodiacSelectionTemplate {
                     .stroke(.black.opacity(0.2))
                     .shadow(color: .black.opacity(0.5), radius: 2, x: 0, y: 0)
             }
-
-            .frame(width: ACYdw(aiachyState, d: 0.20))
     }
     
     private var nameAndDate: some View {
@@ -77,7 +76,7 @@ extension ZodiacSelectionTemplate {
             Text(entity.zodiacShortedDate.rawValue.locale())
                 .font(.aiachyFont(.oldItalic10))
         }
-        .foregroundColor(.AiachyColor(aiachyState, aiachyColor: .firstColor))
+        .foregroundColor(.makeAiachyColor(aiachyState, aiachyColor: .firstColor))
     }
 }
 

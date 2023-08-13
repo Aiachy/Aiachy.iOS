@@ -15,10 +15,10 @@ struct ACYPassButtonStyle: ButtonStyle {
     func makeBody(configuration: Configuration) -> some View {
         ZStack {
             RoundedRectangle(cornerRadius: 20)
-                .stroke(Color.AiachyColor(aiachyState,
+                .stroke(Color.makeAiachyColor(aiachyState,
                                           aiachyColor: .secondColor))
             configuration.label
-                .foregroundColor(Color.AiachyColor(aiachyState,
+                .foregroundColor(Color.makeAiachyColor(aiachyState,
                                                    aiachyColor: .thirdColor))
                 .font(.aiachyFont(.roundedBold14))
         }

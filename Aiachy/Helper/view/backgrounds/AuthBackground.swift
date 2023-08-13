@@ -16,8 +16,9 @@ struct AuthBackground: View {
     
     var body: some View {
         ZStack {
-            Color.AiachyColor(aiachyState, aiachyColor: .backgroundColor)
             //MARK: AuthBackground - ForEach
+            Color.makeAiachyColor(aiachyState, aiachyColor: .backgroundColor)
+            //MARK: AuthBackground - ForEach Static Background Image
             ForEach(authBackgroundModelData ?? dataloski, id:\.id) { image in
                 withAnimation(.easeInOut(duration: 1)) {
                     Image.setACYBackgroundImage(aiachyState, background: image.image)
@@ -29,7 +30,6 @@ struct AuthBackground: View {
                         .position(x: image.positionX, y: image.positionY)
                 }
             }
-            .padding(.horizontal)
         }
         .ignoresSafeArea(.all, edges: .all)
         .onAppear {
@@ -40,7 +40,12 @@ struct AuthBackground: View {
         }
     }
 }
-
+//MARK: AuthBackground - Preview
+#Preview {
+    AuthBackground()
+        .environmentObject(ACY_PREVIEWS_STATE)
+}
+//MARK: AuthBackground - extension
 extension AuthBackground {
     private func setupTimer() {
         let formatter = DateFormatter()
@@ -733,17 +738,6 @@ extension AuthBackground {
         (plane ? 1 * (position + ACYdh(aiachyState, d: dh)) : -1 * (position + ACYdh(aiachyState, d: dh)) )
     }
 }
-
-struct authBackground_Previews: PreviewProvider {
-    
-    static let aiachyState = ACY_PREVIEWS_STATE
-    
-    static var previews: some View {
-        AuthBackground()
-            .environmentObject(aiachyState)
-    }
-}
-
 private let dataloski: [AuthBackgroundModel] = [
     
 ]

@@ -25,7 +25,7 @@ struct SplashView: View {
             } else {
                 //MARK: SplashView - Show to
                 ZStack {
-                    Color.AiachyColor(aiachyState,
+                    Color.makeAiachyColor(aiachyState,
                                       aiachyColor: .backgroundColor)
                     .ignoresSafeArea()
                     ACYLoadingProgress()

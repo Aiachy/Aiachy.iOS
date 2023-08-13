@@ -59,16 +59,16 @@ extension OnboardingView {
                 if index == presenter.currentIndex {
                     RoundedRectangle(cornerRadius: 8)
                         .frame(width: 20)
-                        .foregroundColor(Color.AiachyColor(aiachyState,
+                        .foregroundColor(Color.makeAiachyColor(aiachyState,
                                                            aiachyColor: .firstColor))
                 } else {
                     Circle()
-                        .foregroundColor(Color.AiachyColor(aiachyState,
+                        .foregroundColor(Color.makeAiachyColor(aiachyState,
                                                            aiachyColor: .secondColor))
                 }
             }
         }
-        .foregroundColor(Color.AiachyColor(aiachyState, aiachyColor: .secondColor))
+        .foregroundColor(Color.makeAiachyColor(aiachyState, aiachyColor: .secondColor))
         .frame(width: ACYdw(aiachyState, d: 0.15),height: 5)
     }
     //MARK: OnboardingView - Button
@@ -90,7 +90,7 @@ extension OnboardingView {
             .multilineTextAlignment(.center)
             .padding(.horizontal,ACYdw(aiachyState, d: ACY_SML_SIZE))
             .font(.aiachyFont(.roundedRegular10))
-            .foregroundColor(.AiachyColor(aiachyState, aiachyColor: .firstColor))
+            .foregroundColor(.makeAiachyColor(aiachyState, aiachyColor: .firstColor))
     }
 }
 

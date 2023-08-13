@@ -33,6 +33,10 @@ struct ImageHelper {
         enum button: String {
             case rightArrowButton = "rightArrowButton"
             case leftArrowButton = "leftArrowButton"
+            case mysticLogoButton = "mysticLogoButton"
+            case loveLogoButton = "loveLogoButton"
+            case galaxyLogoButton = "galaxyLogoButton"
+            case settingsLogoButton = "settingsLogoButton"
         }
         
         enum background: String {

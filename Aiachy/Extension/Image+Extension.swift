@@ -7,6 +7,45 @@
 
 import SwiftUI
 
+extension View {
+    /// Taking zodiac number value and converting it to picture in anarchy state.
+    /// - Parameter zodiac: To specify a picture by theme.
+    /// - Returns: Picture rotates.
+    func makeImageWithZodiacInt(aiachy aiachyState: AiachyState) -> Image {
+        
+        let zodiac = aiachyState.user.userZodiac.wrappedZodiac
+        
+        switch zodiac {
+        case 0:
+            return Image.setACYZodiacAltImage(aiachyState, zodiacAlt: .altAries)
+        case 1:
+            return Image.setACYZodiacAltImage(aiachyState, zodiacAlt: .altTaurus)
+        case 2:
+            return Image.setACYZodiacAltImage(aiachyState, zodiacAlt: .altGemini)
+        case 3:
+            return Image.setACYZodiacAltImage(aiachyState, zodiacAlt: .altCancer)
+        case 4:
+            return Image.setACYZodiacAltImage(aiachyState, zodiacAlt: .altLeo)
+        case 5:
+            return Image.setACYZodiacAltImage(aiachyState, zodiacAlt: .altVirgo)
+        case 6:
+            return Image.setACYZodiacAltImage(aiachyState, zodiacAlt: .altLibra)
+        case 7:
+            return Image.setACYZodiacAltImage(aiachyState, zodiacAlt: .altScorpion)
+        case 8:
+            return Image.setACYZodiacAltImage(aiachyState, zodiacAlt: .altSagittarius)
+        case 9:
+            return Image.setACYZodiacAltImage(aiachyState, zodiacAlt: .altCapricorn)
+        case 10:
+            return Image.setACYZodiacAltImage(aiachyState, zodiacAlt: .altAquarius)
+        case 11:
+            return Image.setACYZodiacAltImage(aiachyState, zodiacAlt: .altPisces)
+        default:
+            return Image.setACYZodiacAltImage(aiachyState, zodiacAlt: .altLeo)
+        }
+    }
+}
+
 //NextPatchTODO: Less code More Active
 extension Image {
     //MARK: - ImageExtension - AppCompletion

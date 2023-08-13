@@ -16,18 +16,18 @@ struct ACYTextFieldStyle: TextFieldStyle {
     func _body(configuration: TextField<Self._Label>) -> some View {
         ZStack{
             RoundedRectangle(cornerRadius: 5)
-                .stroke(Color.AiachyColor(aiachyState, aiachyColor: .secondColor))
-            Color.AiachyColor(aiachyState, aiachyColor: .backgroundAlternativeColor)
+                .stroke(Color.makeAiachyColor(aiachyState, aiachyColor: .secondColor))
+            Color.makeAiachyColor(aiachyState, aiachyColor: .backgroundAlternativeColor)
                 .cornerRadius(5)
                 .padding(.all,1)
             VStack(alignment: .leading) {
                 Text(text.locale())
                     .font(.aiachyFont(.roundedRegular10))
-                    .foregroundColor(.AiachyColor(aiachyState, aiachyColor: .firstColor))
+                    .foregroundColor(.makeAiachyColor(aiachyState, aiachyColor: .firstColor))
                     .padding(.init(top: 5, leading: 5, bottom: 0, trailing: 0))
                 configuration.body
                     .font(.aiachyFont(.roundedMedium16))
-                    .foregroundColor(.AiachyColor(aiachyState, aiachyColor: .firstColor))
+                    .foregroundColor(.makeAiachyColor(aiachyState, aiachyColor: .firstColor))
                     .padding(.init(top: 0, leading: 5, bottom: 5, trailing: 0))
             }
         }

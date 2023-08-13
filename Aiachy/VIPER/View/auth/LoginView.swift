@@ -105,7 +105,7 @@ extension LoginView {
     var registerButton: some View {
         VStack(spacing: 10) {
             Rectangle()
-                .foregroundColor(.AiachyColor(aiachyState, aiachyColor: .firstColor))
+                .foregroundColor(.makeAiachyColor(aiachyState, aiachyColor: .firstColor))
                 .frame(height: 1)
                 .padding(.horizontal, ACYdw(aiachyState, d: 0.1))
             Button {
@@ -113,7 +113,7 @@ extension LoginView {
             } label: {
                 Text(ACYTextHelper.ACYAppText.ACYappButtonText.RegisterButton.rawValue.locale())
                     .font(.aiachyFont(.cinzelBold12))
-                    .foregroundColor(.AiachyColor(aiachyState, aiachyColor: .secondColor))
+                    .foregroundColor(.makeAiachyColor(aiachyState, aiachyColor: .secondColor))
             }
             .makeAccessibilitysForUITest(identifier: "RegisterButtonID")
         }

@@ -115,8 +115,5 @@ extension AiachyUITests {
     func checkhourAndMinutePickerHOURID() {
         
     }
-    func checkdatePickersID() {
-        
-    }
 }
 
