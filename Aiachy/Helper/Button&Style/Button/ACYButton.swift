@@ -29,7 +29,7 @@ struct ACYButton: View {
 
 struct aiachyButton_Previews: PreviewProvider {
     
-    static let text = ACYTextHelper.ACYAppText.ACYappButtonText.ContinueButton.rawValue
+    static let text = ACYTextHelper.ACYGeneralText.ACYappButtonText.ContinueButton.rawValue
     
     static var previews: some View {
         ACYButton(text: text) { }

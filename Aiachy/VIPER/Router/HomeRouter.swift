@@ -8,10 +8,10 @@
 import SwiftUI
 
 private protocol RouterProtocol {
-    func navigate(to destination: HomeViews)
+    func navigate(to destination: HomeViewsEnum)
 }
 
-enum HomeViews {
+enum HomeViewsEnum {
     case home
     case mystic
     case galaxy
@@ -21,16 +21,17 @@ enum HomeViews {
 
 class HomeRouterPresenter: ObservableObject, RouterProtocol {
     
-    @Published var isUserLogout: Bool
-    @Published var currentView: HomeViews
+    @Published var currentView: HomeViewsEnum
+    @Published var acyAlertEntity: ACYAlertEntity = ACYAlertEntity()
+    @Published var isDisabledTabBar: Bool = false
     
-    func navigate(to destination: HomeViews) {
-        currentView = destination
+    func navigate(to destination: HomeViewsEnum) {
+        withAnimation(.spring) {
+            currentView = destination
+        }
     }
     
-    init(isUserLogout: Bool = false,
-         currentView: HomeViews = .home) {
-        self.isUserLogout = isUserLogout
+    init(currentView: HomeViewsEnum = .home) {
         self.currentView = currentView
     }
 }
@@ -38,26 +39,34 @@ class HomeRouterPresenter: ObservableObject, RouterProtocol {
 struct HomeRouter: View {
     
     @EnvironmentObject var aiachyState : AiachyState
-    @ObservedObject var authRouter = HomeRouterPresenter()
+    @StateObject var homeRouter = HomeRouterPresenter()
     
     var body: some View {
-        ZStack {
-            switch authRouter.currentView {
-            case .home:
-                HomeView(router: authRouter)
-            case .mystic:
-                MysticView()
-            case .galaxy:
-                GalaxyView()
-            case .love:
-                LoveView()
-            case .settings:
-                SettingsView()
+        VStack(spacing: 0) {
+            ZStack {
+                switch homeRouter.currentView {
+                case .home:
+                    HomeView()
+                case .mystic:
+                    MysticRouter(router: homeRouter)
+                case .galaxy:
+                    GalaxyRouter(router: homeRouter)
+                case .love:
+                    LoveRouter(router: homeRouter)
+                case .settings:
+                    SettingsRouter()
+                }
+            }
+            if !homeRouter.isDisabledTabBar {
+                ACYTabBar(router: homeRouter)
             }
         }
-        .fullScreenCover(isPresented: $authRouter.isUserLogout, content: {
-            SplashView()
-        })
+        .overlay{ 
+            if homeRouter.acyAlertEntity.isShowingAlert {
+                ACYAlertView(acyAlertEntity: homeRouter.acyAlertEntity)
+            }
+        }
         .environmentObject(aiachyState)
     }
 }
+

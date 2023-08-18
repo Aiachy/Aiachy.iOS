@@ -10,33 +10,35 @@ import SwiftUI
 struct ACYAlertView: View {
     
     @EnvironmentObject var aiachyState: AiachyState
-    @State var alertTitle: ACYTextHelper.ACYAppText.ACYappAlertMassageText
-    @State var alertImage: ImageHelper.ACYAppImage.ACYalertImage?
-    @State var isNeedImage: Bool
-    @State var isNeedSecondButton: Bool
-    @State var alertFirstButtonText: ACYTextHelper.ACYAppText.ACYappButtonText
-    @State var secondButtonText: (ACYTextHelper.ACYAppText.ACYappButtonText)? = nil
-    var firstButtonAction: () -> ()
-    var secondButtonAction: (() -> ())? = nil
+    @State var acyAlertEntity: ACYAlertEntity
     
     var body: some View {
         ZStack {
             //MARK: ACYAlert - Blurbackground
             Color.makeAiachyColor(aiachyState,
                               aiachyColor: .backgroundBlurColor)
-            .ignoresSafeArea()
+            .ignoresSafeArea(.all, edges: .all)
             Group{
-                if isNeedImage == false  {
+                if acyAlertEntity.typeError == 0 {
                     titleButtonView
-                } else if isNeedImage == true && isNeedSecondButton == false {
+                } else if acyAlertEntity.typeError == 1 {
+                    titleTwoButtonView
+                } else if acyAlertEntity.typeError == 2 {
                     titleImageButtonView
-                } else if isNeedImage == true && isNeedSecondButton == true {
+                } else if acyAlertEntity.typeError == 3 {
                     titleImageTwoButtonView
                 }
             }
             .background {
                 alertViewBackground
             }
+            .onAppear {
+                
+            }
+            .onDisappear{
+                
+            }
+            
         }
         .makeAccessibilitysForUITest(identifier: "ACYAlertViewID")
     }
@@ -44,29 +46,20 @@ struct ACYAlertView: View {
 
 struct alertView_Previews: PreviewProvider {
 
-    static let aiachyState = ACY_PREVIEWS_STATE
+    static var acyAlertEntity = ACYAlertEntity(title: .appError, image: .notAscendantSelection, firstButtonText: .BackButton, secondButtonText: .BackButton, isNeedImage: false, isShowingAlert: true, isNeedSecondButton: true, levelError: 0, typeError: 1) {
+        
+    } secondAction: {
+        
+    }
 
+    
     static var previews: some View {
         ZStack(content: {
             AuthBackground()
-            //titleButtonView
-//            ACYAlertView(alertTitle: .notUserHaveConnection, firstButtonText: .TryAgainButton, firstButtonAction: {})
-            //titleImageButtonView
-            //titleImageButtonView
-//            ACYAlertView(alertTitle: .notUserHaveConnection,
-//                         alertImage: .notUserHaveConnection,
-//                         isNeedImage: true,
-//                         firstButtonText: .TryAgainButton) { }
-            //titleImageTwoButtonView
-            ACYAlertView(alertTitle: .notUserHaveConnection,
-                         alertImage: .notUserHaveConnection,
-                         isNeedImage: true,
-                         isNeedSecondButton: true,
-                         alertFirstButtonText: .TryAgainButton,
-                         secondButtonText: .ContinueButton) { } secondButtonAction: {}
+            ACYAlertView(acyAlertEntity: acyAlertEntity)
 
         })
-            .environmentObject(aiachyState)
+            .environmentObject(ACY_PREVIEWS_STATE)
     }
 }
 
@@ -79,6 +72,18 @@ extension ACYAlertView {
             Spacer()
             alertFirstButtonView
             Spacer()
+        }
+        .frame(width: ACYdw(aiachyState, d: ACY_MAX_SIZE),
+               height: ACYdh(aiachyState, d: ACY_MED_SIZE))
+    }
+    
+    var titleTwoButtonView: some View {
+        VStack(spacing: 40) {
+            alertTitleView
+            HStack(spacing: 10) {
+                alertFirstButtonView
+                alertSecondButtonView
+            }
         }
         .frame(width: ACYdw(aiachyState, d: ACY_MAX_SIZE),
                height: ACYdh(aiachyState, d: ACY_MED_SIZE))
@@ -112,35 +117,35 @@ extension ACYAlertView {
 extension ACYAlertView {
     
     @ViewBuilder
+    //MARK: ACYAlertView - Title
     private var alertTitleView: some View {
-        //MARK: ACYAlert - Title
-        Text(alertTitle.rawValue.locale())
+        Text(acyAlertEntity.title!.rawValue.locale())
             .padding(.horizontal)
             .font(.aiachyFont(.cinzelBold14))
             .multilineTextAlignment(.center)
 
     }
-    //MARK: ACYAlert - first Button
+    //MARK: ACYAlertView - first Button
     private var alertFirstButtonView: some View {
-        ACYMinorButton(text: alertFirstButtonText.rawValue) {
-            firstButtonAction()
+        ACYMinorButton(text: acyAlertEntity.firstButtonText!.rawValue) {
+            acyAlertEntity.firstAction!()
         }
     }
-    //MARK: ACYAlert - second Button
+    //MARK: ACYAlertView - second Button
     private var alertSecondButtonView: some View {
-        ACYMinorButton(text: secondButtonText!.rawValue) {
-            secondButtonAction!()
+        ACYMinorButton(text: acyAlertEntity.secondButtonText!.rawValue) {
+            acyAlertEntity.secondAction!()
         }
     }
-    //MARK: ACYAlert - image
+    //MARK: ACYAlertView - image
     private var alertImageView: some View {
-        Image.setACYAlertImage(aiachyState, alert: alertImage!)
+        Image.setACYAlertImage(aiachyState, alert: acyAlertEntity.image!)
             .resizable()
             .scaledToFit()
             .frame(width: ACYdw(aiachyState, d: ACY_LNG_SIZE), height: ACYdh(aiachyState, d: 0.1))
             .padding(.vertical)
     }
-    //MARK: ACYAlert - Alert View background
+    //MARK: ACYAlertView - Alert View background
     private var alertViewBackground: some View {
         RoundedRectangle(cornerRadius: 15)
             .stroke(Color.makeAiachyColor(aiachyState,

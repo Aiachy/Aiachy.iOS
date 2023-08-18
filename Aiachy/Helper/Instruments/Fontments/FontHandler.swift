@@ -14,7 +14,9 @@ struct FontHandler {
     static var CinzelBold14: Font = .custom(FontHelper().CinzelBold, size: 14)
     
     static var CinzelBlack20: Font = .custom(FontHelper().CinzelBlack, size: 20)
-    
+    static var CinzelBlack22: Font = .custom(FontHelper().CinzelBlack, size: 22)
+    static var CinzelBlack30: Font = .custom(FontHelper().CinzelBlack, size: 30)
+    static var CinzelBlack50: Font = .custom(FontHelper().CinzelBlack, size: 50)
     //MARK: FontHandler - OldStandartTT
     static var OldItalic10: Font = .custom(FontHelper().oldItalic, size: 10)
     static var OldItalic14: Font = .custom(FontHelper().oldItalic, size: 14)
@@ -31,6 +33,7 @@ struct FontHandler {
     
     static var RoundedBold14: Font = .system(.callout, design: .rounded).weight(.bold)
     static var RoundedBold16: Font = .system(.callout, design: .rounded).weight(.bold)
+    static var RoundedBold20: Font = .system(.body, design: .rounded).weight(.bold)
     
     static var RoundedBlack8: Font = .system(.caption2, design: .rounded).weight(.black)
     
@@ -40,6 +43,9 @@ struct FontHandler {
         case cinzelBold14
         
         case cinzelBlack20
+        case cinzelBlack22
+        case CinzelBlack30
+        case CinzelBlack50
         //MARK: FontHandler - enum OldStandartTT
         case oldItalic10
         case oldItalic14
@@ -55,6 +61,7 @@ struct FontHandler {
         
         case roundedBold14
         case roundedBold16
+        case roundedBold20
         
         case roundedBlack8
     }

@@ -16,8 +16,8 @@ struct ACYTextField: View {
     @State var isNeedPreferenceButton: Bool = false
     @State var isHalfTextField: Bool = false
     @State var isSecureField: Bool = false
-    @State var textFieldTitle: ACYTextHelper.ACYAppText.ACYappTextfieldText
-    @State var errorText: ACYTextHelper.ACYAppText.ACYappTextfieldErrorText?
+    @State var textFieldTitle: ACYTextHelper.ACYTextFieldText.ACYappTextfieldText
+    @State var errorText: ACYTextHelper.ACYTextFieldText.ACYappTextfieldErrorText?
     @State var preferenceText: String? = nil
     var preferenceAction: (() -> ())? = nil
     

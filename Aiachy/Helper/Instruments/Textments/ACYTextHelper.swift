@@ -8,43 +8,8 @@
 import Foundation
 
 struct ACYTextHelper {
-    struct ACYOnboardingText {
-        enum ACYonboardingTitleText: String {
-            case HeartofAstrologyViewTitle = "HeartofAstrologyViewTitle"
-            case SecretOfTheStarsViewTitle = "SecretOfTheStarsViewTitle"
-            case YourFutureViewTitle = "YourFutureViewTitle"
-        }
-        enum ACYonboardingDescriptionText: String {
-            case HeartofAstrologyViewDescription = "HeartofAstrologyViewDescription"
-            case SecretOfTheStarsViewDescription = "SecretOfTheStarsViewDescription"
-            case YourFutureViewDescription = "YourFutureViewDescription"
-        }
-    }
-    struct ACYAuthText {
-        enum ACYauthTitleText: String {
-            case LoginScreenViewTitle = "LoginScreenViewTitle"
-            case ZodiacSelectionViewTitle = "ZodiacSelectionViewTitle"
-            case RegisterViewTitle = "RegisterViewTitle"
-            case AscendantSelectionViewTitle = "AscendantSelectionViewTitle"
-            case AttentionViewTitle = "AttentionViewTitle"
-        }
-        enum ACYauthDescriptionText: String {
-            case LoginScreenViewDescription = "LoginScreenViewDescription"
-            case RegisterViewDescription = "RegisterViewDescription"
-            case AscendantSelectionViewDescription = "AscendantSelectionViewDescription"
-            case AscendantSelectionViewGuideUserDescription = "AscendantSelectionViewGuideUserDescription"
-            case AttentionViewDescription = "AttentionViewDescription"
-            case AttentionViewDescriptionLink = "AttentionViewDescriptionLink" //Remember: Custom Link to Twitter adress
-        }
-        enum ACYprivacyPolicyText: String {
-            case PrivacyPolicyTitle = "PrivacyPolicyTitle"
-            case PrivacyPolicyDescrpition = "PrivacyPolicyDescrpition"
-            case TermsConditionsTitle = "TermsConditionsTitle"
-            case TermsConditionsDescription = "TermsConditionsDescription"
-            case PrivacyTermWay = "PrivacyTermWay"
-        }
-    }
-    struct ACYAppText {
+    //MARK: ACYTextHelper - General
+    struct ACYGeneralText {
         enum ACYNameText: String {
             case ClockNameText = "ClockNameText"
         }
@@ -57,7 +22,22 @@ struct ACYTextHelper {
             case RegisterButton = "RegisterButton"
             case TryAgainButton = "TryAgainButton"
             case ChooseLocationButton = "ChooseLocationButton"
+            case PreRegistrationButton = "PreRegistrationButton"
+            case yesButton = "yesButton"
+            case noButton = "noButton"
         }
+        enum ACYappAlertMassageText: String {
+            case notUserHaveConnection = "notUserHaveConnection"
+            case notUserIsOlder = "notUserIsOlder"
+            case notUserHavePlace = "notUserHavePlace "
+            case appError = "AppError"
+            case areYouSure = "areYouSure"
+        }
+    }
+    
+    //MARK: ACYTextHelper - TextField
+    struct ACYTextFieldText {
+        //TextField - Name
         enum ACYappTextfieldText: String {
             case MailPhoneTextField = "MailPhoneTextField"
             case PasswordTextField = "PasswordTextField"
@@ -69,6 +49,7 @@ struct ACYTextHelper {
             case MailTextField = "MailTextField"
             case PlaceTextField = "PlaceTextField"
         }
+        //TextField - Error
         enum ACYappTextfieldErrorText: String {
             case EmailWrong = "EmailWrong"
             case PasswordWrong = "PasswordWrong"
@@ -92,14 +73,79 @@ struct ACYTextHelper {
             //--
             case MailUsedBefore = "MailUsedBefore"
         }
-        enum ACYappAlertMassageText: String {
-            case notUserHaveConnection = "notUserHaveConnection"
-            case notUserIsOlder = "notUserIsOlder"
-            case notUserHavePlace = "notUserHavePlace "
-            case appError = "AppError"
+    }
+    // MARK: ACYTextHelper - Content
+    struct ACYContentText {
+        enum ACYContentTitle: String {
+            case galaxyTuneTitle = "galaxyTuneTitle"
+            case galaxymeditationTitle = "galaxymeditationTitle"
         }
     }
+    struct ACYGalaxyText {
+        enum ACYgalaxyTuneText: String {
+            case ACYgalaxyPlayText = "ACYgalaxyPlayText"
+            case ACYgalaxyStopText = "ACYgalaxyStopText"
+            case ACYgalaxyClickToDownloadText = "ACYgalaxyClickToDownloadText"
+        }
+    }
+    // Content - Auth
+    struct ACYAuthText {
+        enum ACYauthTitleText: String {
+            case LoginScreenViewTitle = "LoginScreenViewTitle"
+            case ZodiacSelectionViewTitle = "ZodiacSelectionViewTitle"
+            case RegisterViewTitle = "RegisterViewTitle"
+            case AscendantSelectionViewTitle = "AscendantSelectionViewTitle"
+            case AttentionViewTitle = "AttentionViewTitle"
+        }
+        enum ACYauthDescriptionText: String {
+            case LoginScreenViewDescription = "LoginScreenViewDescription"
+            case RegisterViewDescription = "RegisterViewDescription"
+            case AscendantSelectionViewDescription = "AscendantSelectionViewDescription"
+            case AscendantSelectionViewGuideUserDescription = "AscendantSelectionViewGuideUserDescription"
+            case AttentionViewDescription = "AttentionViewDescription"
+            case AttentionViewDescriptionLink = "AttentionViewDescriptionLink" //Remember: Custom Link to Twitter adress
+        }
+        enum ACYprivacyPolicyText: String {
+            case PrivacyPolicyTitle = "PrivacyPolicyTitle"
+            case PrivacyPolicyDescrpition = "PrivacyPolicyDescrpition"
+            case TermsConditionsTitle = "TermsConditionsTitle"
+            case TermsConditionsDescription = "TermsConditionsDescription"
+            case PrivacyTermWay = "PrivacyTermWay"
+        }
+        enum ACYonboardingTitleText: String {
+            case HeartofAstrologyViewTitle = "HeartofAstrologyViewTitle"
+            case SecretOfTheStarsViewTitle = "SecretOfTheStarsViewTitle"
+            case YourFutureViewTitle = "YourFutureViewTitle"
+        }
+        enum ACYonboardingDescriptionText: String {
+            case HeartofAstrologyViewDescription = "HeartofAstrologyViewDescription"
+            case SecretOfTheStarsViewDescription = "SecretOfTheStarsViewDescription"
+            case YourFutureViewDescription = "YourFutureViewDescription"
+        }
+    }
+    // Content - Love
+    struct ACYLoveText {
+        enum ACYloveTitleText: String {
+            case loveAttentionTitle = "loveAttentionTitle"
+        }
+    }
+    // Content - Mystic
+    struct ACYMysticText {
+        enum ACYmysticTitleText: String {
+            case tarotStarterTitle = "tarotStarterTitle"
+            case palmistryStarterTitle = "palmistryStarterTitle"
+            case crystalGazingStarterTitle = "crystalGazingStarterTitle"
+        }
+        
+        enum ACYmysticDescriptionText: String {
+            case tarotStarterDescription = "tarotStarterDescription"
+            case palmistyrStarterDescription = "mysticStarterDescription"
+            case crystalGazingStarterDescription = "crystalGazingStarterDescription"
+        }
+    }
+    // MARK: ACYTextHelper - Zodiac
     struct ACYZodiacText {
+        // Zodiac - Name
         enum ACYzodiacNameText: String {
             case PiscesZodiac = "PiscesZodiac"
             case AriesZodiac = "AriesZodiac"
@@ -114,6 +160,7 @@ struct ACYTextHelper {
             case TaurusZodiac = "TaurusZodiac"
             case CancerZodiac = "CancerZodiac"
         }
+        // Zodiac - Date
         enum ACYzodiacDateText: String {
             case AquariusZodiacShortedDate = "AquariusZodiacShortedDate"
             case AriesZodiacShortedDate = "AriesZodiacShortedDate"
@@ -130,6 +177,4 @@ struct ACYTextHelper {
         }
     }
 }
-
-
 

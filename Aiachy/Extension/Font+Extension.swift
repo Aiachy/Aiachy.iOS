@@ -18,6 +18,12 @@ extension Font {
             
         case .cinzelBlack20:
             return FontHandler.CinzelBlack20
+        case .cinzelBlack22:
+            return FontHandler.CinzelBlack22
+        case .CinzelBlack30:
+            return FontHandler.CinzelBlack30
+        case .CinzelBlack50:
+            return FontHandler.CinzelBlack50
             
         case .oldItalic10:
             return FontHandler.OldItalic10
@@ -40,6 +46,8 @@ extension Font {
             return FontHandler.RoundedBold14
         case .roundedBold16:
             return FontHandler.RoundedBold16
+        case .roundedBold20:
+            return FontHandler.RoundedBold20
             
         case .roundedBlack8:
             return FontHandler.RoundedBlack8

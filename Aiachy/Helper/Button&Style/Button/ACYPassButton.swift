@@ -11,7 +11,7 @@ struct ACYPassButton: View {
     
     @EnvironmentObject var aiachyState: AiachyState
     var isItBackButton: Bool
-    var text : String
+    var text : ACYTextHelper.ACYGeneralText.ACYappButtonText
     var action: () -> ()
     
     var body: some View {
@@ -26,7 +26,7 @@ struct ACYPassButton: View {
                         .frame(width: ACYdw(aiachyState, d: 0.05),
                                height: ACYdh(aiachyState, d: 0.02))
                 }
-                Text(text.locale())
+                Text(text.rawValue.locale())
                     .lineLimit(1)
                     .font(.aiachyFont(.roundedBold14))
                     .frame(width: ACYdw(aiachyState, d: ACY_SML_SIZE))
@@ -42,8 +42,8 @@ struct ACYPassButton: View {
             }
         }
         .buttonStyle(ACYPassButtonStyle())
-        .frame(width: ACYdw(aiachyState, d: ACY_ALTMED_SIZE),
-               height: ACYdh(aiachyState, d: ACY_MAKRO_SIZE))
+        .frame(width: ACYdw(aiachyState, d: 0.2),
+               height: ACYdh(aiachyState, d: ACY_MIKRO_SIZE))
         .makeAccessibilitysForUITest(identifier: "ACYPassButtonID")
     }
 }
@@ -51,7 +51,7 @@ struct ACYPassButton: View {
 struct ACYPassButton_Previews: PreviewProvider {
         
     static var previews: some View {
-        ACYPassButton(isItBackButton: true, text: "Tillbaka") { }
+        ACYPassButton(isItBackButton: true, text: .ChooseLocationButton) { }
             .environmentObject(ACY_PREVIEWS_STATE)
     }
 }

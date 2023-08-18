@@ -219,73 +219,129 @@
 => Feature
 - View add Hstack for fill screen backgrond
 
+/---------------------------------------------------------------------------------------------------------------------------------------------------------/
 
+# ACY Version 0.065 update (Love, Galaxy, Mystic made)
 
+## Home Completions 
 
+** App Changes
+=> File
+- Added ACYTabBar.swift
+- Added Background
+- Added Tabbar
+- Added ACYTabBarEntity
+- Added ACYAlertEntity
+- Changed ACYAlertView
+- Added TuneView, TunePresenter, TuneInteractor
+- Added ACYViewTitleText
+- Added GalaxyListCloumn
 
+=> Properties
+- Changed All Alert Vies All Views 
 
+=> Assets
+- Added logo 4 svg to General/App/Button/tabBar
+- Added zodiac 12 svg Horoscope/Zodiac
 
+** Home File Completions
+=> Feature 
+- None
 
+=> Deficiencies
+- None
 
+=> UI Test
+- None
 
+=> Unit Test
+- None
 
+=> Refator
+- Deleted Logout Button
 
+** Mystic File Completions
+=> Feature 
+- Mystic screen works perfectly.
 
+=> Deficiencies
+- Not done.
 
+=> UI Test
+- None
 
+=> Unit Test
+- None
 
+=> Refator
+- None
 
+** Galaxy File Completions
+=> Feature 
+- Galaxy screen works perfectly.
 
+=> Deficiencies
+- Not done.
 
+=> UI Test
+- None
 
+=> Unit Test
+- None
 
+=> Refator
+- None
+--------------------------------------------------------
+** Love File Completions
+=> Feature 
+- Love screen works perfectly.
 
+=> Deficiencies
+- None
 
+=> UI Test
+- None
 
+=> Unit Test
+- None
 
+=> Refator
+- None
+--------------------------------------------------------
+** Settings File Completions
+=> Feature 
+- View Made
 
+=> Deficiencies
+- Not done.
 
+=> UI Test
+- None
 
+=> Unit Test
+- None
 
+=> Refator
+- None
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+/---------------------------------------------------------------------------------------------------------------------------------------------------------/
 // Template //
+/---------------------------------------------------------------------------------------------------------------------------------------------------------/
+
+** App Changes
+=> File
+-
+
+=> Properties
+-  
+
+=> Assets
+- 
+
+/---------------------------------------------------------------------------------------------------------------------------------------------------------/
+// Template //
+/---------------------------------------------------------------------------------------------------------------------------------------------------------/
+
 ## Auth Completions 
 
 ** Splash File Completions
@@ -369,6 +425,90 @@
 - None
 --------------------------------------------------------
 ** Ascendant Selection File Completions 
+=> Feature 
+- None
+
+=> Deficiencies
+- None
+
+=> UI Test
+- None
+
+=> Unit Test
+- None
+
+=> Refator
+- None
+
+/---------------------------------------------------------------------------------------------------------------------------------------------------------/
+// Template //
+/---------------------------------------------------------------------------------------------------------------------------------------------------------/
+
+** Home File Completions
+=> Feature 
+- None
+
+=> Deficiencies
+- None
+
+=> UI Test
+- None
+
+=> Unit Test
+- None
+
+=> Refator
+- None
+--------------------------------------------------------
+** Mystic File Completions
+=> Feature 
+- None
+
+=> Deficiencies
+- None
+
+=> UI Test
+- None
+
+=> Unit Test
+- None
+
+=> Refator
+- None
+--------------------------------------------------------
+** Galaxy File Completions
+=> Feature 
+- None
+
+=> Deficiencies
+- None
+
+=> UI Test
+- None
+
+=> Unit Test
+- None
+
+=> Refator
+- None
+--------------------------------------------------------
+** Love File Completions
+=> Feature 
+- None
+
+=> Deficiencies
+- None
+
+=> UI Test
+- None
+
+=> Unit Test
+- None
+
+=> Refator
+- None
+--------------------------------------------------------
+** Settings File Completions
 => Feature 
 - None
 

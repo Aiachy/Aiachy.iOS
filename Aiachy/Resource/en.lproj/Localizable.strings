@@ -5,9 +5,86 @@
   Created by Mert Türedü on 13.05.2023.
   
 */
-
-//MARK: Privacy Policy -
-//PrivacyPolicy
+//MARK: Localizable - General
+// General - Name
+"ClockNameText" = "Clock";
+// General - Button
+"BackButton" = "Back";
+"ContinueButton" = "Continue";
+"LoginButton" = "Login";
+"GuestButton" = "Guest";
+"ResetKey" = "Forget your key?";
+"RegisterButton" = "Embark on a Mystical Adventure";
+"TryAgainButton" = "Try again";
+"ChooseLocationButton" = "Chose your location";
+"PreRegistrationButton" = "Pre-registration";
+// General - Wrong Massage
+"notUserHaveConnection" = "Please make sure you are connected to the internet";
+"notUserIsOlder" = "Please enter your age. You have to older 13 years ";
+"notUserHavePlace" = "You have not selected your place. Please select your place";
+//--//
+//--//
+//--//
+//--//
+//MARK: Localizable - TextField
+// Textfeild - Name
+"MailPhoneTextField" = "Mail/Phone";
+"MailTextField" = "Mail";
+"PhoneTextField" = "Phone";
+"PasswordTextField" = "Password";
+"AgainPasswordTextField" = "Again Password";
+"MainTextField" = "Mail";
+"PhoneTextField" = "Phone";
+"NameTextField" = "Name";
+"SurnameTextField" = "Surname";
+"PlaceTextField" = "Place";
+// TextField - Error
+"EmailWrong" = "Your email is wrong";
+"PasswordWrong" = "Your password is wrong";
+//--
+"NameNotFillWrong" = "Please fil your name";
+"NameMinCharacterWrong" = "Name will be a minimum of 2 characters";
+"SurnameMinCharacterWrong" = "Name will be a minimum of 2 characters";
+"SurnameNotFillWrong" = "Please fil your surname";
+"MailNotFillWrong" = "Please fil your mail";
+"PasswordNotFillWrong" = "Please fil your password";
+"PasswordAgainNotFillWrong" = "Please fil your passowrd again";
+"PasswordNotSame" = "Password not same";
+//--
+"MailCharactersWrong" = "Your e-mail address is not compatible";
+"PhoneCharactersWrong" = "Your phone is not compatible";
+"PasswordMinCharacterWrong" = "Password will be a minimum of 6 characters";
+//--
+"MailCantFound" = "Your mail is incorrect";
+"PhoneCantFound" = "Your phone is incorrect";
+"PasswordCantFound" = "Your password is incorrect";
+//--
+"MailUsedBefore" = "This email has been used before";
+//--//
+//--//
+//--//
+//--//
+// MARK: Localizable - Content
+// Auth - Title
+"HeartofAstrologyViewTitle" = "You are in the heart of astrology";
+"SecretOfTheStarsViewTitle" = "Unveil the Secrets of the Stars";
+"YourFutureViewTitle" = "Do you want to know your future";
+"LoginScreenViewTitle" = "Unlock Astrology's Gates, Enter Aiachy's World";
+"ZodiacSelectionViewTitle" = "The time has come to learn your future";
+"RegisterViewTitle" = "Unleash Your Zodiac Potential";
+"AscendantSelectionViewTitle" = "Illuminate Your Inner Radiance";
+"AttentionViewTitle" = "ATTENTION";
+// Auth - Description
+"HeartofAstrologyViewDescription" = "Knowing your horoscope better allows you to make better plans for the future.";
+"SecretOfTheStarsViewDescription" = "Discover the Secrets of the Stars, Unveiling the Intricacies of Astrology, All Here in One Place";
+"YourFutureViewDescription" = "Aiachy will guide you on a beautiful path and show you little tips about your future";
+"LoginScreenViewDescription" = "Unlock the Mysteries of Astrology, Dive into Aiachy's Enchanting World, and Explore the Fascinating Realm of Zodiac Wonders";
+"RegisterViewDescription" = "Step into Aiachy for a personalized horoscope experience! Let us customize your zodiac information with your confidential details and take you on a unique journey";
+"AscendantSelectionViewDescription" = "Embark on a Transformative Journey with Your Ascendant Sign Unleash the Power Within";
+"AscendantSelectionViewGuideUserDescription" = "Select date and time of birth.";
+"AttentionViewDescription" = "The application is still not fully logged out. It is very normal to encounter bugs. If you encounter and want to look for a solution. You can send it to us quickly from the Help section. The app will appear for the first and only time in this genre with your support. Don't forget to have fun while using the app.";
+"AttentionViewDescriptionLink" = "Update comes on 21st of every month Check Our Twitter";
+// Auth - PrivacyPolicy
 "PrivacyPolicyTitle" = "Privacy Policy";
 "PrivacyPolicyDescrpition" = "Muhammet Mert Türedü built the Aiachy app as a Freemium app. This SERVICE is provided by Muhammet Mert Türedü at no cost and is intended for use as is.
 This page is used to inform visitors regarding my policies with the collection, use, and disclosure of Personal Information if anyone decided to use my Service.
@@ -41,7 +118,7 @@ These Services do not address anyone under the age of 13. I do not knowingly col
 Changes to This Privacy Policy
 I may update our Privacy Policy from time to time. Thus, you are advised to review this page periodically for any changes. I will notify you of any changes by posting the new Privacy Policy on this page.
 This policy is effective as of 2023-05-21";
-//Terms&Conditions
+// Auth - Terms&Conditions
 "TermsConditionsTitle" = "Terms & Conditions";
 "TermsConditionsDescription" = "Terms & Conditions
 By downloading or using the app, these terms will automatically apply to you – you should make sure therefore that you read them carefully before using the app. You’re not allowed to copy or modify the app, any part of the app, or our trademarks in any way. You’re not allowed to attempt to extract the source code of the app, and you also shouldn’t try to translate the app into other languages or make derivative versions. The app itself, and all the trademarks, copyright, database rights, and other intellectual property rights related to it, still belong to Muhammet Mert Türedü.
@@ -60,65 +137,23 @@ At some point, we may wish to update the app. The app is currently available on 
 Changes to This Terms and Conditions
 I may update our Terms and Conditions from time to time. Thus, you are advised to review this page periodically for any changes. I will notify you of any changes by posting the new Terms and Conditions on this page.
 These terms and conditions are effective as of 2023-05-21";
-
 "PrivacyTermWay" = "By creating an account, you’re agree to our Privacy policy and Term of use.";
-//MARK: ClockNameText -
-"ClockNameText" = "Clock";
-//MARK: Button -
-"BackButton" = "Back";
-"ContinueButton" = "Continue";
-"LoginButton" = "Login";
-"GuestButton" = "Guest";
-"ResetKey" = "Forget your key?";
-"RegisterButton" = "Embark on a Mystical Adventure";
-"TryAgainButton" = "Try again";
-"ChooseLocationButton" = "Chose your location";
-//MARK: Wrong Massage -
-"notUserHaveConnection" = "Please make sure you are connected to the internet";
-"notUserIsOlder" = "Please enter your age. You have to older 13 years ";
-"notUserHavePlace" = "You have not selected your place. Please select your place";
-//MARK: Textfield Error -
-"EmailWrong" = "Your email is wrong";
-"PasswordWrong" = "Your password is wrong";
-//--
-"NameNotFillWrong" = "Please fil your name";
-"NameMinCharacterWrong" = "Name will be a minimum of 2 characters";
-"SurnameMinCharacterWrong" = "Name will be a minimum of 2 characters";
-"SurnameNotFillWrong" = "Please fil your surname";
-"MailNotFillWrong" = "Please fil your mail";
-"PasswordNotFillWrong" = "Please fil your password";
-"PasswordAgainNotFillWrong" = "Please fil your passowrd again";
-"PasswordNotSame" = "Password not same";
-//--
-"MailCharactersWrong" = "Your e-mail address is not compatible";
-"PhoneCharactersWrong" = "Your phone is not compatible";
-"PasswordMinCharacterWrong" = "Password will be a minimum of 6 characters";
-//--
-"MailCantFound" = "Your mail is incorrect";
-"PhoneCantFound" = "Your phone is incorrect";
-"PasswordCantFound" = "Your password is incorrect";
-//--
-"MailUsedBefore" = "This email has been used before";
-//MARK: Auth Title -
-"HeartofAstrologyViewTitle" = "You are in the heart of astrology";
-"SecretOfTheStarsViewTitle" = "Unveil the Secrets of the Stars";
-"YourFutureViewTitle" = "Do you want to know your future";
-"LoginScreenViewTitle" = "Unlock Astrology's Gates, Enter Aiachy's World";
-"ZodiacSelectionViewTitle" = "The time has come to learn your future";
-"RegisterViewTitle" = "Unleash Your Zodiac Potential";
-"AscendantSelectionViewTitle" = "Illuminate Your Inner Radiance";
-"AttentionViewTitle" = "ATTENTION";
-//MARK: Auth Description -
-"HeartofAstrologyViewDescription" = "Knowing your horoscope better allows you to make better plans for the future.";
-"SecretOfTheStarsViewDescription" = "Discover the Secrets of the Stars, Unveiling the Intricacies of Astrology, All Here in One Place";
-"YourFutureViewDescription" = "Aiachy will guide you on a beautiful path and show you little tips about your future";
-"LoginScreenViewDescription" = "Unlock the Mysteries of Astrology, Dive into Aiachy's Enchanting World, and Explore the Fascinating Realm of Zodiac Wonders";
-"RegisterViewDescription" = "Step into Aiachy for a personalized horoscope experience! Let us customize your zodiac information with your confidential details and take you on a unique journey";
-"AscendantSelectionViewDescription" = "Embark on a Transformative Journey with Your Ascendant Sign Unleash the Power Within";
-"AscendantSelectionViewGuideUserDescription" = "Select date and time of birth.";
-"AttentionViewDescription" = "The application is still not fully logged out. It is very normal to encounter bugs. If you encounter and want to look for a solution. You can send it to us quickly from the Help section. The app will appear for the first and only time in this genre with your support. Don't forget to have fun while using the app.";
-"AttentionViewDescriptionLink" = "Update comes on 21st of every month Check Our Twitter";
-//MARK: Zodiac Name -
+// Love - Title
+"loveAttentionTitle" = "The future of love lies just a little further, so be patient";
+// Mystic - Title
+"tarotStarterTitle" = "Tarot";
+"palmistryStarterTitle" = "Palmistry";
+"crystalGazingStarterTitle" = "Crystal Gazing";
+// Mystic - Description
+"tarotStarterDescription" = "Not available for use";
+"mysticStarterDescription" = "Not available for use";
+"crystalGazingStarterDescription" = "Not available for use";
+//--//
+//--//
+//--//
+//--//
+//MARK: Localizable - Zodiac
+// Zodiac - Name
 "PiscesZodiac" = "Pisces";
 "AriesZodiac" = "Aries";
 "AquariusZodiac" = "Aquarius";
@@ -131,7 +166,7 @@ These terms and conditions are effective as of 2023-05-21";
 "ScorpioZodiac" = "Scorpio";
 "TaurusZodiac" = "Taurus";
 "CancerZodiac" = "Cancer";
-//MARK: Zodiac Date Parted -
+// Zodiac - Date
 "AquariusZodiacShortedDate" = "21 Jan - 19 Feb";
 "AriesZodiacShortedDate" = "21 Mar - 20 Apr";
 "GeminiZodiacShortedDate" = "21 May - 21 Jun";
@@ -144,14 +179,3 @@ These terms and conditions are effective as of 2023-05-21";
 "CancerZodiacShortedDate" = "22 Jun - 22 Jul";
 "LeoZodiacShortedDate" = "23 Jul - 23 Aug";
 "PiscesZodiacShortedDate" = "20 Feb - 20 Mar";
-//MARK: Textfield input -
-"MailPhoneTextField" = "Mail/Phone";
-"MailTextField" = "Mail";
-"PhoneTextField" = "Phone";
-"PasswordTextField" = "Password";
-"AgainPasswordTextField" = "Again Password";
-"MainTextField" = "Mail";
-"PhoneTextField" = "Phone";
-"NameTextField" = "Name";
-"SurnameTextField" = "Surname";
-"PlaceTextField" = "Place";

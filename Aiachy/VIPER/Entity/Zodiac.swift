@@ -26,46 +26,48 @@ struct CompatibilityZodiacs: Codable {
 
 //MARK: Zodiac - ZodiacStatus
 struct ZodiacStatus: Codable {
-    var overallStatus = OverallStatus()
+    var universeStatus = UniverseStatus()
+    var enlightenmentStatus = EnlightenmentStatus()
+    var touchStatus = TouchStatus()
     var loveStatus = LoveStatus()
-    var businessLifeStatus = BusinessLifeStatus()
-    var healthStatus = HealthStatus()
-    var holidayStatus = HolidayStatus()
-    var dietStatus = DietStatus()
-}
+    var strengthStatus = StrengthStatus()
+    var creativeStatus = CreativeStatus()
+    var foundationStatus = FoundationStatus()
 
-//MARK: ZodiacStatus - OverallStatus
-struct OverallStatus: Codable {
+    
+}
+//ZodiacStatus - UniverseStatus
+struct UniverseStatus: Codable {
     var rate: Int?
     var statusComment: String?
 }
-
-//MARK: ZodiacStatus - LoveStatus
+//ZodiacStatus - EnlightenmentStatus
+struct EnlightenmentStatus: Codable {
+    var rate: Int?
+    var statusComment: String?
+}
+//ZodiacStatus - TouchStatus
+struct TouchStatus: Codable {
+    var rate: Int?
+    var statusComment: String?
+}
+//ZodiacStatus - LoveStatus
 struct LoveStatus: Codable {
     var rate: Int?
     var statusComment: String?
 }
-
-//MARK: ZodiacStatus - BusinessLifeStatus
-struct BusinessLifeStatus: Codable {
+//ZodiacStatus - StrengthStatus
+struct StrengthStatus: Codable {
     var rate: Int?
     var statusComment: String?
 }
-
-//MARK: ZodiacStatus - HealthStatus
-struct HealthStatus: Codable {
+//ZodiacStatus - FoundationStatus
+struct CreativeStatus: Codable {
     var rate: Int?
     var statusComment: String?
 }
-
-//MARK: ZodiacStatus - HolidayStatus
-struct HolidayStatus: Codable {
-    var rate: Int?
-    var statusComment: String?
-}
-
-//MARK: ZodiacStatus - DietStatus
-struct DietStatus: Codable {
+//ZodiacStatus - FoundationStatus
+struct FoundationStatus: Codable {
     var rate: Int?
     var statusComment: String?
 }

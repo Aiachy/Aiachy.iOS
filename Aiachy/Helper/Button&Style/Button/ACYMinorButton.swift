@@ -20,7 +20,7 @@ struct ACYMinorButton: View {
             Text(text.locale())
         }
         .frame(width: ACYdw(aiachyState, d: ACY_MED_SIZE),
-               height: ACYdh(aiachyState, d: ACY_MIN_SIZE))
+               height: ACYdh(aiachyState, d: ACY_ALTMIN_SIZE))
         .buttonStyle(ACYMinorButtonStyle())
         .environmentObject(aiachyState)
         .makeAccessibilitysForUITest(identifier: "ACYMinorButtonID")
@@ -29,10 +29,10 @@ struct ACYMinorButton: View {
 
 struct ACYErrorButton_Previews: PreviewProvider {
     
-    static let text = ACYTextHelper.ACYAppText.ACYappButtonText.ContinueButton.rawValue
+    static let text = ACYTextHelper.ACYGeneralText.ACYappButtonText.ContinueButton.rawValue
     
     static var previews: some View {
-        ACYMinorButton(text: ACYTextHelper.ACYAppText.ACYappButtonText.TryAgainButton.rawValue) {  }
+        ACYMinorButton(text: ACYTextHelper.ACYGeneralText.ACYappButtonText.TryAgainButton.rawValue) {  }
             .environmentObject(ACY_PREVIEWS_STATE)
     }
 }

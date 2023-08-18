@@ -46,6 +46,15 @@ struct ImageHandler {
         }
     }
     
+    static func getACYAppTabBarLogoString(_ aiachyTheme: ImageHelper.aiachyThemeImage, tabBarLogo: imageHelperApp.ACYtabBarLogo) -> String {
+        switch aiachyTheme {
+        case .AiachyLight:
+            return tabBarLogo.rawValue
+        case .AiachyDark:
+            return tabBarLogo.rawValue + "-Dark"
+        }
+    }
+    
     static func getACYAppStringBackground(_ aiachyTheme: ImageHelper.aiachyThemeImage, background: imageHelperApp.background) -> String {
         switch aiachyTheme {
         case .AiachyLight:
@@ -82,6 +91,45 @@ struct ImageHandler {
             return "\(auth.rawValue)"
         case .AiachyDark:
             return "\(auth.rawValue)" + "-Dark"
+        }
+    }
+    //MARK: - ImageHandler - MysticCompletion
+    typealias imageHelperMystic = ImageHelper.ACYMysticCompletion
+    static func getACYMysticStarterImageString(_ aiachyTheme: ImageHelper.aiachyThemeImage, mysticStarterImage: imageHelperMystic.ACYmysticStarterImage) -> String {
+        switch aiachyTheme {
+        case .AiachyLight:
+            return "\(mysticStarterImage.rawValue)"
+        case .AiachyDark:
+            return "\(mysticStarterImage.rawValue)" + "-Dark"
+        }
+    }
+    
+    static func getACYMysticStarterLogoString(_ aiachyTheme: ImageHelper.aiachyThemeImage, mysticStarterLogo: imageHelperMystic.ACYmysticStarterLogo) -> String {
+        switch aiachyTheme {
+        case .AiachyLight:
+            return "\(mysticStarterLogo.rawValue)"
+        case .AiachyDark:
+            return "\(mysticStarterLogo.rawValue)" + "-Dark"
+        }
+    }
+    //MARK: - ImageHandler - GalaxyCompletion
+    typealias imageHelperGalaxy = ImageHelper.ACYGalaxyCompletion
+    static func getACYGalaxyLogo(_ aiachyTheme: ImageHelper.aiachyThemeImage, galaxyLogo: imageHelperGalaxy.ACYGalaxyLogo) -> String {
+        switch aiachyTheme {
+        case .AiachyLight:
+            return "\(galaxyLogo.rawValue)"
+        case .AiachyDark:
+            return "\(galaxyLogo.rawValue)" + "-Dark"
+        }
+    }
+    //MARK: - ImageHandler - LoveCompletion
+    typealias imageHelperLove = ImageHelper.LoveCompletion
+    static func getACYLoveString(_ aiachyTheme: ImageHelper.aiachyThemeImage, love: imageHelperLove.loveCompletion) -> String {
+        switch aiachyTheme {
+        case .AiachyLight:
+            return "\(love.rawValue)"
+        case .AiachyDark:
+            return "\(love.rawValue)" + "-Dark"
         }
     }
 }

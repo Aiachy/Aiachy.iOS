@@ -11,25 +11,24 @@ struct ACYTitleAndDescriptionText: View {
     
     @EnvironmentObject var aiachyState: AiachyState
     @State var isHaveDescription: Bool = true
-    var titleText: String
-    var descriptionText: String?
+    var title: String
+    var description: String?
     
     var body: some View {
-        VStack(spacing: 10) {
+        LazyVStack(spacing: 10) {
             //MARK: authTitleAndDescription - Title for all Auth
-            Text(titleText.locale())
+            Text(title.locale())
                 .font(.aiachyFont(.cinzelBlack20))
                 .foregroundColor(Color.makeAiachyColor(aiachyState, aiachyColor: .firstColor))
             if isHaveDescription {
                 //MARK: authTitleAndDescription - Description for all Auth
-                Text(descriptionText!.locale())
+                Text(description!.locale())
                     .font(.aiachyFont(.oldItalic14))
                     .foregroundColor(Color.makeAiachyColor(aiachyState, aiachyColor: .secondColor))
             }
         }
         .multilineTextAlignment(.center)
-        .padding(.horizontal)
-        .frame(height: ACYdh(aiachyState, d: isHaveDescription ? ACY_SML_SIZE : ACY_MIN_SIZE))
+        .frame(height: ACYdh(aiachyState, d: isHaveDescription ? ACY_SML_SIZE : ACY_UPMIN_SIZE))
         .makeAccessibilitysForUITest(identifier: "ACYTitleAndDescriptionTextID")
 
     }
@@ -37,8 +36,8 @@ struct ACYTitleAndDescriptionText: View {
 
 struct AuthTitleAndDescription_Previews: PreviewProvider {
     static var previews: some View {
-        ACYTitleAndDescriptionText(titleText: "Title Text",
-                                   descriptionText: "Description")
+        ACYTitleAndDescriptionText(title: "Title Text",
+                                   description: "Description")
         .environmentObject(ACY_PREVIEWS_STATE)
     }
 }

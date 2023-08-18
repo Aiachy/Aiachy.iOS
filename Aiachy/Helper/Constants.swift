@@ -21,7 +21,9 @@ let ACY_GRADE_TIME: Double = 4
 //MARK: Constants - Size
 let ACY_MIKRO_SIZE: Double = 0.04
 let ACY_MAKRO_SIZE: Double = 0.05
+let ACY_ALTMIN_SIZE: Double = 0.06
 let ACY_MIN_SIZE: Double = 0.07
+let ACY_UPMIN_SIZE: Double = 0.11
 let ACY_ALTSML_SIZE: Double = 0.15
 let ACY_SML_SIZE: Double = 0.2
 let ACY_UPSML_SIZE: Double = 0.23
@@ -37,7 +39,8 @@ let ACY_UI_HEIGHT_SIZE = UIScreen.main.bounds.height
 //MARK: Constant - for previews
 let ACY_PREVIEWS_STATE = AiachyState(user:
                                         User(userZodiac: UserZodiac(zodiac: 0),
-                                            deviceInfo:
+                                             aiachyInfo: AiachyInfo(theme: "Light"),
+                                             deviceInfo:
                                                 DeviceInfo(phoneWidth: ACY_UI_WIDTH_SIZE,
                                                            phoneHeight: ACY_UI_HEIGHT_SIZE)))
 //MARK: Constant - firebase collection

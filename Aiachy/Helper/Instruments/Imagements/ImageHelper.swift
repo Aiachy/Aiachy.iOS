@@ -33,10 +33,17 @@ struct ImageHelper {
         enum button: String {
             case rightArrowButton = "rightArrowButton"
             case leftArrowButton = "leftArrowButton"
-            case mysticLogoButton = "mysticLogoButton"
-            case loveLogoButton = "loveLogoButton"
-            case galaxyLogoButton = "galaxyLogoButton"
-            case settingsLogoButton = "settingsLogoButton"
+        }
+        
+        enum ACYtabBarLogo: String {
+            case mysticLogoUnSelectedButton = "mysticLogoUnSelectedButton"
+            case mysticLogoSelectedButton = "mysticLogoSelectedButton"
+            case loveLogoUnSelectedButton = "loveLogoUnSelectedButton"
+            case loveLogoSelectedButton = "loveLogoSelectedButton"
+            case galaxyLogoUnSelectedButton = "galaxyLogoUnSelectedButton"
+            case galaxyLogoSelectedButton = "galaxyLogoSelectedButton"
+            case settingsLogoUnSelectedButton = "settingsLogoUnSelectedButton"
+            case settingsLogoSelectedButton = "settingsLogoSelectedButton"            
         }
         
         enum background: String {
@@ -80,9 +87,41 @@ struct ImageHelper {
         }
     }
     
+    
     struct AuthCompletion {
         enum authCompletion: String {
             case attention = "attention"
+        }
+    }
+    struct ACYMysticCompletion {
+        enum ACYmysticStarterImage: String {
+            case tarotStarterImage1 = "tarotStarterImage1"
+            case tarotStarterImage2 = "tarotStarterImage2"
+            case palmistryStarterImage1 = "palmistryStarterImage1"
+            case palmistryStarterImage2 = "palmistryStarterImage2"
+            case palmistryStarterImage3 = "palmistryStarterImage3"
+            case crystalGazingStarterImage1 = "crystalGazingStarterImage1"
+            case crystalGazingStarterImage2 = "crystalGazingStarterImage2"
+        }
+        
+        enum ACYmysticStarterLogo: String {
+            case crystalGazingStarterLogoSelected = "crystalGazingStarterLogoSelected"
+            case crystalGazingStarterLogoUnSelected = "crystalGazingStarterLogoUnSelected"
+            case palmistryStarterLogoSelected = "palmistryStarterLogoSelected"
+            case palmistryStarterLogoUnSelected = "palmistryStarterLogoUnSelected"
+            case tarotStarterLogoSelected = "tarotStarterLogoSelected"
+            case tarotStarterLogoUnSelected = "tarotStarterLogoUnSelected"
+        }
+    }
+    struct ACYGalaxyCompletion {
+        enum ACYGalaxyLogo: String {
+            case tuneLogo = "tuneLogo"
+            case maditation = "meditationLogo"
+        }
+    }
+    struct LoveCompletion {
+        enum loveCompletion: String {
+            case loveAttention = "loveAttention"
         }
     }
 }

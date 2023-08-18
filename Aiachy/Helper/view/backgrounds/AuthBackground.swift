@@ -12,14 +12,14 @@ struct AuthBackground: View {
     
     @EnvironmentObject var aiachyState: AiachyState
     @State private var cancellable: AnyCancellable?
-    @State private var authBackgroundModelData: [AuthBackgroundModel]? = nil
+    @State private var authBackgroundEntityData: [AuthBackgroundEntity]? = nil
     
     var body: some View {
         ZStack {
             //MARK: AuthBackground - ForEach
             Color.makeAiachyColor(aiachyState, aiachyColor: .backgroundColor)
             //MARK: AuthBackground - ForEach Static Background Image
-            ForEach(authBackgroundModelData ?? dataloski, id:\.id) { image in
+            ForEach(authBackgroundEntityData ?? dataloski, id:\.id) { image in
                 withAnimation(.easeInOut(duration: 1)) {
                     Image.setACYBackgroundImage(aiachyState, background: image.image)
                         .resizable()
@@ -73,7 +73,7 @@ extension AuthBackground {
         //MARK: AuthBackground checkSecondAndSetBackground Test object
         //        switch newValue {
         //        case 0..<60:
-        //            self.authBackgroundModelData = changeAuthBackgroundModel(id: 0,
+        //            self.authBackgroundEntityData = changeAuthBackgroundModel(id: 0,
         //                                                                     positionX: 0,
         //                                                                     positionY: 0,
         //                                                                     opaqued: midOpaqued,
@@ -86,7 +86,7 @@ extension AuthBackground {
         switch newValue {
         case 0..<10:
             if newValue == 0 {
-                self.authBackgroundModelData = changeAuthBackgroundModel(id: 100,
+                self.authBackgroundEntityData = changeAuthBackgroundModel(id: 100,
                                                                          positionX: 0,
                                                                          positionY: 0,
                                                                          opaqued: firstOpaqued,
@@ -95,7 +95,7 @@ extension AuthBackground {
             }
             if newValue == 1 {
                 self.setDispatchedQueueForBackground(durationTime: midDurationTime) {
-                    self.authBackgroundModelData = changeAuthBackgroundModel(id: 100,
+                    self.authBackgroundEntityData = changeAuthBackgroundModel(id: 100,
                                                                              positionX: 0,
                                                                              positionY: 0,
                                                                              opaqued: midOpaqued,
@@ -105,7 +105,7 @@ extension AuthBackground {
             }
             if newValue == 8 {
                 self.setDispatchedQueueForBackground(durationTime: lastDurationTime) {
-                    self.authBackgroundModelData = changeAuthBackgroundModel(id: 100,
+                    self.authBackgroundEntityData = changeAuthBackgroundModel(id: 100,
                                                                              positionX: 0,
                                                                              positionY: 0,
                                                                              opaqued: lastOpaqued,
@@ -115,7 +115,7 @@ extension AuthBackground {
             }
         case 10..<20:
             if newValue == 11 {
-                self.authBackgroundModelData = changeAuthBackgroundModel(id: 100,
+                self.authBackgroundEntityData = changeAuthBackgroundModel(id: 100,
                                                                          positionX: 0,
                                                                          positionY: 0,
                                                                          opaqued: firstOpaqued,
@@ -124,7 +124,7 @@ extension AuthBackground {
             }
             if newValue == 11 {
                 self.setDispatchedQueueForBackground(durationTime: midDurationTime) {
-                    self.authBackgroundModelData = changeAuthBackgroundModel(id: 100,
+                    self.authBackgroundEntityData = changeAuthBackgroundModel(id: 100,
                                                                              positionX: 0,
                                                                              positionY: 0,
                                                                              opaqued: midOpaqued,
@@ -134,7 +134,7 @@ extension AuthBackground {
             }
             if newValue == 18 {
                 self.setDispatchedQueueForBackground(durationTime: lastDurationTime) {
-                    self.authBackgroundModelData = changeAuthBackgroundModel(id: 100,
+                    self.authBackgroundEntityData = changeAuthBackgroundModel(id: 100,
                                                                              positionX: 0,
                                                                              positionY: 0,
                                                                              opaqued: lastOpaqued,
@@ -144,7 +144,7 @@ extension AuthBackground {
             }
         case 20..<30:
             if newValue == 20 {
-                self.authBackgroundModelData = changeAuthBackgroundModel(id: 100,
+                self.authBackgroundEntityData = changeAuthBackgroundModel(id: 100,
                                                                          positionX: 0,
                                                                          positionY: 0,
                                                                          opaqued: firstOpaqued,
@@ -153,7 +153,7 @@ extension AuthBackground {
             }
             if newValue == 21 {
                 self.setDispatchedQueueForBackground(durationTime: midDurationTime) {
-                    self.authBackgroundModelData = changeAuthBackgroundModel(id: 100,
+                    self.authBackgroundEntityData = changeAuthBackgroundModel(id: 100,
                                                                              positionX: 0,
                                                                              positionY: 0,
                                                                              opaqued: midOpaqued,
@@ -163,7 +163,7 @@ extension AuthBackground {
             }
             if newValue == 28 {
                 self.setDispatchedQueueForBackground(durationTime: lastDurationTime) {
-                    self.authBackgroundModelData = changeAuthBackgroundModel(id: 100,
+                    self.authBackgroundEntityData = changeAuthBackgroundModel(id: 100,
                                                                              positionX: 0,
                                                                              positionY: 0,
                                                                              opaqued: lastOpaqued,
@@ -173,7 +173,7 @@ extension AuthBackground {
             }
         case 30..<40:
             if newValue == 30 {
-                self.authBackgroundModelData = changeAuthBackgroundModel(id: 100,
+                self.authBackgroundEntityData = changeAuthBackgroundModel(id: 100,
                                                                          positionX: 0,
                                                                          positionY: 0,
                                                                          opaqued: firstOpaqued,
@@ -182,7 +182,7 @@ extension AuthBackground {
             }
             if newValue == 32 {
                 self.setDispatchedQueueForBackground(durationTime: midDurationTime) {
-                    self.authBackgroundModelData = changeAuthBackgroundModel(id: 100,
+                    self.authBackgroundEntityData = changeAuthBackgroundModel(id: 100,
                                                                              positionX: 0,
                                                                              positionY: 0,
                                                                              opaqued: midOpaqued,
@@ -192,7 +192,7 @@ extension AuthBackground {
             }
             if newValue == 38 {
                 self.setDispatchedQueueForBackground(durationTime: lastDurationTime) {
-                    self.authBackgroundModelData = changeAuthBackgroundModel(id: 100,
+                    self.authBackgroundEntityData = changeAuthBackgroundModel(id: 100,
                                                                              positionX: 0,
                                                                              positionY: 0,
                                                                              opaqued: lastOpaqued,
@@ -202,7 +202,7 @@ extension AuthBackground {
             }
         case 40..<50:
             if newValue == 40 {
-                self.authBackgroundModelData = changeAuthBackgroundModel(id: 100,
+                self.authBackgroundEntityData = changeAuthBackgroundModel(id: 100,
                                                                          positionX: 0,
                                                                          positionY: 0,
                                                                          opaqued: firstOpaqued,
@@ -211,7 +211,7 @@ extension AuthBackground {
             }
             if newValue == 42 {
                 self.setDispatchedQueueForBackground(durationTime: midDurationTime) {
-                    self.authBackgroundModelData = changeAuthBackgroundModel(id: 100,
+                    self.authBackgroundEntityData = changeAuthBackgroundModel(id: 100,
                                                                              positionX: 0,
                                                                              positionY: 0,
                                                                              opaqued: midOpaqued,
@@ -221,7 +221,7 @@ extension AuthBackground {
             }
             if newValue == 48 {
                 self.setDispatchedQueueForBackground(durationTime: lastDurationTime) {
-                    self.authBackgroundModelData = changeAuthBackgroundModel(id: 100,
+                    self.authBackgroundEntityData = changeAuthBackgroundModel(id: 100,
                                                                              positionX: 0,
                                                                              positionY: 0,
                                                                              opaqued: lastOpaqued,
@@ -231,7 +231,7 @@ extension AuthBackground {
             }
         case 50..<60:
             if newValue == 50 {
-                self.authBackgroundModelData = changeAuthBackgroundModel(id: 100,
+                self.authBackgroundEntityData = changeAuthBackgroundModel(id: 100,
                                                                          positionX: 0,
                                                                          positionY: 0,
                                                                          opaqued: firstOpaqued,
@@ -240,7 +240,7 @@ extension AuthBackground {
             }
             if newValue == 52 {
                 self.setDispatchedQueueForBackground(durationTime: midDurationTime) {
-                    self.authBackgroundModelData = changeAuthBackgroundModel(id: 100,
+                    self.authBackgroundEntityData = changeAuthBackgroundModel(id: 100,
                                                                              positionX: 0,
                                                                              positionY: 0,
                                                                              opaqued: midOpaqued,
@@ -250,7 +250,7 @@ extension AuthBackground {
             }
             if newValue == 58 {
                 self.setDispatchedQueueForBackground(durationTime: lastDurationTime) {
-                    self.authBackgroundModelData = changeAuthBackgroundModel(id: 100,
+                    self.authBackgroundEntityData = changeAuthBackgroundModel(id: 100,
                                                                              positionX: 0,
                                                                              positionY: 0,
                                                                              opaqued: lastOpaqued,
@@ -285,8 +285,8 @@ extension AuthBackground {
     ///   - opaqued: checkSecondAndSetBackground is also intended to make it disappear gradually and make it appear.
     ///   - planeX: checkSecondAndSetBackground here I thought I created geometry plane and we can set (+) (+) or (+) (-) positions and show them as we want. (X Values)
     ///   - planeY: checkSecondAndSetBackground here I thought I created geometry plane and we can set (+) (+) or (+) (-) positions and show them as we want. (Y Values)
-    /// - Returns: We return it as [AuthBackgroundModel].
-    private func changeAuthBackgroundModel(id: Int, positionX: CGFloat, positionY: CGFloat, opaqued: Double, planeX: Bool, planeY: Bool ) -> [AuthBackgroundModel] {
+    /// - Returns: We return it as [AuthBackgroundEntity].
+    private func changeAuthBackgroundModel(id: Int, positionX: CGFloat, positionY: CGFloat, opaqued: Double, planeX: Bool, planeY: Bool ) -> [AuthBackgroundEntity] {
         
         let frameWSettedSymbol1 = 20.0
         let frameHSettedSymbol1 = 21.0
@@ -294,9 +294,9 @@ extension AuthBackground {
         let frameWSettedSymbol2 = 10.0
         let frameHSettedSymbol2 = 15.0
         
-        let authBackgroundModelData: [AuthBackgroundModel] = [
+        let authBackgroundModelData: [AuthBackgroundEntity] = [
             // MARK: - AuthBackground changeAuthBackgroundModel authBackgroundSymbol1 Start
-            AuthBackgroundModel(id: id + 0,
+            AuthBackgroundEntity(id: id + 0,
                                 image: .authBackgroundSymbol1,
                                 frameW: frameWSettedSymbol1,
                                 framwH: frameHSettedSymbol1,
@@ -304,7 +304,7 @@ extension AuthBackground {
                                 positionY: setBackgroundPositionH(plane: planeY, position: positionY, dh: 0.01),
                                 opaqued: opaqued,
                                 rotated: 21),
-            AuthBackgroundModel(id: id + 1,
+            AuthBackgroundEntity(id: id + 1,
                                 image: .authBackgroundSymbol1,
                                 frameW: frameWSettedSymbol1,
                                 framwH: frameHSettedSymbol1,
@@ -312,7 +312,7 @@ extension AuthBackground {
                                 positionY: setBackgroundPositionH(plane: planeY, position: positionY, dh: 0.11),
                                 opaqued: opaqued,
                                 rotated: 78),
-            AuthBackgroundModel(id: id + 2,
+            AuthBackgroundEntity(id: id + 2,
                                 image: .authBackgroundSymbol1,
                                 frameW: frameWSettedSymbol1,
                                 framwH: frameHSettedSymbol1,
@@ -320,7 +320,7 @@ extension AuthBackground {
                                 positionY: setBackgroundPositionH(plane: planeY, position: positionY, dh: 0.09),
                                 opaqued: opaqued,
                                 rotated: 141),
-            AuthBackgroundModel(id: id + 3,
+            AuthBackgroundEntity(id: id + 3,
                                 image: .authBackgroundSymbol1,
                                 frameW: frameWSettedSymbol1,
                                 framwH: frameHSettedSymbol1,
@@ -328,7 +328,7 @@ extension AuthBackground {
                                 positionY: setBackgroundPositionH(plane: planeY, position: positionY, dh: 0.07),
                                 opaqued: opaqued,
                                 rotated: 120),
-            AuthBackgroundModel(id: id + 4,
+            AuthBackgroundEntity(id: id + 4,
                                 image: .authBackgroundSymbol1,
                                 frameW: frameWSettedSymbol1,
                                 framwH: frameHSettedSymbol1,
@@ -336,7 +336,7 @@ extension AuthBackground {
                                 positionY: setBackgroundPositionH(plane: planeY, position: positionY, dh: 0.27),
                                 opaqued: opaqued,
                                 rotated: 230),
-            AuthBackgroundModel(id: id + 5,
+            AuthBackgroundEntity(id: id + 5,
                                 image: .authBackgroundSymbol1,
                                 frameW: frameWSettedSymbol1,
                                 framwH: frameHSettedSymbol1,
@@ -344,7 +344,7 @@ extension AuthBackground {
                                 positionY: setBackgroundPositionH(plane: planeY, position: positionY, dh: 0.23),
                                 opaqued: opaqued,
                                 rotated: 310),
-            AuthBackgroundModel(id: id + 6,
+            AuthBackgroundEntity(id: id + 6,
                                 image: .authBackgroundSymbol1,
                                 frameW: frameWSettedSymbol1,
                                 framwH: frameHSettedSymbol1,
@@ -352,7 +352,7 @@ extension AuthBackground {
                                 positionY: setBackgroundPositionH(plane: planeY, position: positionY, dh: 0.28),
                                 opaqued: opaqued,
                                 rotated: 69),
-            AuthBackgroundModel(id: id + 7,
+            AuthBackgroundEntity(id: id + 7,
                                 image: .authBackgroundSymbol1,
                                 frameW: frameWSettedSymbol1,
                                 framwH: frameHSettedSymbol1,
@@ -360,7 +360,7 @@ extension AuthBackground {
                                 positionY: setBackgroundPositionH(plane: planeY, position: positionY, dh: 0.43),
                                 opaqued: opaqued,
                                 rotated: 69),
-            AuthBackgroundModel(id: id + 8,
+            AuthBackgroundEntity(id: id + 8,
                                 image: .authBackgroundSymbol1,
                                 frameW: frameWSettedSymbol1,
                                 framwH: frameHSettedSymbol1,
@@ -368,7 +368,7 @@ extension AuthBackground {
                                 positionY: setBackgroundPositionH(plane: planeY, position: positionY, dh: 0.45),
                                 opaqued: opaqued,
                                 rotated: 69),
-            AuthBackgroundModel(id: id + 9,
+            AuthBackgroundEntity(id: id + 9,
                                 image: .authBackgroundSymbol1,
                                 frameW: frameWSettedSymbol1,
                                 framwH: frameHSettedSymbol1,
@@ -376,7 +376,7 @@ extension AuthBackground {
                                 positionY: setBackgroundPositionH(plane: planeY, position: positionY, dh: 0.53),
                                 opaqued: opaqued,
                                 rotated: 69),
-            AuthBackgroundModel(id: id + 10,
+            AuthBackgroundEntity(id: id + 10,
                                 image: .authBackgroundSymbol1,
                                 frameW: frameWSettedSymbol1,
                                 framwH: frameHSettedSymbol1,
@@ -384,7 +384,7 @@ extension AuthBackground {
                                 positionY: setBackgroundPositionH(plane: planeY, position: positionY, dh: 0.59),
                                 opaqued: opaqued,
                                 rotated: 69),
-            AuthBackgroundModel(id: id + 11,
+            AuthBackgroundEntity(id: id + 11,
                                 image: .authBackgroundSymbol1,
                                 frameW: frameWSettedSymbol1,
                                 framwH: frameHSettedSymbol1,
@@ -392,7 +392,7 @@ extension AuthBackground {
                                 positionY: setBackgroundPositionH(plane: planeY, position: positionY, dh: 0.62),
                                 opaqued: opaqued,
                                 rotated: 69),
-            AuthBackgroundModel(id: id + 12,
+            AuthBackgroundEntity(id: id + 12,
                                 image: .authBackgroundSymbol1,
                                 frameW: frameWSettedSymbol1,
                                 framwH: frameHSettedSymbol1,
@@ -400,7 +400,7 @@ extension AuthBackground {
                                 positionY: setBackgroundPositionH(plane: planeY, position: positionY, dh: 0.72),
                                 opaqued: opaqued,
                                 rotated: 23),
-            AuthBackgroundModel(id: id + 13,
+            AuthBackgroundEntity(id: id + 13,
                                 image: .authBackgroundSymbol1,
                                 frameW: frameWSettedSymbol1,
                                 framwH: frameHSettedSymbol1,
@@ -408,7 +408,7 @@ extension AuthBackground {
                                 positionY: setBackgroundPositionH(plane: planeY, position: positionY, dh: 0.79),
                                 opaqued: opaqued,
                                 rotated: 30),
-            AuthBackgroundModel(id: id + 14,
+            AuthBackgroundEntity(id: id + 14,
                                 image: .authBackgroundSymbol1,
                                 frameW: frameWSettedSymbol1,
                                 framwH: frameHSettedSymbol1,
@@ -416,7 +416,7 @@ extension AuthBackground {
                                 positionY: setBackgroundPositionH(plane: planeY, position: positionY, dh: 0.79),
                                 opaqued: opaqued,
                                 rotated: 90),
-            AuthBackgroundModel(id: id + 15,
+            AuthBackgroundEntity(id: id + 15,
                                 image: .authBackgroundSymbol1,
                                 frameW: frameWSettedSymbol1,
                                 framwH: frameHSettedSymbol1,
@@ -424,7 +424,7 @@ extension AuthBackground {
                                 positionY: setBackgroundPositionH(plane: planeY, position: positionY, dh: 0.89),
                                 opaqued: opaqued,
                                 rotated: 21),
-            AuthBackgroundModel(id: id + 16,
+            AuthBackgroundEntity(id: id + 16,
                                 image: .authBackgroundSymbol1,
                                 frameW: frameWSettedSymbol1,
                                 framwH: frameHSettedSymbol1,
@@ -432,7 +432,7 @@ extension AuthBackground {
                                 positionY: setBackgroundPositionH(plane: planeY, position: positionY, dh: 0.89),
                                 opaqued: opaqued,
                                 rotated: 19),
-            AuthBackgroundModel(id: id + 17,
+            AuthBackgroundEntity(id: id + 17,
                                 image: .authBackgroundSymbol1,
                                 frameW: frameWSettedSymbol1,
                                 framwH: frameHSettedSymbol1,
@@ -440,7 +440,7 @@ extension AuthBackground {
                                 positionY: setBackgroundPositionH(plane: planeY, position: positionY, dh: 0.69),
                                 opaqued: opaqued,
                                 rotated: 230),
-            AuthBackgroundModel(id: id + 18,
+            AuthBackgroundEntity(id: id + 18,
                                 image: .authBackgroundSymbol1,
                                 frameW: frameWSettedSymbol1,
                                 framwH: frameHSettedSymbol1,
@@ -448,7 +448,7 @@ extension AuthBackground {
                                 positionY: setBackgroundPositionH(plane: planeY, position: positionY, dh: 0.69),
                                 opaqued: opaqued,
                                 rotated: 80),
-            AuthBackgroundModel(id: id + 19,
+            AuthBackgroundEntity(id: id + 19,
                                 image: .authBackgroundSymbol1,
                                 frameW: frameWSettedSymbol1,
                                 framwH: frameHSettedSymbol1,
@@ -456,7 +456,7 @@ extension AuthBackground {
                                 positionY: setBackgroundPositionH(plane: planeY, position: positionY, dh: 0.28),
                                 opaqued: opaqued,
                                 rotated: 71),
-            AuthBackgroundModel(id: id + 20,
+            AuthBackgroundEntity(id: id + 20,
                                 image: .authBackgroundSymbol1,
                                 frameW: frameWSettedSymbol1,
                                 framwH: frameHSettedSymbol1,
@@ -464,7 +464,7 @@ extension AuthBackground {
                                 positionY: setBackgroundPositionH(plane: planeY, position: positionY, dh: 0.89),
                                 opaqued: opaqued,
                                 rotated: 281),
-            AuthBackgroundModel(id: id + 21,
+            AuthBackgroundEntity(id: id + 21,
                                 image: .authBackgroundSymbol1,
                                 frameW: frameWSettedSymbol1,
                                 framwH: frameHSettedSymbol1,
@@ -472,7 +472,7 @@ extension AuthBackground {
                                 positionY: setBackgroundPositionH(plane: planeY, position: positionY, dh: 0.36),
                                 opaqued: opaqued,
                                 rotated: 61),
-            AuthBackgroundModel(id: id + 22,
+            AuthBackgroundEntity(id: id + 22,
                                 image: .authBackgroundSymbol1,
                                 frameW: frameWSettedSymbol1,
                                 framwH: frameHSettedSymbol1,
@@ -480,7 +480,7 @@ extension AuthBackground {
                                 positionY: setBackgroundPositionH(plane: planeY, position: positionY, dh: 0.16),
                                 opaqued: opaqued,
                                 rotated: 69),
-            AuthBackgroundModel(id: id + 23,
+            AuthBackgroundEntity(id: id + 23,
                                 image: .authBackgroundSymbol1,
                                 frameW: frameWSettedSymbol1,
                                 framwH: frameHSettedSymbol1,
@@ -488,7 +488,7 @@ extension AuthBackground {
                                 positionY: setBackgroundPositionH(plane: planeY, position: positionY, dh: 0.6),
                                 opaqued: opaqued,
                                 rotated: 69),
-            AuthBackgroundModel(id: id + 24,
+            AuthBackgroundEntity(id: id + 24,
                                 image: .authBackgroundSymbol1,
                                 frameW: frameWSettedSymbol1,
                                 framwH: frameHSettedSymbol1,
@@ -496,7 +496,7 @@ extension AuthBackground {
                                 positionY: setBackgroundPositionH(plane: planeY, position: positionY, dh: 0.6),
                                 opaqued: opaqued,
                                 rotated: 69),
-            AuthBackgroundModel(id: id + 25,
+            AuthBackgroundEntity(id: id + 25,
                                 image: .authBackgroundSymbol1,
                                 frameW: frameWSettedSymbol1,
                                 framwH: frameHSettedSymbol1,
@@ -504,7 +504,7 @@ extension AuthBackground {
                                 positionY: setBackgroundPositionH(plane: planeY, position: positionY, dh: 0.6),
                                 opaqued: opaqued,
                                 rotated: 69),
-            AuthBackgroundModel(id: id + 26,
+            AuthBackgroundEntity(id: id + 26,
                                 image: .authBackgroundSymbol1,
                                 frameW: frameWSettedSymbol1,
                                 framwH: frameHSettedSymbol1,
@@ -512,7 +512,7 @@ extension AuthBackground {
                                 positionY: setBackgroundPositionH(plane: planeY, position: positionY, dh: -0.02),
                                 opaqued: opaqued,
                                 rotated: 69),
-            AuthBackgroundModel(id: id + 27,
+            AuthBackgroundEntity(id: id + 27,
                                 image: .authBackgroundSymbol1,
                                 frameW: frameWSettedSymbol1,
                                 framwH: frameHSettedSymbol1,
@@ -522,7 +522,7 @@ extension AuthBackground {
                                 rotated: 69),
             // MARK: AuthBackground changeAuthBackgroundModel authBackgroundSymbol1 End -
             // MARK: - AuthBackground changeAuthBackgroundMode2 authBackgroundSymbol1 Start
-            AuthBackgroundModel(id: id + 50,
+            AuthBackgroundEntity(id: id + 50,
                                 image: .authBackgroundSymbol2,
                                 frameW: frameWSettedSymbol2,
                                 framwH: frameHSettedSymbol2,
@@ -530,7 +530,7 @@ extension AuthBackground {
                                 positionY: setBackgroundPositionH(plane: planeY, position: positionY, dh: 0.01),
                                 opaqued: opaqued,
                                 rotated: 0),
-            AuthBackgroundModel(id: id + 51,
+            AuthBackgroundEntity(id: id + 51,
                                 image: .authBackgroundSymbol2,
                                 frameW: frameWSettedSymbol2,
                                 framwH: frameHSettedSymbol2,
@@ -538,7 +538,7 @@ extension AuthBackground {
                                 positionY: setBackgroundPositionH(plane: planeY, position: positionY, dh: 0.11),
                                 opaqued: opaqued,
                                 rotated: 21),
-            AuthBackgroundModel(id: id + 52,
+            AuthBackgroundEntity(id: id + 52,
                                 image: .authBackgroundSymbol2,
                                 frameW: frameWSettedSymbol2,
                                 framwH: frameHSettedSymbol2,
@@ -546,7 +546,7 @@ extension AuthBackground {
                                 positionY: setBackgroundPositionH(plane: planeY, position: positionY, dh: 0.09),
                                 opaqued: opaqued,
                                 rotated: 39),
-            AuthBackgroundModel(id: id + 53,
+            AuthBackgroundEntity(id: id + 53,
                                 image: .authBackgroundSymbol2,
                                 frameW: frameWSettedSymbol2,
                                 framwH: frameHSettedSymbol2,
@@ -554,7 +554,7 @@ extension AuthBackground {
                                 positionY: setBackgroundPositionH(plane: planeY, position: positionY, dh: 0.07),
                                 opaqued: opaqued,
                                 rotated: 359),
-            AuthBackgroundModel(id: id + 54,
+            AuthBackgroundEntity(id: id + 54,
                                 image: .authBackgroundSymbol2,
                                 frameW: frameWSettedSymbol2,
                                 framwH: frameHSettedSymbol2,
@@ -562,7 +562,7 @@ extension AuthBackground {
                                 positionY: setBackgroundPositionH(plane: planeY, position: positionY, dh: 0.22),
                                 opaqued: opaqued,
                                 rotated: 69),
-            AuthBackgroundModel(id: id + 55,
+            AuthBackgroundEntity(id: id + 55,
                                 image: .authBackgroundSymbol2,
                                 frameW: frameWSettedSymbol2,
                                 framwH: frameHSettedSymbol2,
@@ -570,7 +570,7 @@ extension AuthBackground {
                                 positionY: setBackgroundPositionH(plane: planeY, position: positionY, dh: 0.17),
                                 opaqued: opaqued,
                                 rotated: 69),
-            AuthBackgroundModel(id: id + 56,
+            AuthBackgroundEntity(id: id + 56,
                                 image: .authBackgroundSymbol2,
                                 frameW: frameWSettedSymbol2,
                                 framwH: frameHSettedSymbol2,
@@ -578,7 +578,7 @@ extension AuthBackground {
                                 positionY: setBackgroundPositionH(plane: planeY, position: positionY, dh: 0.34),
                                 opaqued: opaqued,
                                 rotated: 69),
-            AuthBackgroundModel(id: id + 57,
+            AuthBackgroundEntity(id: id + 57,
                                 image: .authBackgroundSymbol2,
                                 frameW: frameWSettedSymbol2,
                                 framwH: frameHSettedSymbol2,
@@ -586,7 +586,7 @@ extension AuthBackground {
                                 positionY: setBackgroundPositionH(plane: planeY, position: positionY, dh: 0.36),
                                 opaqued: opaqued,
                                 rotated: 69),
-            AuthBackgroundModel(id: id + 58,
+            AuthBackgroundEntity(id: id + 58,
                                 image: .authBackgroundSymbol2,
                                 frameW: frameWSettedSymbol2,
                                 framwH: frameHSettedSymbol2,
@@ -594,7 +594,7 @@ extension AuthBackground {
                                 positionY: setBackgroundPositionH(plane: planeY, position: positionY, dh: 0.45),
                                 opaqued: opaqued,
                                 rotated: 69),
-            AuthBackgroundModel(id: id + 59,
+            AuthBackgroundEntity(id: id + 59,
                                 image: .authBackgroundSymbol2,
                                 frameW: frameWSettedSymbol2,
                                 framwH: frameHSettedSymbol2,
@@ -602,7 +602,7 @@ extension AuthBackground {
                                 positionY: setBackgroundPositionH(plane: planeY, position: positionY, dh: 0.53),
                                 opaqued: opaqued,
                                 rotated: 69),
-            AuthBackgroundModel(id: id + 60,
+            AuthBackgroundEntity(id: id + 60,
                                 image: .authBackgroundSymbol2,
                                 frameW: frameWSettedSymbol2,
                                 framwH: frameHSettedSymbol2,
@@ -610,7 +610,7 @@ extension AuthBackground {
                                 positionY: setBackgroundPositionH(plane: planeY, position: positionY, dh: 0.49),
                                 opaqued: opaqued,
                                 rotated: 69),
-            AuthBackgroundModel(id: id + 61,
+            AuthBackgroundEntity(id: id + 61,
                                 image: .authBackgroundSymbol2,
                                 frameW: frameWSettedSymbol2,
                                 framwH: frameHSettedSymbol2,
@@ -618,7 +618,7 @@ extension AuthBackground {
                                 positionY: setBackgroundPositionH(plane: planeY, position: positionY, dh: 0.62),
                                 opaqued: opaqued,
                                 rotated: 69),
-            AuthBackgroundModel(id: id + 62,
+            AuthBackgroundEntity(id: id + 62,
                                 image: .authBackgroundSymbol2,
                                 frameW: frameWSettedSymbol2,
                                 framwH: frameHSettedSymbol2,
@@ -626,7 +626,7 @@ extension AuthBackground {
                                 positionY: setBackgroundPositionH(plane: planeY, position: positionY, dh: 0.68),
                                 opaqued: opaqued,
                                 rotated: 69),
-            AuthBackgroundModel(id: id + 63,
+            AuthBackgroundEntity(id: id + 63,
                                 image: .authBackgroundSymbol2,
                                 frameW: frameWSettedSymbol2,
                                 framwH: frameHSettedSymbol2,
@@ -634,7 +634,7 @@ extension AuthBackground {
                                 positionY: setBackgroundPositionH(plane: planeY, position: positionY, dh: 0.79),
                                 opaqued: opaqued,
                                 rotated: 69),
-            AuthBackgroundModel(id: id + 64,
+            AuthBackgroundEntity(id: id + 64,
                                 image: .authBackgroundSymbol2,
                                 frameW: frameWSettedSymbol2,
                                 framwH: frameHSettedSymbol2,
@@ -642,7 +642,7 @@ extension AuthBackground {
                                 positionY: setBackgroundPositionH(plane: planeY, position: positionY, dh: 0.79),
                                 opaqued: opaqued,
                                 rotated: 69),
-            AuthBackgroundModel(id: id + 65,
+            AuthBackgroundEntity(id: id + 65,
                                 image: .authBackgroundSymbol2,
                                 frameW: frameWSettedSymbol2,
                                 framwH: frameHSettedSymbol2,
@@ -650,7 +650,7 @@ extension AuthBackground {
                                 positionY: setBackgroundPositionH(plane: planeY, position: positionY, dh: 0.86),
                                 opaqued: opaqued,
                                 rotated: 69),
-            AuthBackgroundModel(id: id + 66,
+            AuthBackgroundEntity(id: id + 66,
                                 image: .authBackgroundSymbol2,
                                 frameW: frameWSettedSymbol2,
                                 framwH: frameHSettedSymbol2,
@@ -658,7 +658,7 @@ extension AuthBackground {
                                 positionY: setBackgroundPositionH(plane: planeY, position: positionY, dh: 0.89),
                                 opaqued: opaqued,
                                 rotated: 69),
-            AuthBackgroundModel(id: id + 67,
+            AuthBackgroundEntity(id: id + 67,
                                 image: .authBackgroundSymbol2,
                                 frameW: frameWSettedSymbol2,
                                 framwH: frameHSettedSymbol2,
@@ -666,7 +666,7 @@ extension AuthBackground {
                                 positionY: setBackgroundPositionH(plane: planeY, position: positionY, dh: 0.59),
                                 opaqued: opaqued,
                                 rotated: 69),
-            AuthBackgroundModel(id: id + 68,
+            AuthBackgroundEntity(id: id + 68,
                                 image: .authBackgroundSymbol2,
                                 frameW: frameWSettedSymbol2,
                                 framwH: frameHSettedSymbol2,
@@ -674,7 +674,7 @@ extension AuthBackground {
                                 positionY: setBackgroundPositionH(plane: planeY, position: positionY, dh: 0.69),
                                 opaqued: opaqued,
                                 rotated: 69),
-            AuthBackgroundModel(id: id + 69,
+            AuthBackgroundEntity(id: id + 69,
                                 image: .authBackgroundSymbol2,
                                 frameW: frameWSettedSymbol2,
                                 framwH: frameHSettedSymbol2,
@@ -682,7 +682,7 @@ extension AuthBackground {
                                 positionY: setBackgroundPositionH(plane: planeY, position: positionY, dh: 0.69),
                                 opaqued: opaqued,
                                 rotated: 69),
-            AuthBackgroundModel(id: id + 70,
+            AuthBackgroundEntity(id: id + 70,
                                 image: .authBackgroundSymbol2,
                                 frameW: frameWSettedSymbol2,
                                 framwH: frameHSettedSymbol2,
@@ -690,7 +690,7 @@ extension AuthBackground {
                                 positionY: setBackgroundPositionH(plane: planeY, position: positionY, dh: 0.89),
                                 opaqued: opaqued,
                                 rotated: 69),
-            AuthBackgroundModel(id: id + 71,
+            AuthBackgroundEntity(id: id + 71,
                                 image: .authBackgroundSymbol2,
                                 frameW: frameWSettedSymbol2,
                                 framwH: frameHSettedSymbol2,
@@ -698,7 +698,7 @@ extension AuthBackground {
                                 positionY: setBackgroundPositionH(plane: planeY, position: positionY, dh: 0.36),
                                 opaqued: opaqued,
                                 rotated: 69),
-            AuthBackgroundModel(id: id + 72,
+            AuthBackgroundEntity(id: id + 72,
                                 image: .authBackgroundSymbol2,
                                 frameW: frameWSettedSymbol2,
                                 framwH: frameHSettedSymbol2,
@@ -706,7 +706,7 @@ extension AuthBackground {
                                 positionY: setBackgroundPositionH(plane: planeY, position: positionY, dh: 0.16),
                                 opaqued: opaqued,
                                 rotated: 69),
-            AuthBackgroundModel(id: id + 73,
+            AuthBackgroundEntity(id: id + 73,
                                 image: .authBackgroundSymbol2,
                                 frameW: frameWSettedSymbol2,
                                 framwH: frameHSettedSymbol2,
@@ -738,6 +738,6 @@ extension AuthBackground {
         (plane ? 1 * (position + ACYdh(aiachyState, d: dh)) : -1 * (position + ACYdh(aiachyState, d: dh)) )
     }
 }
-private let dataloski: [AuthBackgroundModel] = [
+private let dataloski: [AuthBackgroundEntity] = [
     
 ]

@@ -15,17 +15,17 @@ struct ACYMinorButtonStyle: ButtonStyle {
         let pressed = configuration.isPressed
         ZStack {
             RoundedRectangle(cornerRadius: 10)
-                .stroke(Color.makeAiachyColor(aiachyState,
-                                          aiachyColor: .secondColor),
+                .stroke(Color.makeAiachyColor(aiachyState, aiachyColor: .secondColor),
                         lineWidth: 1)
             configuration.label
-                .foregroundColor(.makeAiachyColor(aiachyState,
-                                              aiachyColor: .secondColor))
+                .foregroundColor(.makeAiachyColor(aiachyState, aiachyColor: .secondColor))
                 .font(.aiachyFont(.roundedBold14))
         }
-        .background(Color.makeAiachyColor(aiachyState,
-                                      aiachyColor: .backgroundColor).cornerRadius(10).shadow(color: .black.opacity(0.25), radius: 4, x: 0, y: 4))
-        .offset(x: 0,
-                y: pressed ? 2 : 0 )
+        .background(
+            Color.makeAiachyColor(aiachyState,aiachyColor: .backgroundColor)
+            .cornerRadius(10)
+            .shadow(color: .black.opacity(0.25), radius: 4, x: 0, y: 4)
+        )
+        .offset(y: pressed ? 2 : 0 )
     }
 }

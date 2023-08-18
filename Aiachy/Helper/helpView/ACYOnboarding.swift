@@ -11,12 +11,12 @@ struct ACYOnboarding: View {
     
     @EnvironmentObject var aiachyState: AiachyState
     @Binding var selection: Int
-    let OnboardingItems: [Onboarding]
+    let acyOnboardingEntityData: [ACYOnboardingEntity]
     
     var body: some View {
         TabView(selection: $selection, content: {
-            ForEach(OnboardingItems, id: \.id) { onboarding in
-                OnboardingTemplate(onboarding: onboarding)
+            ForEach(acyOnboardingEntityData, id: \.id) { onboarding in
+                OnboardingTemplate(ACYOnboardingEntityData: onboarding)
             }
         })
         .tabViewStyle(.page(indexDisplayMode: .never))
@@ -28,23 +28,23 @@ struct ACYOnboarding: View {
 struct ACYOnboarding_Previews: PreviewProvider {
     
     
-    static let onboardingItems: [Onboarding] = [
-        Onboarding(id: 0,
+    static let ACYOnboardingEntityData: [ACYOnboardingEntity] = [
+        ACYOnboardingEntity(id: 0,
                    onboardingImage: .authHeart,
-                   onboardingTitle: ACYTextHelper.ACYOnboardingText.ACYonboardingTitleText.HeartofAstrologyViewTitle.rawValue,
-                   onboardingDescription: ACYTextHelper.ACYOnboardingText.ACYonboardingDescriptionText.HeartofAstrologyViewDescription.rawValue),
-        Onboarding(id: 1,
+                   onboardingTitle: ACYTextHelper.ACYAuthText.ACYonboardingTitleText.HeartofAstrologyViewTitle.rawValue,
+                   onboardingDescription: ACYTextHelper.ACYAuthText.ACYonboardingDescriptionText.HeartofAstrologyViewDescription.rawValue),
+        ACYOnboardingEntity(id: 1,
                    onboardingImage: .secretStar,
-                   onboardingTitle: ACYTextHelper.ACYOnboardingText.ACYonboardingTitleText.SecretOfTheStarsViewTitle.rawValue,
-                   onboardingDescription: ACYTextHelper.ACYOnboardingText.ACYonboardingDescriptionText.SecretOfTheStarsViewDescription.rawValue),
-        Onboarding(id: 2,
+                   onboardingTitle: ACYTextHelper.ACYAuthText.ACYonboardingTitleText.SecretOfTheStarsViewTitle.rawValue,
+                   onboardingDescription: ACYTextHelper.ACYAuthText.ACYonboardingDescriptionText.SecretOfTheStarsViewDescription.rawValue),
+        ACYOnboardingEntity(id: 2,
                    onboardingImage: .yourFuture,
-                   onboardingTitle: ACYTextHelper.ACYOnboardingText.ACYonboardingTitleText.HeartofAstrologyViewTitle.rawValue,
-                   onboardingDescription: ACYTextHelper.ACYOnboardingText.ACYonboardingDescriptionText.HeartofAstrologyViewDescription.rawValue),
+                   onboardingTitle: ACYTextHelper.ACYAuthText.ACYonboardingTitleText.HeartofAstrologyViewTitle.rawValue,
+                   onboardingDescription: ACYTextHelper.ACYAuthText.ACYonboardingDescriptionText.HeartofAstrologyViewDescription.rawValue),
     ]
     
     static var previews: some View {
-        ACYOnboarding(selection: .constant(0), OnboardingItems: onboardingItems)
+        ACYOnboarding(selection: .constant(0), acyOnboardingEntityData: ACYOnboardingEntityData)
             .environmentObject(ACY_PREVIEWS_STATE)
     }
 }
@@ -52,16 +52,16 @@ struct ACYOnboarding_Previews: PreviewProvider {
 private struct OnboardingTemplate: View {
     
     @EnvironmentObject var aiachyState: AiachyState
-    let onboarding: Onboarding
+    let ACYOnboardingEntityData: ACYOnboardingEntity
     
     var body: some View {
         VStack(spacing: 0) {
-            Image.setACYOnboardingImage(aiachyState, onboarding: onboarding.onboardingImage)
+            Image.setACYOnboardingImage(aiachyState, onboarding: ACYOnboardingEntityData.onboardingImage)
                 .resizable()
                 .scaledToFit()
                 .frame(height: ACYdh(aiachyState, d: ACY_UPMED_SIZE))
-            ACYTitleAndDescriptionText(titleText: onboarding.onboardingTitle,
-                                       descriptionText: onboarding.onboardingDescription)
+            ACYTitleAndDescriptionText(title: ACYOnboardingEntityData.onboardingTitle,
+                                       description: ACYOnboardingEntityData.onboardingDescription)
         }
         .environmentObject(aiachyState)
     }
