@@ -7,27 +7,33 @@
 
 import Foundation
 
+
 class OnboardingPresenter: ObservableObject {
     
     @Published var currentIndex: Int
-    let aiachyState = AiachyState()
+    let aiachyState: AiachyState
+    let router: AuthRouterPresenter
     
-    init(currentIndex: Int = 0) {
+    init(currentIndex: Int = 0, 
+         aiachy aiachyState: AiachyState,
+         router: AuthRouterPresenter) {
         self.currentIndex = currentIndex
+        self.aiachyState = aiachyState
+        self.router = router
     }
     
-    let acyOnboardingEntityData: [ACYOnboardingEntity] = [
-        ACYOnboardingEntity(id: 0,
-                            onboardingImage: .authHeart,
-                            onboardingTitle: ACYTextHelper.ACYAuthText.ACYonboardingTitleText.HeartofAstrologyViewTitle.rawValue,
-                            onboardingDescription: ACYTextHelper.ACYAuthText.ACYonboardingDescriptionText.HeartofAstrologyViewDescription.rawValue),
-        ACYOnboardingEntity(id: 1,
-                            onboardingImage: .secretStar,
-                            onboardingTitle: ACYTextHelper.ACYAuthText.ACYonboardingTitleText.SecretOfTheStarsViewTitle.rawValue,
-                            onboardingDescription: ACYTextHelper.ACYAuthText.ACYonboardingDescriptionText.SecretOfTheStarsViewDescription.rawValue),
-        ACYOnboardingEntity(id: 2,
-                            onboardingImage: .yourFuture,
-                            onboardingTitle: ACYTextHelper.ACYAuthText.ACYonboardingTitleText.YourFutureViewTitle.rawValue,
-                            onboardingDescription: ACYTextHelper.ACYAuthText.ACYonboardingDescriptionText.YourFutureViewDescription.rawValue),
+    lazy var acyOnboardingEntityData: [ACYAuthOnboardingEntity] = [
+        ACYAuthOnboardingEntity(id: 0,
+                                image: .authHeart,
+                                title: .heartofAstrologyTitle,
+                                description: .heartofAstrologyDescription),
+        ACYAuthOnboardingEntity(id: 1,
+                                image: .secretStar,
+                                title: .secretOfTheStarsTitle,
+                                description: .secretOfTheStarsDescription),
+        ACYAuthOnboardingEntity(id: 2,
+                                image: .yourFuture,
+                                title: .yourFutureTitle,
+                                description: .yourFutureDescription),
     ]
 }

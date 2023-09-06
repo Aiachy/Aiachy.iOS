@@ -17,14 +17,16 @@ struct TarotStarterView: View {
             HomeBackground()
             HStack(spacing: 0) {
                 VStack(spacing: 0) {
-                    Image.setACYMysticStarterImage(aiachyState, mysticStarterImage: .tarotStarterImage1)
+                    Image(ImageHandler.makeMysticStarterString(aiachyState, 
+                                                               starter: .tarotStarter1))
                         .resizable()
                         .rotate(22)
                         .scaledToFit()
                         .offset(x: isOnAppear ? 0 : ACYdw(aiachyState, d: 0.5))
                         .opacity(isOnAppear ? 1 : 0)
                     
-                    Image.setACYMysticStarterImage(aiachyState, mysticStarterImage: .tarotStarterImage2)
+                    Image(ImageHandler.makeMysticStarterString(aiachyState, 
+                                                               starter: .tarotStarter2))
                         .resizable()
                         .rotate(-22)
                         .scaledToFit()
@@ -34,8 +36,8 @@ struct TarotStarterView: View {
                 .padding(.leading, ACYdw(aiachyState, d: -0.1))
                 
                 ACYMysticTitleAndDescriptionText(fontType: .CinzelBlack50,
-                                                 title: .tarotStarterTitle,
-                                                 description: .tarotStarterDescription)
+                                                 title: .tarotTitle,
+                                                 description: .tarotDescription)
                 .offset(x: isOnAppear ? 0 : ACYdw(aiachyState, d: 0.5))
                     .opacity(isOnAppear ? 1 : 0)
             }

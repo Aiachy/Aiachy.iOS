@@ -8,7 +8,7 @@
 import SwiftUI
 
 @main
-struct YourApp: App {
+struct AiachyApp: App {
     
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
 

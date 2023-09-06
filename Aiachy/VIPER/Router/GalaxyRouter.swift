@@ -22,7 +22,9 @@ class GalaxyRouterPresenter: ObservableObject, GalaxyRouterProtocol {
     @Published var currentView: GalaxyRouterEnum
     
     func navigate(to destination: GalaxyRouterEnum) {
-        currentView = destination
+        withAnimation(.spring) {
+            currentView = destination
+        }
     }
     
     init(currentView: GalaxyRouterEnum = .galaxy) {
@@ -33,25 +35,27 @@ class GalaxyRouterPresenter: ObservableObject, GalaxyRouterProtocol {
 struct GalaxyRouter: View {
     
     @EnvironmentObject var aiachyState : AiachyState
-    @StateObject var galaxyRouter = GalaxyRouterPresenter()
-    let router: HomeRouterPresenter
+    @StateObject var presenter = GalaxyRouterPresenter()
+    let homeRouter: HomeRouterPresenter
     
     var body: some View {
         ZStack {
-            switch galaxyRouter.currentView {
+            switch presenter.currentView {
             case .galaxy:
-                GalaxyView(router: galaxyRouter)
+                GalaxyView(aiachy: aiachyState, router: presenter)
             case .tune:
-                TuneView(router: galaxyRouter)
+                TuneView(aiachy: aiachyState,router: presenter)
             case .meditation:
-                MeditationView(router: galaxyRouter)
+                MeditationView(router: presenter)
             }
         }
-        .onChange(of: galaxyRouter.currentView, perform: { viewChanged in
-            if viewChanged != .galaxy {
-                router.isDisabledTabBar = true
-            } else {
-                router.isDisabledTabBar = false
+        .onChange(of: presenter.currentView, perform: { viewChanged in
+            withAnimation(.spring) {
+                if viewChanged != .galaxy {
+                    homeRouter.isDisabledTabBar = true
+                } else {
+                    homeRouter.isDisabledTabBar = false
+                }
             }
         })
         .environmentObject(aiachyState)

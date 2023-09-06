@@ -36,7 +36,7 @@ struct MysticView: View {
 extension MysticView {
     //MARK: MysticView - Tabview
     private var tabView: some View {
-        TabView(selection: $presenter.selection,
+        TabView(selection: $presenter.selection.animation(.easeInOut),
                 content:  {
             TarotStarterView()
                 .tag(0)

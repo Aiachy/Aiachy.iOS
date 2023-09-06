@@ -17,14 +17,15 @@ struct ACYTitleAndDescriptionText: View {
     var body: some View {
         LazyVStack(spacing: 10) {
             //MARK: authTitleAndDescription - Title for all Auth
-            Text(title.locale())
+            Text(title)
                 .font(.aiachyFont(.cinzelBlack20))
                 .foregroundColor(Color.makeAiachyColor(aiachyState, aiachyColor: .firstColor))
             if isHaveDescription {
                 //MARK: authTitleAndDescription - Description for all Auth
-                Text(description!.locale())
+                Text(description!)
                     .font(.aiachyFont(.oldItalic14))
                     .foregroundColor(Color.makeAiachyColor(aiachyState, aiachyColor: .secondColor))
+                    .padding(.horizontal)
             }
         }
         .multilineTextAlignment(.center)

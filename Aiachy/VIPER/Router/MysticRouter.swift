@@ -31,12 +31,12 @@ class MysticRouterPresenter: ObservableObject, MysticRouterProtocol {
 struct MysticRouter: View {
     
     @EnvironmentObject var aiachyState : AiachyState
-    @StateObject var mysticRouter = MysticRouterPresenter()
-    let router: HomeRouterPresenter
+    @StateObject var presenter = MysticRouterPresenter()
+    let homeRouter: HomeRouterPresenter
     
     var body: some View {
         ZStack {
-            switch mysticRouter.currentView {
+            switch presenter.currentView {
             case .mystic:
                 MysticView()
             }

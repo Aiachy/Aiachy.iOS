@@ -30,14 +30,14 @@ class LoveRouterPresenter: ObservableObject, RouterProtocol {
 struct LoveRouter: View {
     
     @EnvironmentObject var aiachyState : AiachyState
-    @StateObject var loveRouter = LoveRouterPresenter()
-    let router: HomeRouterPresenter
+    @StateObject var presenter = LoveRouterPresenter()
+    let homeRouter: HomeRouterPresenter
     
     var body: some View {
         ZStack {
-            switch loveRouter.currentView {
+            switch presenter.currentView {
             case .love:
-                LoveView(router: router)
+                LoveView(aiachy: aiachyState, homeRouter: homeRouter, router: presenter)
             }
         }
         .environmentObject(aiachyState)

@@ -9,15 +9,14 @@
 /* Begin PBXBuildFile section */
 		3400E6AD2A10A81B00DF32B3 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3400E6AC2A10A81B00DF32B3 /* User.swift */; };
 		3400E6AF2A10A86600DF32B3 /* SplashPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3400E6AE2A10A86600DF32B3 /* SplashPresenter.swift */; };
+		3401B3A82A98316000D6831D /* Oracle.storekit in Resources */ = {isa = PBXBuildFile; fileRef = 3401B3A72A98316000D6831D /* Oracle.storekit */; };
+		3401B3AA2A986DD000D6831D /* StoreKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3401B3A92A986DD000D6831D /* StoreKitManager.swift */; };
+		3401B3AC2A987E2500D6831D /* ACYStoreEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3401B3AB2A987E2500D6831D /* ACYStoreEntity.swift */; };
 		3401C86D2A11758200BD368A /* ImageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3401C86C2A11758200BD368A /* ImageHelper.swift */; };
 		3401C86F2A117C0A00BD368A /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3401C86E2A117C0A00BD368A /* Color+Extension.swift */; };
 		3401C8712A117C1300BD368A /* Image+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3401C8702A117C1300BD368A /* Image+Extension.swift */; };
 		3401C8732A11D57E00BD368A /* SplashInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3401C8722A11D57E00BD368A /* SplashInteractor.swift */; };
 		3401C8762A11D69A00BD368A /* AuthServerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3401C8752A11D69A00BD368A /* AuthServerManager.swift */; };
-		3401C8792A11D79000BD368A /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 3401C8782A11D79000BD368A /* FirebaseAuth */; };
-		3401C87B2A11D79000BD368A /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 3401C87A2A11D79000BD368A /* FirebaseFirestore */; };
-		3401C87D2A11D79000BD368A /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 3401C87C2A11D79000BD368A /* FirebaseFirestoreSwift */; };
-		3401C87F2A11D79000BD368A /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 3401C87E2A11D79000BD368A /* FirebaseStorage */; };
 		3401C8862A11EBFB00BD368A /* ColorHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3401C8852A11EBFB00BD368A /* ColorHelper.swift */; };
 		3401C88C2A1293E300BD368A /* ColorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3401C88B2A1293E300BD368A /* ColorHandler.swift */; };
 		3401C88E2A12A30B00BD368A /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3401C88D2A12A30B00BD368A /* OnboardingView.swift */; };
@@ -31,10 +30,9 @@
 		340369CF2A8BE08C004CFA1A /* PalmistryStarterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340369CE2A8BE08C004CFA1A /* PalmistryStarterView.swift */; };
 		340369D12A8C3A27004CFA1A /* CrystalGazingStarterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340369D02A8C3A27004CFA1A /* CrystalGazingStarterView.swift */; };
 		3405C2082A83D17700424FC8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3405C2072A83D17700424FC8 /* GoogleService-Info.plist */; };
-		3405C20C2A84996800424FC8 /* TuneEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3405C20B2A84996800424FC8 /* TuneEntity.swift */; };
+		3405C20C2A84996800424FC8 /* ACYTuneEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3405C20B2A84996800424FC8 /* ACYTuneEntity.swift */; };
 		3407544F2A0FF12800E6B8D4 /* Color.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3407544E2A0FF12800E6B8D4 /* Color.xcassets */; };
 		340754532A0FF18300E6B8D4 /* Horoscope.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 340754522A0FF18300E6B8D4 /* Horoscope.xcassets */; };
-		3407545C2A0FF4BA00E6B8D4 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3407545E2A0FF4BA00E6B8D4 /* Localizable.strings */; };
 		3407546F2A0FF5DF00E6B8D4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3407546E2A0FF5DF00E6B8D4 /* AppDelegate.swift */; };
 		340754742A100DDD00E6B8D4 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340754732A100DDD00E6B8D4 /* SplashView.swift */; };
 		3407547A2A102B9C00E6B8D4 /* OldStandardTT-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 340754772A102B9C00E6B8D4 /* OldStandardTT-Regular.ttf */; };
@@ -51,10 +49,12 @@
 		343A67DC2A84DB8F00CF984D /* OnboardingViewUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 343A67DB2A84DB8F00CF984D /* OnboardingViewUITest.swift */; };
 		343C17F62A16894C000F1E28 /* AuthRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 343C17F52A16894C000F1E28 /* AuthRouter.swift */; };
 		343C17F82A16912F000F1E28 /* AiachyState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 343C17F72A16912F000F1E28 /* AiachyState.swift */; };
-		343FAEFE2A6340A50084DEAD /* ACYMinorButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 343FAEFD2A6340A50084DEAD /* ACYMinorButton.swift */; };
+		343FAEFE2A6340A50084DEAD /* ACYAlertMinorButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 343FAEFD2A6340A50084DEAD /* ACYAlertMinorButton.swift */; };
 		343FAF012A6340D60084DEAD /* ACYMinorButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 343FAF002A6340D60084DEAD /* ACYMinorButtonStyle.swift */; };
+		344479F72A92296A00701FD2 /* ACYAiachyRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 344479F62A92296A00701FD2 /* ACYAiachyRepo.swift */; };
+		344479F92A930EC300701FD2 /* AudioPlayerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 344479F82A930EC300701FD2 /* AudioPlayerManager.swift */; };
 		3445AEE52A8CD8DD0066996B /* StarterIndexView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3445AEE42A8CD8DD0066996B /* StarterIndexView.swift */; };
-		3445AEE72A8CDC380066996B /* ACYStarterLogoEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3445AEE62A8CDC380066996B /* ACYStarterLogoEntity.swift */; };
+		3445AEE72A8CDC380066996B /* ACYmysticStarterLogoEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3445AEE62A8CDC380066996B /* ACYmysticStarterLogoEntity.swift */; };
 		3445AEE92A8D2A620066996B /* TuneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3445AEE82A8D2A620066996B /* TuneView.swift */; };
 		3445AEEB2A8D2A900066996B /* TunePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3445AEEA2A8D2A900066996B /* TunePresenter.swift */; };
 		3445AEED2A8D33DD0066996B /* ACYViewTitleText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3445AEEC2A8D33DD0066996B /* ACYViewTitleText.swift */; };
@@ -63,20 +63,34 @@
 		344994362A17608C0042CF01 /* HomeRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 344994352A17608C0042CF01 /* HomeRouter.swift */; };
 		344BDFA32A645A3F001738B9 /* ACYPassButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 344BDFA22A645A3F001738B9 /* ACYPassButton.swift */; };
 		344BDFA52A645A4B001738B9 /* ACYPassButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 344BDFA42A645A4B001738B9 /* ACYPassButtonStyle.swift */; };
+		3457340A2A9AC7E8009FE067 /* ACYChakraStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345734092A9AC7E8009FE067 /* ACYChakraStatus.swift */; };
 		345D56CD2A14AF160037F92B /* ACYButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345D56CC2A14AF160037F92B /* ACYButton.swift */; };
 		345D56D02A1621B70037F92B /* ACYButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345D56CF2A1621B60037F92B /* ACYButtonStyle.swift */; };
 		345D56DA2A166A0B0037F92B /* Double+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345D56D92A166A0B0037F92B /* Double+Extension.swift */; };
 		345EBE912A64212700E3895D /* ACYAlternativeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345EBE902A64212700E3895D /* ACYAlternativeButton.swift */; };
 		345EBE932A64217200E3895D /* ACYAlternativeButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345EBE922A64217200E3895D /* ACYAlternativeButtonStyle.swift */; };
-		345EBE972A64227800E3895D /* ACYOnboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345EBE962A64227800E3895D /* ACYOnboarding.swift */; };
+		345EBE972A64227800E3895D /* ACYAuthOnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 345EBE962A64227800E3895D /* ACYAuthOnboardingView.swift */; };
+		3461DEA12A9664E4002EA6A2 /* TextHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3461DEA02A9664E4002EA6A2 /* TextHandler.swift */; };
+		3461DEA52A967B19002EA6A2 /* ArabicLanguage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3461DEA42A967B19002EA6A2 /* ArabicLanguage.swift */; };
+		3461DEA72A967B22002EA6A2 /* DanishLanguage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3461DEA62A967B22002EA6A2 /* DanishLanguage.swift */; };
+		3461DEA92A967B37002EA6A2 /* EnglishUKLanguage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3461DEA82A967B37002EA6A2 /* EnglishUKLanguage.swift */; };
+		3461DEAB2A967B47002EA6A2 /* EnglishUSALanguage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3461DEAA2A967B47002EA6A2 /* EnglishUSALanguage.swift */; };
+		3461DEAD2A967B54002EA6A2 /* FrenchLanguage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3461DEAC2A967B54002EA6A2 /* FrenchLanguage.swift */; };
+		3461DEAF2A967B62002EA6A2 /* GermanLanguage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3461DEAE2A967B62002EA6A2 /* GermanLanguage.swift */; };
+		3461DEB12A967B6C002EA6A2 /* RussianLanguage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3461DEB02A967B6C002EA6A2 /* RussianLanguage.swift */; };
+		3461DEB32A967B7F002EA6A2 /* ItalianLanguage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3461DEB22A967B7F002EA6A2 /* ItalianLanguage.swift */; };
+		3461DEB52A967B88002EA6A2 /* UkrainianLanguage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3461DEB42A967B88002EA6A2 /* UkrainianLanguage.swift */; };
+		3461DEB72A967B92002EA6A2 /* PolishLanguage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3461DEB62A967B92002EA6A2 /* PolishLanguage.swift */; };
+		3461DEB92A967BA2002EA6A2 /* GreekLanguage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3461DEB82A967BA2002EA6A2 /* GreekLanguage.swift */; };
+		3461DEBB2A967BAB002EA6A2 /* RomanianLanguage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3461DEBA2A967BAB002EA6A2 /* RomanianLanguage.swift */; };
 		34664DBB2A81F6B2007295E5 /* MysticRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34664DBA2A81F6B2007295E5 /* MysticRouter.swift */; };
 		34664DBD2A81F6E9007295E5 /* GalaxyRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34664DBC2A81F6E9007295E5 /* GalaxyRouter.swift */; };
 		34664DBF2A81F6F2007295E5 /* LoveRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34664DBE2A81F6F2007295E5 /* LoveRouter.swift */; };
 		34664DC12A81F6FB007295E5 /* SettingsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34664DC02A81F6FB007295E5 /* SettingsRouter.swift */; };
 		3478B3032A6AED6A00D94F67 /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3478B3022A6AED6A00D94F67 /* Place.swift */; };
-		3478C4D92A8DB9EC003F412D /* GalaxyListCloumn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3478C4D82A8DB9EC003F412D /* GalaxyListCloumn.swift */; };
+		3478C4D92A8DB9EC003F412D /* GalaxyColumn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3478C4D82A8DB9EC003F412D /* GalaxyColumn.swift */; };
 		3478C4DB2A8DC265003F412D /* MeditationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3478C4DA2A8DC265003F412D /* MeditationView.swift */; };
-		347BD9A22A673ED4001A251B /* Zodiac.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347BD9A12A673ED4001A251B /* Zodiac.swift */; };
+		347BD9A22A673ED4001A251B /* ACYUserAllEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347BD9A12A673ED4001A251B /* ACYUserAllEntity.swift */; };
 		347BD9A82A674F84001A251B /* ZodiacSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347BD9A72A674F84001A251B /* ZodiacSelectionView.swift */; };
 		347BD9AA2A674FBA001A251B /* ZodiacSelectionPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347BD9A92A674FBA001A251B /* ZodiacSelectionPresenter.swift */; };
 		347BD9AC2A674FE3001A251B /* ZodiacSelectionInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347BD9AB2A674FE3001A251B /* ZodiacSelectionInteractor.swift */; };
@@ -94,7 +108,7 @@
 		34828035296BB56000D3BA9F /* AiachyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34828034296BB56000D3BA9F /* AiachyApp.swift */; };
 		34828039296BB56000D3BA9F /* General.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34828038296BB56000D3BA9F /* General.xcassets */; };
 		3482803C296BB56000D3BA9F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3482803B296BB56000D3BA9F /* Preview Assets.xcassets */; };
-		348D1DBB2A130A2300602165 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348D1DBA2A130A2300602165 /* Constants.swift */; };
+		348D1DBB2A130A2300602165 /* ACYConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348D1DBA2A130A2300602165 /* ACYConstants.swift */; };
 		348D1DBD2A13163800602165 /* AuthBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348D1DBC2A13163800602165 /* AuthBackground.swift */; };
 		348D1DBF2A1318C900602165 /* ImageHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348D1DBE2A1318C900602165 /* ImageHandler.swift */; };
 		348D1DC12A133C6500602165 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348D1DC02A133C6500602165 /* String+Extension.swift */; };
@@ -103,9 +117,31 @@
 		348D1DC92A1340F400602165 /* LoginInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348D1DC82A1340F400602165 /* LoginInteractor.swift */; };
 		348D7BEC2A8D967F003632D9 /* TuneInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348D7BEB2A8D967F003632D9 /* TuneInteractor.swift */; };
 		348FA5692A676EB500BC51D4 /* ZodiacSelectionTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348FA5682A676EB500BC51D4 /* ZodiacSelectionTemplate.swift */; };
+		349236D32A99B66E00079636 /* ACYHomeImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349236D22A99B66E00079636 /* ACYHomeImage.swift */; };
+		349236D72A9A53F300079636 /* DateSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349236D62A9A53F200079636 /* DateSection.swift */; };
+		349CA6F02A94E38B009F8B27 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 349CA6EF2A94E38B009F8B27 /* FirebaseAuth */; };
+		349CA6F22A94E38B009F8B27 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 349CA6F12A94E38B009F8B27 /* FirebaseFirestore */; };
+		349CA6F42A94E38B009F8B27 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 349CA6F32A94E38B009F8B27 /* FirebaseStorage */; };
+		349CA6F62A94E5A0009F8B27 /* ACYDualButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349CA6F52A94E5A0009F8B27 /* ACYDualButtonStyle.swift */; };
+		349CA6F82A95010E009F8B27 /* AicyCashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349CA6F72A95010E009F8B27 /* AicyCashView.swift */; };
+		349CA6FA2A950124009F8B27 /* OracleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349CA6F92A950124009F8B27 /* OracleView.swift */; };
+		349CA6FC2A95012B009F8B27 /* LanguageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349CA6FB2A95012B009F8B27 /* LanguageView.swift */; };
+		349CA6FE2A950133009F8B27 /* ThemeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349CA6FD2A950133009F8B27 /* ThemeView.swift */; };
+		349CA7002A950177009F8B27 /* AicyCashInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349CA6FF2A950177009F8B27 /* AicyCashInteractor.swift */; };
+		349CA7022A95018D009F8B27 /* OracleInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349CA7012A95018D009F8B27 /* OracleInteractor.swift */; };
+		349CA7042A95019C009F8B27 /* LanguageInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349CA7032A95019C009F8B27 /* LanguageInteractor.swift */; };
+		349CA7062A9501A4009F8B27 /* ThemeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349CA7052A9501A4009F8B27 /* ThemeInteractor.swift */; };
+		349CA7082A9501E0009F8B27 /* AicyCashPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349CA7072A9501E0009F8B27 /* AicyCashPresenter.swift */; };
+		349CA70A2A9501EB009F8B27 /* OraclePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349CA7092A9501EB009F8B27 /* OraclePresenter.swift */; };
+		349CA70C2A9501F3009F8B27 /* LanguagePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349CA70B2A9501F3009F8B27 /* LanguagePresenter.swift */; };
+		349CA70E2A9501FC009F8B27 /* ThemePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349CA70D2A9501FC009F8B27 /* ThemePresenter.swift */; };
+		349CA7112A953E41009F8B27 /* LanguageColumn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349CA7102A953E41009F8B27 /* LanguageColumn.swift */; };
+		349CA7142A953F3E009F8B27 /* ACYLanguageEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349CA7132A953F3E009F8B27 /* ACYLanguageEntity.swift */; };
+		349CA7172A9659D3009F8B27 /* EnglishLanguage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349CA7162A9659D3009F8B27 /* EnglishLanguage.swift */; };
+		349CA7192A965E2A009F8B27 /* TurkishLanguage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349CA7182A965E2A009F8B27 /* TurkishLanguage.swift */; };
 		34AE56042A146992009DA69E /* ACYLoadingProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34AE56032A146992009DA69E /* ACYLoadingProgress.swift */; };
-		34AE56092A1474D1009DA69E /* ACYOnboardingEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34AE56082A1474D1009DA69E /* ACYOnboardingEntity.swift */; };
-		34AE560C2A1475F8009DA69E /* ACYTextHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34AE560B2A1475F8009DA69E /* ACYTextHelper.swift */; };
+		34AE56092A1474D1009DA69E /* ACYAuthOnboardingEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34AE56082A1474D1009DA69E /* ACYAuthOnboardingEntity.swift */; };
+		34AE560C2A1475F8009DA69E /* TextHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34AE560B2A1475F8009DA69E /* TextHelper.swift */; };
 		34AE560F2A147B05009DA69E /* FontHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34AE560E2A147B05009DA69E /* FontHelper.swift */; };
 		34AE56112A147B13009DA69E /* FontHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34AE56102A147B13009DA69E /* FontHandler.swift */; };
 		34AE56152A148204009DA69E /* Font+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34AE56142A148204009DA69E /* Font+Extension.swift */; };
@@ -129,36 +165,43 @@
 		34AFB0622A77CE3100BBCC9C /* GalaxyPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34AFB0612A77CE3100BBCC9C /* GalaxyPresenter.swift */; };
 		34AFB0642A77CE3800BBCC9C /* LovePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34AFB0632A77CE3800BBCC9C /* LovePresenter.swift */; };
 		34AFB0662A77CE3E00BBCC9C /* SettingsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34AFB0652A77CE3E00BBCC9C /* SettingsPresenter.swift */; };
-		34AFB0682A77CF0700BBCC9C /* AiachyGalaxyServerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34AFB0672A77CF0700BBCC9C /* AiachyGalaxyServerManager.swift */; };
 		34B156162A70BB2200E95B8C /* AssetsExplain.md in Resources */ = {isa = PBXBuildFile; fileRef = 34B156152A70BB2200E95B8C /* AssetsExplain.md */; };
 		34B4D7662A8992BD001F2C8E /* Mystic.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34B4D7652A8992BD001F2C8E /* Mystic.xcassets */; };
 		34B4D7692A89933C001F2C8E /* Content.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 34B4D7682A89933C001F2C8E /* Content.xcassets */; };
 		34BC51602A12E32200455842 /* ACYPrintCompletion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BC515F2A12E32200455842 /* ACYPrintCompletion.swift */; };
-		34BE64F12A862A4C003FDF17 /* ACYTextHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34AE560B2A1475F8009DA69E /* ACYTextHelper.swift */; };
+		34BE64F12A862A4C003FDF17 /* TextHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34AE560B2A1475F8009DA69E /* TextHelper.swift */; };
 		34BE8D992A8945C2007361D0 /* ACYTabBarEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BE8D982A8945C2007361D0 /* ACYTabBarEntity.swift */; };
 		34BE8D9B2A894EEF007361D0 /* HomeBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BE8D9A2A894EEF007361D0 /* HomeBackground.swift */; };
 		34BF0CCA2A8664EF0027F985 /* AiachyUITestsHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BF0CC92A8664EF0027F985 /* AiachyUITestsHelper.swift */; };
 		34C11DA82A64A80A00D1F7DE /* ACYTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34C11DA72A64A80A00D1F7DE /* ACYTextField.swift */; };
 		34C11DAC2A64CF7500D1F7DE /* ACYTextFieldStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34C11DAB2A64CF7500D1F7DE /* ACYTextFieldStyle.swift */; };
-		34C212D32A8EE38400C8EB0A /* DownloadTuneManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34C212D22A8EE38400C8EB0A /* DownloadTuneManager.swift */; };
-		34CA22A42A8E7E7E002817EB /* TuneListCloumn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34CA22A32A8E7E7E002817EB /* TuneListCloumn.swift */; };
-		34DE3D152A61A69800F45E8F /* ACYBackgroundsEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34DE3D142A61A69800F45E8F /* ACYBackgroundsEntity.swift */; };
+		34C212D32A8EE38400C8EB0A /* TuneServerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34C212D22A8EE38400C8EB0A /* TuneServerManager.swift */; };
+		34CA22A42A8E7E7E002817EB /* TuneColumn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34CA22A32A8E7E7E002817EB /* TuneColumn.swift */; };
+		34CC46A02AA11B8E00622526 /* ACYZodiacEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34CC469F2AA11B8E00622526 /* ACYZodiacEntity.swift */; };
+		34DCD5D32A94D9AC0079C52C /* ACYDualButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34DCD5D22A94D9AC0079C52C /* ACYDualButton.swift */; };
+		34DE3D152A61A69800F45E8F /* ACYAuthBackgroundEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34DE3D142A61A69800F45E8F /* ACYAuthBackgroundEntity.swift */; };
 		34E36B812A84E79B002F8748 /* LoginViewUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34E36B802A84E79B002F8748 /* LoginViewUITest.swift */; };
 		34E36B832A84E7A9002F8748 /* ZodiacSelectionViewUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34E36B822A84E7A9002F8748 /* ZodiacSelectionViewUITest.swift */; };
 		34E36B852A84E7BC002F8748 /* RegisterViewUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34E36B842A84E7BC002F8748 /* RegisterViewUITest.swift */; };
 		34E36B872A84E7FE002F8748 /* AscendantSelectionViewUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34E36B862A84E7FE002F8748 /* AscendantSelectionViewUITest.swift */; };
 		34E614542A56228400BCEB09 /* ACYErrorCompletion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34E614532A56228400BCEB09 /* ACYErrorCompletion.swift */; };
-		34EA33792A18CD450042C1D6 /* PrivacyPolicyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34EA33782A18CD450042C1D6 /* PrivacyPolicyView.swift */; };
-		34EA337B2A18CD540042C1D6 /* PrivacyPolicyInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34EA337A2A18CD540042C1D6 /* PrivacyPolicyInteractor.swift */; };
-		34EA337D2A18CD600042C1D6 /* PrivacyPolicyPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34EA337C2A18CD600042C1D6 /* PrivacyPolicyPresenter.swift */; };
 		34EA337F2A18D4000042C1D6 /* ACYAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34EA337E2A18D3FF0042C1D6 /* ACYAlertView.swift */; };
 		34EB7AB22A84EE170013EBD8 /* TestStructureID.md in Resources */ = {isa = PBXBuildFile; fileRef = 34EB7AB12A84EE170013EBD8 /* TestStructureID.md */; };
 		34EE1D8E2A72916C002F2FE2 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34EE1D8D2A72916C002F2FE2 /* CoreDataManager.swift */; };
 		34F3E9812A89D2D400DB009A /* ACYAlertEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34F3E9802A89D2D400DB009A /* ACYAlertEntity.swift */; };
-		34FCD66D2A7B52470032BCAA /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 34FCD66C2A7B52470032BCAA /* FirebaseAuth */; };
-		34FCD66F2A7B524D0032BCAA /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 34FCD66E2A7B524D0032BCAA /* FirebaseAuth */; };
-		34FCD6712A7B52510032BCAA /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 34FCD6702A7B52510032BCAA /* FirebaseFirestore */; };
-		34FCD6732A7B52560032BCAA /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 34FCD6722A7B52560032BCAA /* FirebaseFirestore */; };
+		34FE01A32A9D0143008210C6 /* ACYAscendiantEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34FE01A22A9D0143008210C6 /* ACYAscendiantEntity.swift */; };
+		34FE01A52A9D0186008210C6 /* ACYCompatibilityZodiac.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34FE01A42A9D0186008210C6 /* ACYCompatibilityZodiac.swift */; };
+		34FE01A72A9D11CB008210C6 /* ACYStatusEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34FE01A62A9D11CB008210C6 /* ACYStatusEntity.swift */; };
+		34FE01AA2A9F1E2C008210C6 /* SwiftyTranslate in Frameworks */ = {isa = PBXBuildFile; productRef = 34FE01A92A9F1E2C008210C6 /* SwiftyTranslate */; };
+		34FE01AC2A9F58F2008210C6 /* TarotInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34FE01AB2A9F58F2008210C6 /* TarotInteractor.swift */; };
+		34FE01AE2A9F5963008210C6 /* TarotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34FE01AD2A9F5963008210C6 /* TarotView.swift */; };
+		34FE01B02A9F5970008210C6 /* CrystalGazingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34FE01AF2A9F5970008210C6 /* CrystalGazingView.swift */; };
+		34FE01B22A9F597D008210C6 /* CrystalGazingInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34FE01B12A9F597D008210C6 /* CrystalGazingInteractor.swift */; };
+		34FE01B62A9F59A0008210C6 /* CrystalGazingPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34FE01B52A9F59A0008210C6 /* CrystalGazingPresenter.swift */; };
+		34FE01B82A9F59AA008210C6 /* TarotPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34FE01B72A9F59AA008210C6 /* TarotPresenter.swift */; };
+		34FE01BA2A9F59BC008210C6 /* PalmistryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34FE01B92A9F59BC008210C6 /* PalmistryView.swift */; };
+		34FE01BC2A9F59C7008210C6 /* PalmistryInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34FE01BB2A9F59C7008210C6 /* PalmistryInteractor.swift */; };
+		34FE01BE2A9F59CE008210C6 /* PalmistryPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34FE01BD2A9F59CE008210C6 /* PalmistryPresenter.swift */; };
 		34FF67C12A69706900FC9CBD /* ACYTitleAndDescriptionText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34FF67C02A69706900FC9CBD /* ACYTitleAndDescriptionText.swift */; };
 /* End PBXBuildFile section */
 
@@ -182,6 +225,9 @@
 /* Begin PBXFileReference section */
 		3400E6AC2A10A81B00DF32B3 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		3400E6AE2A10A86600DF32B3 /* SplashPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashPresenter.swift; sourceTree = "<group>"; };
+		3401B3A72A98316000D6831D /* Oracle.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = Oracle.storekit; sourceTree = "<group>"; };
+		3401B3A92A986DD000D6831D /* StoreKitManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreKitManager.swift; sourceTree = "<group>"; };
+		3401B3AB2A987E2500D6831D /* ACYStoreEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ACYStoreEntity.swift; sourceTree = "<group>"; };
 		3401C86C2A11758200BD368A /* ImageHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageHelper.swift; sourceTree = "<group>"; };
 		3401C86E2A117C0A00BD368A /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
 		3401C8702A117C1300BD368A /* Image+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image+Extension.swift"; sourceTree = "<group>"; };
@@ -200,23 +246,10 @@
 		340369CE2A8BE08C004CFA1A /* PalmistryStarterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PalmistryStarterView.swift; sourceTree = "<group>"; };
 		340369D02A8C3A27004CFA1A /* CrystalGazingStarterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrystalGazingStarterView.swift; sourceTree = "<group>"; };
 		3405C2072A83D17700424FC8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		3405C20B2A84996800424FC8 /* TuneEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TuneEntity.swift; sourceTree = "<group>"; };
-		3405C20D2A8499B100424FC8 /* Updates.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Updates.md; sourceTree = "<group>"; };
+		3405C20B2A84996800424FC8 /* ACYTuneEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ACYTuneEntity.swift; sourceTree = "<group>"; };
+		3405C20D2A8499B100424FC8 /* (0.09)HeartsOfAstrology.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "(0.09)HeartsOfAstrology.md"; sourceTree = "<group>"; };
 		3407544E2A0FF12800E6B8D4 /* Color.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Color.xcassets; sourceTree = "<group>"; };
 		340754522A0FF18300E6B8D4 /* Horoscope.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Horoscope.xcassets; sourceTree = "<group>"; };
-		3407545D2A0FF4BA00E6B8D4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
-		3407545F2A0FF4BB00E6B8D4 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Localizable.strings; sourceTree = "<group>"; };
-		340754602A0FF4BC00E6B8D4 /* da */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = da; path = da.lproj/Localizable.strings; sourceTree = "<group>"; };
-		340754612A0FF4BD00E6B8D4 /* en-GB */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "en-GB"; path = "en-GB.lproj/Localizable.strings"; sourceTree = "<group>"; };
-		340754622A0FF4BE00E6B8D4 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
-		340754632A0FF4BF00E6B8D4 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
-		340754642A0FF4BF00E6B8D4 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
-		340754652A0FF4C000E6B8D4 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/Localizable.strings; sourceTree = "<group>"; };
-		340754662A0FF4C000E6B8D4 /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/Localizable.strings; sourceTree = "<group>"; };
-		340754672A0FF4C100E6B8D4 /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = uk.lproj/Localizable.strings; sourceTree = "<group>"; };
-		340754682A0FF4FA00E6B8D4 /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/Localizable.strings; sourceTree = "<group>"; };
-		340754692A0FF50600E6B8D4 /* el */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = el; path = el.lproj/Localizable.strings; sourceTree = "<group>"; };
-		3407546A2A0FF51600E6B8D4 /* ro */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ro; path = ro.lproj/Localizable.strings; sourceTree = "<group>"; };
 		3407546E2A0FF5DF00E6B8D4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		340754732A100DDD00E6B8D4 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		340754772A102B9C00E6B8D4 /* OldStandardTT-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OldStandardTT-Regular.ttf"; sourceTree = "<group>"; };
@@ -235,10 +268,12 @@
 		343A67DB2A84DB8F00CF984D /* OnboardingViewUITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewUITest.swift; sourceTree = "<group>"; };
 		343C17F52A16894C000F1E28 /* AuthRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRouter.swift; sourceTree = "<group>"; };
 		343C17F72A16912F000F1E28 /* AiachyState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AiachyState.swift; sourceTree = "<group>"; };
-		343FAEFD2A6340A50084DEAD /* ACYMinorButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ACYMinorButton.swift; sourceTree = "<group>"; };
+		343FAEFD2A6340A50084DEAD /* ACYAlertMinorButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ACYAlertMinorButton.swift; sourceTree = "<group>"; };
 		343FAF002A6340D60084DEAD /* ACYMinorButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ACYMinorButtonStyle.swift; sourceTree = "<group>"; };
+		344479F62A92296A00701FD2 /* ACYAiachyRepo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ACYAiachyRepo.swift; sourceTree = "<group>"; };
+		344479F82A930EC300701FD2 /* AudioPlayerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayerManager.swift; sourceTree = "<group>"; };
 		3445AEE42A8CD8DD0066996B /* StarterIndexView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarterIndexView.swift; sourceTree = "<group>"; };
-		3445AEE62A8CDC380066996B /* ACYStarterLogoEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ACYStarterLogoEntity.swift; sourceTree = "<group>"; };
+		3445AEE62A8CDC380066996B /* ACYmysticStarterLogoEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ACYmysticStarterLogoEntity.swift; sourceTree = "<group>"; };
 		3445AEE82A8D2A620066996B /* TuneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TuneView.swift; sourceTree = "<group>"; };
 		3445AEEA2A8D2A900066996B /* TunePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TunePresenter.swift; sourceTree = "<group>"; };
 		3445AEEC2A8D33DD0066996B /* ACYViewTitleText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ACYViewTitleText.swift; sourceTree = "<group>"; };
@@ -247,20 +282,34 @@
 		344994352A17608C0042CF01 /* HomeRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeRouter.swift; sourceTree = "<group>"; };
 		344BDFA22A645A3F001738B9 /* ACYPassButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ACYPassButton.swift; sourceTree = "<group>"; };
 		344BDFA42A645A4B001738B9 /* ACYPassButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ACYPassButtonStyle.swift; sourceTree = "<group>"; };
+		345734092A9AC7E8009FE067 /* ACYChakraStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ACYChakraStatus.swift; sourceTree = "<group>"; };
 		345D56CC2A14AF160037F92B /* ACYButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ACYButton.swift; sourceTree = "<group>"; };
 		345D56CF2A1621B60037F92B /* ACYButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ACYButtonStyle.swift; sourceTree = "<group>"; };
 		345D56D92A166A0B0037F92B /* Double+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Extension.swift"; sourceTree = "<group>"; };
 		345EBE902A64212700E3895D /* ACYAlternativeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ACYAlternativeButton.swift; sourceTree = "<group>"; };
 		345EBE922A64217200E3895D /* ACYAlternativeButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ACYAlternativeButtonStyle.swift; sourceTree = "<group>"; };
-		345EBE962A64227800E3895D /* ACYOnboarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ACYOnboarding.swift; sourceTree = "<group>"; };
+		345EBE962A64227800E3895D /* ACYAuthOnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ACYAuthOnboardingView.swift; sourceTree = "<group>"; };
+		3461DEA02A9664E4002EA6A2 /* TextHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextHandler.swift; sourceTree = "<group>"; };
+		3461DEA42A967B19002EA6A2 /* ArabicLanguage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArabicLanguage.swift; sourceTree = "<group>"; };
+		3461DEA62A967B22002EA6A2 /* DanishLanguage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DanishLanguage.swift; sourceTree = "<group>"; };
+		3461DEA82A967B37002EA6A2 /* EnglishUKLanguage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnglishUKLanguage.swift; sourceTree = "<group>"; };
+		3461DEAA2A967B47002EA6A2 /* EnglishUSALanguage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnglishUSALanguage.swift; sourceTree = "<group>"; };
+		3461DEAC2A967B54002EA6A2 /* FrenchLanguage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrenchLanguage.swift; sourceTree = "<group>"; };
+		3461DEAE2A967B62002EA6A2 /* GermanLanguage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GermanLanguage.swift; sourceTree = "<group>"; };
+		3461DEB02A967B6C002EA6A2 /* RussianLanguage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RussianLanguage.swift; sourceTree = "<group>"; };
+		3461DEB22A967B7F002EA6A2 /* ItalianLanguage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItalianLanguage.swift; sourceTree = "<group>"; };
+		3461DEB42A967B88002EA6A2 /* UkrainianLanguage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UkrainianLanguage.swift; sourceTree = "<group>"; };
+		3461DEB62A967B92002EA6A2 /* PolishLanguage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PolishLanguage.swift; sourceTree = "<group>"; };
+		3461DEB82A967BA2002EA6A2 /* GreekLanguage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreekLanguage.swift; sourceTree = "<group>"; };
+		3461DEBA2A967BAB002EA6A2 /* RomanianLanguage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RomanianLanguage.swift; sourceTree = "<group>"; };
 		34664DBA2A81F6B2007295E5 /* MysticRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MysticRouter.swift; sourceTree = "<group>"; };
 		34664DBC2A81F6E9007295E5 /* GalaxyRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalaxyRouter.swift; sourceTree = "<group>"; };
 		34664DBE2A81F6F2007295E5 /* LoveRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoveRouter.swift; sourceTree = "<group>"; };
 		34664DC02A81F6FB007295E5 /* SettingsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsRouter.swift; sourceTree = "<group>"; };
 		3478B3022A6AED6A00D94F67 /* Place.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
-		3478C4D82A8DB9EC003F412D /* GalaxyListCloumn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalaxyListCloumn.swift; sourceTree = "<group>"; };
+		3478C4D82A8DB9EC003F412D /* GalaxyColumn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalaxyColumn.swift; sourceTree = "<group>"; };
 		3478C4DA2A8DC265003F412D /* MeditationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeditationView.swift; sourceTree = "<group>"; };
-		347BD9A12A673ED4001A251B /* Zodiac.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Zodiac.swift; sourceTree = "<group>"; };
+		347BD9A12A673ED4001A251B /* ACYUserAllEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ACYUserAllEntity.swift; sourceTree = "<group>"; };
 		347BD9A72A674F84001A251B /* ZodiacSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZodiacSelectionView.swift; sourceTree = "<group>"; };
 		347BD9A92A674FBA001A251B /* ZodiacSelectionPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZodiacSelectionPresenter.swift; sourceTree = "<group>"; };
 		347BD9AB2A674FE3001A251B /* ZodiacSelectionInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZodiacSelectionInteractor.swift; sourceTree = "<group>"; };
@@ -279,7 +328,7 @@
 		34828034296BB56000D3BA9F /* AiachyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AiachyApp.swift; sourceTree = "<group>"; };
 		34828038296BB56000D3BA9F /* General.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = General.xcassets; sourceTree = "<group>"; };
 		3482803B296BB56000D3BA9F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		348D1DBA2A130A2300602165 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		348D1DBA2A130A2300602165 /* ACYConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ACYConstants.swift; sourceTree = "<group>"; };
 		348D1DBC2A13163800602165 /* AuthBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthBackground.swift; sourceTree = "<group>"; };
 		348D1DBE2A1318C900602165 /* ImageHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageHandler.swift; sourceTree = "<group>"; };
 		348D1DC02A133C6500602165 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
@@ -288,9 +337,28 @@
 		348D1DC82A1340F400602165 /* LoginInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInteractor.swift; sourceTree = "<group>"; };
 		348D7BEB2A8D967F003632D9 /* TuneInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TuneInteractor.swift; sourceTree = "<group>"; };
 		348FA5682A676EB500BC51D4 /* ZodiacSelectionTemplate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZodiacSelectionTemplate.swift; sourceTree = "<group>"; };
+		349236D22A99B66E00079636 /* ACYHomeImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ACYHomeImage.swift; sourceTree = "<group>"; };
+		349236D62A9A53F200079636 /* DateSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateSection.swift; sourceTree = "<group>"; };
+		349CA6F52A94E5A0009F8B27 /* ACYDualButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ACYDualButtonStyle.swift; sourceTree = "<group>"; };
+		349CA6F72A95010E009F8B27 /* AicyCashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AicyCashView.swift; sourceTree = "<group>"; };
+		349CA6F92A950124009F8B27 /* OracleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OracleView.swift; sourceTree = "<group>"; };
+		349CA6FB2A95012B009F8B27 /* LanguageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageView.swift; sourceTree = "<group>"; };
+		349CA6FD2A950133009F8B27 /* ThemeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeView.swift; sourceTree = "<group>"; };
+		349CA6FF2A950177009F8B27 /* AicyCashInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AicyCashInteractor.swift; sourceTree = "<group>"; };
+		349CA7012A95018D009F8B27 /* OracleInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OracleInteractor.swift; sourceTree = "<group>"; };
+		349CA7032A95019C009F8B27 /* LanguageInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageInteractor.swift; sourceTree = "<group>"; };
+		349CA7052A9501A4009F8B27 /* ThemeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeInteractor.swift; sourceTree = "<group>"; };
+		349CA7072A9501E0009F8B27 /* AicyCashPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AicyCashPresenter.swift; sourceTree = "<group>"; };
+		349CA7092A9501EB009F8B27 /* OraclePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OraclePresenter.swift; sourceTree = "<group>"; };
+		349CA70B2A9501F3009F8B27 /* LanguagePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguagePresenter.swift; sourceTree = "<group>"; };
+		349CA70D2A9501FC009F8B27 /* ThemePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemePresenter.swift; sourceTree = "<group>"; };
+		349CA7102A953E41009F8B27 /* LanguageColumn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageColumn.swift; sourceTree = "<group>"; };
+		349CA7132A953F3E009F8B27 /* ACYLanguageEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ACYLanguageEntity.swift; sourceTree = "<group>"; };
+		349CA7162A9659D3009F8B27 /* EnglishLanguage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnglishLanguage.swift; sourceTree = "<group>"; };
+		349CA7182A965E2A009F8B27 /* TurkishLanguage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TurkishLanguage.swift; sourceTree = "<group>"; };
 		34AE56032A146992009DA69E /* ACYLoadingProgress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ACYLoadingProgress.swift; sourceTree = "<group>"; };
-		34AE56082A1474D1009DA69E /* ACYOnboardingEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ACYOnboardingEntity.swift; sourceTree = "<group>"; };
-		34AE560B2A1475F8009DA69E /* ACYTextHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ACYTextHelper.swift; sourceTree = "<group>"; };
+		34AE56082A1474D1009DA69E /* ACYAuthOnboardingEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ACYAuthOnboardingEntity.swift; sourceTree = "<group>"; };
+		34AE560B2A1475F8009DA69E /* TextHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextHelper.swift; sourceTree = "<group>"; };
 		34AE560E2A147B05009DA69E /* FontHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontHelper.swift; sourceTree = "<group>"; };
 		34AE56102A147B13009DA69E /* FontHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontHandler.swift; sourceTree = "<group>"; };
 		34AE56142A148204009DA69E /* Font+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Font+Extension.swift"; sourceTree = "<group>"; };
@@ -314,7 +382,6 @@
 		34AFB0612A77CE3100BBCC9C /* GalaxyPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalaxyPresenter.swift; sourceTree = "<group>"; };
 		34AFB0632A77CE3800BBCC9C /* LovePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LovePresenter.swift; sourceTree = "<group>"; };
 		34AFB0652A77CE3E00BBCC9C /* SettingsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsPresenter.swift; sourceTree = "<group>"; };
-		34AFB0672A77CF0700BBCC9C /* AiachyGalaxyServerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AiachyGalaxyServerManager.swift; sourceTree = "<group>"; };
 		34B156152A70BB2200E95B8C /* AssetsExplain.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = AssetsExplain.md; sourceTree = "<group>"; };
 		34B156172A70CF7500E95B8C /* MagicWords.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = MagicWords.md; sourceTree = "<group>"; };
 		34B156182A70CFB100E95B8C /* DataFlows.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = DataFlows.md; sourceTree = "<group>"; };
@@ -327,22 +394,34 @@
 		34BF0CC92A8664EF0027F985 /* AiachyUITestsHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AiachyUITestsHelper.swift; sourceTree = "<group>"; };
 		34C11DA72A64A80A00D1F7DE /* ACYTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ACYTextField.swift; sourceTree = "<group>"; };
 		34C11DAB2A64CF7500D1F7DE /* ACYTextFieldStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ACYTextFieldStyle.swift; sourceTree = "<group>"; };
-		34C212D22A8EE38400C8EB0A /* DownloadTuneManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadTuneManager.swift; sourceTree = "<group>"; };
+		34C212D22A8EE38400C8EB0A /* TuneServerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TuneServerManager.swift; sourceTree = "<group>"; };
 		34C44AEF2A10B01E00702720 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		34CA22A32A8E7E7E002817EB /* TuneListCloumn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TuneListCloumn.swift; sourceTree = "<group>"; };
-		34DE3D142A61A69800F45E8F /* ACYBackgroundsEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ACYBackgroundsEntity.swift; sourceTree = "<group>"; };
+		34CA22A32A8E7E7E002817EB /* TuneColumn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TuneColumn.swift; sourceTree = "<group>"; };
+		34CC469F2AA11B8E00622526 /* ACYZodiacEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ACYZodiacEntity.swift; sourceTree = "<group>"; };
+		34D858402AA778DA00560AFA /* UpdatesTemplate.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = UpdatesTemplate.md; sourceTree = "<group>"; };
+		34DCD5D22A94D9AC0079C52C /* ACYDualButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ACYDualButton.swift; sourceTree = "<group>"; };
+		34DE3D142A61A69800F45E8F /* ACYAuthBackgroundEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ACYAuthBackgroundEntity.swift; sourceTree = "<group>"; };
 		34E36B802A84E79B002F8748 /* LoginViewUITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewUITest.swift; sourceTree = "<group>"; };
 		34E36B822A84E7A9002F8748 /* ZodiacSelectionViewUITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZodiacSelectionViewUITest.swift; sourceTree = "<group>"; };
 		34E36B842A84E7BC002F8748 /* RegisterViewUITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewUITest.swift; sourceTree = "<group>"; };
 		34E36B862A84E7FE002F8748 /* AscendantSelectionViewUITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AscendantSelectionViewUITest.swift; sourceTree = "<group>"; };
 		34E614532A56228400BCEB09 /* ACYErrorCompletion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ACYErrorCompletion.swift; sourceTree = "<group>"; };
-		34EA33782A18CD450042C1D6 /* PrivacyPolicyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyPolicyView.swift; sourceTree = "<group>"; };
-		34EA337A2A18CD540042C1D6 /* PrivacyPolicyInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyPolicyInteractor.swift; sourceTree = "<group>"; };
-		34EA337C2A18CD600042C1D6 /* PrivacyPolicyPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyPolicyPresenter.swift; sourceTree = "<group>"; };
 		34EA337E2A18D3FF0042C1D6 /* ACYAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ACYAlertView.swift; sourceTree = "<group>"; };
 		34EB7AB12A84EE170013EBD8 /* TestStructureID.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = TestStructureID.md; sourceTree = "<group>"; };
 		34EE1D8D2A72916C002F2FE2 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		34F3E9802A89D2D400DB009A /* ACYAlertEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ACYAlertEntity.swift; sourceTree = "<group>"; };
+		34FE01A22A9D0143008210C6 /* ACYAscendiantEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ACYAscendiantEntity.swift; sourceTree = "<group>"; };
+		34FE01A42A9D0186008210C6 /* ACYCompatibilityZodiac.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ACYCompatibilityZodiac.swift; sourceTree = "<group>"; };
+		34FE01A62A9D11CB008210C6 /* ACYStatusEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ACYStatusEntity.swift; sourceTree = "<group>"; };
+		34FE01AB2A9F58F2008210C6 /* TarotInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TarotInteractor.swift; sourceTree = "<group>"; };
+		34FE01AD2A9F5963008210C6 /* TarotView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TarotView.swift; sourceTree = "<group>"; };
+		34FE01AF2A9F5970008210C6 /* CrystalGazingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrystalGazingView.swift; sourceTree = "<group>"; };
+		34FE01B12A9F597D008210C6 /* CrystalGazingInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrystalGazingInteractor.swift; sourceTree = "<group>"; };
+		34FE01B52A9F59A0008210C6 /* CrystalGazingPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrystalGazingPresenter.swift; sourceTree = "<group>"; };
+		34FE01B72A9F59AA008210C6 /* TarotPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TarotPresenter.swift; sourceTree = "<group>"; };
+		34FE01B92A9F59BC008210C6 /* PalmistryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PalmistryView.swift; sourceTree = "<group>"; };
+		34FE01BB2A9F59C7008210C6 /* PalmistryInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PalmistryInteractor.swift; sourceTree = "<group>"; };
+		34FE01BD2A9F59CE008210C6 /* PalmistryPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PalmistryPresenter.swift; sourceTree = "<group>"; };
 		34FF67C02A69706900FC9CBD /* ACYTitleAndDescriptionText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ACYTitleAndDescriptionText.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -351,8 +430,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				34FCD66D2A7B52470032BCAA /* FirebaseAuth in Frameworks */,
-				34FCD6732A7B52560032BCAA /* FirebaseFirestore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -360,8 +437,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				34FCD66F2A7B524D0032BCAA /* FirebaseAuth in Frameworks */,
-				34FCD6712A7B52510032BCAA /* FirebaseFirestore in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -369,10 +444,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3401C8792A11D79000BD368A /* FirebaseAuth in Frameworks */,
-				3401C87F2A11D79000BD368A /* FirebaseStorage in Frameworks */,
-				3401C87B2A11D79000BD368A /* FirebaseFirestore in Frameworks */,
-				3401C87D2A11D79000BD368A /* FirebaseFirestoreSwift in Frameworks */,
+				349CA6F02A94E38B009F8B27 /* FirebaseAuth in Frameworks */,
+				349CA6F22A94E38B009F8B27 /* FirebaseFirestore in Frameworks */,
+				349CA6F42A94E38B009F8B27 /* FirebaseStorage in Frameworks */,
+				34FE01AA2A9F1E2C008210C6 /* SwiftyTranslate in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -382,7 +457,7 @@
 		3400E6A82A10A6B600DF32B3 /* ReadMe */ = {
 			isa = PBXGroup;
 			children = (
-				3405C20D2A8499B100424FC8 /* Updates.md */,
+				34D8583F2AA7784900560AFA /* Updates */,
 				34B156142A70BAEB00E95B8C /* ACYRoadMap */,
 			);
 			path = ReadMe;
@@ -425,9 +500,8 @@
 			children = (
 				3401C8752A11D69A00BD368A /* AuthServerManager.swift */,
 				34AFB03F2A77CC1600BBCC9C /* ExecutiveServerManager.swift */,
-				34AFB0672A77CF0700BBCC9C /* AiachyGalaxyServerManager.swift */,
 				34AFB0412A77CC7400BBCC9C /* ZodiacServerManager.swift */,
-				34C212D22A8EE38400C8EB0A /* DownloadTuneManager.swift */,
+				34C212D22A8EE38400C8EB0A /* TuneServerManager.swift */,
 			);
 			path = Firebase;
 			sourceTree = "<group>";
@@ -440,6 +514,7 @@
 				34470E362A87FC35005A9040 /* homeHelperView */,
 				340369C82A8BDCDE004CFA1A /* mysticHelperView */,
 				3478C4D72A8DB9D7003F412D /* galaxyHelperView */,
+				349CA70F2A953E07009F8B27 /* settingsHelperView */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -458,6 +533,8 @@
 			children = (
 				3401C8962A12A44D00BD368A /* NetworkMonitorManager.swift */,
 				34EE1D8D2A72916C002F2FE2 /* CoreDataManager.swift */,
+				344479F82A930EC300701FD2 /* AudioPlayerManager.swift */,
+				3401B3A92A986DD000D6831D /* StoreKitManager.swift */,
 			);
 			path = Local;
 			sourceTree = "<group>";
@@ -473,12 +550,12 @@
 			path = mysticHelperView;
 			sourceTree = "<group>";
 		};
-		3405C20E2A84AC2A00424FC8 /* Galaxy */ = {
+		3405C20E2A84AC2A00424FC8 /* galaxyEntity */ = {
 			isa = PBXGroup;
 			children = (
-				3405C20B2A84996800424FC8 /* TuneEntity.swift */,
+				3405C20B2A84996800424FC8 /* ACYTuneEntity.swift */,
 			);
-			path = Galaxy;
+			path = galaxyEntity;
 			sourceTree = "<group>";
 		};
 		3407544D2A0FF11000E6B8D4 /* Assets */ = {
@@ -500,8 +577,8 @@
 				347BD9C22A6754A7001A251B /* homePresenter */,
 				34AFB0472A77CD7E00BBCC9C /* mysticPresenter */,
 				34AFB0492A77CD8600BBCC9C /* galaxyPresenter */,
-				34AFB04A2A77CD8900BBCC9C /* love */,
-				34AFB0482A77CD8300BBCC9C /* settings */,
+				34AFB04A2A77CD8900BBCC9C /* lovePresenter */,
+				34AFB0482A77CD8300BBCC9C /* settingsPresenter */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -535,7 +612,7 @@
 		340754572A0FF22400E6B8D4 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
-				348D1DBA2A130A2300602165 /* Constants.swift */,
+				348D1DBA2A130A2300602165 /* ACYConstants.swift */,
 				34BC515F2A12E32200455842 /* ACYPrintCompletion.swift */,
 				34E614532A56228400BCEB09 /* ACYErrorCompletion.swift */,
 				3401C8802A11DC6900BD368A /* view */,
@@ -551,12 +628,13 @@
 		340754582A0FF28F00E6B8D4 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				3401B3A72A98316000D6831D /* Oracle.storekit */,
 				3405C2072A83D17700424FC8 /* GoogleService-Info.plist */,
 				341A698D2A671B04009177D6 /* AiachyData.xcdatamodeld */,
 				34C44AEF2A10B01E00702720 /* Info.plist */,
-				3407545E2A0FF4BA00E6B8D4 /* Localizable.strings */,
 				340754752A102B8900E6B8D4 /* Fonts */,
 				3407544D2A0FF11000E6B8D4 /* Assets */,
+				349CA7152A9659C1009F8B27 /* Language */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -659,7 +737,8 @@
 				345D56CC2A14AF160037F92B /* ACYButton.swift */,
 				345EBE902A64212700E3895D /* ACYAlternativeButton.swift */,
 				344BDFA22A645A3F001738B9 /* ACYPassButton.swift */,
-				343FAEFD2A6340A50084DEAD /* ACYMinorButton.swift */,
+				343FAEFD2A6340A50084DEAD /* ACYAlertMinorButton.swift */,
+				34DCD5D22A94D9AC0079C52C /* ACYDualButton.swift */,
 			);
 			path = Button;
 			sourceTree = "<group>";
@@ -667,7 +746,7 @@
 		3445AEE32A8CD8760066996B /* mysticEntity */ = {
 			isa = PBXGroup;
 			children = (
-				3445AEE62A8CDC380066996B /* ACYStarterLogoEntity.swift */,
+				3445AEE62A8CDC380066996B /* ACYmysticStarterLogoEntity.swift */,
 			);
 			path = mysticEntity;
 			sourceTree = "<group>";
@@ -675,8 +754,10 @@
 		34470E362A87FC35005A9040 /* homeHelperView */ = {
 			isa = PBXGroup;
 			children = (
-				34470E372A87FC58005A9040 /* ACYTabBar.swift */,
-				340369C62A8AFEB4004CFA1A /* ACYTabBarCircle.swift */,
+				349236D12A99B65200079636 /* TabBar */,
+				349236D22A99B66E00079636 /* ACYHomeImage.swift */,
+				349236D62A9A53F200079636 /* DateSection.swift */,
+				345734092A9AC7E8009FE067 /* ACYChakraStatus.swift */,
 			);
 			path = homeHelperView;
 			sourceTree = "<group>";
@@ -686,7 +767,6 @@
 			children = (
 				3401C8722A11D57E00BD368A /* SplashInteractor.swift */,
 				348D1DC62A1340E700602165 /* OnboardingInteractor.swift */,
-				34EA337A2A18CD540042C1D6 /* PrivacyPolicyInteractor.swift */,
 				348D1DC82A1340F400602165 /* LoginInteractor.swift */,
 				347BD9AB2A674FE3001A251B /* ZodiacSelectionInteractor.swift */,
 				347BD9B82A675185001A251B /* RegisterInteractor.swift */,
@@ -701,7 +781,6 @@
 			children = (
 				3400E6AE2A10A86600DF32B3 /* SplashPresenter.swift */,
 				3401C88F2A12A32000BD368A /* OnboardingPresenter.swift */,
-				34EA337C2A18CD600042C1D6 /* PrivacyPolicyPresenter.swift */,
 				3401C8912A12A34300BD368A /* LoginPresenter.swift */,
 				347BD9A92A674FBA001A251B /* ZodiacSelectionPresenter.swift */,
 				347BD9C02A6751C2001A251B /* RegisterPresenter.swift */,
@@ -727,6 +806,7 @@
 				345EBE922A64217200E3895D /* ACYAlternativeButtonStyle.swift */,
 				344BDFA42A645A4B001738B9 /* ACYPassButtonStyle.swift */,
 				343FAF002A6340D60084DEAD /* ACYMinorButtonStyle.swift */,
+				349CA6F52A94E5A0009F8B27 /* ACYDualButtonStyle.swift */,
 			);
 			path = Style;
 			sourceTree = "<group>";
@@ -766,9 +846,10 @@
 			isa = PBXGroup;
 			children = (
 				3400E6AC2A10A81B00DF32B3 /* User.swift */,
-				347BD9A12A673ED4001A251B /* Zodiac.swift */,
+				344479F62A92296A00701FD2 /* ACYAiachyRepo.swift */,
+				34FE01A12A9D012C008210C6 /* ZodiacEntity */,
 				34EE1D8F2A72EF10002F2FE2 /* ViewEntity */,
-				3405C20E2A84AC2A00424FC8 /* Galaxy */,
+				3401B3AB2A987E2500D6831D /* ACYStoreEntity.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -776,8 +857,8 @@
 		3478C4D72A8DB9D7003F412D /* galaxyHelperView */ = {
 			isa = PBXGroup;
 			children = (
-				3478C4D82A8DB9EC003F412D /* GalaxyListCloumn.swift */,
-				34CA22A32A8E7E7E002817EB /* TuneListCloumn.swift */,
+				3478C4D82A8DB9EC003F412D /* GalaxyColumn.swift */,
+				34CA22A32A8E7E7E002817EB /* TuneColumn.swift */,
 			);
 			path = galaxyHelperView;
 			sourceTree = "<group>";
@@ -861,12 +942,57 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		349236D12A99B65200079636 /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				34470E372A87FC58005A9040 /* ACYTabBar.swift */,
+				340369C62A8AFEB4004CFA1A /* ACYTabBarCircle.swift */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
+		349CA70F2A953E07009F8B27 /* settingsHelperView */ = {
+			isa = PBXGroup;
+			children = (
+				349CA7102A953E41009F8B27 /* LanguageColumn.swift */,
+			);
+			path = settingsHelperView;
+			sourceTree = "<group>";
+		};
+		349CA7122A953EFC009F8B27 /* settingsEntity */ = {
+			isa = PBXGroup;
+			children = (
+				349CA7132A953F3E009F8B27 /* ACYLanguageEntity.swift */,
+			);
+			path = settingsEntity;
+			sourceTree = "<group>";
+		};
+		349CA7152A9659C1009F8B27 /* Language */ = {
+			isa = PBXGroup;
+			children = (
+				349CA7162A9659D3009F8B27 /* EnglishLanguage.swift */,
+				3461DEA82A967B37002EA6A2 /* EnglishUKLanguage.swift */,
+				3461DEAA2A967B47002EA6A2 /* EnglishUSALanguage.swift */,
+				3461DEBA2A967BAB002EA6A2 /* RomanianLanguage.swift */,
+				3461DEB62A967B92002EA6A2 /* PolishLanguage.swift */,
+				3461DEB82A967BA2002EA6A2 /* GreekLanguage.swift */,
+				349CA7182A965E2A009F8B27 /* TurkishLanguage.swift */,
+				3461DEA42A967B19002EA6A2 /* ArabicLanguage.swift */,
+				3461DEA62A967B22002EA6A2 /* DanishLanguage.swift */,
+				3461DEAC2A967B54002EA6A2 /* FrenchLanguage.swift */,
+				3461DEAE2A967B62002EA6A2 /* GermanLanguage.swift */,
+				3461DEB02A967B6C002EA6A2 /* RussianLanguage.swift */,
+				3461DEB22A967B7F002EA6A2 /* ItalianLanguage.swift */,
+				3461DEB42A967B88002EA6A2 /* UkrainianLanguage.swift */,
+			);
+			path = Language;
+			sourceTree = "<group>";
+		};
 		34AE56052A146E4A009DA69E /* authView */ = {
 			isa = PBXGroup;
 			children = (
 				340754732A100DDD00E6B8D4 /* SplashView.swift */,
 				3401C88D2A12A30B00BD368A /* OnboardingView.swift */,
-				34EA33782A18CD450042C1D6 /* PrivacyPolicyView.swift */,
 				3401C8932A12A34B00BD368A /* LoginView.swift */,
 				347BD9A72A674F84001A251B /* ZodiacSelectionView.swift */,
 				347BD9AF2A67506D001A251B /* RegisterView.swift */,
@@ -879,7 +1005,8 @@
 		34AE560A2A1475ED009DA69E /* Textments */ = {
 			isa = PBXGroup;
 			children = (
-				34AE560B2A1475F8009DA69E /* ACYTextHelper.swift */,
+				34AE560B2A1475F8009DA69E /* TextHelper.swift */,
+				3461DEA02A9664E4002EA6A2 /* TextHandler.swift */,
 			);
 			path = Textments;
 			sourceTree = "<group>";
@@ -932,6 +1059,10 @@
 		34AFB0452A77CD6500BBCC9C /* settingsInteractor */ = {
 			isa = PBXGroup;
 			children = (
+				349CA6FF2A950177009F8B27 /* AicyCashInteractor.swift */,
+				349CA7012A95018D009F8B27 /* OracleInteractor.swift */,
+				349CA7032A95019C009F8B27 /* LanguageInteractor.swift */,
+				349CA7052A9501A4009F8B27 /* ThemeInteractor.swift */,
 			);
 			path = settingsInteractor;
 			sourceTree = "<group>";
@@ -939,6 +1070,9 @@
 		34AFB0462A77CD6A00BBCC9C /* mysticInteractor */ = {
 			isa = PBXGroup;
 			children = (
+				34FE01AB2A9F58F2008210C6 /* TarotInteractor.swift */,
+				34FE01BB2A9F59C7008210C6 /* PalmistryInteractor.swift */,
+				34FE01B12A9F597D008210C6 /* CrystalGazingInteractor.swift */,
 			);
 			path = mysticInteractor;
 			sourceTree = "<group>";
@@ -946,15 +1080,22 @@
 		34AFB0472A77CD7E00BBCC9C /* mysticPresenter */ = {
 			isa = PBXGroup;
 			children = (
+				34FE01B72A9F59AA008210C6 /* TarotPresenter.swift */,
+				34FE01BD2A9F59CE008210C6 /* PalmistryPresenter.swift */,
+				34FE01B52A9F59A0008210C6 /* CrystalGazingPresenter.swift */,
 			);
 			path = mysticPresenter;
 			sourceTree = "<group>";
 		};
-		34AFB0482A77CD8300BBCC9C /* settings */ = {
+		34AFB0482A77CD8300BBCC9C /* settingsPresenter */ = {
 			isa = PBXGroup;
 			children = (
+				349CA7072A9501E0009F8B27 /* AicyCashPresenter.swift */,
+				349CA7092A9501EB009F8B27 /* OraclePresenter.swift */,
+				349CA70B2A9501F3009F8B27 /* LanguagePresenter.swift */,
+				349CA70D2A9501FC009F8B27 /* ThemePresenter.swift */,
 			);
-			path = settings;
+			path = settingsPresenter;
 			sourceTree = "<group>";
 		};
 		34AFB0492A77CD8600BBCC9C /* galaxyPresenter */ = {
@@ -965,16 +1106,19 @@
 			path = galaxyPresenter;
 			sourceTree = "<group>";
 		};
-		34AFB04A2A77CD8900BBCC9C /* love */ = {
+		34AFB04A2A77CD8900BBCC9C /* lovePresenter */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			path = love;
+			path = lovePresenter;
 			sourceTree = "<group>";
 		};
 		34AFB04B2A77CDA300BBCC9C /* mysticView */ = {
 			isa = PBXGroup;
 			children = (
+				34FE01AD2A9F5963008210C6 /* TarotView.swift */,
+				34FE01B92A9F59BC008210C6 /* PalmistryView.swift */,
+				34FE01AF2A9F5970008210C6 /* CrystalGazingView.swift */,
 			);
 			path = mysticView;
 			sourceTree = "<group>";
@@ -998,6 +1142,10 @@
 		34AFB04E2A77CDAE00BBCC9C /* settingsView */ = {
 			isa = PBXGroup;
 			children = (
+				349CA6F72A95010E009F8B27 /* AicyCashView.swift */,
+				349CA6F92A950124009F8B27 /* OracleView.swift */,
+				349CA6FB2A95012B009F8B27 /* LanguageView.swift */,
+				349CA6FD2A950133009F8B27 /* ThemeView.swift */,
 			);
 			path = settingsView;
 			sourceTree = "<group>";
@@ -1017,6 +1165,8 @@
 		34BE8D962A89456A007361D0 /* authEntity */ = {
 			isa = PBXGroup;
 			children = (
+				34DE3D142A61A69800F45E8F /* ACYAuthBackgroundEntity.swift */,
+				34AE56082A1474D1009DA69E /* ACYAuthOnboardingEntity.swift */,
 				3478B3022A6AED6A00D94F67 /* Place.swift */,
 				341D3BDB2A67866E00F0F011 /* ZodiacSelect.swift */,
 			);
@@ -1065,9 +1215,19 @@
 			path = SpecialViewUITest;
 			sourceTree = "<group>";
 		};
+		34D8583F2AA7784900560AFA /* Updates */ = {
+			isa = PBXGroup;
+			children = (
+				3405C20D2A8499B100424FC8 /* (0.09)HeartsOfAstrology.md */,
+				34D858402AA778DA00560AFA /* UpdatesTemplate.md */,
+			);
+			path = Updates;
+			sourceTree = "<group>";
+		};
 		34DB97C52A61DA8600CAB87C /* backgrounds */ = {
 			isa = PBXGroup;
 			children = (
+				345EBE962A64227800E3895D /* ACYAuthOnboardingView.swift */,
 				348D1DBC2A13163800602165 /* AuthBackground.swift */,
 				34BE8D9A2A894EEF007361D0 /* HomeBackground.swift */,
 			);
@@ -1079,7 +1239,6 @@
 			children = (
 				34EA337E2A18D3FF0042C1D6 /* ACYAlertView.swift */,
 				34AE56032A146992009DA69E /* ACYLoadingProgress.swift */,
-				345EBE962A64227800E3895D /* ACYOnboarding.swift */,
 			);
 			path = helpView;
 			sourceTree = "<group>";
@@ -1088,13 +1247,25 @@
 			isa = PBXGroup;
 			children = (
 				34F3E9802A89D2D400DB009A /* ACYAlertEntity.swift */,
-				34AE56082A1474D1009DA69E /* ACYOnboardingEntity.swift */,
-				34DE3D142A61A69800F45E8F /* ACYBackgroundsEntity.swift */,
 				34BE8D962A89456A007361D0 /* authEntity */,
 				34BE8D972A894573007361D0 /* homeEntity */,
 				3445AEE32A8CD8760066996B /* mysticEntity */,
+				3405C20E2A84AC2A00424FC8 /* galaxyEntity */,
+				349CA7122A953EFC009F8B27 /* settingsEntity */,
 			);
 			path = ViewEntity;
+			sourceTree = "<group>";
+		};
+		34FE01A12A9D012C008210C6 /* ZodiacEntity */ = {
+			isa = PBXGroup;
+			children = (
+				347BD9A12A673ED4001A251B /* ACYUserAllEntity.swift */,
+				34FE01A22A9D0143008210C6 /* ACYAscendiantEntity.swift */,
+				34FE01A42A9D0186008210C6 /* ACYCompatibilityZodiac.swift */,
+				34FE01A62A9D11CB008210C6 /* ACYStatusEntity.swift */,
+				34CC469F2AA11B8E00622526 /* ACYZodiacEntity.swift */,
+			);
+			path = ZodiacEntity;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1115,8 +1286,6 @@
 			);
 			name = AiachyUITests;
 			packageProductDependencies = (
-				34FCD66C2A7B52470032BCAA /* FirebaseAuth */,
-				34FCD6722A7B52560032BCAA /* FirebaseFirestore */,
 			);
 			productName = AiachyUITests;
 			productReference = 3407548E2A10990700E6B8D4 /* AiachyUITests.xctest */;
@@ -1137,8 +1306,6 @@
 			);
 			name = AiachyTests;
 			packageProductDependencies = (
-				34FCD66E2A7B524D0032BCAA /* FirebaseAuth */,
-				34FCD6702A7B52510032BCAA /* FirebaseFirestore */,
 			);
 			productName = AiachyTests;
 			productReference = 3407549D2A10993100E6B8D4 /* AiachyTests.xctest */;
@@ -1158,10 +1325,10 @@
 			);
 			name = Aiachy;
 			packageProductDependencies = (
-				3401C8782A11D79000BD368A /* FirebaseAuth */,
-				3401C87A2A11D79000BD368A /* FirebaseFirestore */,
-				3401C87C2A11D79000BD368A /* FirebaseFirestoreSwift */,
-				3401C87E2A11D79000BD368A /* FirebaseStorage */,
+				349CA6EF2A94E38B009F8B27 /* FirebaseAuth */,
+				349CA6F12A94E38B009F8B27 /* FirebaseFirestore */,
+				349CA6F32A94E38B009F8B27 /* FirebaseStorage */,
+				34FE01A92A9F1E2C008210C6 /* SwiftyTranslate */,
 			);
 			productName = Aiachy;
 			productReference = 34828031296BB56000D3BA9F /* Aiachy.app */;
@@ -1197,22 +1364,11 @@
 			knownRegions = (
 				en,
 				Base,
-				tr,
-				fr,
-				it,
-				ar,
-				da,
-				ru,
-				uk,
-				"en-GB",
-				de,
-				pl,
-				el,
-				ro,
 			);
 			mainGroup = 34828028296BB55F00D3BA9F;
 			packageReferences = (
-				3401C8772A11D79000BD368A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				349CA6EE2A94E38B009F8B27 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				34FE01A82A9F1E2C008210C6 /* XCRemoteSwiftPackageReference "SwiftyTranslate" */,
 			);
 			productRefGroup = 34828032296BB56000D3BA9F /* Products */;
 			projectDirPath = "";
@@ -1252,10 +1408,10 @@
 				3407544F2A0FF12800E6B8D4 /* Color.xcassets in Resources */,
 				340754532A0FF18300E6B8D4 /* Horoscope.xcassets in Resources */,
 				34B4D7692A89933C001F2C8E /* Content.xcassets in Resources */,
+				3401B3A82A98316000D6831D /* Oracle.storekit in Resources */,
 				340754812A102BBB00E6B8D4 /* CinzelDecorative-Bold.ttf in Resources */,
 				34B156162A70BB2200E95B8C /* AssetsExplain.md in Resources */,
 				34828039296BB56000D3BA9F /* General.xcassets in Resources */,
-				3407545C2A0FF4BA00E6B8D4 /* Localizable.strings in Resources */,
 				340754822A102BBB00E6B8D4 /* CinzelDecorative-Regular.ttf in Resources */,
 				34EB7AB22A84EE170013EBD8 /* TestStructureID.md in Resources */,
 				340754832A102BBB00E6B8D4 /* CinzelDecorative-Black.ttf in Resources */,
@@ -1273,7 +1429,7 @@
 				340754912A10990700E6B8D4 /* AiachyUITests.swift in Sources */,
 				34E36B872A84E7FE002F8748 /* AscendantSelectionViewUITest.swift in Sources */,
 				343A67DC2A84DB8F00CF984D /* OnboardingViewUITest.swift in Sources */,
-				34BE64F12A862A4C003FDF17 /* ACYTextHelper.swift in Sources */,
+				34BE64F12A862A4C003FDF17 /* TextHelper.swift in Sources */,
 				34E36B832A84E7A9002F8748 /* ZodiacSelectionViewUITest.swift in Sources */,
 				34E36B852A84E7BC002F8748 /* RegisterViewUITest.swift in Sources */,
 				343A67D82A84DB6600CF984D /* SplashViewUITest.swift in Sources */,
@@ -1300,51 +1456,67 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				349CA70A2A9501EB009F8B27 /* OraclePresenter.swift in Sources */,
 				3407546F2A0FF5DF00E6B8D4 /* AppDelegate.swift in Sources */,
 				340754742A100DDD00E6B8D4 /* SplashView.swift in Sources */,
-				34AFB0682A77CF0700BBCC9C /* AiachyGalaxyServerManager.swift in Sources */,
 				34F3E9812A89D2D400DB009A /* ACYAlertEntity.swift in Sources */,
+				349CA6FC2A95012B009F8B27 /* LanguageView.swift in Sources */,
 				344BDFA32A645A3F001738B9 /* ACYPassButton.swift in Sources */,
-				34C212D32A8EE38400C8EB0A /* DownloadTuneManager.swift in Sources */,
-				343FAEFE2A6340A50084DEAD /* ACYMinorButton.swift in Sources */,
+				349CA6F62A94E5A0009F8B27 /* ACYDualButtonStyle.swift in Sources */,
+				34C212D32A8EE38400C8EB0A /* TuneServerManager.swift in Sources */,
+				343FAEFE2A6340A50084DEAD /* ACYAlertMinorButton.swift in Sources */,
+				349CA7172A9659D3009F8B27 /* EnglishLanguage.swift in Sources */,
 				34AE560F2A147B05009DA69E /* FontHelper.swift in Sources */,
-				3445AEE72A8CDC380066996B /* ACYStarterLogoEntity.swift in Sources */,
+				3445AEE72A8CDC380066996B /* ACYmysticStarterLogoEntity.swift in Sources */,
+				34FE01AC2A9F58F2008210C6 /* TarotInteractor.swift in Sources */,
 				341D3BDC2A67866E00F0F011 /* ZodiacSelect.swift in Sources */,
 				34AFB0622A77CE3100BBCC9C /* GalaxyPresenter.swift in Sources */,
 				34AFB0542A77CDE400BBCC9C /* GalaxyView.swift in Sources */,
-				34EA33792A18CD450042C1D6 /* PrivacyPolicyView.swift in Sources */,
 				34470E382A87FC58005A9040 /* ACYTabBar.swift in Sources */,
 				345EBE912A64212700E3895D /* ACYAlternativeButton.swift in Sources */,
 				34AFB0422A77CC7400BBCC9C /* ZodiacServerManager.swift in Sources */,
+				34FE01AE2A9F5963008210C6 /* TarotView.swift in Sources */,
+				34FE01BC2A9F59C7008210C6 /* PalmistryInteractor.swift in Sources */,
 				3401C8712A117C1300BD368A /* Image+Extension.swift in Sources */,
+				3461DEB32A967B7F002EA6A2 /* ItalianLanguage.swift in Sources */,
+				34FE01BA2A9F59BC008210C6 /* PalmistryView.swift in Sources */,
 				34AFB0582A77CE0400BBCC9C /* MysticInteractor.swift in Sources */,
 				34664DBF2A81F6F2007295E5 /* LoveRouter.swift in Sources */,
+				3461DEA92A967B37002EA6A2 /* EnglishUKLanguage.swift in Sources */,
 				348FA5692A676EB500BC51D4 /* ZodiacSelectionTemplate.swift in Sources */,
 				34AFB0502A77CDD400BBCC9C /* SettingsView.swift in Sources */,
 				34AFB0602A77CE2900BBCC9C /* MysticPresenter.swift in Sources */,
 				343C17F62A16894C000F1E28 /* AuthRouter.swift in Sources */,
 				348D7BEC2A8D967F003632D9 /* TuneInteractor.swift in Sources */,
 				348D1DC92A1340F400602165 /* LoginInteractor.swift in Sources */,
-				34EA337B2A18CD540042C1D6 /* PrivacyPolicyInteractor.swift in Sources */,
+				349CA7002A950177009F8B27 /* AicyCashInteractor.swift in Sources */,
+				3461DEBB2A967BAB002EA6A2 /* RomanianLanguage.swift in Sources */,
+				3461DEB12A967B6C002EA6A2 /* RussianLanguage.swift in Sources */,
 				34BE8D992A8945C2007361D0 /* ACYTabBarEntity.swift in Sources */,
+				34FE01BE2A9F59CE008210C6 /* PalmistryPresenter.swift in Sources */,
 				3400E6AD2A10A81B00DF32B3 /* User.swift in Sources */,
 				34828035296BB56000D3BA9F /* AiachyApp.swift in Sources */,
-				348D1DBB2A130A2300602165 /* Constants.swift in Sources */,
+				348D1DBB2A130A2300602165 /* ACYConstants.swift in Sources */,
 				34AFB0562A77CDEA00BBCC9C /* MysticView.swift in Sources */,
+				349CA7042A95019C009F8B27 /* LanguageInteractor.swift in Sources */,
+				349236D72A9A53F300079636 /* DateSection.swift in Sources */,
 				3401C86D2A11758200BD368A /* ImageHelper.swift in Sources */,
 				3478C4DB2A8DC265003F412D /* MeditationView.swift in Sources */,
 				347BD9C72A6754D5001A251B /* HomePresenter.swift in Sources */,
 				348D1DC12A133C6500602165 /* String+Extension.swift in Sources */,
 				345D56CD2A14AF160037F92B /* ACYButton.swift in Sources */,
+				34FE01A72A9D11CB008210C6 /* ACYStatusEntity.swift in Sources */,
 				340369D12A8C3A27004CFA1A /* CrystalGazingStarterView.swift in Sources */,
 				344994342A17606A0042CF01 /* HomeView.swift in Sources */,
 				347BD9AC2A674FE3001A251B /* ZodiacSelectionInteractor.swift in Sources */,
 				34EE1D8E2A72916C002F2FE2 /* CoreDataManager.swift in Sources */,
+				349CA7142A953F3E009F8B27 /* ACYLanguageEntity.swift in Sources */,
 				340369CB2A8BDCF5004CFA1A /* TarotStarterView.swift in Sources */,
 				345D56D02A1621B70037F92B /* ACYButtonStyle.swift in Sources */,
 				34C11DA82A64A80A00D1F7DE /* ACYTextField.swift in Sources */,
-				347BD9A22A673ED4001A251B /* Zodiac.swift in Sources */,
+				347BD9A22A673ED4001A251B /* ACYUserAllEntity.swift in Sources */,
 				347BD9A82A674F84001A251B /* ZodiacSelectionView.swift in Sources */,
+				3461DEA52A967B19002EA6A2 /* ArabicLanguage.swift in Sources */,
 				345EBE932A64217200E3895D /* ACYAlternativeButtonStyle.swift in Sources */,
 				348D1DBD2A13163800602165 /* AuthBackground.swift in Sources */,
 				348D1DC32A133CBF00602165 /* View+Extension.swift in Sources */,
@@ -1352,46 +1524,73 @@
 				34C11DAC2A64CF7500D1F7DE /* ACYTextFieldStyle.swift in Sources */,
 				344994362A17608C0042CF01 /* HomeRouter.swift in Sources */,
 				34664DC12A81F6FB007295E5 /* SettingsRouter.swift in Sources */,
+				3461DEAF2A967B62002EA6A2 /* GermanLanguage.swift in Sources */,
 				34BC51602A12E32200455842 /* ACYPrintCompletion.swift in Sources */,
-				34EA337D2A18CD600042C1D6 /* PrivacyPolicyPresenter.swift in Sources */,
+				349CA6FA2A950124009F8B27 /* OracleView.swift in Sources */,
+				349CA7112A953E41009F8B27 /* LanguageColumn.swift in Sources */,
+				34DCD5D32A94D9AC0079C52C /* ACYDualButton.swift in Sources */,
+				3461DEB52A967B88002EA6A2 /* UkrainianLanguage.swift in Sources */,
 				347BD9BD2A6751A9001A251B /* AttentionPresenter.swift in Sources */,
+				349236D32A99B66E00079636 /* ACYHomeImage.swift in Sources */,
 				347BD9B02A67506D001A251B /* RegisterView.swift in Sources */,
+				344479F92A930EC300701FD2 /* AudioPlayerManager.swift in Sources */,
+				349CA6F82A95010E009F8B27 /* AicyCashView.swift in Sources */,
 				3401C8732A11D57E00BD368A /* SplashInteractor.swift in Sources */,
 				34AFB05C2A77CE1500BBCC9C /* LoveInteractor.swift in Sources */,
-				3405C20C2A84996800424FC8 /* TuneEntity.swift in Sources */,
+				3405C20C2A84996800424FC8 /* ACYTuneEntity.swift in Sources */,
 				340369CF2A8BE08C004CFA1A /* PalmistryStarterView.swift in Sources */,
 				347BD9B22A6750AE001A251B /* AscendantSelectionView.swift in Sources */,
+				349CA7082A9501E0009F8B27 /* AicyCashPresenter.swift in Sources */,
+				3461DEAD2A967B54002EA6A2 /* FrenchLanguage.swift in Sources */,
 				341A698F2A671B04009177D6 /* AiachyData.xcdatamodeld in Sources */,
 				343FAF012A6340D60084DEAD /* ACYMinorButtonStyle.swift in Sources */,
 				343C17F82A16912F000F1E28 /* AiachyState.swift in Sources */,
-				34AE560C2A1475F8009DA69E /* ACYTextHelper.swift in Sources */,
+				34AE560C2A1475F8009DA69E /* TextHelper.swift in Sources */,
 				34EA337F2A18D4000042C1D6 /* ACYAlertView.swift in Sources */,
+				349CA7192A965E2A009F8B27 /* TurkishLanguage.swift in Sources */,
 				347BD9BF2A6751B7001A251B /* AscendantSelectionPresenter.swift in Sources */,
+				3461DEA72A967B22002EA6A2 /* DanishLanguage.swift in Sources */,
+				34FE01A32A9D0143008210C6 /* ACYAscendiantEntity.swift in Sources */,
 				3401C8762A11D69A00BD368A /* AuthServerManager.swift in Sources */,
+				349CA70C2A9501F3009F8B27 /* LanguagePresenter.swift in Sources */,
+				3461DEB92A967BA2002EA6A2 /* GreekLanguage.swift in Sources */,
 				347BD9B72A67516D001A251B /* AscendantSelectionInteractor.swift in Sources */,
 				3445AEE52A8CD8DD0066996B /* StarterIndexView.swift in Sources */,
 				345D56DA2A166A0B0037F92B /* Double+Extension.swift in Sources */,
 				344BDFA52A645A4B001738B9 /* ACYPassButtonStyle.swift in Sources */,
 				348D1DC72A1340E700602165 /* OnboardingInteractor.swift in Sources */,
+				34FE01B02A9F5970008210C6 /* CrystalGazingView.swift in Sources */,
 				3401C8902A12A32000BD368A /* OnboardingPresenter.swift in Sources */,
-				345EBE972A64227800E3895D /* ACYOnboarding.swift in Sources */,
+				345EBE972A64227800E3895D /* ACYAuthOnboardingView.swift in Sources */,
+				3461DEB72A967B92002EA6A2 /* PolishLanguage.swift in Sources */,
 				3445AEED2A8D33DD0066996B /* ACYViewTitleText.swift in Sources */,
+				349CA7022A95018D009F8B27 /* OracleInteractor.swift in Sources */,
 				34AFB0402A77CC1600BBCC9C /* ExecutiveServerManager.swift in Sources */,
 				34AFB0642A77CE3800BBCC9C /* LovePresenter.swift in Sources */,
+				349CA7062A9501A4009F8B27 /* ThemeInteractor.swift in Sources */,
+				3457340A2A9AC7E8009FE067 /* ACYChakraStatus.swift in Sources */,
+				3401B3AA2A986DD000D6831D /* StoreKitManager.swift in Sources */,
 				34AE56042A146992009DA69E /* ACYLoadingProgress.swift in Sources */,
 				3401C88C2A1293E300BD368A /* ColorHandler.swift in Sources */,
 				3401C8922A12A34300BD368A /* LoginPresenter.swift in Sources */,
+				3461DEA12A9664E4002EA6A2 /* TextHandler.swift in Sources */,
+				34FE01A52A9D0186008210C6 /* ACYCompatibilityZodiac.swift in Sources */,
 				347BD9C52A6754C4001A251B /* HomeInteractor.swift in Sources */,
 				347BD9BB2A675199001A251B /* AttentionInteractor.swift in Sources */,
 				3401C8862A11EBFB00BD368A /* ColorHelper.swift in Sources */,
+				34FE01B22A9F597D008210C6 /* CrystalGazingInteractor.swift in Sources */,
 				34BE8D9B2A894EEF007361D0 /* HomeBackground.swift in Sources */,
-				34DE3D152A61A69800F45E8F /* ACYBackgroundsEntity.swift in Sources */,
-				34CA22A42A8E7E7E002817EB /* TuneListCloumn.swift in Sources */,
-				34AE56092A1474D1009DA69E /* ACYOnboardingEntity.swift in Sources */,
+				34DE3D152A61A69800F45E8F /* ACYAuthBackgroundEntity.swift in Sources */,
+				34CA22A42A8E7E7E002817EB /* TuneColumn.swift in Sources */,
+				34CC46A02AA11B8E00622526 /* ACYZodiacEntity.swift in Sources */,
+				34AE56092A1474D1009DA69E /* ACYAuthOnboardingEntity.swift in Sources */,
 				34AFB05E2A77CE1E00BBCC9C /* SettingsInteractor.swift in Sources */,
+				349CA70E2A9501FC009F8B27 /* ThemePresenter.swift in Sources */,
 				3445AEE92A8D2A620066996B /* TuneView.swift in Sources */,
 				34FF67C12A69706900FC9CBD /* ACYTitleAndDescriptionText.swift in Sources */,
+				34FE01B62A9F59A0008210C6 /* CrystalGazingPresenter.swift in Sources */,
 				34AE56152A148204009DA69E /* Font+Extension.swift in Sources */,
+				344479F72A92296A00701FD2 /* ACYAiachyRepo.swift in Sources */,
 				3401C88E2A12A30B00BD368A /* OnboardingView.swift in Sources */,
 				34AE56112A147B13009DA69E /* FontHandler.swift in Sources */,
 				340369C72A8AFEB4004CFA1A /* ACYTabBarCircle.swift in Sources */,
@@ -1400,15 +1599,19 @@
 				3401C8942A12A34B00BD368A /* LoginView.swift in Sources */,
 				3445AEEB2A8D2A900066996B /* TunePresenter.swift in Sources */,
 				3401C8972A12A44D00BD368A /* NetworkMonitorManager.swift in Sources */,
+				34FE01B82A9F59AA008210C6 /* TarotPresenter.swift in Sources */,
 				3400E6AF2A10A86600DF32B3 /* SplashPresenter.swift in Sources */,
 				34664DBD2A81F6E9007295E5 /* GalaxyRouter.swift in Sources */,
 				34AFB0662A77CE3E00BBCC9C /* SettingsPresenter.swift in Sources */,
+				3461DEAB2A967B47002EA6A2 /* EnglishUSALanguage.swift in Sources */,
 				3478B3032A6AED6A00D94F67 /* Place.swift in Sources */,
+				349CA6FE2A950133009F8B27 /* ThemeView.swift in Sources */,
 				34AFB0522A77CDDA00BBCC9C /* LoveView.swift in Sources */,
 				34AFB05A2A77CE0E00BBCC9C /* GalaxyInteractor.swift in Sources */,
 				340369CD2A8BDD75004CFA1A /* ACYMysticTitleAndDescriptionText.swift in Sources */,
 				347BD9C12A6751C2001A251B /* RegisterPresenter.swift in Sources */,
-				3478C4D92A8DB9EC003F412D /* GalaxyListCloumn.swift in Sources */,
+				3401B3AC2A987E2500D6831D /* ACYStoreEntity.swift in Sources */,
+				3478C4D92A8DB9EC003F412D /* GalaxyColumn.swift in Sources */,
 				348D1DBF2A1318C900602165 /* ImageHandler.swift in Sources */,
 				347BD9B92A675185001A251B /* RegisterInteractor.swift in Sources */,
 				3401C86F2A117C0A00BD368A /* Color+Extension.swift in Sources */,
@@ -1430,29 +1633,6 @@
 			targetProxy = 340754A12A10993100E6B8D4 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		3407545E2A0FF4BA00E6B8D4 /* Localizable.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				3407545D2A0FF4BA00E6B8D4 /* en */,
-				3407545F2A0FF4BB00E6B8D4 /* ar */,
-				340754602A0FF4BC00E6B8D4 /* da */,
-				340754612A0FF4BD00E6B8D4 /* en-GB */,
-				340754622A0FF4BE00E6B8D4 /* fr */,
-				340754632A0FF4BF00E6B8D4 /* de */,
-				340754642A0FF4BF00E6B8D4 /* ru */,
-				340754652A0FF4C000E6B8D4 /* it */,
-				340754662A0FF4C000E6B8D4 /* tr */,
-				340754672A0FF4C100E6B8D4 /* uk */,
-				340754682A0FF4FA00E6B8D4 /* pl */,
-				340754692A0FF50600E6B8D4 /* el */,
-				3407546A2A0FF51600E6B8D4 /* ro */,
-			);
-			name = Localizable.strings;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		340754972A10990700E6B8D4 /* Debug */ = {
@@ -1673,12 +1853,13 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.051;
+				MARKETING_VERSION = 0.09;
 				PRODUCT_BUNDLE_IDENTIFIER = Azman.Aiachy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1709,12 +1890,13 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.051;
+				MARKETING_VERSION = 0.09;
 				PRODUCT_BUNDLE_IDENTIFIER = Azman.Aiachy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1763,56 +1945,44 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		3401C8772A11D79000BD368A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+		349CA6EE2A94E38B009F8B27 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 10.0.0;
+				minimumVersion = 10.13.0;
+			};
+		};
+		34FE01A82A9F1E2C008210C6 /* XCRemoteSwiftPackageReference "SwiftyTranslate" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/cpageler93/SwiftyTranslate";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		3401C8782A11D79000BD368A /* FirebaseAuth */ = {
+		349CA6EF2A94E38B009F8B27 /* FirebaseAuth */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 3401C8772A11D79000BD368A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			package = 349CA6EE2A94E38B009F8B27 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseAuth;
 		};
-		3401C87A2A11D79000BD368A /* FirebaseFirestore */ = {
+		349CA6F12A94E38B009F8B27 /* FirebaseFirestore */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 3401C8772A11D79000BD368A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			package = 349CA6EE2A94E38B009F8B27 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseFirestore;
 		};
-		3401C87C2A11D79000BD368A /* FirebaseFirestoreSwift */ = {
+		349CA6F32A94E38B009F8B27 /* FirebaseStorage */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 3401C8772A11D79000BD368A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseFirestoreSwift;
-		};
-		3401C87E2A11D79000BD368A /* FirebaseStorage */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 3401C8772A11D79000BD368A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			package = 349CA6EE2A94E38B009F8B27 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseStorage;
 		};
-		34FCD66C2A7B52470032BCAA /* FirebaseAuth */ = {
+		34FE01A92A9F1E2C008210C6 /* SwiftyTranslate */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = 3401C8772A11D79000BD368A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseAuth;
-		};
-		34FCD66E2A7B524D0032BCAA /* FirebaseAuth */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 3401C8772A11D79000BD368A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseAuth;
-		};
-		34FCD6702A7B52510032BCAA /* FirebaseFirestore */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 3401C8772A11D79000BD368A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseFirestore;
-		};
-		34FCD6722A7B52560032BCAA /* FirebaseFirestore */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 3401C8772A11D79000BD368A /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseFirestore;
+			package = 34FE01A82A9F1E2C008210C6 /* XCRemoteSwiftPackageReference "SwiftyTranslate" */;
+			productName = SwiftyTranslate;
 		};
 /* End XCSwiftPackageProductDependency section */
 

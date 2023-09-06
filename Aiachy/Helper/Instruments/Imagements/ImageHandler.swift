@@ -9,128 +9,100 @@ import SwiftUI
 
 //NextPatchTODO: Less code More Active
 struct ImageHandler {
-    //MARK: - ImageHandler - AppCompletion
-    typealias imageHelperApp = ImageHelper.ACYAppImage
-    static func getACYAppStringApp(_ aiachyTheme: ImageHelper.aiachyThemeImage, app: imageHelperApp.ACYappImage) -> String {
-        switch aiachyTheme {
-        case .AiachyLight:
-            return app.rawValue
-        case .AiachyDark:
-            return app.rawValue + "-Dark"
-        }
-    }
-    static func getACYAppStringAlert(_ aiachyTheme: ImageHelper.aiachyThemeImage, alert: imageHelperApp.ACYalertImage) -> String {
-        switch aiachyTheme {
-        case .AiachyLight:
-            return alert.rawValue
-        case .AiachyDark:
-            return alert.rawValue + "-Dark"
-        }
+    //MARK: - ImageHandler - AppCompletion -
+    typealias imageHelperGeneralCompletion = ImageHelper.GeneralCompletion
+    static func makeGeneralAppString(_ aiachyState: AiachyState,
+                                          app: imageHelperGeneralCompletion.app) -> String {
+        switchValueWithThemeToString(aiachy: aiachyState, with: app.rawValue)
     }
     
-    static func getACYAppStringOnboarding(_ aiachyTheme: ImageHelper.aiachyThemeImage, alert: imageHelperApp.ACYonboardingImage) -> String {
-        switch aiachyTheme {
-        case .AiachyLight:
-            return alert.rawValue
-        case .AiachyDark:
-            return alert.rawValue + "-Dark"
-        }
+    static func makeGeneralFlagString(flag: imageHelperGeneralCompletion.flag) -> String {
+        flag.rawValue
     }
     
-    static func getACYAppStringButton(_ aiachyTheme: ImageHelper.aiachyThemeImage, button: imageHelperApp.button) -> String {
-        switch aiachyTheme {
-        case .AiachyLight:
-            return button.rawValue
-        case .AiachyDark:
-            return button.rawValue + "-Dark"
-        }
+    static func makeGeneralButtonString(_ aiachyState: AiachyState,
+                                             button: imageHelperGeneralCompletion.button) -> String {
+        switchValueWithThemeToString(aiachy: aiachyState, with: button.rawValue)
     }
     
-    static func getACYAppTabBarLogoString(_ aiachyTheme: ImageHelper.aiachyThemeImage, tabBarLogo: imageHelperApp.ACYtabBarLogo) -> String {
-        switch aiachyTheme {
-        case .AiachyLight:
-            return tabBarLogo.rawValue
-        case .AiachyDark:
-            return tabBarLogo.rawValue + "-Dark"
-        }
+    //MARK: - ImageHandler - AlertCompletion -
+    typealias imageHelperAlertCompletion = ImageHelper.AlertCompletion
+    static func makeAlertString(_ aiachyState: AiachyState,
+                                     alert: imageHelperAlertCompletion.alert) -> String {
+        switchValueWithThemeToString(aiachy: aiachyState, with: alert.rawValue)
+    }
+    //MARK: - ImageHandler - AuthCompletion -
+    typealias imageHelperAuthCompletion = ImageHelper.AuthCompletion
+    static func makeAuthString(_ aiachyState: AiachyState,
+                                    auth: imageHelperAuthCompletion.auth) -> String {
+        switchValueWithThemeToString(aiachy: aiachyState, with: auth.rawValue)
     }
     
-    static func getACYAppStringBackground(_ aiachyTheme: ImageHelper.aiachyThemeImage, background: imageHelperApp.background) -> String {
-        switch aiachyTheme {
-        case .AiachyLight:
-            return background.rawValue
-        case .AiachyDark:
-            return background.rawValue + "-Dark"
-        }
+    static func makeAuthOnboardingString(_ aiachyState: AiachyState,
+                                              onboarding: imageHelperAuthCompletion.onboarding) -> String {
+        switchValueWithThemeToString(aiachy: aiachyState, with: onboarding.rawValue)
     }
-    //MARK: - ImageHandler - ZodiacCompletion
-    typealias imageHelperZodiac = ImageHelper.ZodiacCompletion
-    static func getACYZodiacString(_ aiachyTheme: ImageHelper.aiachyThemeImage, zodiac: imageHelperZodiac.ACYzodiacImage) -> String {
-        switch aiachyTheme {
-        case .AiachyLight:
-            return zodiac.rawValue
-        case .AiachyDark:
-            return zodiac.rawValue + "-Dark"
-        }
+    //MARK: - ImageHandler - MysticCompletion -
+    typealias imageHelperHomeCompletion = ImageHelper.HomeCompletion
+    static func makeHomeString(_ aiachyState: AiachyState,
+                               home: imageHelperHomeCompletion.home) -> String {
+        switchValueWithThemeToString(aiachy: aiachyState, with: home.rawValue)
     }
-    
-    static func getACYZodiacAltString(_ aiachyTheme: ImageHelper.aiachyThemeImage, zodiacAlt: imageHelperZodiac.zodiacAlt) -> String {
-        switch aiachyTheme {
-        case .AiachyLight:
-            return zodiacAlt.rawValue
-        case .AiachyDark:
-            return zodiacAlt.rawValue + "-Dark"
-        }
+    static func makeHometabBarLogoString(_ aiachyState: AiachyState,
+                                         tabBarLogo: imageHelperHomeCompletion.tabBarLogo) -> String {
+        switchValueWithThemeToString(aiachy: aiachyState, with: tabBarLogo.rawValue)
     }
-  
-    //MARK: - ImageHandler - AuthCompletion
-    typealias imageHelperAuth = ImageHelper.AuthCompletion
-    static func getACYAuthString(_ aiachyTheme: ImageHelper.aiachyThemeImage, auth: imageHelperAuth.authCompletion) -> String {
-        switch aiachyTheme {
-        case .AiachyLight:
-            return "\(auth.rawValue)"
-        case .AiachyDark:
-            return "\(auth.rawValue)" + "-Dark"
-        }
+    //MARK: - ImageHandler - MysticCompletion -
+    typealias imageHelperMysticCompletion = ImageHelper.MysticCompletion
+    static func makeMysticStarterString(_ aiachyState: AiachyState,
+                                        starter: imageHelperMysticCompletion.starter) -> String {
+        switchValueWithThemeToString(aiachy: aiachyState, with: starter.rawValue)
     }
-    //MARK: - ImageHandler - MysticCompletion
-    typealias imageHelperMystic = ImageHelper.ACYMysticCompletion
-    static func getACYMysticStarterImageString(_ aiachyTheme: ImageHelper.aiachyThemeImage, mysticStarterImage: imageHelperMystic.ACYmysticStarterImage) -> String {
-        switch aiachyTheme {
-        case .AiachyLight:
-            return "\(mysticStarterImage.rawValue)"
-        case .AiachyDark:
-            return "\(mysticStarterImage.rawValue)" + "-Dark"
-        }
+    //MARK: - ImageHandler - GalaxyCompletion -
+    typealias imageHelperGalaxyCompletion = ImageHelper.GalaxyCompletion
+    static func makeGalaxyString(_ aiachyState: AiachyState,
+                                 galaxy: imageHelperGalaxyCompletion.galaxy) -> String {
+        switchValueWithThemeToString(aiachy: aiachyState, with: galaxy.rawValue)
     }
-    
-    static func getACYMysticStarterLogoString(_ aiachyTheme: ImageHelper.aiachyThemeImage, mysticStarterLogo: imageHelperMystic.ACYmysticStarterLogo) -> String {
-        switch aiachyTheme {
-        case .AiachyLight:
-            return "\(mysticStarterLogo.rawValue)"
-        case .AiachyDark:
-            return "\(mysticStarterLogo.rawValue)" + "-Dark"
-        }
-    }
-    //MARK: - ImageHandler - GalaxyCompletion
-    typealias imageHelperGalaxy = ImageHelper.ACYGalaxyCompletion
-    static func getACYGalaxyLogo(_ aiachyTheme: ImageHelper.aiachyThemeImage, galaxyLogo: imageHelperGalaxy.ACYGalaxyLogo) -> String {
-        switch aiachyTheme {
-        case .AiachyLight:
-            return "\(galaxyLogo.rawValue)"
-        case .AiachyDark:
-            return "\(galaxyLogo.rawValue)" + "-Dark"
-        }
-    }
-    //MARK: - ImageHandler - LoveCompletion
+    //MARK: - ImageHandler - LoveCompletion -
     typealias imageHelperLove = ImageHelper.LoveCompletion
-    static func getACYLoveString(_ aiachyTheme: ImageHelper.aiachyThemeImage, love: imageHelperLove.loveCompletion) -> String {
+    static func makeLoveString(_ aiachyState: AiachyState,
+                               love: imageHelperLove.love) -> String {
+        switchValueWithThemeToString(aiachy: aiachyState, with: love.rawValue)
+    }
+    //MARK: - ImageHandler - SettingsCompletion -
+    typealias imageHelperSettingsCompletion = ImageHelper.SettingsCompletion
+    static func makeSettingsString(_ aiachyState: AiachyState,
+                                         settings: imageHelperSettingsCompletion.settings) -> String {
+        switchValueWithThemeToString(aiachy: aiachyState, with: settings.rawValue)
+    }
+    static func makeSettingsAicyCashString(_ aiachyState: AiachyState,
+                                             aicyCash: imageHelperSettingsCompletion.aicyCash) -> String {
+        switchValueWithThemeToString(aiachy: aiachyState, with: aicyCash.rawValue)
+    }
+    static func makeSettingsOracleString(_ aiachyState: AiachyState, oracle: imageHelperSettingsCompletion.oracle) -> String {
+        switchValueWithThemeToString(aiachy: aiachyState, with: oracle.rawValue)
+    }
+    static func makeSettingsThemeString(_ aiachyState: AiachyState,theme: imageHelperSettingsCompletion.theme) -> String {
+        switchValueWithThemeToString(aiachy: aiachyState, with: theme.rawValue)
+    }
+    //MARK: - ImageHandler - ZodiacCompletion -
+    typealias imageHelperZodiacCompletion = ImageHelper.ZodiacCompletion
+    static func makeZodiacString(_ aiachyState: AiachyState,
+                                   zodiac: imageHelperZodiacCompletion.zodiac) -> String {
+        switchValueWithThemeToString(aiachy: aiachyState, with: zodiac.rawValue)
+    }
+}
+extension ImageHandler {
+    static func switchValueWithThemeToString(aiachy aiachyState: AiachyState, with value: String) -> String  {
+        let aiachyTheme = aiachyState.user.aiachyInfo.wrappedTheme
         switch aiachyTheme {
-        case .AiachyLight:
-            return "\(love.rawValue)"
-        case .AiachyDark:
-            return "\(love.rawValue)" + "-Dark"
+        case "Light":
+            return value
+        case "Dark":
+            return value + "-Dark"
+        default:
+            return value
         }
     }
 }
-

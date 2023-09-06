@@ -52,7 +52,7 @@ extension AttentionPresenter: AttentionPresenterAlertProtocol {
     fileprivate func makeAlert() {
         acyAlertEntity.title = .notUserHaveConnection
         acyAlertEntity.image = .notUserHaveConnection
-        acyAlertEntity.firstButtonText = .TryAgainButton
+        acyAlertEntity.firstButtonText = .tryAgain
         acyAlertEntity.typeError = 2
         acyAlertEntity.levelError = 0
         acyAlertEntity.isShowingAlert = true

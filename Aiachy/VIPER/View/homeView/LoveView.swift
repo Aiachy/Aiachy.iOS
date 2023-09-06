@@ -9,11 +9,18 @@ import SwiftUI
 //MARK: LoveView - View
 struct LoveView: View {
     
-    @EnvironmentObject var aiachyState: AiachyState
-    @ObservedObject var presenter: LovePresenter
+    @StateObject var presenter: LovePresenter
+    var aiachyState: AiachyState
+    let router: LoveRouterPresenter
     
-    init(router: HomeRouterPresenter ) {
-        self.presenter = LovePresenter(router: router)
+    init(aiachy aiachyState: AiachyState,
+         homeRouter: HomeRouterPresenter,
+         router: LoveRouterPresenter) {
+        self._presenter = StateObject(wrappedValue: LovePresenter(aiachyState: aiachyState,
+                                                                 homeRouter: homeRouter,
+                                                                 router: router))
+        self.aiachyState = aiachyState
+        self.router = router
     }
     
     var body: some View {
@@ -22,12 +29,14 @@ struct LoveView: View {
             VStack(spacing: 20){
                 //MARK: LoveView - Tittle
                 ACYTitleAndDescriptionText(isHaveDescription: false,
-                                           title: ACYTextHelper.ACYLoveText.ACYloveTitleText.loveAttentionTitle.rawValue)
+                                           title: TextHandler.makeLoveString(aiachy: aiachyState,
+                                                                             love: .attentionTitle))
                 //MARK: LoveView - Attention Image
-                Image.setACYLoveCompletion(aiachyState, love: .loveAttention)
-                    .resizable()
-                    .scaledToFit()
-                    .padding(.all)
+                Image(ImageHandler.makeLoveString(aiachyState,
+                                                  love: .loveAttention))
+                .resizable()
+                .scaledToFit()
+                .padding(.all)
                 button
             }
         }
@@ -36,14 +45,13 @@ struct LoveView: View {
 }
 //MARK: LoveView - Preview
 #Preview {
-    LoveView(router: HomeRouterPresenter())
-        .environmentObject(ACY_PREVIEWS_STATE)
+    LoveView(aiachy: ACY_PREVIEWS_STATE,homeRouter: HomeRouterPresenter(), router: LoveRouterPresenter())
 }
 
 extension LoveView {
     var button: some View {
         //MARK: LoveView - Button
-        ACYButton(text: ACYTextHelper.ACYGeneralText.ACYappButtonText.PreRegistrationButton.rawValue) {
+        ACYButton(text: .preRegistration) {
             presenter.makeAlert()
         }
     }

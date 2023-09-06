@@ -11,15 +11,15 @@ struct ACYMysticTitleAndDescriptionText: View {
     
     @EnvironmentObject var aiachyState: AiachyState
     var fontType: FontHandler.aiachyFontType
-    var title: ACYTextHelper.ACYMysticText.ACYmysticTitleText
-    var description: ACYTextHelper.ACYMysticText.ACYmysticDescriptionText
+    var title: TextHelper.MysticCompletion.mystic
+    var description: TextHelper.MysticCompletion.mystic
     
     var body: some View {
         VStack {
-            Text(title.rawValue.locale())
+            Text(TextHandler.makeMysticString(aiachy: aiachyState, mystic: title))
                 .font(.aiachyFont(fontType))
                 .foregroundStyle(Color.makeAiachyColor(aiachyState, aiachyColor: .secondColor))
-            Text(description.rawValue.locale())
+            Text(TextHandler.makeMysticString(aiachy: aiachyState, mystic: description))
                 .font(.aiachyFont(.oldBold14))
                 .foregroundStyle(Color.makeAiachyColor(aiachyState, aiachyColor: .firstColor))
         }
@@ -28,7 +28,7 @@ struct ACYMysticTitleAndDescriptionText: View {
 
 #Preview {
     ACYMysticTitleAndDescriptionText(fontType: .CinzelBlack50,
-                                     title: .tarotStarterTitle,
-                                     description: .tarotStarterDescription)
+                                     title: .tarotTitle,
+                                     description: .tarotDescription)
     .environmentObject(ACY_PREVIEWS_STATE)
 }

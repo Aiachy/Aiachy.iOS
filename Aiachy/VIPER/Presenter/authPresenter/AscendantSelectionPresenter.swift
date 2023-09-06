@@ -8,21 +8,24 @@
 import SwiftUI
 import Combine
 import MapKit
-//MARK: AscendantSelectionPresenter - procotol  - AscendantSelectionPresenterAiachyStateProtocol
-private protocol AscendantSelectionPresenterAiachyStateProtocol {
+
+//MARK: AscendantSelectionPresenter - procotol  - AscendantSelectionPresenterHandlerProtocol
+private protocol HandlerProtocol {
     func checkValues(aiachyState: AiachyState, completion: () -> ())
     func uploadValuesToState(aiachyState: AiachyState)
     func updateValuesFromState(aiachyState: AiachyState)
-}
-//MARK: AscendantSelectionPresenter - procotol  - AscendantSelectionPresenterHandlerProtocol
-private protocol AscendantSelectionPresenterHandlerProtocol {
     func searchArea(_ query: String)
+}
+private protocol AlertProtocol {
+    func makeAgeAlert()
+    func makeUnknownPlaceAlert()
+    func closeAlert()
 }
 //MARK: AscendantSelectionPresenter - Presenter
 class AscendantSelectionPresenter: ObservableObject {
     
     @Published var places = [Place]()
-    @Published var acyAlertEntity = ACYAlertEntity()
+    @Published var acyAlertEntity: ACYAlertEntity
 
     @Published var userDate: Date
     @Published var isPressedLocationButton: Bool
@@ -35,11 +38,14 @@ class AscendantSelectionPresenter: ObservableObject {
     @Published var userProvince: String
     @Published var userDistrict: String
     @Published var searchText: String
+    let aiachyState: AiachyState
+    let router: AuthRouterPresenter
     let interactor: AscendantSelectionInteractor
     let searchPublisher = PassthroughSubject<String, Never>()
     private var cancellables = Set<AnyCancellable>()
     
-    init(userDate: Date = .now,
+    init(acyAlertEntity: ACYAlertEntity = ACYAlertEntity(),
+        userDate: Date = .now,
          isPressedLocationButton: Bool = false,
          isShowingACYAlert: Bool = false,
          userHour: Int = 0,
@@ -50,7 +56,10 @@ class AscendantSelectionPresenter: ObservableObject {
          userCountry: String = "",
          userProvince: String = "",
          userDistrict: String = "",
+         aiachy aiachyState: AiachyState,
+         router: AuthRouterPresenter,
          interactor: AscendantSelectionInteractor = AscendantSelectionInteractor()) {
+        self.acyAlertEntity = acyAlertEntity
         self.userDate = userDate
         self.isPressedLocationButton = isPressedLocationButton
         self.isShowingACYAlert = isShowingACYAlert
@@ -62,6 +71,8 @@ class AscendantSelectionPresenter: ObservableObject {
         self.userCountry = userCountry
         self.userProvince = userProvince
         self.userDistrict = userDistrict
+        self.aiachyState = aiachyState
+        self.router = router
         self.interactor = interactor
         searchPublisher
             .debounce(for: .milliseconds(300), scheduler: RunLoop.main)
@@ -74,7 +85,7 @@ class AscendantSelectionPresenter: ObservableObject {
     /// - Returns: if guards clear return common text else return location
     func makeButtonText() -> String {
         
-        let commonText = ACYTextHelper.ACYGeneralText.ACYappButtonText.ChooseLocationButton.rawValue
+        let commonText = TextHandler.makeGeneralButtonString(aiachy: aiachyState, button: .chooseLocation)
         
         guard self.userCountry != "" else {
             return commonText
@@ -88,8 +99,17 @@ class AscendantSelectionPresenter: ObservableObject {
         return  "\(userDistrict),\(userProvince),\(userCountry)"
     }
 }
-//MARK: AscendantSelectionPresenter - extension  - AscendantSelectionPresenterAiachyStateProtocol
-extension AscendantSelectionPresenter: AscendantSelectionPresenterAiachyStateProtocol {
+//MARK: AscendantSelectionPresenter - HandlerProtocol
+extension AscendantSelectionPresenter: HandlerProtocol {
+    
+    func makeChosenLocation() -> String {
+        if !userCountry.isEmpty {
+            return "\(userCountry)" + "/" + "\(userProvince)" + "/" + "\(userDistrict)"
+        } else {
+            return ""
+        }
+    }
+    
     /// We are checking values is it true or false if false error type triggering else nothing else.
     /// - Parameter completion: When all cheking values complate that.
     func checkValues(aiachyState: AiachyState, completion: () -> ()) {
@@ -99,13 +119,12 @@ extension AscendantSelectionPresenter: AscendantSelectionPresenterAiachyStatePro
         let age = ageComponents.year!
         
         guard age > 13 else {
-            self.acyAlertEntity.isShowingAlert = true
-            self.acyAlertEntity.title = .notUserIsOlder
+            makeAgeAlert()
             return
         }
         guard self.userCountry != "" else {
-            self.acyAlertEntity.isShowingAlert = true
-            self.acyAlertEntity.title = .notUserHavePlace
+            makeUnknownPlaceAlert()
+            
             return
         }
         uploadValuesToState(aiachyState: aiachyState)
@@ -141,9 +160,6 @@ extension AscendantSelectionPresenter: AscendantSelectionPresenterAiachyStatePro
         self.userProvince = aiachyState.user.userInfo.location.province ?? ""
         self.userDistrict = aiachyState.user.userInfo.location.district ?? ""
     }
-}
-//MARK: AscendantSelectionPresenter - AscendantSelectionPresenterHandlerProtocol
-extension AscendantSelectionPresenter: AscendantSelectionPresenterHandlerProtocol {
     /// searchArea is for the user to select the place of birth
     /// - Parameter query: To evaluate the incoming String value about the location
     fileprivate func searchArea(_ query: String) {
@@ -162,4 +178,32 @@ extension AscendantSelectionPresenter: AscendantSelectionPresenterHandlerProtoco
             }
         }
     }
+}
+
+extension AscendantSelectionPresenter: AlertProtocol {
+    func makeAgeAlert() {
+        acyAlertEntity.isShowingAlert = true
+        acyAlertEntity.title = .notUserIsOlder
+        acyAlertEntity.typeError = 0
+        acyAlertEntity.firstButtonText = .tryAgain
+        acyAlertEntity.firstAction = {
+            self.closeAlert()
+        }
+    }
+    
+    func makeUnknownPlaceAlert() {
+        acyAlertEntity.isShowingAlert = true
+        acyAlertEntity.title = .notUserHavePlace
+        acyAlertEntity.typeError = 0
+        acyAlertEntity.firstButtonText = .tryAgain
+        acyAlertEntity.firstAction = {
+            self.closeAlert()
+        }
+    }
+    
+    func closeAlert() {
+        acyAlertEntity = ACYAlertEntity()
+    }
+    
+    
 }

@@ -7,17 +7,25 @@
 
 import SwiftUI
 
+private protocol HandlerProtocol {
+    func makeZodiacString(_ zodiac: TextHelper.ZodiacCompletion.zodiac ) -> String
+}
+// ZodiacSelectionPresenter - Presenter
 class ZodiacSelectionPresenter: ObservableObject {
     
     @Published var isUserSelectedZodiac: Bool
-    @Published var selectedZodiac: String
+    @Published var selectedZodiac: TextHelper.ZodiacCompletion.zodiac?
+    let aiachyState: AiachyState
+    let router: AuthRouterPresenter
     let columns: [GridItem]
     
     init(isUserSelectedZodiac: Bool = false,
-         selectedZodiac: String = "",
+         aiachy aiachyState: AiachyState,
+         router: AuthRouterPresenter,
          columns: [GridItem] = Array(repeating: .init(.flexible()), count: 3)) {
         self.isUserSelectedZodiac = isUserSelectedZodiac
-        self.selectedZodiac = selectedZodiac
+        self.aiachyState = aiachyState
+        self.router = router
         self.columns = columns
     }
     
@@ -25,94 +33,95 @@ class ZodiacSelectionPresenter: ObservableObject {
        ZodiacSelect(id: 0,
                     zodiacImage: .altAries,
                     selectedZodiacImage: .aries,
-                    zodiacName: .AriesZodiac,
-                    zodiacShortedDate: .AriesZodiacShortedDate),
+                    zodiacName: .ariesZodiacName,
+                    zodiacShortedDate: .ariesZodiacDate),
        ZodiacSelect(id: 1,
                     zodiacImage: .altTaurus,
                     selectedZodiacImage: .taurus,
-                    zodiacName: .TaurusZodiac,
-                    zodiacShortedDate: .TaurusZodiacShortedDate),
+                    zodiacName: .taurusZodiacName,
+                    zodiacShortedDate: .taurusZodiacDate),
        ZodiacSelect(id: 2,
                     zodiacImage: .altGemini,
                     selectedZodiacImage: .gemini,
-                    zodiacName: .GeminiZodiac,
-                    zodiacShortedDate: .GeminiZodiacShortedDate),
+                    zodiacName: .geminiZodiacName,
+                    zodiacShortedDate: .geminiZodiacDate),
        ZodiacSelect(id: 3,
                     zodiacImage: .altCancer,
                     selectedZodiacImage: .cancer,
-                    zodiacName: .CancerZodiac,
-                    zodiacShortedDate: .CancerZodiacShortedDate),
+                    zodiacName: .cancerZodiacName,
+                    zodiacShortedDate: .cancerZodiacDate),
        ZodiacSelect(id: 4,
                     zodiacImage: .altLeo,
                     selectedZodiacImage: .leo,
-                    zodiacName: .LeoZodiac,
-                    zodiacShortedDate: .LeoZodiacShortedDate),
+                    zodiacName: .leoZodiacName,
+                    zodiacShortedDate: .leoZodiacDate),
        ZodiacSelect(id: 5,
                     zodiacImage: .altVirgo,
                     selectedZodiacImage: .virgo,
-                    zodiacName: .VirgoZodiac,
-                    zodiacShortedDate: .VirgoZodiacShortedDate),
+                    zodiacName: .virgoZodiacName,
+                    zodiacShortedDate: .virgoZodiacDate),
        ZodiacSelect(id: 6,
                     zodiacImage: .altLibra,
                     selectedZodiacImage: .libra,
-                    zodiacName: .LibraZodiac,
-                    zodiacShortedDate: .LibraZodiacShortedDate),
+                    zodiacName: .libraZodiacDate,
+                    zodiacShortedDate: .libraZodiacDate),
        ZodiacSelect(id: 7,
                     zodiacImage: .altScorpion,
                     selectedZodiacImage: .scorpion,
-                    zodiacName: .ScorpioZodiac,
-                    zodiacShortedDate: .ScorpioZodiacShortedDate),
+                    zodiacName: .scorpioZodiacName,
+                    zodiacShortedDate: .scorpioZodiacDate),
        ZodiacSelect(id: 8,
                     zodiacImage: .altSagittarius,
                     selectedZodiacImage: .sagittarius,
-                    zodiacName: .SagittariusZodiac,
-                    zodiacShortedDate: .SagittariusZodiacShortedDate),
+                    zodiacName: .sagittariusZodiacDate,
+                    zodiacShortedDate: .sagittariusZodiacDate),
        ZodiacSelect(id: 9,
                     zodiacImage: .altCapricorn,
                     selectedZodiacImage: .capricorn,
-                    zodiacName: .CapricornZodiac,
-                    zodiacShortedDate: .CapricornZodiacShortedDate),
+                    zodiacName: .capricornZodiacName,
+                    zodiacShortedDate: .capricornZodiacDate),
        ZodiacSelect(id: 10,
                     zodiacImage: .altAquarius,
                     selectedZodiacImage: .aquarius,
-                    zodiacName: .AquariusZodiac,
-                    zodiacShortedDate: .AquariusZodiacShortedDate),
+                    zodiacName: .aquariusZodiacName,
+                    zodiacShortedDate: .aquariusZodiacDate),
        ZodiacSelect(id: 11,
                     zodiacImage: .altPisces,
                     selectedZodiacImage: .pisces,
-                    zodiacName: .PiscesZodiac,
-                    zodiacShortedDate: .PiscesZodiacShortedDate)
+                    zodiacName: .piscesZodiacName,
+                    zodiacShortedDate: .piscesZodiacDate)
        
     ]
     
 }
 
 extension ZodiacSelectionPresenter {
-    func selectedZodiacToInt(selectedZodiac: String) -> Int {
+    
+    func selectedZodiacToInt(selectedZodiac: TextHelper.ZodiacCompletion.zodiac) -> Int {
         switch selectedZodiac {
-        case "AriesZodiac":
+        case .ariesZodiacName:
             return 0
-        case "TaurusZodiac":
+        case .taurusZodiacName:
             return 1
-        case "GeminiZodiac":
+        case .geminiZodiacName:
             return 2
-        case "CancerZodiac":
+        case .cancerZodiacName:
             return 3
-        case "LeoZodiac":
+        case .leoZodiacName:
             return 4
-        case "VirgoZodiac":
+        case .virgoZodiacName:
             return 5
-        case "LibraZodiac":
+        case .libraZodiacName:
             return 6
-        case "ScorpioZodiac":
+        case .scorpioZodiacName:
             return 7
-        case "SagittariusZodiac":
+        case .sagittariusZodiacName:
             return 8
-        case "CapricornZodiac":
+        case .capricornZodiacName:
             return 9
-        case "AquariusZodiac":
+        case .aquariusZodiacName:
             return 10
-        case "PiscesZodiac":
+        case .piscesZodiacName:
             return 11
         default:
             return .zero

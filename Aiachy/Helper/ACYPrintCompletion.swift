@@ -133,12 +133,12 @@ struct ACYPrintCompletion {
         case isSubscriped
         case subscripedMethod
         func printUserSubscription(_ T: AiachyState) -> String {
-            let newT = T.user.userSubscription
+            let newT = T.user.userOracle
             switch self {
             case .isSubscriped:
-                return "AiachySystem: User is subscribe \(newT.wrappedIsSubscriped)"
+                return "AiachySystem: User is subscribe \(newT.wrappedIsOracled)"
             case .subscripedMethod:
-                return "AiachySystem: User is subscribe method \(newT.wrappedSubscripedMethod)"
+                return "AiachySystem: User is subscribe method \(newT.wrappedOracleMethod)"
             }
         }
     }

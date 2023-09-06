@@ -9,21 +9,28 @@ import SwiftUI
 
 struct GalaxyView: View {
     
-    @EnvironmentObject var aiachyState: AiachyState
-    @ObservedObject var presenter = GalaxyPresenter()
+    @ObservedObject var presenter: GalaxyPresenter
+    let aiachyState: AiachyState
     let router: GalaxyRouterPresenter
+    
+    init(aiachy aiachyState: AiachyState,
+         router: GalaxyRouterPresenter) {
+        self.aiachyState = aiachyState
+        self.presenter = GalaxyPresenter(aiachyState: aiachyState)
+        self.router = router
+    }
     
     var body: some View {
         ZStack {
             HomeBackground()
             VStack {
                 LazyVGrid(columns: presenter.columns, content: {
-                    GalaxyListCloumn(title: .galaxyTuneTitle, 
+                    GalaxyColumn(title: .tuneTitle,
                                      image: .tuneLogo) {
                         router.navigate(to: .tune)
                     }
-                    GalaxyListCloumn(title: .galaxymeditationTitle, 
-                                     image: .maditation) {
+                    GalaxyColumn(title: .meditationTitle, 
+                                     image: .maditationLogo) {
                         router.navigate(to: .meditation)
                     }
                     
@@ -37,7 +44,6 @@ struct GalaxyView: View {
 
 struct GalaxyView_Previews: PreviewProvider {
     static var previews: some View {
-        GalaxyView(router: GalaxyRouterPresenter())
-            .environmentObject(ACY_PREVIEWS_STATE)
+        GalaxyView(aiachy: ACY_PREVIEWS_STATE, router: GalaxyRouterPresenter())
     }
 }

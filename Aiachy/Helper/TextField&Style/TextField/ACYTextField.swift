@@ -16,23 +16,48 @@ struct ACYTextField: View {
     @State var isNeedPreferenceButton: Bool = false
     @State var isHalfTextField: Bool = false
     @State var isSecureField: Bool = false
-    @State var textFieldTitle: ACYTextHelper.ACYTextFieldText.ACYappTextfieldText
-    @State var errorText: ACYTextHelper.ACYTextFieldText.ACYappTextfieldErrorText?
-    @State var preferenceText: String? = nil
+    @State var textFieldTitle: TextHelper.TextFieldCompletion.textField
+    @State var errorText: TextHelper.TextFieldCompletion.error?
+    @State var preferenceText: TextHelper.TextFieldCompletion.textField?
     var preferenceAction: (() -> ())? = nil
+    
+    init(textfieldString: Binding<String>, 
+         errorType: Binding<Int>,
+         isShowingError: Bool = false,
+         isNeedPreferenceButton: Bool = false,
+         isHalfTextField: Bool = false,
+         isSecureField: Bool = false,
+         textFieldTitle: TextHelper.TextFieldCompletion.textField,
+         errorText: TextHelper.TextFieldCompletion.error? = nil,
+         preferenceText: TextHelper.TextFieldCompletion.textField? = nil,
+         preferenceAction: ( () -> Void)? = nil) {
+        self._textfieldString = textfieldString
+        self._errorType = errorType
+        self.isShowingError = isShowingError
+        self.isNeedPreferenceButton = isNeedPreferenceButton
+        self.isHalfTextField = isHalfTextField
+        self.isSecureField = isSecureField
+        self.textFieldTitle = textFieldTitle
+        self.errorText = errorText
+        self.preferenceText = preferenceText
+        self.preferenceAction = preferenceAction
+    }
+    
+    
+    
     
     var body: some View {
         VStack(spacing: 0) {
             //MARK: ACYTextField - Textfield
             isSecureTextFields
             .textFieldStyle(ACYTextFieldStyle(height: ACYdh(aiachyState, d: ACY_MIN_SIZE),
-                                              text: textFieldTitle.rawValue))
+                                              text: TextHandler.makeTextFieldString(aiachy: aiachyState, textField: textFieldTitle)))
                 .frame(height: ACYdh(aiachyState, d:  ACY_MIN_SIZE))
             //MARK: ACYTextField - Textfield Bottom error & button
             HStack {
                 //error
                 if isShowingError == true {
-                    Text(errorText!.rawValue.locale())
+                    Text(TextHandler.maketextFieldErrorString(aiachy: aiachyState, textFieldError: errorText!))
                         .font(.aiachyFont(.roundedMedium10))
                         .foregroundColor(.makeAiachyColor(aiachyState, aiachyColor: .fourthColor))
                 }
@@ -42,7 +67,8 @@ struct ACYTextField: View {
                     Button {
                         preferenceAction!()
                     } label: {
-                        Text(preferenceText!.locale())
+                        Text(TextHandler.makeTextFieldString(aiachy: aiachyState,
+                                                             textField: preferenceText!))
                             .font(.aiachyFont(.roundedBlack8))
                     }
                 }
@@ -69,18 +95,18 @@ struct ACYTextField_Previews: PreviewProvider {
                          isNeedPreferenceButton: true,
                          isHalfTextField: false,
                          isSecureField: false,
-                         textFieldTitle: .MailPhoneTextField,
-                         errorText: .EmailWrong,
-                         preferenceText: "preference button") { print("preference button working ") }
+                         textFieldTitle: .mailPhone,
+                         errorText: .emailWrong,
+                         preferenceText: .resetPasswordPreference)
             ACYTextField(textfieldString: .constant("nomotetes.onetrue@gamil.com"),
                          errorType: .constant(0),
                          isShowingError: true,
                          isNeedPreferenceButton: true,
                          isHalfTextField: false,
                          isSecureField: true,
-                         textFieldTitle: .MailPhoneTextField,
-                         errorText: .EmailWrong,
-                         preferenceText: "preference button") { print("preference button working ") }
+                         textFieldTitle: .mailPhone,
+                         errorText: .emailWrong,
+                         preferenceText: .resetPasswordPreference)
         })
             .environmentObject(ACY_PREVIEWS_STATE)
     }
@@ -113,75 +139,75 @@ extension ACYTextField {
             isShowingError = false
         case 1:
             // email wrong
-            errorText = .EmailWrong
+            errorText = .emailWrong
             isShowingError = true
         case 2:
             // passwordWrong
-            errorText = .PasswordWrong
+            errorText = .passwordWrong
             isShowingError = true
         case 3:
             // nameNotFillWrong
-            errorText = .NameNotFillWrong
+            errorText = .nameNotFill
             isShowingError = true
         case 4:
             // surnameNotFillWrong
-            errorText = .SurnameNotFillWrong
+            errorText = .surnameNotFill
             isShowingError = true
         case 5:
             // mailNotFillWrong
-            errorText = .MailNotFillWrong
+            errorText = .mailNotFill
             isShowingError = true
         case 6:
             // passwordNotFillWrong
-            errorText = .PasswordNotFillWrong
+            errorText = .passwordNotFill
             isShowingError = true
         case 7:
             // passwordAgainNotFillWrong
-            errorText = .PasswordAgainNotFillWrong
+            errorText = .passwordAgainNotFill
             isShowingError = true
         case 8:
             // passwordNotSame
-            errorText = .PasswordNotSame
+            errorText = .passwordNotSame
             isShowingError = true
         case 9:
             // mailCharacterWrong
-            errorText = .MailCharactersWrong
+            errorText = .mailCharactersWrong
             isShowingError = true
         case 10:
             // phoneCharacterWrong
-            errorText = .PhoneCharactersWrong
+            errorText = .phoneCharactersWrong
             isShowingError = true
         case 11:
             // passwordMinCharacterWrong
-            errorText = .PasswordMinCharacterWrong
+            errorText = .passwordMinCharacter
             isShowingError = true
         case 12:
             // mailCantFoundWrong
-            errorText = .MailCantFoundWrong
+            errorText = .mailCantFound
             isShowingError = true
         case 13:
             // phoneCantFoundWrong
-            errorText = .PhoneCantFoundWrong
+            errorText = .phoneCantFound
             isShowingError = true
         case 14:
             // passwordCantFoundWrong
-            errorText = .PasswordCantFoundWrong
+            errorText = .passwordCantFound
             isShowingError = true
         case 15:
             // name min character
-            errorText = .NameMinCharacterWrong
+            errorText = .nameMinCharacter
             isShowingError = true
         case 16:
             // surname min character
-            errorText = .SurnameMinCharacterWrong
+            errorText = .surnameMinCharacter
             isShowingError = true
         case 17:
             // same mail on sever
-            errorText = .MailUsedBefore
+            errorText = .mailUsedBefore
             isShowingError = true
         default:
             //Close error
-            errorText = .none
+            errorText = nil
             isShowingError = false
         }
     }

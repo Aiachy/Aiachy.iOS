@@ -14,7 +14,7 @@ struct ACYLoadingProgress: View {
     
     var body: some View {
         //MARK: ACYLoadingProgress - Image
-        Image.setACYAppImage(aiachyState, app: .appLogo)
+        Image(ImageHandler.makeGeneralAppString(aiachyState, app: .appLogo))
             .resizable()
             .scaledToFit()
             .frame(width: ACY_UI_WIDTH_SIZE * ACY_LRG_SIZE)

@@ -16,28 +16,29 @@ struct PalmistryStarterView: View {
         ZStack {
             HomeBackground()
             VStack {
-                Image.setACYMysticStarterImage(aiachyState, mysticStarterImage: .palmistryStarterImage2)
+                Image(ImageHandler.makeMysticStarterString(aiachyState, starter: .palmistryStarter2))
                     .resizable()
                     .scaledToFit()
-                    .offset(x: isOnAppear ? ACYdw(aiachyState, d: 0.2) : ACYdw(aiachyState, d: 0.5))
+                    .offset(x: isOnAppear ? ACYdw(aiachyState, d: 0.23) : ACYdw(aiachyState, d: 0.7))
                     .opacity(isOnAppear ? 1 : 0)
-                Image.setACYMysticStarterImage(aiachyState, mysticStarterImage: .palmistryStarterImage3)
+                Image(ImageHandler.makeMysticStarterString(aiachyState, starter: .palmistryStarter3))
                     .resizable()
                     .scaledToFit()
-                    .offset(x: isOnAppear ? 0 : ACYdw(aiachyState, d: 0.5))
                     .opacity(isOnAppear ? 1 : 0)
-                Image.setACYMysticStarterImage(aiachyState, mysticStarterImage: .palmistryStarterImage1)
+                Image(ImageHandler.makeMysticStarterString(aiachyState, starter: .palmistryStarter1))
                     .resizable()
                     .scaledToFit()
-                    .offset(x: isOnAppear ? ACYdw(aiachyState, d: -0.1) : ACYdw(aiachyState, d: 0.5))
+                    .offset(x: isOnAppear ? ACYdw(aiachyState, d: 0) : ACYdw(aiachyState, d: -0.7))
                     .opacity(isOnAppear ? 1 : 0)
+                    .frame(height: ACYdw(aiachyState, d: 0.5))
             }
             ACYMysticTitleAndDescriptionText(fontType: .CinzelBlack30, 
-                                             title: .palmistryStarterTitle,
-                                             description: .palmistyrStarterDescription)
+                                             title: .palmistryTitle,
+                                             description: .palmistyrDescription)
+            .opacity(isOnAppear ? 1 : 0)
         }
-        .onAppear { withAnimation(.spring) { isOnAppear = true } }
-        .onDisappear { withAnimation(.spring) { isOnAppear = false } }
+        .onAppear { withAnimation(.linear(duration: 1.2)) { isOnAppear = true } }
+        .onDisappear { withAnimation(.linear(duration: 1.2)) { isOnAppear = false } }
         .environmentObject(aiachyState)
     }
 }

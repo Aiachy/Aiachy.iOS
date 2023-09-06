@@ -10,10 +10,10 @@ import SwiftUI
 struct ACYViewTitleText: View {
     
     @EnvironmentObject var aiachyState: AiachyState
-    let title: ACYTextHelper.ACYContentText.ACYContentTitle
+    let title: String
     
     var body: some View {
-        Text(title.rawValue.locale())
+        Text(title)
             .font(.aiachyFont(.roundedBold20))
             .foregroundStyle(Color.makeAiachyColor(aiachyState,
                                                    aiachyColor: .firstColor))
@@ -22,5 +22,5 @@ struct ACYViewTitleText: View {
 }
 
 #Preview {
-    ACYViewTitleText(title: .galaxyTuneTitle)
+    ACYViewTitleText(title: "Title")
 }

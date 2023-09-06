@@ -10,14 +10,14 @@ import SwiftUI
 struct ZodiacSelectionTemplate: View {
     
     @EnvironmentObject var aiachyState: AiachyState
-    @Binding var selected: String
+    @Binding var selected: TextHelper.ZodiacCompletion.zodiac?
     let entity: ZodiacSelect
     
     var body: some View {
         
         Button {
             withAnimation(.linear) {
-                selected = entity.zodiacName.rawValue
+                selected =  entity.zodiacName
             }
         } label: {
             VStack(spacing: 5) {
@@ -33,22 +33,13 @@ struct ZodiacSelectionTemplate: View {
     }
 }
 //MARK: ZodiacSelectionTemplate - previews
-struct ZodiacSelection_Previews: PreviewProvider {
-    
-    static let data: [ZodiacSelect] = [
-        ZodiacSelect(id: 0, zodiacImage: .altAquarius, selectedZodiacImage: .aquarius, zodiacName: .AquariusZodiac, zodiacShortedDate: .AquariusZodiacShortedDate)
-    ]
-    
-    static var previews: some View {
-        ZStack {
-            Color.makeAiachyColor(ACY_PREVIEWS_STATE, aiachyColor: .backgroundColor)
-                .ignoresSafeArea()
-            HStack(spacing: 25, content: {
-                ZodiacSelectionTemplate(selected: .constant(ACYTextHelper.ACYZodiacText.ACYzodiacNameText.PiscesZodiac.rawValue), entity: data.first!)
-            })
-            .environmentObject(ACY_PREVIEWS_STATE)
-        }
-    }
+#Preview {
+    ZodiacSelectionTemplate(selected: .constant(.ariesZodiacName),
+                            entity: ZodiacSelect(id: 0, zodiacImage: .altAquarius,
+                                                               selectedZodiacImage: .aquarius,
+                                                               zodiacName: .aquariusZodiacDate,
+                                                               zodiacShortedDate: .aquariusZodiacDate))
+    .environmentObject(ACY_PREVIEWS_STATE)
 }
 
 //MARK: ZodiacSelectionTemplate - extension
@@ -57,7 +48,7 @@ extension ZodiacSelectionTemplate {
     private var circledImage: some View {
         Circle()
             .foregroundColor(.makeAiachyColor(aiachyState,
-                                          aiachyColor: (selected != entity.zodiacName.rawValue) ? .backgroundAlternativeColor : .firstColor))
+                                          aiachyColor: (selected != entity.zodiacName) ? .backgroundAlternativeColor : .firstColor))
             .overlay {
                 convertSelectedImage
             }
@@ -70,10 +61,10 @@ extension ZodiacSelectionTemplate {
     
     private var nameAndDate: some View {
         VStack(spacing: 5) {
-            Text(entity.zodiacName.rawValue.locale())
+            Text(TextHandler.makeZodiacString(aiachy: aiachyState, zodiac: entity.zodiacName))
                 .font(.aiachyFont(.roundedBold14))
             
-            Text(entity.zodiacShortedDate.rawValue.locale())
+            Text(TextHandler.makeZodiacString(aiachy: aiachyState, zodiac: entity.zodiacShortedDate))
                 .font(.aiachyFont(.oldItalic10))
         }
         .foregroundColor(.makeAiachyColor(aiachyState, aiachyColor: .firstColor))
@@ -85,13 +76,13 @@ extension ZodiacSelectionTemplate {
     
     @ViewBuilder
     private var convertSelectedImage: some View {
-        if selected != entity.zodiacName.rawValue {
-            Image.setACYZodiacAltImage(aiachyState, zodiacAlt: entity.zodiacImage)
+        if selected != entity.zodiacName {
+            Image(ImageHandler.makeZodiacString(aiachyState, zodiac: entity.zodiacImage))
             .resizable()
             .scaledToFit()
             .frame(width: ACYdw(aiachyState, d: 0.1))
         } else {
-            Image.setACYZodiacImage(aiachyState, zodiac: entity.selectedZodiacImage)
+            Image(ImageHandler.makeZodiacString(aiachyState, zodiac: entity.selectedZodiacImage))
             .resizable()
             .scaledToFit()
             .frame(width: ACYdw(aiachyState, d: 0.10))

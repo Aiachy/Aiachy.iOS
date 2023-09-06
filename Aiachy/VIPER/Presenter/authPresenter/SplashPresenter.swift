@@ -7,62 +7,75 @@
 
 import SwiftUI
 import Combine
-//MARK: SplashPresenter - protocol - SplashPresenterSetterProtocol
-private protocol SplashPresenterSetterProtocol {
-    func setterCompletion(color colorScheme: ColorScheme, aiachy aiachyState: AiachyState)
-    func setAiachyTheme(color colorScheme: ColorScheme, aiachy aiachyState: AiachyState)
-    func setIdFromCache(aiachy aiachyState: AiachyState)
-    func setDeviceInfo(aiachy aiachyState: AiachyState)
+//MARK: - SplashPresenter - protocol - HandlerProtocol -
+private protocol HandlerProtocol {
+    func setterCompletion(color colorScheme: ColorScheme)
+    func setAiachyTheme(color colorScheme: ColorScheme)
+    func setIdFromCache()
+    func setDeviceInfo()
 }
-//MARK: SplashPresenter - protocol - SplashPresenterPrintProtocol
-private protocol SplashPresenterPrintProtocol {
-    func makePrintCompletion(aiachy aiachyState: AiachyState)
-    func makeDeviceInfoPrint(aiachy aiachyState: AiachyState)
-    func makeUserInfoPrint(aiachy aiachyState: AiachyState)
+//MARK: - SplashPresenter - protocol - StoreProtocol -
+private protocol StoreProtocol {
+    
+}
+//MARK: - SplashPresenter - protocol - PrintProtocol -
+private protocol PrintProtocol {
+    func makePrintCompletion()
+    func makeDeviceInfoPrint()
+    func makeUserInfoPrint()
 }
 //MARK: SplashPresenter - Presenter
 class SplashPresenter: ObservableObject {
-    
+        
     @Published var acyAlertEntity = ACYAlertEntity()
-    
     @Published var isCurrentUser: Bool
     @Published var isNewUser: Bool
     @Published var cycleErrorCount: Int
-    let indicator: SplashInteractor
-    var cancellable: AnyCancellable?
+    private let aiachyState: AiachyState
+    private let interactor: SplashInteractor
+    private var cancellable: AnyCancellable?
     
     init(isCurrentUser: Bool = false,
          isNewUser: Bool = false ,
          cycleErrorCount: Int = 0,
-         indicator: SplashInteractor = SplashInteractor())
+         aiachy aiachyState: AiachyState,
+         interactor: SplashInteractor = SplashInteractor())
     {
-        
         self.isCurrentUser = isCurrentUser
         self.isNewUser = isNewUser
         self.cycleErrorCount = cycleErrorCount
-        self.indicator = indicator
+        self.aiachyState = aiachyState
+        self.interactor = interactor
+        
+        interactor.fetchProducts(aiachy: aiachyState)
+        checkUserSubscription()
     }
     /// The user is downloading the data, the user is to find out if it is new or old, and CoreData is for uploading the data.
     /// - Parameters:
     ///   - colorScheme: We want learn colorScheme for change theme.
     ///   - aiachyState: We update aiachyState.
-    func startApp(colorScheme: ColorScheme,aiachy aiachyState: AiachyState) {
-        setterCompletion(color: colorScheme, aiachy: aiachyState)
-        indicator.checkNetwork { [self] isCheckedNetwork in
-            self.indicator.controlSplashProcess(aiachy: aiachyState) { [self] result in
+    func startApp(colorScheme: ColorScheme) {
+        
+        guard isCurrentUser == false, isNewUser == false else { return }
+        
+        interactor.checkNetwork { [self] isCheckedNetwork in
+            setterCompletion(color: colorScheme)
+            self.interactor.controlUser(aiachy: aiachyState) { [self] result in
                 if result {
-                    isCurrentUser = true
-                    self.makePrintCompletion(aiachy: aiachyState)
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 1 ) {
+                        self.isCurrentUser = true
+                    }
+                    self.makePrintCompletion()
                 } else {
-                    handeledError(colorScheme: colorScheme, aiachy: aiachyState)
+                    handeledError(colorScheme: colorScheme)
                 }
             }
         }
     }
     /// help to startApp function
-    func handeledError(colorScheme: ColorScheme,aiachy aiachyState: AiachyState) {
+    func handeledError(colorScheme: ColorScheme) {
         
-        cancellable = indicator.isHaveError
+        cancellable = interactor.isHaveError
             .removeDuplicates()
             .subscribe(on: DispatchQueue.main)
             .sink(receiveValue: { [self] errorType in
@@ -70,27 +83,25 @@ class SplashPresenter: ObservableObject {
                 guard errorType != 0 else {
                     acyAlertEntity.title = .notUserHaveConnection
                     acyAlertEntity.image = .notUserHaveConnection
-                    acyAlertEntity.firstButtonText = .TryAgainButton
-                    acyAlertEntity.isNeedImage = true
+                    acyAlertEntity.firstButtonText = .tryAgain
                     acyAlertEntity.levelError = 0
                     acyAlertEntity.isShowingAlert = true
                     return
                 }
                 guard errorType != 1 else {
                     isNewUser = true
-                    self.makePrintCompletion(aiachy: aiachyState)
+                    self.makePrintCompletion()
                     return
                 }
                 guard errorType != 2 else {
                     if cycleErrorCount < 5 {
                         DispatchQueue.main.asyncAfter(deadline: .now() + ACY_MAX_TIME) {
-                            self.startApp(colorScheme: colorScheme, aiachy: aiachyState)
+                            self.startApp(colorScheme: colorScheme)
                             self.cycleErrorCount += 1
                         }
                     } else {
                         acyAlertEntity.title = .appError
-                        acyAlertEntity.firstButtonText = .TryAgainButton
-                        acyAlertEntity.isNeedImage = false
+                        acyAlertEntity.firstButtonText = .tryAgain
                         acyAlertEntity.levelError = 1
                         acyAlertEntity.isShowingAlert = true
                     }
@@ -98,48 +109,47 @@ class SplashPresenter: ObservableObject {
                 }
                 guard errorType != 3 else {
                     isNewUser = true
-                    self.makePrintCompletion(aiachy: aiachyState)
+                    self.makePrintCompletion()
                     return
                 }
             })
     }
     
-    func definitionErrorAction(colorScheme: ColorScheme, aiachy aiachyState: AiachyState) {
+    func definitionErrorAction(colorScheme: ColorScheme) {
         let alert = acyAlertEntity.levelError
         
         if alert == 0 {
             acyAlertEntity.isShowingAlert = false
-            indicator.cancelNetwork()
+            interactor.cancelNetwork()
             DispatchQueue.main.asyncAfter(deadline: .now() + ACY_MED_TIME) { [self] in
-                startApp(colorScheme: colorScheme, aiachy: aiachyState)
+                startApp(colorScheme: colorScheme)
                 
             }
         } else if alert == 1 {
             acyAlertEntity.isShowingAlert = false
             DispatchQueue.main.asyncAfter(deadline: .now() + ACY_LRG_TIME) {
-                self.startApp(colorScheme: colorScheme, aiachy: aiachyState)
+                self.startApp(colorScheme: colorScheme)
             }
         }
     }
 }
-//MARK: SplashPresenter - SplashPresenterSetterProtocol
-extension SplashPresenter: SplashPresenterSetterProtocol {
+//MARK: - SplashPresenter - HandlerProtocol -
+extension SplashPresenter: HandlerProtocol {
     /// All set functions run event.
     /// - Parameters:
     ///   - colorScheme: To determine the application theme.
     ///   - aiachyState: aiachy state values will be updated
-    fileprivate func setterCompletion(color colorScheme: ColorScheme, aiachy aiachyState: AiachyState) {
-        
-        setAiachyTheme(color: colorScheme, aiachy: aiachyState)
-        setDeviceInfo(aiachy: aiachyState)
-        setIdFromCache(aiachy: aiachyState)
-        
+    fileprivate func setterCompletion(color colorScheme: ColorScheme) {
+        setAiachyTheme(color: colorScheme)
+        setDeviceInfo()
+        setIdFromCache()
+        setLangauge()
     }
     /// Without the user choosing any theme, we get the information about which theme the phone is in and assign it to the themeString.
     /// - Parameters:
     ///   - colorScheme: To get colorScheme
     ///   - aiachyState: To be able to set to currentTheme
-    fileprivate func setAiachyTheme(color colorScheme: ColorScheme, aiachy aiachyState: AiachyState) {
+    fileprivate func setAiachyTheme(color colorScheme: ColorScheme) {
         
         guard aiachyState.user.aiachyInfo.theme == nil else { return }
         
@@ -154,7 +164,7 @@ extension SplashPresenter: SplashPresenterSetterProtocol {
     /// We learn everything about the user's phone.
     /// - Parameter aiachy: phone current state
     /// - Returns: The getDeviceInfo method indicates that it is working and that it has received device information.
-    fileprivate func setDeviceInfo(aiachy aiachyState: AiachyState) {
+    fileprivate func setDeviceInfo() {
         aiachyState.user.deviceInfo.phoneHeight = ACY_UI_HEIGHT_SIZE
         aiachyState.user.deviceInfo.phoneWidth = ACY_UI_WIDTH_SIZE
         aiachyState.user.deviceInfo.phoneModel = UIDevice.current.model
@@ -164,25 +174,37 @@ extension SplashPresenter: SplashPresenterSetterProtocol {
     }
     /// The purpose of this function is to get the id from the cache and allow us to call it.
     /// - Returns: It returns id as return
-    fileprivate func setIdFromCache(aiachy aiachyState: AiachyState) {
+    fileprivate func setIdFromCache() {
         let cachedId = ACYUserDefaults.string(forKey: ACYUserID)
         guard cachedId != nil, cachedId != "" else {
             print(ACYErrorUserInfo.userIdNotFound.printUserInfo("SplashPresenter"))
             return }
         aiachyState.user.userInfo.id = cachedId
     }
+    fileprivate func setLangauge() {
+        let userID = aiachyState.user.userInfo.id
+        guard userID == nil else { return }
+        aiachyState.user.aiachyInfo.language = String(Locale.current.identifier.suffix(2))
+        aiachyState.user.aiachyInfo.languageIdentifier = String(Locale.current.identifier)
+    }
 }
-//MARK: SplashPresenter - extension - SplashPresenterPrintProtocol
-extension SplashPresenter: SplashPresenterPrintProtocol {
+//MARK: - SplashPresenter - StoreProtocol -
+extension SplashPresenter: StoreProtocol {
+    func checkUserSubscription() {
+        interactor.fetchProducts(aiachy: aiachyState)
+    }
+}
+//MARK: - SplashPresenter - extension - PrintProtocol -
+extension SplashPresenter: PrintProtocol {
     /// All the print functions are gathered in one place.
     /// - Parameter aiachyState: To collect data.
-    fileprivate func makePrintCompletion(aiachy aiachyState: AiachyState) {
-        makeDeviceInfoPrint(aiachy: aiachyState)
-        makeUserInfoPrint(aiachy: aiachyState)
+    fileprivate func makePrintCompletion() {
+        makeDeviceInfoPrint()
+        makeUserInfoPrint()
     }
     /// This func checking Aiachystate current Device printing
     /// - Parameter aiachy: AiachyState, This means the user is where we store all the data.
-    fileprivate func makeDeviceInfoPrint(aiachy aiachyState: AiachyState) {
+    fileprivate func makeDeviceInfoPrint() {
         print("------ Aiachy Current Device Informations ------")
         
         print(ACYPrintUserDeviceInfo.phoneWidth.printDeviceInfo(aiachyState))
@@ -194,7 +216,7 @@ extension SplashPresenter: SplashPresenterPrintProtocol {
     }
     /// This func checking Aiachystate current User Info printing
     /// - Parameter aiachy: AiachyState, This means the user is where we store all the data.
-    fileprivate func makeUserInfoPrint(aiachy aiachyState: AiachyState) {
+    fileprivate func makeUserInfoPrint() {
         let infoUser = aiachyState.user.userInfo
         guard !infoUser.wrappedId.isEmpty else {
             print("------ Aiachy New Account ------")

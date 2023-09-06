@@ -17,6 +17,8 @@ class LoginPresenter: ObservableObject {
     @Published var passwordTextFieldErrorType: Int
     @Published var mailPhoneTextField: String
     @Published var passwordTextField: String
+    let aiachyState: AiachyState
+    let router: AuthRouterPresenter
     let interactor: LoginInteractor
     
     init(isUserCanEntryApp: Bool = false,
@@ -25,6 +27,8 @@ class LoginPresenter: ObservableObject {
          passwordTextFieldErrorType: Int = 0,
          mailPhoneTextField: String = "",
          passwordTextField: String = "",
+         aiachy aiachyState: AiachyState,
+         router: AuthRouterPresenter,
          interactor: LoginInteractor = LoginInteractor()) {
         self.isUserCanEntryApp = isUserCanEntryApp
         self.isNetworkingChecked = isNetworkingChecked
@@ -32,6 +36,8 @@ class LoginPresenter: ObservableObject {
         self.passwordTextFieldErrorType = passwordTextFieldErrorType
         self.mailPhoneTextField = mailPhoneTextField
         self.passwordTextField = passwordTextField
+        self.aiachyState = aiachyState
+        self.router = router
         self.interactor = interactor
     }
     

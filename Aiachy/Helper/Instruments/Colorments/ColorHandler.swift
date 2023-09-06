@@ -22,4 +22,22 @@ struct ColorHandler {
             return "\(AiachyColor.rawValue)-Dark"
         }
     }
+    
+    static func makeAiachyColorsChacka(aiachy aiachyState: AiachyState, chackra: ColorHelper.Chackra) -> String {
+        switchValueWithThemeToString(aiachy: aiachyState, with: chackra.rawValue)
+    }
+}
+
+extension ColorHandler {
+    static func switchValueWithThemeToString(aiachy aiachyState: AiachyState, with value: String) -> String  {
+        let aiachyTheme = aiachyState.user.aiachyInfo.wrappedTheme
+        switch aiachyTheme {
+        case "Light":
+            return value
+        case "Dark":
+            return value + "-Dark"
+        default:
+            return value
+        }
+    }
 }

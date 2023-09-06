@@ -6,52 +6,62 @@
 //
 
 import SwiftUI
-
+//MARK: - ACYPassButton - View -
 struct ACYPassButton: View {
     
     @EnvironmentObject var aiachyState: AiachyState
     var isItBackButton: Bool
-    var text : ACYTextHelper.ACYGeneralText.ACYappButtonText
+    var text : TextHelper.GeneralCompletion.button
     var action: () -> ()
     
     var body: some View {
         Button {
             action()
         } label: {
-            HStack {
+            HStack(spacing: 0) {
                 if isItBackButton {
-                    Image.setACYButtonImage(aiachyState, button: .leftArrowButton)
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: ACYdw(aiachyState, d: 0.05),
-                               height: ACYdh(aiachyState, d: 0.02))
+                    //MARK: ACYPassButton - buttonArrow
+                    buttonArrow
                 }
-                Text(text.rawValue.locale())
-                    .lineLimit(1)
-                    .font(.aiachyFont(.roundedBold14))
-                    .frame(width: ACYdw(aiachyState, d: ACY_SML_SIZE))
-                    .multilineTextAlignment(.leading)
-                    
+                //MARK: ACYPassButton - buttonText
+                buttonText
+                
                 if !isItBackButton {
-                    Image.setACYButtonImage(aiachyState, button: .rightArrowButton)
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: ACYdw(aiachyState, d: 0.05),
-                               height: ACYdh(aiachyState, d: 0.02))
+                    //MARK: ACYPassButton - buttonArrow
+                    buttonArrow
                 }
             }
         }
-        .buttonStyle(ACYPassButtonStyle())
-        .frame(width: ACYdw(aiachyState, d: 0.2),
+        .frame(width: ACYdw(aiachyState, d: 0.18),
                height: ACYdh(aiachyState, d: ACY_MIKRO_SIZE))
+        .buttonStyle(ACYPassButtonStyle())
         .makeAccessibilitysForUITest(identifier: "ACYPassButtonID")
     }
 }
-
-struct ACYPassButton_Previews: PreviewProvider {
-        
-    static var previews: some View {
-        ACYPassButton(isItBackButton: true, text: .ChooseLocationButton) { }
-            .environmentObject(ACY_PREVIEWS_STATE)
+//MARK: - ACYPassButton - Preview -
+#Preview("ACYPassButton") {
+    ACYPassButton(isItBackButton: true, text: .guest) {}
+        .environmentObject(ACY_PREVIEWS_STATE)
+}
+//MARK: - ACYPassButton - extension -
+extension ACYPassButton {
+    //MARK: ACYPassButton - buttonArrow
+    private var buttonArrow: some View {
+        Image(ImageHandler.makeGeneralButtonString(aiachyState, button: .rightArrowButton))
+            .resizable()
+            .frame(width: ACYdw(aiachyState, d: 0.015),
+                   height: ACYdh(aiachyState, d: 0.014))
+            .scaledToFit()
+            .rotate(isItBackButton ? 180 : 0)
+    }
+    //MARK: ACYPassButton - buttonText
+    private var buttonText: some View {
+        Text(TextHandler.makeGeneralButtonString(aiachy: aiachyState, button: text))
+            .lineLimit(1)
+            .font(.aiachyFont(.roundedBold12))
+            .frame(width: ACYdw(aiachyState, d: ACY_ALTSML_SIZE))
+            .multilineTextAlignment(.leading)
+            .frame(width: ACYdw(aiachyState, d: 0.14),
+                   height: ACYdh(aiachyState, d: 0.02))
     }
 }

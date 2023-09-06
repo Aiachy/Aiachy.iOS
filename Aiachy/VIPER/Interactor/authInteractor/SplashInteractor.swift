@@ -7,20 +7,23 @@
 
 import SwiftUI
 import Combine
-//MARK: SplashInteractor -  protocol - SplashInteractorServerProtocol
-private protocol SplashInteractorServerProtocol {
-    func fetchUser(aiachy aiachyState: AiachyState, completion: @escaping (Bool) -> () )
-}
-//MARK: SplashInteractor -  protocol - SplashInteractorCoreDataProtocol
-private protocol SplashInteractorCoreDataProtocol {
-    func setCoreData(completion: @escaping (Bool) -> ())
-}
-//MARK: SplashInteractor -  protocol - SplashInteractorNetworkProtocol
-private protocol SplashInteractorSetterProtocol {
-    func setUserNew(aiachy aiachyState: AiachyState)
-}
-private protocol SplashInteractorNetworkProtocol {
+//MARK: SplashInteractor -  protocol - HandlerProtocol
+private protocol HandlerProtocol {
     func checkNetwork(completion: @escaping (Bool) -> ())
+    func setUserNew(aiachy aiachyState: AiachyState)
+    func cancelNetwork()
+}
+//MARK: SplashInteractor -  protocol - ServerProtocol
+private protocol ServerProtocol {
+    func checkZodiacDataVersion(aiachy aiachyState: AiachyState,completion: @escaping (Bool) -> ())
+}
+//MARK: SplashInteractor -  protocol - CoreDataProtocol
+private protocol CoreDataProtocol {
+    func setServerZodiacDataToCoreData()
+    func deleteAllZodiacCoreDatas()
+}
+private protocol StoreProtocol {
+    func fetchProducts(aiachy aiachyState: AiachyState)
 }
 //MARK: SplashInteractor - Interactor
 class SplashInteractor {
@@ -32,6 +35,7 @@ class SplashInteractor {
     private let executiveServerManager: ExecutiveServerManager
     private let coreDataManager: CoreDataManager
     private let networkMonitorManager: NetworkMonitorManager
+    private let storeKitManager: StoreKitManager
     private var cancellable: AnyCancellable?
     
     init(isHaveError: Int = 5,
@@ -39,8 +43,10 @@ class SplashInteractor {
          zodiacServerManager: ZodiacServerManager = ZodiacServerManager(),
          executiveServerManager: ExecutiveServerManager = ExecutiveServerManager(),
          coreDataManager: CoreDataManager = CoreDataManager(),
-         networkMonitorManager: NetworkMonitorManager = NetworkMonitorManager())
+         networkMonitorManager: NetworkMonitorManager = NetworkMonitorManager(),
+         storeKitManager: StoreKitManager = StoreKitManager())
     {
+        //NextPatchTODO: Will change 
         //MARK: SplashInteractor ReadMe (isHaveCoreDataErrorType) - If the return value is 0, it indicates an internet problem,
         //MARK: SplashInteractor ReadMe (isHaveCoreDataErrorType) - if it is 1, it indicates the problem that the zodiac data version is not present
         //MARK: SplashInteractor ReadMe (isHaveCoreDataErrorType) - if it is 2, the data is still being loaded.
@@ -51,48 +57,73 @@ class SplashInteractor {
         self.executiveServerManager = executiveServerManager
         self.coreDataManager = coreDataManager
         self.networkMonitorManager = networkMonitorManager
+        self.storeKitManager = storeKitManager
     }
     /// Controlling interactor process.
     /// - Parameters:
     ///   - aiachyState: if user fetched datas from server it will be setted value.
     ///   - completion: if false its turning handeledError on presenter page else its login successfull
-    func controlSplashProcess(aiachy aiachyState: AiachyState, completion: @escaping (Bool) -> ()) {
+    func controlUser(aiachy aiachyState: AiachyState, completion: @escaping (Bool) -> ()) {
         /// checking
         guard self.isCheckedEnthernet ?? false else { self.isHaveError.send(0); completion(false); return }
-        
         /// check nethowrk or error
-        fetchUser(aiachy: aiachyState) { isFetchedUser in
+        fetchUser(aiachy: aiachyState) { [self] isFetchedUser in
             /// checking user
             if isFetchedUser {
-                self.checkZodiacDataVersionOnUser(aiachy: aiachyState) { isNotSameDataVersion in
-                    guard isNotSameDataVersion else { completion(true); return }
-                    /// setted core data
-                    self.setCoreData { [self] isSettedCoreData in
-                        if isSettedCoreData {
-                            isHaveError.send(2)
-                            completion(false)
-                        } else {
-                            completion(true)
-                        }
+                checkZodiacDataVersion(aiachy: aiachyState) {
+                    guard $0 else {self.setServerZodiacDataToCoreData(); completion(true); return }
+                    
+                    self.checkCoreData {
+                        guard $0 else {self.setServerZodiacDataToCoreData(); completion(true); return }
+                        completion(true)
                     }
                 }
             } else {
                 /// setted core data
-                self.setCoreData { [self] isSettedCoreData in
-                    if isSettedCoreData {
-                        isHaveError.send(2)
-                        completion(false)
-                    } else {
-                        isHaveError.send(3)
-                        completion(false)
-                    }
-                }
+                self.setServerZodiacDataToCoreData()
+                self.setUserNew(aiachy: aiachyState)
+                isHaveError.send(3)
+                completion(false)
             }
         }
     }
 }
-//MARK: SplashInteractor -  extension - SplashInteractorNetworkProtocol
-extension SplashInteractor: SplashInteractorServerProtocol {
+//MARK: SplashInteractor -  extension - HandlerProtocol
+extension SplashInteractor: HandlerProtocol {
+    /// To set the user's unset data
+    /// - Parameter aiachyState: state where values will change
+    fileprivate func setUserNew(aiachy aiachyState: AiachyState) {
+        /// bundle
+        let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as! String
+        /// setting value
+        aiachyState.user.userOracle.isOracled = false
+        aiachyState.user.userOracle.oracleMethod = ""
+        aiachyState.user.userOracle.oraclePackage = "none"
+        aiachyState.user.userOracle.aicyCash = 0
+        aiachyState.user.aiachyInfo.version = version
+        executiveServerManager.setLocalUserZodiacDataVersion(aiachy: aiachyState)
+    }
+    
+    /// Boolean value is returned as a result of network control.
+    /// - Parameter completion: If true, found, if false, not found.
+    func checkNetwork(completion: @escaping (Bool) -> ()) {
+        networkMonitorManager.startEthernetCheck()
+        cancellable = networkMonitorManager.isConnectedToEthernet
+            .dropFirst()
+            .sink(receiveValue: { [self] in
+                guard $0 else { cancelNetwork(); isCheckedEnthernet = false; completion($0); return }
+                self.isCheckedEnthernet = true
+                completion($0)
+            })
+    }
+    /// cancel networking
+    func cancelNetwork() {
+        networkMonitorManager.cancelEthernetConnection()
+    }
+}
+
+//MARK: SplashInteractor -  extension - ServerProtocol
+extension SplashInteractor: ServerProtocol {
     /// Check and fecth user datas.
     /// - Parameters:
     ///   - aiachyState: will setted user local values.
@@ -114,70 +145,52 @@ extension SplashInteractor: SplashInteractorServerProtocol {
             }
         }
     }
-    
     /// Checking zodiac data version
     /// - Parameters:
     ///   - aiachyState: will setting & checking last version zodiac data version
     ///   - completion: if  return true success login else  updating coredata
-    fileprivate func checkZodiacDataVersionOnUser(aiachy aiachyState: AiachyState, completion: @escaping (Bool) -> ()) {
-        let checkedCoreData = coreDataManager.controlCoreData()
-        
-        executiveServerManager.checkZodiacDataVersion(aiachy: aiachyState) { isZodiacDataVersionSame in
-            guard isZodiacDataVersionSame else {self.executiveServerManager.updateUserZodiacDataVersion(aiachy: aiachyState); completion(false); return }
-            guard checkedCoreData else { completion(false); return }
-            completion(true)
-        }
-    }
-}
-//MARK: SplashInteractor -  protocol - SplashInteractorCoreDataProtocol
-extension SplashInteractor: SplashInteractorCoreDataProtocol {
-    /// Setting core data
-    /// - Parameter completion: if turn true current updateing
-    fileprivate func setCoreData(completion: @escaping (Bool) -> ()) {
-        zodiacServerManager.getZodiacFromServer { [self] result in
-            switch result {
-            case .success(let success):
-                coreDataManager.makeCoreDataManaging(zodiac: success)
-                completion(true)
-            case .failure(let failure):
-                print(failure.printDataFetching("SplashInteractor"))
-                completion(false)
+    fileprivate func checkZodiacDataVersion(aiachy aiachyState: AiachyState,completion: @escaping (Bool) -> ()) {
+
+        executiveServerManager.checkIsSameZodiacVersion(aiachy: aiachyState) { [self] isSameZodiacVersion in
+            if isSameZodiacVersion {
+                completion(isSameZodiacVersion)
+            } else {
+                executiveServerManager.updateServerUserZodiacDataVersion(aiachy: aiachyState)
+                executiveServerManager.setLocalUserZodiacDataVersion(aiachy: aiachyState)
+                completion(isSameZodiacVersion)
             }
         }
     }
 }
-//MARK: SplashInteractor -  extension - SplashInteractorSetterProtocol
-extension SplashInteractor: SplashInteractorSetterProtocol {
-    /// To set the user's unset data
-    /// - Parameter aiachyState: state where values will change
-    fileprivate func setUserNew(aiachy aiachyState: AiachyState) {
-        /// bundle
-        let version = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as! String
-        /// setting value
-        aiachyState.user.userSubscription.isSubscriped = false
-        aiachyState.user.userSubscription.subscripedMethod = "none"
-        aiachyState.user.userSubscription.subscripedPackage = "none"
-        aiachyState.user.aiachyInfo.version = version
-        aiachyState.user.aiachyInfo.zodiacDataVersion = self.executiveServerManager.lastVersionZodiacData
+//MARK: SplashInteractor -  protocol - CoreDataProtocol
+extension SplashInteractor: CoreDataProtocol {
+    /// Setting core data
+    /// - Parameter completion: if turn true current updateing
+    fileprivate func setServerZodiacDataToCoreData() {
+        deleteAllZodiacCoreDatas()
+        zodiacServerManager.getUserZodiacEntityFromServer { data in
+            self.coreDataManager.saveUserAllEntity(entity: data)
+        }
+    }
+    
+    fileprivate func checkCoreData(completion: @escaping (Bool) -> ()) {
+        let checekedCoreData = coreDataManager.checkDataExists(type: .zodiacEntity)
+        completion(checekedCoreData)
+    }
+    
+    fileprivate func deleteAllZodiacCoreDatas() {
+        coreDataManager.deleteAllData(type: .ascendiantEntity)
+        coreDataManager.deleteAllData(type: .compatibilityEntity)
+        coreDataManager.deleteAllData(type: .zodiacEntity)
+        coreDataManager.deleteAllData(type: .chakraStatusEntity)
+    }
+    
+}
+
+extension SplashInteractor: StoreProtocol {
+    func fetchProducts(aiachy aiachyState: AiachyState) {
+            storeKitManager.requestProducts()
+            print("BU2 \(storeKitManager.acyStoreEntities.count)")
     }
 }
 
-//MARK: SplashInteractor - SplashInteractorNetworkProtocol
-extension SplashInteractor: SplashInteractorNetworkProtocol {
-    /// Boolean value is returned as a result of network control.
-    /// - Parameter completion: If true, found, if false, not found.
-    func checkNetwork(completion: @escaping (Bool) -> ()) {
-        networkMonitorManager.startEthernetCheck()
-        cancellable = networkMonitorManager.isConnectedToEthernet
-            .dropFirst()
-            .sink(receiveValue: { [self] in
-                guard $0 else { cancelNetwork(); isCheckedEnthernet = false; completion($0); return }
-                self.isCheckedEnthernet = true
-                completion($0)
-            })
-    }
-    /// cancel networking
-    func cancelNetwork() {
-        networkMonitorManager.cancelEthernetConnection()
-    }
-}

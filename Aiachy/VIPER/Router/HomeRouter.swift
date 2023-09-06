@@ -22,48 +22,52 @@ enum HomeViewsEnum {
 class HomeRouterPresenter: ObservableObject, RouterProtocol {
     
     @Published var currentView: HomeViewsEnum
-    @Published var acyAlertEntity: ACYAlertEntity = ACYAlertEntity()
-    @Published var isDisabledTabBar: Bool = false
+    @Published var acyAlertEntity: ACYAlertEntity
+    @Published var isDisabledTabBar: Bool
     
     func navigate(to destination: HomeViewsEnum) {
-        withAnimation(.spring) {
+        withAnimation(.linear) {
             currentView = destination
         }
     }
     
-    init(currentView: HomeViewsEnum = .home) {
+    init(currentView: HomeViewsEnum = .home,
+         acyAlertEntity: ACYAlertEntity = ACYAlertEntity(),
+         isDisabledTabBar: Bool = false) {
         self.currentView = currentView
+        self.acyAlertEntity = acyAlertEntity
+        self.isDisabledTabBar = isDisabledTabBar
     }
 }
 
 struct HomeRouter: View {
     
     @EnvironmentObject var aiachyState : AiachyState
-    @StateObject var homeRouter = HomeRouterPresenter()
+    @StateObject var presenter = HomeRouterPresenter()
     
     var body: some View {
         VStack(spacing: 0) {
             ZStack {
-                switch homeRouter.currentView {
+                switch presenter.currentView {
                 case .home:
-                    HomeView()
+                    HomeView(aiachyState: aiachyState, router: presenter)
                 case .mystic:
-                    MysticRouter(router: homeRouter)
+                    MysticRouter(homeRouter: presenter)
                 case .galaxy:
-                    GalaxyRouter(router: homeRouter)
+                    GalaxyRouter(homeRouter: presenter)
                 case .love:
-                    LoveRouter(router: homeRouter)
+                    LoveRouter(homeRouter: presenter)
                 case .settings:
-                    SettingsRouter()
+                    SettingsRouter(homeRouter: presenter)
                 }
             }
-            if !homeRouter.isDisabledTabBar {
-                ACYTabBar(router: homeRouter)
+            if !presenter.isDisabledTabBar {
+                ACYTabBar(router: presenter)
             }
         }
         .overlay{ 
-            if homeRouter.acyAlertEntity.isShowingAlert {
-                ACYAlertView(acyAlertEntity: homeRouter.acyAlertEntity)
+            if presenter.acyAlertEntity.isShowingAlert {
+                ACYAlertView(acyAlertEntity: presenter.acyAlertEntity)
             }
         }
         .environmentObject(aiachyState)

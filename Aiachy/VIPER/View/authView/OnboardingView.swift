@@ -10,43 +10,39 @@ import MessageUI
 
 struct OnboardingView: View {
     
-    @EnvironmentObject var aiachyState: AiachyState
-    @ObservedObject var presenter = OnboardingPresenter()
+    @StateObject var presenter: OnboardingPresenter
+    let aiachyState: AiachyState
     let router: AuthRouterPresenter
     
+    init(aiachy aiachyState: AiachyState,
+         router: AuthRouterPresenter) {
+        self._presenter = StateObject(wrappedValue: OnboardingPresenter(aiachy: aiachyState,
+                                                                        router: router))
+        self.aiachyState = aiachyState
+        self.router = router
+    }
+    
     var body: some View {
-        ZStack {
             VStack {
-                Spacer()
                 //MARK: OnboardingView - Onboarding Value
-                ACYOnboarding(selection: $presenter.currentIndex,
-                              acyOnboardingEntityData: presenter.acyOnboardingEntityData)
+                ACYAuthOnboardingView(selection: $presenter.currentIndex,
+                              acyAuthOnboardingEntityData: presenter.acyOnboardingEntityData)
                 .tabViewStyle(.page(indexDisplayMode: .never))
-                Spacer()
                 //MARK: OnboardingView - Page Index
                 pageIndex
                 //MARK: OnboardingView - Button
                 navigateToLoginButton
                 .padding(.vertical)
-                //MARK: OnboardingView - PrivacyPolicy Way
-                privacyPolicyButton
-                    .onTapGesture {
-                        router.navigate(to: .privacyPolicyView)
-                    }
-                Spacer()
+                //MARK: OnboardingView - privacyPolicy
+                privacyPolicy
             }
-        }
-        .makeAccessibilitysForUITest(identifier: "OnboardingViewID")
         .environmentObject(aiachyState)
+        .makeAccessibilitysForUITest(identifier: "OnboardingViewID")
     }
 }
 
-struct OnboardingView_Previews: PreviewProvider {
-    
-    static var previews: some View {
-            OnboardingView(router: AuthRouterPresenter())
-            .environmentObject(ACY_PREVIEWS_STATE)
-    }
+#Preview {
+    OnboardingView(aiachy: ACY_PREVIEWS_STATE, router: AuthRouterPresenter())
 }
 
 //MARK: OnboardingView - extensions
@@ -73,7 +69,7 @@ extension OnboardingView {
     }
     //MARK: OnboardingView - Button
     private var navigateToLoginButton: some View {
-        ACYButton(text: ACYTextHelper.ACYGeneralText.ACYappButtonText.ContinueButton.rawValue) {
+        ACYButton(text: .continue) {
             withAnimation(.linear(duration: ACY_MIN_TIME)) {
                 if presenter.currentIndex < presenter.acyOnboardingEntityData.count - 1 {
                     presenter.currentIndex += 1
@@ -83,9 +79,9 @@ extension OnboardingView {
             }
         }
     }
-    //MARK: OnboardingView - PrivacyPolicy Way
-    private var privacyPolicyButton: some View {
-        Text(ACYTextHelper.ACYAuthText.ACYprivacyPolicyText.PrivacyTermWay.rawValue.locale())
+    //MARK: OnboardingView - privacyPolicy
+    private var privacyPolicy: some View {
+        Text(TextHandler.makeAuthOnboardingString(aiachy: aiachyState, onboarding: .privacyPolicy))
             .makeAccessibilitysForUITest(identifier: "PrivacyPolicyButtonID")
             .multilineTextAlignment(.center)
             .padding(.horizontal,ACYdw(aiachyState, d: ACY_SML_SIZE))

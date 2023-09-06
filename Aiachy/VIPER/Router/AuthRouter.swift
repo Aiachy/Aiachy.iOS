@@ -13,7 +13,6 @@ private protocol RouterProtocol {
 
 enum AuthViews {
     case onboardingView
-    case privacyPolicyView
     case loginView
     case zodiacSelectionView
     case registerView
@@ -46,25 +45,25 @@ struct AuthRouter: View {
     
     var body: some View {
         ZStack {
-            switch authRouter.currentView {
-            case .onboardingView:
-                OnboardingView(router: authRouter)
-            case .privacyPolicyView:
-                PrivacyPolicyView(router: authRouter)
-            case .loginView:
-                LoginView(router: authRouter)
-            case .zodiacSelectionView:
-                ZodiacSelectionView(router: authRouter)
-            case .registerView:
-                RegisterView(router: authRouter)
-            case .ascendantSelectionView:
-                AscendantSelectionView(router: authRouter)
-            case .attentionView:
-                AttentionView(router: authRouter)
+            AuthBackground()
+            ZStack {
+                switch authRouter.currentView {
+                case .onboardingView:
+                    OnboardingView(aiachy: aiachyState,router: authRouter)
+                case .loginView:
+                    LoginView(aiachy: aiachyState, router: authRouter)
+                case .zodiacSelectionView:
+                    ZodiacSelectionView(aiachy: aiachyState, router: authRouter)
+                case .registerView:
+                    RegisterView(aiachy: aiachyState, router: authRouter)
+                case .ascendantSelectionView:
+                    AscendantSelectionView(aiachy: aiachyState, router: authRouter)
+                case .attentionView:
+                    AttentionView(router: authRouter)
+                }
             }
+            .padding(.vertical)
         }
-        .padding(.vertical)
-        .background(AuthBackground())
         .fullScreenCover(isPresented: $authRouter.isUserComplateAuthCompletion, content: {
             HomeRouter()
         })

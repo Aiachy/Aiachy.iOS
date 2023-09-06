@@ -11,7 +11,7 @@ struct StarterIndexView: View {
     
     @EnvironmentObject var aiachyState: AiachyState
     @Binding var currentLogo: Int
-    let entityData: [ACYStarterLogoEntity]
+    let entityData: [ACYmysticStarterLogoEntity]
     
     var body: some View {
         ZStack {
@@ -39,13 +39,13 @@ struct StarterIndexView: View {
 #Preview {
     
     StarterIndexView(currentLogo: .constant(0),
-                     entityData: [ACYStarterLogoEntity(id: 0,
-                                                       selectedLogo: .tarotStarterLogoSelected,
-                                                       unSelectedLogo: .tarotStarterLogoUnSelected),
-                                  ACYStarterLogoEntity(id: 1,
-                                                       selectedLogo: .palmistryStarterLogoSelected,
-                                                       unSelectedLogo: .palmistryStarterLogoUnSelected),
-                                  ACYStarterLogoEntity(id: 2,
+                     entityData: [ACYmysticStarterLogoEntity(id: 0,
+                                                             selectedLogo: .tarotLogoSelected,
+                                                             unSelectedLogo: .tarotLogoUnSelected),
+                                  ACYmysticStarterLogoEntity(id: 1,
+                                                             selectedLogo: .palmistryLogoSelected,
+                                                       unSelectedLogo: .palmistryLogoUnSelected),
+                                  ACYmysticStarterLogoEntity(id: 2,
                                                        selectedLogo: .crystalGazingStarterLogoSelected,
                                                        unSelectedLogo: .crystalGazingStarterLogoUnSelected)])
     .environmentObject(ACY_PREVIEWS_STATE)
@@ -56,14 +56,17 @@ struct StarterIndexLogo: View {
     
     @EnvironmentObject var aiachyState: AiachyState
     let id: Int?
-    let entity: ACYStarterLogoEntity
+    let entity: ACYmysticStarterLogoEntity
     
     var body: some View {
         Circle()
-            .stroke( Color.makeAiachyColor(aiachyState, aiachyColor: entity.id == id ? .backgroundColor : .fifthColor))
-            .background(Color.makeAiachyColor(aiachyState, aiachyColor: entity.id == id ? .fifthColor : .backgroundColor).clipShape(Circle()))
+            .stroke( Color.makeAiachyColor(aiachyState, 
+                                           aiachyColor: entity.id == id ? .backgroundColor : .fifthColor))
+            .background(Color.makeAiachyColor(aiachyState, 
+                                              aiachyColor: entity.id == id ? .fifthColor : .backgroundColor).clipShape(Circle()))
             .frame(width: ACYdw(aiachyState, d: 0.08))
-            .overlay { Image.setACYMysticStarterLogo(aiachyState, mysticStarterLogo: entity.id == id ? entity.selectedLogo : entity.unSelectedLogo)
+            .overlay { Image(ImageHandler.makeMysticStarterString(aiachyState,
+                                                                  starter: entity.id == id ? entity.selectedLogo : entity.unSelectedLogo))
                     .resizable()
                     .scaledToFit()
                     .padding(3)

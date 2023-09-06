@@ -9,30 +9,35 @@ import SwiftUI
 //MARK: RegisterView - View
 struct RegisterView: View {
     
-    @EnvironmentObject var aiachyState: AiachyState
-    @ObservedObject var presenter = RegisterPresenter()
+    @StateObject var presenter: RegisterPresenter
+    let aiachyState: AiachyState
     let router: AuthRouterPresenter
     
+    init(aiachy aiachyState: AiachyState,
+         router: AuthRouterPresenter) {
+        self._presenter = StateObject(wrappedValue: RegisterPresenter(aiachy: aiachyState,
+                                                                      router: router))
+        self.aiachyState = aiachyState
+        self.router = router
+    }
+    
     var body: some View {
-        ZStack {
-            makeImageWithZodiacInt(aiachy: aiachyState)
-                .resizable()
-                .scaledToFit()
-                .opacity(0.2)
-                .padding(.all,15)
+            
             VStack {
                 //MARK: RegisterView - Back Button
                 HStack {
                     ACYPassButton(isItBackButton: true,
-                                  text: .BackButton) {
+                                  text: .back) {
                         router.navigate(to: .zodiacSelectionView)
                     }
                     Spacer()
                 }
                 .padding(.horizontal)
                 //MARK: RegisterView - Tittle & Description
-                ACYTitleAndDescriptionText(title: ACYTextHelper.ACYAuthText.ACYauthTitleText.RegisterViewTitle.rawValue,
-                                           description: ACYTextHelper.ACYAuthText.ACYauthDescriptionText.RegisterViewDescription.rawValue)
+                ACYTitleAndDescriptionText(title: TextHandler.makeAuthString(aiachy: aiachyState,
+                                                                             auth: .registerTitle),
+                                           description: TextHandler.makeAuthString(aiachy: aiachyState,
+                                                                                   auth: .registerDescription))
                 //MARK: RegisterView - Name & Surname Textfields
                 namesTextFields
                 //MARK: RegisterView - Mail Textfield
@@ -43,25 +48,15 @@ struct RegisterView: View {
                 //MARK: RegisterView - Continue Button
                 continueButton
             }
-        }
-        .onAppear(perform: {
-            presenter.userName = "1234"
-            presenter.userSurname = "12345"
-            presenter.userPassword = "1234567"
-            presenter.userPasswordAgain = "1234567"
-            presenter.userMail = "nomotetes.onetrue@gmail.com"
-        })
+            .background { backgroundZodiacImage }
         .environmentObject(aiachyState)
         .makeAccessibilitysForUITest(identifier: "RegisterViewID")
     }
 }
 //MARK: RegisterView -  Previews
-struct RegisterView_Previews: PreviewProvider {
-    static var previews: some View {
-        RegisterView(router: AuthRouterPresenter())
-            .environmentObject(ACY_PREVIEWS_STATE)
-            .preferredColorScheme(.light)
-    }
+#Preview("RegisterView") {
+    RegisterView(aiachy: ACY_PREVIEWS_STATE,
+                 router: AuthRouterPresenter())
 }
 //MARK: RegisterView - Extension
 extension RegisterView {
@@ -73,14 +68,14 @@ extension RegisterView {
                          isNeedPreferenceButton: false,
                          isHalfTextField: true ,
                          isSecureField: false,
-                         textFieldTitle: .NameTextField )
+                         textFieldTitle: .name )
             Spacer()
             ACYTextField(textfieldString: $presenter.userSurname,
                          errorType: $presenter.userSurnameErrorType,
                          isNeedPreferenceButton: false,
                          isHalfTextField: true ,
                          isSecureField: false,
-                         textFieldTitle: .SurnameTextField )
+                         textFieldTitle: .surname )
         }
         .frame(width: ACYdw(aiachyState, d: 0.9))
     }
@@ -91,7 +86,7 @@ extension RegisterView {
                      isNeedPreferenceButton: false,
                      isHalfTextField: false,
                      isSecureField: false,
-                     textFieldTitle: .MailTextField)
+                     textFieldTitle: .mail)
         .keyboardType(.emailAddress)
     }
     //MARK: RegisterView - Password & Password Again Textfields
@@ -102,24 +97,33 @@ extension RegisterView {
                          isNeedPreferenceButton: false,
                          isHalfTextField: true ,
                          isSecureField: true,
-                         textFieldTitle: .PasswordTextField )
+                         textFieldTitle: .password )
             Spacer()
             ACYTextField(textfieldString: $presenter.userPasswordAgain,
                          errorType: $presenter.userPasswordAgainErrorType,
                          isNeedPreferenceButton: false,
                          isHalfTextField: true ,
                          isSecureField: true,
-                         textFieldTitle: .AgainPasswordTextField )
+                         textFieldTitle: .againPassword )
         }
         .frame(width: ACYdw(aiachyState, d: 0.9))
     }
 
     //MARK: RegisterView - Continue Button
     private var continueButton: some View {
-        ACYButton(text: ACYTextHelper.ACYGeneralText.ACYappButtonText.ContinueButton.rawValue) {
+        ACYButton(text: .continue) {
             presenter.checkValues(aiachy: aiachyState) {
                 router.navigate(to: .ascendantSelectionView)
             }
         }
+    }
+    
+    
+    private var backgroundZodiacImage: some View {
+        makeImageWithZodiacInt(aiachy: aiachyState,zodiac: aiachyState.user.userZodiac.wrappedZodiac)
+            .resizable()
+            .scaledToFit()
+            .opacity(0.2)
+            .padding(.all,55)
     }
 }

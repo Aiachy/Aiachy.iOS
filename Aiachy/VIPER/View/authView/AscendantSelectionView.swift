@@ -9,15 +9,23 @@ import SwiftUI
 //MARK: AscendantSelectionView - View
 struct AscendantSelectionView: View {
     
-    @EnvironmentObject var aiachyState: AiachyState
-    @ObservedObject var presenter = AscendantSelectionPresenter()
+    @StateObject var presenter: AscendantSelectionPresenter
+    var aiachyState: AiachyState
     let router: AuthRouterPresenter
+    
+    init(aiachy aiachyState: AiachyState,
+         router: AuthRouterPresenter) {
+        self._presenter = StateObject(wrappedValue: AscendantSelectionPresenter(aiachy: aiachyState,
+                                                                                router: router))
+        self.aiachyState = aiachyState
+        self.router = router
+    }
     
     var body: some View {
         ZStack {
+            AuthBackground()
             //MARK: AscendantSelectionView - Background Image
-            Image.setACYBackgroundImage(aiachyState,
-                                        background: .authAscendantSelectionBackground)
+            Image(ImageHandler.makeAuthString(aiachyState, auth: .ascendantSelectionBackground))
             .resizable()
             .scaledToFit()
             .opacity(0.2)
@@ -35,7 +43,7 @@ struct AscendantSelectionView: View {
                 hourAndMinutePicker
                 Spacer()
                 //MARK: AscendantSelectionView - Upload value button
-                ACYButton(text: ACYTextHelper.ACYGeneralText.ACYappButtonText.ContinueButton.rawValue) {
+                ACYButton(text: .continue) {
                     print(presenter.userHour)
                     presenter.checkValues(aiachyState: aiachyState) {
                         router.navigate(to: .attentionView)
@@ -48,7 +56,7 @@ struct AscendantSelectionView: View {
             sheetView
         })
         .overlay(content: {
-            if presenter.isShowingACYAlert {
+            if presenter.acyAlertEntity.isShowingAlert {
                 ACYAlertView(acyAlertEntity: presenter.acyAlertEntity)
             }
         })
@@ -61,9 +69,7 @@ struct AscendantSelectionView: View {
 }
 //MARK: AscendantSelectionView - Previews
 #Preview("AscendantSelectionView") {
-    AscendantSelectionView(router: AuthRouterPresenter())
-        .background(AuthBackground())
-        .environmentObject(ACY_PREVIEWS_STATE)
+    AscendantSelectionView(aiachy: ACY_PREVIEWS_STATE, router: AuthRouterPresenter())
 }
 //MARK: AscendantSelectionView - Extension
 extension AscendantSelectionView {
@@ -71,7 +77,7 @@ extension AscendantSelectionView {
     private var backButton: some View {
         HStack {
             ACYPassButton(isItBackButton: true, 
-                          text: .BackButton) {
+                          text: .back) {
                 router.navigate(to: .registerView)
             }
             Spacer()
@@ -80,12 +86,14 @@ extension AscendantSelectionView {
     }
     //MARK: AscendantSelectionView - Tittle & Description
     private var titleAndDescription: some View {
-        ACYTitleAndDescriptionText(title: ACYTextHelper.ACYAuthText.ACYauthTitleText.AscendantSelectionViewTitle.rawValue,
-                                   description: ACYTextHelper.ACYAuthText.ACYauthDescriptionText.AscendantSelectionViewDescription.rawValue)
+        ACYTitleAndDescriptionText(title: TextHandler.makeAuthString(aiachy: aiachyState,
+                                                                     auth: .ascendantSelectionTitle),
+                                   description: TextHandler.makeAuthString(aiachy: aiachyState,
+                                                                           auth: .ascendantSelectionDescription))
     }
     //MARK: AscendantSelectionView - Choose Location
     private var chooseLocation: some View {
-        ACYAlternativeButton(text: presenter.makeButtonText() ) {
+        ACYAlternativeButton(text: .chooseLocation,stringText: presenter.makeChosenLocation()) {
             presenter.isPressedLocationButton.toggle()
         }
     }
@@ -103,7 +111,7 @@ extension AscendantSelectionView {
     //MARK: AscendantSelectionView - Hour And Minute Picker
     private var hourAndMinutePicker: some View {
         HStack {
-            Text(ACYTextHelper.ACYGeneralText.ACYNameText.ClockNameText.rawValue.locale())
+            Text(TextHandler.makeAuthHelperAuthString(aiachy: aiachyState, helperAuth: .clock))
                 .font(.aiachyFont(.roundedBold16))
             Spacer()
             Picker("Hour", selection: $presenter.userHour) {
@@ -138,7 +146,7 @@ extension AscendantSelectionView {
             Color.makeAiachyColor(aiachyState, aiachyColor: .backgroundColor)
                 .ignoresSafeArea()
             ScrollView(.vertical, showsIndicators: true) {
-                ACYTextField(textfieldString: $presenter.searchText, errorType: .constant(0), textFieldTitle: .PlaceTextField)
+                ACYTextField(textfieldString: $presenter.searchText, errorType: .constant(0), textFieldTitle: .place)
                     .onChange(of: presenter.searchText ) { newValue in
                         presenter.searchPublisher.send(newValue)
                     }

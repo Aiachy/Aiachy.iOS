@@ -10,14 +10,19 @@ import SwiftUI
 struct ACYAlternativeButton: View {
     
     @EnvironmentObject var aiachyState: AiachyState
-    let text: String
+    let text: TextHelper.GeneralCompletion.button
+    var stringText: String
     let action: () -> Void
     
     var body: some View {
         Button {
             action()
         } label: {
-            Text(text.locale())
+            if !stringText.isEmpty {
+                Text(stringText)
+            } else {
+                Text(TextHandler.makeGeneralButtonString(aiachy: aiachyState, button: text))
+            }
         }
         .frame(width: ACYdw(aiachyState, d: ACY_MAX_SIZE),
                height: ACYdh(aiachyState, d: ACY_MIN_SIZE))
@@ -29,7 +34,7 @@ struct ACYAlternativeButton: View {
 
 struct ACYAlternativeButton_Previews: PreviewProvider {
     static var previews: some View {
-        ACYAlternativeButton(text: "") {}
+        ACYAlternativeButton(text: .back,stringText: "") {}
         .environmentObject(ACY_PREVIEWS_STATE)
     }
 }

@@ -13,6 +13,6 @@ struct ACYTabBarEntity: Identifiable {
     var widthCircle: Double
     var widthImage: Double
     var routering: HomeViewsEnum
-    var selectedImage: ImageHelper.ACYAppImage.ACYtabBarLogo?
-    var unSelectedImage: ImageHelper.ACYAppImage.ACYtabBarLogo?
+    var selectedImage: ImageHelper.HomeCompletion.tabBarLogo?
+    var unSelectedImage: ImageHelper.HomeCompletion.tabBarLogo?
 }

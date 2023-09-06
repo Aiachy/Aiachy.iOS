@@ -9,9 +9,18 @@ import SwiftUI
 //MARK: ZodiacSelectionView - View
 struct ZodiacSelectionView: View {
     
-    @EnvironmentObject var aiachyState: AiachyState
-    @ObservedObject var presenter = ZodiacSelectionPresenter()
+    @StateObject var presenter: ZodiacSelectionPresenter
+    let aiachyState: AiachyState
     let router: AuthRouterPresenter
+    
+    init(aiachy aiachyState: AiachyState, 
+         router: AuthRouterPresenter) {
+        self._presenter = StateObject(wrappedValue: ZodiacSelectionPresenter(aiachy: aiachyState,
+                                                                             router: router))
+        self.aiachyState = aiachyState
+        self.router = router
+    }
+    
     
     var body: some View {
         VStack {
@@ -19,7 +28,6 @@ struct ZodiacSelectionView: View {
             backButton
             //MARK: ZodiacSelectionView - Title
             title
-            Spacer()
             //MARK: ZodiacSelectionView - Zodiac Selections
             zodiacs
             Spacer()
@@ -32,18 +40,16 @@ struct ZodiacSelectionView: View {
 }
 //MARK: ZodiacSelectionView - Previews
 #Preview {
-    ZodiacSelectionView(router: AuthRouterPresenter())
-        .padding(.vertical)
-        .background(AuthBackground())
-        .environmentObject(ACY_PREVIEWS_STATE)
+    ZodiacSelectionView(aiachy: ACY_PREVIEWS_STATE,
+                        router: AuthRouterPresenter())
 }
 //MARK: ZodiacSelectionView - extension
 extension ZodiacSelectionView {
     //MARK: ZodiacSelectionView - Back Button
     private var backButton: some View {
-        HStack(alignment: .firstTextBaseline) {
+        HStack {
             ACYPassButton(isItBackButton: true,
-                          text: .BackButton) {
+                          text: .back) {
                 if aiachyState.isGuest {
                     router.navigate(to: .loginView)
                     aiachyState.isGuest = false
@@ -58,28 +64,29 @@ extension ZodiacSelectionView {
     //MARK: ZodiacSelectionView - Title
     private var title: some View {
         ACYTitleAndDescriptionText(isHaveDescription: false,
-                                   title: ACYTextHelper.ACYAuthText.ACYauthTitleText.ZodiacSelectionViewTitle.rawValue)
+                                   title: TextHandler.makeAuthString(aiachy: aiachyState, auth: .zodiacSelectionTitle))
     }
     //MARK: ZodiacSelectionView - Zodiac Selections
     private var zodiacs: some View {
         LazyVGrid(columns: presenter.columns, spacing: 10) {
             ForEach(presenter.zodiacSelectEntity, id: \.id) { entity in
                 ZodiacSelectionTemplate(selected: $presenter.selectedZodiac,
-                                entity: entity)
+                                        entity: entity)
             }
         }
     }
     //MARK: ZodiacSelectionView - Zodiac Continue Button
     private var continueButton: some View {
-        ACYButton(text: ACYTextHelper.ACYGeneralText.ACYappButtonText.ContinueButton.rawValue) {
-            self.aiachyState.user.userZodiac.zodiac = presenter.selectedZodiacToInt(selectedZodiac: presenter.selectedZodiac)
+        ACYButton(text: .continue) {
+            self.aiachyState.user.userZodiac.zodiac = presenter.selectedZodiacToInt(selectedZodiac: presenter.selectedZodiac!)
+            
             if aiachyState.isGuest {
                 router.isUserComplateAuthCompletion = true
             } else {
                 router.navigate(to: .registerView)
             }
         }
-        .disabledOpacited(bool: (presenter.selectedZodiac.isEmpty != false),
+        .disabledOpacited(bool: (presenter.selectedZodiac == nil),
                           disabledOpacity: 0.3)
     }
 }

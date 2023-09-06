@@ -27,6 +27,8 @@ class RegisterPresenter: ObservableObject {
     @Published var userMailErrorType: Int
     @Published var userPasswordErrorType: Int
     @Published var userPasswordAgainErrorType: Int
+    let aiachyState: AiachyState
+    let router: AuthRouterPresenter
     let interactor: RegisterInteractor
     
     init(userNameErrorType: Int = 0,
@@ -39,6 +41,8 @@ class RegisterPresenter: ObservableObject {
          userMail: String = "" ,
          userPassword: String = "" ,
          userPasswordAgain: String = "",
+         aiachy aiachyState: AiachyState,
+         router: AuthRouterPresenter,
          interactor: RegisterInteractor = RegisterInteractor()) {
         self.userNameErrorType = userNameErrorType
         self.userSurnameErrorType = userSurnameErrorType
@@ -50,6 +54,8 @@ class RegisterPresenter: ObservableObject {
         self.userMail = userMail
         self.userPassword = userPassword
         self.userPasswordAgain = userPasswordAgain
+        self.aiachyState = aiachyState
+        self.router = router
         self.interactor = interactor
     }
 }
@@ -82,7 +88,7 @@ extension RegisterPresenter: RegisterPresenterAiachyStateProtocol {
             return
         }
         guard mail != "" else {
-            userMailErrorType = 53
+            userMailErrorType = 5
             return
         }
         guard mail.isValidEmail() else {

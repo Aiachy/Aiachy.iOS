@@ -10,14 +10,15 @@ import SwiftUI
 struct ACYButton: View {
     
     @EnvironmentObject var aiachyState: AiachyState
-    let text: String
+    let text: TextHelper.GeneralCompletion.button
     let action: () -> Void
     
     var body: some View {
         Button {
             action()
         } label: {
-            Text(text.locale())
+            Text(TextHandler.makeGeneralButtonString(aiachy: aiachyState,
+                                                     button: text))
         }
         .frame(width: ACYdw(aiachyState, d: ACY_MAX_SIZE),
                height: ACYdh(aiachyState, d: ACY_MIN_SIZE))
@@ -27,13 +28,10 @@ struct ACYButton: View {
     }
 }
 
-struct aiachyButton_Previews: PreviewProvider {
-    
-    static let text = ACYTextHelper.ACYGeneralText.ACYappButtonText.ContinueButton.rawValue
-    
-    static var previews: some View {
-        ACYButton(text: text) { }
-            .environmentObject(ACY_PREVIEWS_STATE)
+#Preview {
+    ACYButton(text: .continue) {
+        
     }
+    .environmentObject(ACY_PREVIEWS_STATE)
 }
 

@@ -14,21 +14,24 @@ struct AttentionView: View {
     let router: AuthRouterPresenter
     
     var body: some View {
-        VStack(spacing: 20) {
-            //NextPatchTODO: Fix this 
-            HStack {
+        ZStack {
+            AuthBackground()
+            VStack(spacing: 20) {
+                //NextPatchTODO: Fix this
+                HStack {
+                    Spacer()
+                }
+                //MARK: AttentionView - Attention Image
+                attentionImage
+                //MARK: AttentionView - Title And Description
+                titleAndDescription
+                //MARK: AttentionView - Twitter
+                twitterDescription
+                Spacer()
+                //MARK: AttentionView - Continue Button
+                continueButton
                 Spacer()
             }
-            //MARK: AttentionView - Attention Image
-            attentionImage
-            //MARK: AttentionView - Title And Description
-            titleAndDescription
-            //MARK: AttentionView - Twitter
-            twitterDescription
-            Spacer()
-            //MARK: AttentionView - Continue Button
-            continueButton
-            Spacer()
         }
         .overlay {
             if presenter.acyAlertEntity.isShowingAlert {
@@ -49,7 +52,8 @@ struct AttentionView: View {
 extension AttentionView {
     //MARK: AttentionView - Image
     private var attentionImage: some View {
-        Image.setACYAuthCompletion(aiachyState, auth: .attention)
+        Image(ImageHandler.makeAuthString(aiachyState, 
+                                          auth: .attention))
             .resizable()
             .scaledToFit()
             .frame(width: ACYdw(aiachyState, d: 0.8))
@@ -58,12 +62,16 @@ extension AttentionView {
     //MARK: AttentionView - Title And Description
     private var titleAndDescription: some View {
         VStack(spacing: 20) {
-            Text(ACYTextHelper.ACYAuthText.ACYauthTitleText.AttentionViewTitle.rawValue.locale())
-                .foregroundColor(.makeAiachyColor(aiachyState, aiachyColor: .firstColor))
+            Text(TextHandler.makeAuthString(aiachy: aiachyState, 
+                                            auth: .attentionTitle))
+                .foregroundColor(.makeAiachyColor(aiachyState, 
+                                                  aiachyColor: .firstColor))
                 .font(.aiachyFont(.cinzelBlack20))
             
-            Text(ACYTextHelper.ACYAuthText.ACYauthDescriptionText.AttentionViewDescription.rawValue.locale())
-                .foregroundColor(.makeAiachyColor(aiachyState, aiachyColor: .firstColor))
+            Text(TextHandler.makeAuthString(aiachy: aiachyState, 
+                                            auth: .attentionDescription))
+                .foregroundColor(.makeAiachyColor(aiachyState, 
+                                                  aiachyColor: .firstColor))
                 .font(.aiachyFont(.oldBold14))
         }
         .multilineTextAlignment(.center)
@@ -71,8 +79,10 @@ extension AttentionView {
     }
     //MARK: AttentionView - Twitter
     private var twitterDescription: some View {
-        Text(ACYTextHelper.ACYAuthText.ACYauthDescriptionText.AttentionViewDescriptionLink.rawValue.locale())
-            .foregroundColor(.makeAiachyColor(aiachyState, aiachyColor: .secondColor))
+        Text(TextHandler.makeAuthString(aiachy: aiachyState, 
+                                        auth: .attentionSecondDescription))
+            .foregroundColor(.makeAiachyColor(aiachyState, 
+                                              aiachyColor: .secondColor))
             .font(.aiachyFont(.roundedBold16))
             .multilineTextAlignment(.center)
             .padding(.horizontal)
@@ -82,11 +92,10 @@ extension AttentionView {
     }
     //MARK: AttentionView - Continue Button
     private var continueButton: some View {
-        ACYButton(text: ACYTextHelper.ACYGeneralText.ACYappButtonText.ContinueButton.rawValue) {
+        ACYButton(text: .continue) {
             presenter.makeReadyToApp(aiachy: aiachyState) {
                 guard $0 else { return }
                 router.isUserComplateAuthCompletion = true
-                
             }
         }
         .disabledOpacited(bool: presenter.isReadyForApp, disabledOpacity: 0.4)

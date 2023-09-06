@@ -2,16 +2,7 @@
   "images" : [
     {
       "filename" : "Group 1000002200.png",
-      "idiom" : "iphone",
-      "scale" : "1x"
-    },
-    {
-      "idiom" : "iphone",
-      "scale" : "2x"
-    },
-    {
-      "idiom" : "iphone",
-      "scale" : "3x"
+      "idiom" : "iphone"
     }
   ],
   "info" : {

@@ -10,8 +10,13 @@ import SwiftUI
 struct SplashView: View {
     
     @Environment(\.colorScheme) var colorScheme
-    @StateObject var aiachyState = AiachyState()
-    @ObservedObject var presenter = SplashPresenter()
+    @StateObject var aiachyState: AiachyState
+    @StateObject var presenter: SplashPresenter
+    
+    init(aiachyState: AiachyState = AiachyState() ) {
+        self._aiachyState = StateObject(wrappedValue: aiachyState)
+        self._presenter = StateObject(wrappedValue: SplashPresenter(aiachy: aiachyState))
+    }
     
     var body: some View {
         ZStack {
@@ -38,19 +43,12 @@ struct SplashView: View {
             }
         }
         .onAppear {
-            presenter.startApp(colorScheme: colorScheme, aiachy: aiachyState)
+            presenter.startApp(colorScheme: colorScheme)
         }
         .environmentObject(aiachyState)
     }
 }
 
-struct SplashView_Previews: PreviewProvider {
-    
-    static let aiachyState = ACY_PREVIEWS_STATE
-    
-    static var previews: some View {
-        SplashView()
-            .environmentObject(aiachyState)
-            
-    }
+#Preview {
+    SplashView(aiachyState: ACY_PREVIEWS_STATE)
 }

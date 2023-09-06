@@ -15,10 +15,10 @@ class MysticPresenter: ObservableObject {
         self.selection = selection
     }
     
-    let ACYStarterLogoEntityData: [ACYStarterLogoEntity] = [
-        ACYStarterLogoEntity(id: 0, selectedLogo: .tarotStarterLogoSelected, unSelectedLogo: .tarotStarterLogoUnSelected),
-        ACYStarterLogoEntity(id: 1, selectedLogo: .palmistryStarterLogoSelected, unSelectedLogo: .palmistryStarterLogoUnSelected),
-        ACYStarterLogoEntity(id: 2, selectedLogo: .crystalGazingStarterLogoSelected, unSelectedLogo: .crystalGazingStarterLogoUnSelected)
+    let ACYStarterLogoEntityData: [ACYmysticStarterLogoEntity] = [
+        ACYmysticStarterLogoEntity(id: 0, selectedLogo: .tarotLogoSelected, unSelectedLogo: .tarotLogoUnSelected),
+        ACYmysticStarterLogoEntity(id: 1, selectedLogo: .palmistryLogoSelected, unSelectedLogo: .palmistryLogoUnSelected),
+        ACYmysticStarterLogoEntity(id: 2, selectedLogo: .crystalGazingStarterLogoSelected, unSelectedLogo: .crystalGazingStarterLogoUnSelected)
     ]
     
 }

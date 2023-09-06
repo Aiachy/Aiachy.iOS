@@ -21,8 +21,19 @@ struct ColorHelper {
         case thirdColor = "3C"
         case fourthColor = "4C"
         case fifthColor = "5C"
+        case sixColor = "6C"
         case backgroundColor = "BC"
         case backgroundAlternativeColor = "BAC"
         case backgroundBlurColor = "BBC"
+    }
+    
+    enum Chackra: String, CaseIterable {
+        case firstChackra = "1Chackra"
+        case secondChackra = "2Chackra"
+        case thirdChackra = "3Chackra"
+        case fourthChackra = "4Chackra"
+        case fifthChackra = "5Chackra"
+        case sixthChackra = "6Chackra"
+        case seventhChackra = "7Chackra"
     }
 }

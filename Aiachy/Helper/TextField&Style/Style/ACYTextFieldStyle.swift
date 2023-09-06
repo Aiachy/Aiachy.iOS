@@ -21,7 +21,7 @@ struct ACYTextFieldStyle: TextFieldStyle {
                 .cornerRadius(5)
                 .padding(.all,1)
             VStack(alignment: .leading) {
-                Text(text.locale())
+                Text(text)
                     .font(.aiachyFont(.roundedRegular10))
                     .foregroundColor(.makeAiachyColor(aiachyState, aiachyColor: .firstColor))
                     .padding(.init(top: 5, leading: 5, bottom: 0, trailing: 0))

@@ -8,20 +8,22 @@
 import Foundation
 
 /// User Main Model
+//MARK: - User -
 struct User: Codable {
     var userLoginInfo = UserLoginInfo()
     var userInfo = UserInfo()
     var userZodiac = UserZodiac()
-    var userSubscription = UserSubscription()
+    var userOracle = UserOracle()
     var aiachyInfo = AiachyInfo()
     var aiachyLove = AiachyLove()
     var aiachyMystic = AiachyMystic()
     var aiachyGalaxy = AiachyGalaxy()
     var deviceInfo = DeviceInfo()
     var userCompletion = UserCompletion()
+    
 }
 
-// MARK: User - UserLoginInfo
+// MARK  - User - UserLoginInfo -
 struct UserLoginInfo: Codable {
     var email: String?
     var password: String?
@@ -41,7 +43,7 @@ struct UserLoginInfo: Codable {
     }
 }
 
-/// MARK: UserLoginInfo - Number
+// MARK: UserLoginInfo - PhoneNumber -
 struct UserNumber: Codable {
     var countryCode: Int?
     var phoneNumber: Int?
@@ -58,7 +60,7 @@ struct UserNumber: Codable {
     }
 }
 
-// MARK: User - UserInfo
+// MARK: User - UserInfo -
 struct UserInfo: Codable {
     var id: String?
     var fullName = UserInfoFullName()
@@ -70,7 +72,7 @@ struct UserInfo: Codable {
     }
 }
 
-// MARK: UserInfo - FullName
+// MARK: UserInfo - FullName -
 struct UserInfoFullName: Codable {
     var firstName: String?
     var lastName: String?
@@ -87,7 +89,7 @@ struct UserInfoFullName: Codable {
     }
 }
 
-// MARK: UserInfo - BirthDay
+// MARK: UserInfo - BirthDay -
 struct UserInfoBirthDay: Codable {
     var year: Int?
     var month: Int?
@@ -108,7 +110,7 @@ struct UserInfoBirthDay: Codable {
         day ?? 00
     }
 }
-
+// MARK: UserInfo - UserInfoBirthDayClock -
 struct UserInfoBirthDayClock: Codable {
     var hour: Int?
     var minute: Int?
@@ -177,19 +179,23 @@ struct UserZodiac: Codable {
 }
 
 // MARK: User - UserSubscription
-struct UserSubscription: Codable {
-    var isSubscriped: Bool?
-    var subscripedMethod: String?
-    var subscripedPackage: String?
+struct UserOracle: Codable {
+    var isOracled: Bool?
+    var oracleMethod: String?
+    var oraclePackage: String?
+    var aicyCash: Int?
     
-    var wrappedIsSubscriped: Bool {
-        isSubscriped ?? false
+    var wrappedIsOracled: Bool {
+        isOracled ?? false
     }
-    var wrappedSubscripedMethod: String {
-        subscripedMethod ?? ""
+    var wrappedOracleMethod: String {
+        oracleMethod ?? ""
     }
-    var wrappedSubscripedPackage: String {
-        subscripedPackage ?? ""
+    var wrappedOraclePackage: String {
+        oraclePackage ?? "None"
+    }
+    var wrappedAicyCash: Int {
+        aicyCash ?? 0
     }
 }
 
@@ -197,7 +203,10 @@ struct UserSubscription: Codable {
 struct AiachyInfo: Codable {
     var version: String?
     var zodiacDataVersion: String?
+    var tuneDataVersion: String?
     var theme: String?
+    var language: String?
+    var languageIdentifier: String?
     
     var wrappedVersion: String {
         version ?? ""
@@ -205,8 +214,17 @@ struct AiachyInfo: Codable {
     var wrappedZodiacDataVersion: String {
         zodiacDataVersion ?? ""
     }
+    var wrappedTuneDataVersion: String {
+        tuneDataVersion ?? ""
+    }
     var wrappedTheme: String {
-        theme ?? ""
+        theme ?? "Light"
+    }
+    var wrappedLanguage: String {
+        language ?? "US"
+    }
+    var wrappedLanguageIdentifier: String {
+        languageIdentifier ?? "en_US"
     }
 }
 

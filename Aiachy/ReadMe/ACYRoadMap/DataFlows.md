@@ -5,7 +5,9 @@
 
 /-------/
 
-## AiachyGalaxy
+# Galaxy
+
+## tune
     - Data (Data)
 
 /-------/
@@ -65,57 +67,84 @@
 
 /-------/
 
+# Zodiac
+
+- SerialNumber: Date + Version + Zodiac 
+- Example: 20000101 001 01 -> 2000010100101
+
+- Date - 2000 01 01
+- Version - 001  
+- Zodiac - 01
+
+- Zodiac DocumantCode 2000010100101 
+
 ## Zodiac
+    - serialNumber (Int)
     - date (String)
-        - zodiac ([Int])
-        - dailyComment ([String])
-        - dailySpecialComment ([String])
-        - compatibilityZodiacs ([Array])
-            - Zodiac (Int)
-            - Zodiac (Int)
-        - zodiacStatus
-            - overall
-                - rate (Int)
-                - statusComment (String)
-            - love 
-                - rate (Int)
-                - statusComment (String)
-            - businessLife 
-                - rate (Int)
-                - statusComment (String)
-            - health 
-                - rate (Int)
-                - statusComment (String)
-            - holiday
-                - rate (Int)
-                - statusComment (String)
-            - diet
-                - rate (Int)
-                - statusComment (String)
-        - ascendiant ([Array])
-            - ascendiant (String)
-            - dailyComment (Stirng)
+    - zodiac ([Int])
+    - dailyComment ([String])
+    - dailySpecialComment ([String])
+    - zodiacDataVersion (String)
+    
+- Ascendiant DocumantCode 2000010100101 + (determinedZodiac)
+
+## ascendiant
+    - serialNumber (Int)
+    - determinedZodiac (Int)
+    - comment (Stirng)
+
+- Compatibility DocumantCode 2000010100101 + (0 or 1)
+
+## Compatibility
+    - serialNumber (Int)
+    - Zodiac (Int)
+
+- Status DocumantCode 2000010100101 + (tier)
+
+## Status
+    - serialNumber (Int)
+    - serialNumber: (String)        
+    - tier: (Int)
+    - rate: (Double)
+    - comment: (String)
 /----------------------/
 
 # Local Data
 
-## CoreData
+## CoreData (Zodiac)
 - ZodiacEntity
-    - zodiac (Int)
-    - date (Date)
-    - dailyComment (String)
-    - dailySpecialComment (String)
-    - compatibilityZodiacs (Data)
-    - zodiStatus (Data)
+    - comment (String)
+    - date (String)
+    - serialNumber (Int16)
+    - zodiac (Int16)
+    - zodiacDataVersion (String)
     
 - AscendiantEntity
-    - zodiac (Int)
-    - date (Date)
+    - zodiac (Int16)
+    - determinedZodiac (Int16)
     - dailyComment (String)
 
-- AiachyGalaxyEntity
-    - melody (Data)
+- StatusEntity
+    - comment (String)
+    - rate (Double)
+    - serialNumber (Int16)
+    - tier (Int16)
+    
+- CompatibilityEntity
+    - serialNumber (Int16)
+    - zodiac (Int16) 
+    
+## CoreData (Galaxy)
 
+- TuneEntity
+    - determinedZodiac (Int16)
+    - duration (Int16)
+    - isPremium (Bool)
+    - name (String)
+    - statement (String)
+    - tuneDataVersion (String)
+    - tuneId (String)
+    - url (String)
 /----------------------/
 
 # DATA TYPE
@@ -134,3 +163,43 @@ SagittariusZodiac = 8
 CapricornZodiac = 9
 AquariusZodiac = 10
 PiscesZodiac = 11
+
+## Status with tier number
+
+UniverseStatus - Tier 0
+EnlightenmentStatus - Tier 1
+TouchStatus - Tier 2
+LoveStatus - Tier 3
+StrengthStatus - Tier 4
+CreativeStatus - Tier 5
+FoundationStatus - Tier 6
+
+/----------------------/
+
+# EXAMPLE DATA
+
+{
+  "date": "2000.01.01",
+  "zodiac": 1,
+  "serialNumber": 2023010100101,
+  "comment": "Comment",
+  "zodiacDataVersion": "0.0.1",
+  "ascendiant": {
+    "serialNumber": 2023010100101,
+    "comment": "Ascendiant Comment"
+  },
+  "compatibility": [
+    {
+      "serialNumber": 2023010100101,
+      "zodiac": 0
+    }
+  ],
+  "status": [
+    {
+      "serialNumber": 2023010100101,
+      "tier": 0,
+      "rate": 0.3,
+      "comment": "Status Comment"
+    }
+  ]
+}

@@ -15,29 +15,26 @@ struct CrystalGazingStarterView: View {
     var body: some View {
         ZStack {
             VStack(spacing: 0) {
-                Image.setACYMysticStarterImage(aiachyState,
-                                               mysticStarterImage: .crystalGazingStarterImage1)
+                Image(ImageHandler.makeMysticStarterString(aiachyState, starter: .crystalGazingStarter1))
                     .resizable()
                     .scaledToFill()
                     .offset(y: isOnAppear ? 0 : ACYdh(aiachyState, d: -0.5))
                     .opacity(isOnAppear ? 1 : 0)
-                Image.setACYMysticStarterImage(aiachyState,
-                                               mysticStarterImage: .crystalGazingStarterImage1)
+                Image(ImageHandler.makeMysticStarterString(aiachyState, starter: .crystalGazingStarter1))
                     .resizable()
                     .scaledToFill()
                     .offset(y: isOnAppear ? 0 : ACYdh(aiachyState, d: 0.5))
                     .opacity(isOnAppear ? 1 : 0)
             }
-            Image.setACYMysticStarterImage(aiachyState,
-                                           mysticStarterImage: .crystalGazingStarterImage2)
+            Image(ImageHandler.makeMysticStarterString(aiachyState, starter: .crystalGazingStarter2))
                 .resizable()
                 .scaledToFit()
                 .frame(width: ACYdw(aiachyState, d: 0.5))
                 .offset(y: isOnAppear ? 0 : ACYdh(aiachyState, d: -0.7))
                 .opacity(isOnAppear ? 1 : 0)
             ACYMysticTitleAndDescriptionText(fontType: .CinzelBlack30,
-                                             title: .crystalGazingStarterTitle,
-                                             description: .crystalGazingStarterDescription)
+                                             title: .crystalGazingTitle,
+                                             description: .crystalGazingDescription)
             .offset(y: isOnAppear ? ACYdh(aiachyState, d: -0.22) : ACYdh(aiachyState, d: -0.7))
             .opacity(isOnAppear ? 1 : 0)
         }

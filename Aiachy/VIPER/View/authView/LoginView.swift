@@ -9,13 +9,21 @@ import SwiftUI
 //MARK: LoginView - View
 struct LoginView: View {
     
-    @EnvironmentObject var aiachyState : AiachyState
-    @ObservedObject var presenter = LoginPresenter()
+    @StateObject var presenter: LoginPresenter
+    let aiachyState: AiachyState
     let router: AuthRouterPresenter
-    @State var textfieldio = ""
+    
+    init(aiachy aiachyState: AiachyState,
+         router: AuthRouterPresenter) {
+        self._presenter = StateObject(wrappedValue: LoginPresenter(aiachy: aiachyState,
+                                                                   router: router))
+        self.aiachyState = aiachyState
+        self.router = router
+    }
+    
     var body: some View {
         ZStack {
-            Image.setACYBackgroundImage(aiachyState, background: .authLoginBackground)
+            Image(ImageHandler.makeAuthString(aiachyState, auth: .authLoginBackground))
                 .resizable()
                 .scaledToFit()
                 .opacity(0.2)
@@ -41,14 +49,9 @@ struct LoginView: View {
     }
 }
 //MARK: LoginView - Previews
-struct LoginView_Previews: PreviewProvider {
-    static var previews: some View {
-        ZStack {
-            AuthBackground()
-            LoginView(router: AuthRouterPresenter())
-        }
-        .environmentObject(ACY_PREVIEWS_STATE)
-    }
+#Preview {
+    LoginView(aiachy: ACY_PREVIEWS_STATE,
+              router: AuthRouterPresenter())
 }
 //MARK: LoginView - extension
 extension LoginView {
@@ -57,7 +60,7 @@ extension LoginView {
         HStack {
             Spacer()
             ACYPassButton(isItBackButton: false,
-                          text: .GuestButton) {
+                          text: .guest) {
                 router.navigate(to: .zodiacSelectionView)
                 aiachyState.isGuest = true
             }
@@ -67,8 +70,10 @@ extension LoginView {
     }
     //MARK: LoginView - Title & Description
     private var titleAndDescription: some View {
-        ACYTitleAndDescriptionText(title: ACYTextHelper.ACYAuthText.ACYauthTitleText.LoginScreenViewTitle.rawValue,
-                                   description: ACYTextHelper.ACYAuthText.ACYauthDescriptionText.LoginScreenViewDescription.rawValue)
+        ACYTitleAndDescriptionText(title: TextHandler.makeAuthString(aiachy: aiachyState,
+                                                                     auth: .loginScreenTitle),
+                                   description: TextHandler.makeAuthString(aiachy: aiachyState,
+                                                                           auth: .loginScreenDescription))
     }
     
     //MARK: LoginView - textfields
@@ -80,7 +85,7 @@ extension LoginView {
                      isNeedPreferenceButton: false,
                      isHalfTextField: false,
                      isSecureField: false,
-                     textFieldTitle: .MailPhoneTextField)
+                     textFieldTitle: .mailPhone)
         .keyboardType(.default)
         .padding(.bottom)
         //password textfield
@@ -89,13 +94,13 @@ extension LoginView {
                      isNeedPreferenceButton: false,
                      isHalfTextField: false,
                      isSecureField: true,
-                     textFieldTitle: .PasswordTextField)
+                     textFieldTitle: .password)
         .keyboardType(.default)
         .padding(.bottom,30)
     }
     //MARK: LoginView - loginButton
     private var loginButton: some View {
-        ACYButton(text: ACYTextHelper.ACYGeneralText.ACYappButtonText.LoginButton.rawValue) {
+        ACYButton(text: .login) {
             presenter.checkForLogin(aiachy: aiachyState) {
                 router.isUserComplateAuthCompletion = true
             }
@@ -111,7 +116,7 @@ extension LoginView {
             Button {
                 router.navigate(to: .zodiacSelectionView)
             } label: {
-                Text(ACYTextHelper.ACYGeneralText.ACYappButtonText.RegisterButton.rawValue.locale())
+                Text(TextHandler.makeGeneralButtonString(aiachy: aiachyState, button: .register))
                     .font(.aiachyFont(.cinzelBold12))
                     .foregroundColor(.makeAiachyColor(aiachyState, aiachyColor: .secondColor))
             }
