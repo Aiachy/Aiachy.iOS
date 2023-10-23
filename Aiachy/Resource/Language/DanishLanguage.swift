@@ -91,37 +91,41 @@ struct DanishLanguage {
     
     // MARK: - DanishLanguage - AuthCompletion -
     typealias textHelperAuthCompletion = TextHelper.AuthCompletion
-    let auth: [textHelperAuthCompletion.auth:String] = [
-        .loginScreenTitle: "Lås op for astrologiens porte, træd ind i Aiachys verden",
-        .zodiacSelectionTitle: "Tiden er kommet til at lære din fremtid at kende",
+    let authTitle: [textHelperAuthCompletion.title:String] = [
+        .loginScreenTitle: "Afslør Magien, Rejs i Aiachy's Rige",
+        .crystalSelectionTitle: "Afslør den mystiske krystal af din fødsel",
         .registerTitle: "Frigør dit stjernetegns potentiale",
-        .ascendantSelectionTitle: "Opklar din indre glans",
-        .attentionTitle: "OBS",
-        .loginScreenDescription: "Lås op for astrologiens mysterier, dyk ned i Aiachys fortryllende verden og udforsk det fascinerende rige af stjernetegn",
-        .registerDescription: "Træd ind i Aiachy for en personlig horoskopoplevelse! Lad os tilpasse dine stjernetegnsoplysninger med dine fortrolige detaljer og tage dig med på en unik rejse",
-        .ascendantSelectionDescription: "Påbegynd en transformativ rejse med dit opstigende tegn og frigør den indre kraft",
-        .ascendantSelectionViewGuideDescription: "Vælg fødselsdato og -tid",
-        .attentionDescription: "Applikationen er stadig ikke fuldt logget ud. Det er meget normalt at støde på fejl. Hvis du støder på en og ønsker at søge efter en løsning, kan du sende den til os hurtigt fra hjælpsektionen. Appen vil fremstå for første og eneste gang i denne genre med din støtte. Husk at have det sjovt, mens du bruger appen",
-        .attentionSecondDescription: "Opdatering kommer den 21. hver måned. Tjek vores Twitter"
+        .ascendantSelectionTitle: "Opklar Din Indre Glans",
+        .attentionTitle: "OPMÆRKSOMHED",
     ]
+    
+    let authDescription: [textHelperAuthCompletion.description:String] = [
+        .loginScreenDescription: "Dekrypter Mysterierne af Æteren, Træd ind i Aiachy's Hellige Helligdom, og Vær Vidne til Celestiale Ånders Dans!",
+        .crystalSelectionDescription: "Tiden er kommet til at lære din fremtid",
+        .registerDescription: "Træd ind i Aiachy for en personlig horoskop oplevelse! Lad os tilpasse din zodiak information med dine fortrolige detaljer og tage dig med på en unik rejse",
+        .ascendantSelectionDescription: "Begynd en Transformative Rejse med Dit Ascendant Tegn og Frigør Kraften Indeni",
+        .ascendantSelectionViewGuideDescription: "Vælg fødselsdato og -tid",
+        .attentionDescription: "Applikationen er stadig ikke fuldt logget ud. Det er meget normalt at støde på fejl. Hvis du støder på og vil søge efter en løsning. Du kan hurtigt sende det til os fra Hjælp-sektionen. Appen vil fremstå for første og eneste gang i denne genre med din støtte. Husk at have det sjovt, mens du bruger appen",
+        .attentionSecondDescription: "Opdatering kommer den 21. hver måned. Tjek Vores Twitter"
+    ]
+    
     let authOnboarding: [textHelperAuthCompletion.onboarding:String] = [
-        .heartofAstrologyTitle: "Du er i astrologiens hjerte",
+        .heartofMysticTitle: "Du er i hjertet af det mystiske univers",
         .secretOfTheStarsTitle: "Afslør stjernernes hemmeligheder",
         .yourFutureTitle: "Vil du kende din fremtid",
-        .heartofAstrologyDescription: "At kende dit horoskop bedre giver dig mulighed for at planlægge bedre for fremtiden",
-        .secretOfTheStarsDescription: "Opdag stjernernes hemmeligheder, afslør astrologiens finesser, alt her på ét sted",
+        .heartofMysticDescription: "At låse dørene op til en mystisk verden giver dig mulighed for at planlægge din fremtid mere effektivt",
+        .secretOfTheStarsDescription: "Ud over Sløret af den Dødelige Rige, Dans med de Mystiske Hvisken af Stjernerne, Afslører Gåderne af den Hellige Kosmos",
         .yourFutureDescription: "Aiachy vil guide dig på en smuk sti og give dig små tip om din fremtid",
-        .privacyPolicy: "Ved at oprette en konto accepterer du vores privatlivspolitik og brugervilkår."
     ]
     let authHelperAuth: [textHelperAuthCompletion.helperAuth:String] = [
-        .clock: "Time"
+        .clock: "Time",
+        .privacyPolicy: "Ved at oprette en konto accepterer du vores privatlivspolitik og brugervilkår."
     ]
     
     // MARK: - DanishLanguage - AuthCompletion -
     typealias textHelperHomeCompletion = TextHelper.HomeCompletion
     let home: [textHelperHomeCompletion.home:String] = [
-        .horoscope: "Horoskop",
-        .ascendant: "Opstigende",
+        .aiachy: "Aiachy",
         .compatibility: "Kompatibilitet",
         .notUsable: "Ikke tilgængelig. Du skal abonnere.",
         .notHaveAscendant: "Du skal vælge det opstigende tegn."
@@ -186,45 +190,73 @@ struct DanishLanguage {
         .currentLanguage: "Nuværende sprog",
         .otherLanguage: "Andet sprog"
     ]
-    let settingsOracle: [textHelperSettingsCompletion.oracle:String] = [
-        .packageZodiacTitle: "Stjernetegn",
-        .packageZodiacItem1: "Dit astrologiske kort vil flyde over med kosmisk visdom og hjælpe dig med bedre at forstå dit livs retning.",
-        .packageZodiacItem2: "Tarotkortene vil åbne nye døre for dig og styrke din intuition",
-        .packageZodiacItem3: "Nye musikalske frekvenser vil opløfte din sjæl og åbne op for nye følelsesmæssige landskaber for dig.",
-        .packageOracleTitle: "Orakel",
-        .packageOracleItem1: "Du vil have adgang til funktionerne i alle tilgængelige pakker, hvilket gør dig veludstyret på alle områder.",
-        .packageOracleItem2: "Innovative funktioner vil være lige ved hånden, hvilket giver dig et skridt foran alle andre.",
-        .packageOracleItem3: "Den venlighed, du har vist, vil efterlade et evigt aftryk på hjerter.",
-        .packageOracleItem4: "Denne pakke vil være et uundværligt værktøj for at ophøje og forbedre din applikation."
+    let settingsOracle: [textHelperSettingsCompletion.oracle: String] = [
+        .universalWisdomTitle: "Universel visdom",
+        .universalWisdomOccult1: "Når du lukker universets videnflod, vil dybere hemmeligheder flyde til dig fra de mystiske riger.",
+        .universalWisdomOccult2: "Du vil vidne hemmelighederne i morgen førstehånds, og få evnen til at forstå og dechifrere fremtiden mere dybt.",
+        .universalWisdomOccult3: "Med evnen til at observere chakraer mere omfattende, vil du forbedre din evne til at fortolke dine dage, dykke dybere ind i vejledningen af din indre energi.",
+        .universalWisdomOccult4: "Specifikt vil du være i stand til at granske dine daglige indsigter mere dybt og opfatte dine initiativer mere klart, og dermed få muligheden for at forme din rådgivning mere detaljeret.",
+        .universalWisdomOracle1: "Denne specielle pakke omfatter alle Okkult's Universelle Visdom funktioner.",
+        .universalWisdomOracle2: "Denne hellige støtte, du tilbyder, vil blive husket på forhånd og vil vende tilbage til dig med positive energier fra universets hemmeligheder.",
+        .universalWisdomOracle3: "Du vil opnå den første adgang til de nye funktioner i beta-testen, der leder vejen med de indkommende forbedringer.",
+        .universalWisdomOracle4: "Eksklusive visualiseringer af den nærmeste fremtid vil blive præsenteret for dig gennem adgangsporten.",
+        .thresholdOfTheSoulTitle: "Sjælens Tærskel",
+        .thresholdOfTheSoulOccult1: "Nye musikalske frekvenser vil løfte din sjæl og åbne op for nye følelsesmæssige landskaber for dig.",
+        .thresholdOfTheSoulOccult2: "Bag portene til det mystiske rige venter en dybere adgang på dig til tarotens dybder, din hænders skæbnelinjer og globusens hemmeligheder.",
+        .thresholdOfTheSoulOccult3: "Du vil træde ind i den magiske verden af personliggjorte melodier og opdage fremtidens skjulte melodier.",
+        .thresholdOfTheSoulOccult4: "Du vil være i stand til at dykke dybere ind i mysteriet om personliggjorte mystiske sten.",
+        .thresholdOfTheSoulOracle1: "Denne specielle pakke omfatter alle Okkult's Sjælens Tærskel funktioner.",
+        .thresholdOfTheSoulOracle2: "Denne hellige støtte, du tilbyder, vil blive husket på forhånd og vil vende tilbage til dig med positive energier fra universets hemmeligheder.",
+        .thresholdOfTheSoulOracle3: "Du vil opnå den første adgang til de nye funktioner i beta-testen, der leder vejen med de indkommende forbedringer.",
+        .thresholdOfTheSoulOracle4: "Eksklusive visualiseringer af den nærmeste fremtid vil blive præsenteret for dig gennem adgangsporten."
     ]
+
     
     // MARK: - DanishLanguage - ZodiacCompletion -
-    typealias textHelperZodiacCompletion = TextHelper.ZodiacCompletion
-    let zodiac: [textHelperZodiacCompletion.zodiac:String] = [
-        .piscesZodiacName: "Fiskene",
-        .piscesZodiacDate: "20. feb - 20. mar",
-        .ariesZodiacName: "Vædderen",
-        .ariesZodiacDate: "21. mar - 20. apr",
-        .aquariusZodiacName: "Vandmanden",
-        .aquariusZodiacDate: "21. jan - 19. feb",
-        .geminiZodiacName: "Tvillingerne",
-        .geminiZodiacDate: "21. maj - 21. jun",
-        .libraZodiacName: "Vægten",
-        .libraZodiacDate: "24. sep - 23. okt",
-        .virgoZodiacName: "Jomfruen",
-        .virgoZodiacDate: "24. aug - 23. sep",
-        .capricornZodiacName: "Stenbukken",
-        .capricornZodiacDate: "22. dec - 20. jan",
-        .sagittariusZodiacName: "Skytten",
-        .sagittariusZodiacDate: "23. nov - 21. dec",
-        .leoZodiacName: "Løven",
-        .leoZodiacDate: "23. jul - 23. aug",
-        .scorpioZodiacName: "Skorpionen",
-        .scorpioZodiacDate: "24. okt - 22. nov",
-        .taurusZodiacName: "Tyren",
-        .taurusZodiacDate: "21. apr - 20. maj",
-        .cancerZodiacName: "Krabben",
-        .cancerZodiacDate: "22. jun - 22. jul"
+    typealias textHelperSpiritualCompletion = TextHelper.SpiritualCompletion
+    let crystalZodiac: [textHelperSpiritualCompletion.crystal:String] = [
+        .ariesCrystal: "Ametyst",
+        .taurusCrystal: "Tigerøje",
+        .geminiCrystal: "Rosenkvarts",
+        .cancerCrystal: "Labradorit",
+        .leoCrystal: "Granat",
+        .virgoCrystal: "Månsten",
+        .libraCrystal: "Lapis Lazuli",
+        .scorpioCrystal: "Turmalin",
+        .sagittariusCrystal: "Obsidian",
+        .capricornCrystal: "Krystalkvarts",
+        .aquariusCrystal: "Akvamarin",
+        .piscesCrystal: "Perle"
+    ]
+
+    let zodiac: [textHelperSpiritualCompletion.zodiac:String] = [
+        .pisces: "Fisk",
+        .aries: "Vædder",
+        .aquarius: "Vandmand",
+        .gemini: "Tvilling",
+        .libra: "Vægt",
+        .virgo: "Jomfru",
+        .capricorn: "Stenbuk",
+        .sagittarius: "Skytte",
+        .leo: "Løve",
+        .scorpio: "Skorpion",
+        .taurus: "Tyr",
+        .cancer: "Krabbe"
+    ]
+
+    let dateZodiac: [textHelperSpiritualCompletion.dateZodiac:String] = [
+        .piscesZodiacDate: "20 feb - 20 mar",
+        .ariesZodiacDate: "21 mar - 20 apr",
+        .aquariusZodiacDate: "21 jan - 19 feb",
+        .geminiZodiacDate: "21 maj - 21 jun",
+        .libraZodiacDate: "24 sep - 23 okt",
+        .virgoZodiacDate: "24 aug - 23 sep",
+        .capricornZodiacDate: "22 dec - 20 jan",
+        .sagittariusZodiacDate: "23 nov - 21 dec",
+        .leoZodiacDate: "23 jul - 23 aug",
+        .scorpioZodiacDate: "24 okt - 22 nov",
+        .taurusZodiacDate: "21 apr - 20 maj",
+        .cancerZodiacDate: "22 jun - 22 jul"
     ]
 }
 

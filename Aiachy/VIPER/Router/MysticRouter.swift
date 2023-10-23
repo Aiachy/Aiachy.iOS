@@ -38,7 +38,7 @@ struct MysticRouter: View {
         ZStack {
             switch presenter.currentView {
             case .mystic:
-                MysticView()
+                MysticView(aiachy: aiachyState, homeRouter: homeRouter, router: presenter)
             }
         }
         .environmentObject(aiachyState)

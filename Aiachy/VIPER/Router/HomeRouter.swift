@@ -16,7 +16,7 @@ enum HomeViewsEnum {
     case mystic
     case galaxy
     case love
-    case settings
+    case profile
 }
 
 class HomeRouterPresenter: ObservableObject, RouterProtocol {
@@ -57,8 +57,8 @@ struct HomeRouter: View {
                     GalaxyRouter(homeRouter: presenter)
                 case .love:
                     LoveRouter(homeRouter: presenter)
-                case .settings:
-                    SettingsRouter(homeRouter: presenter)
+                case .profile:
+                    ProfileRouter(homeRouter: presenter)
                 }
             }
             if !presenter.isDisabledTabBar {

@@ -6,25 +6,27 @@
 //
 
 import Foundation
-//MARK: RegisterInteractor - protocol - RegisterInteractorCheckProtocol
-private protocol RegisterInteractorCheckProtocol {
+//MARK: RegisterInteractor - protocol - HandlerProtocol
+private protocol HandlerProtocol {
     func checkMail(_ userEmail: String, completion: @escaping (Bool) -> ())
 }
 //MARK: RegisterInteractor - Interactor
 class RegisterInteractor: ObservableObject {
     
-    private let authServerManager: AuthServerManager
+    var aiachyState: AiachyState
+    private let userServerManager: UserServerManager
     
-    init(authServerManager: AuthServerManager = AuthServerManager())
-    {
-        self.authServerManager = authServerManager
+    init(aiachy aiachyState: AiachyState) {
+        self.aiachyState = aiachyState
+        self.userServerManager = UserServerManager(aiachy: aiachyState)
     }
+    //NextPatchTODO: 1312"
     /// <#Description#>
     /// - Parameters:
     ///   - aiachyState: <#aiachyState description#>
     ///   - completion: <#completion description#>
     func checkUserInformation(userEmail: String, completion: @escaping (Bool) -> ()) {
-        authServerManager.controlUserInformationOnServer(dataField: "userLoginInfo", whereField: "email", userInformation: userEmail) { checkedMail in
+        userServerManager.controlUserInformationOnServer(dataField: "userLoginInfo", whereField: "email", userInformation: userEmail) { checkedMail in
             if checkedMail {
                 completion(true)
             } else {
@@ -33,3 +35,5 @@ class RegisterInteractor: ObservableObject {
         }
     }
 }
+
+

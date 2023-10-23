@@ -89,39 +89,43 @@ struct  PolishLanguage {
     ]
     // MARK: - PolishLanguage - AuthCompletion -
     typealias textHelperAuthCompletion = TextHelper.AuthCompletion
-    let auth: [textHelperAuthCompletion.auth:String] = [
-        .loginScreenTitle: "Otwórz Bramy Astrologii, Wejdź do Świata Aiachy",
-        .zodiacSelectionTitle: "Nadszedł czas, aby poznać swoją przyszłość",
-        .registerTitle: "Odkryj Swój Potencjał Zodiakalny",
-        .ascendantSelectionTitle: "Oświetl Swoją Wewnętrzną Promienność",
+    let authTitle: [textHelperAuthCompletion.title:String] = [
+        .loginScreenTitle: "Odkryj Magię, Podróżuj po Królestwie Aiachy",
+        .crystalSelectionTitle: "Odkryj tajemniczy kryształ swojego narodzin",
+        .registerTitle: "Uwolnij swój potencjał zodiakalny",
+        .ascendantSelectionTitle: "Rozświetl swoją wewnętrzną radiację",
         .attentionTitle: "UWAGA",
-        .loginScreenDescription: "Odkryj Tajemnice Astrologii, Zanurz się w Czarującym Świecie Aiachy i Odkryj Fascynujący Wszechświat Cudów Zodiaku",
-        .registerDescription: "Wejdź do Aiachy na spersonalizowane doświadczenie z horoskopem! Pozwól nam dostosować informacje o Twoim znaku zodiaku z Twoimi poufnymi danymi i zabrać Cię w unikalną podróż",
-        .ascendantSelectionDescription: "Wyrusz w Transformującą Podróż ze Swoim Znakiem Wzlotu i Uwolnij Wewnętrzną Moc",
+    ]
+    
+    let authDescription: [textHelperAuthCompletion.description:String] = [
+        .loginScreenDescription: "Odszyfruj Tajemnice Eteru, Wejdź do Świętego Sanktuarium Aiachy i Obejrzyj Taniec Niebiańskich Duchów!",
+        .crystalSelectionDescription: "Nadszedł czas, aby dowiedzieć się o swojej przyszłości",
+        .registerDescription: "Wejdź do Aiachy, aby uzyskać spersonalizowane doświadczenie z horoskopem! Pozwól nam dostosować twoje informacje zodiakalne z twoimi poufnymi szczegółami i zabrać cię w unikalną podróż",
+        .ascendantSelectionDescription: "Rozpocznij Transformacyjną Podróż ze Znakiem Twojego Wzrostu i Uwolnij Wewnętrzną Moc",
         .ascendantSelectionViewGuideDescription: "Wybierz datę i godzinę urodzenia",
-        .attentionDescription: "Aplikacja nadal nie jest w pełni wylogowana. To bardzo normalne, że mogą wystąpić błędy. Jeśli je napotkasz i chcesz szukać rozwiązania, możesz szybko przesłać je do nas z sekcji Pomoc. Aplikacja pojawi się po raz pierwszy i jedyny w tym gatunku dzięki Twojemu wsparciu. Nie zapomnij się dobrze bawić, korzystając z aplikacji",
-        .attentionSecondDescription: "Aktualizacja przychodzi 21. każdego miesiąca. Sprawdź nasz Twitter"
+        .attentionDescription: "Aplikacja nadal nie jest całkowicie wylogowana. Jest bardzo normalne, że napotkasz błędy. Jeśli napotkasz i chcesz szukać rozwiązania. Możesz szybko przesłać nam to z sekcji Pomoc. Aplikacja pojawi się po raz pierwszy i jedyny w tym gatunku dzięki twojemu wsparciu. Nie zapomnij bawić się korzystając z aplikacji",
+        .attentionSecondDescription: "Aktualizacja pojawia się 21. dnia każdego miesiąca. Sprawdź nasz Twitter"
     ]
 
+    
     let authOnboarding: [textHelperAuthCompletion.onboarding:String] = [
-        .heartofAstrologyTitle: "Jesteś w sercu astrologii",
+        .heartofMysticTitle: "Jesteś w sercu mistycznego wszechświata",
         .secretOfTheStarsTitle: "Odkryj Sekrety Gwiazd",
         .yourFutureTitle: "Czy chcesz znać swoją przyszłość",
-        .heartofAstrologyDescription: "Lepsze poznanie swojego horoskopu pozwala lepiej planować przyszłość",
-        .secretOfTheStarsDescription: "Odkryj Sekrety Gwiazd, Poznaj Zawiłości Astrologii, Wszystko Tutaj w Jednym Miejscu",
+        .heartofMysticDescription: "Otwieranie drzwi do mistycznego świata pozwala ci efektywniej planować swoją przyszłość",
+        .secretOfTheStarsDescription: "Poza Welonem Śmiertelnego Królestwa, Tańcz z Mistycznymi Szeptami Gwiazd, Rozwiązując Zagadki Świętego Kosmosu",
         .yourFutureDescription: "Aiachy poprowadzi Cię piękną ścieżką i pokaże małe wskazówki dotyczące Twojej przyszłości",
-        .privacyPolicy: "Tworząc konto, zgadzasz się na naszą Politykę prywatności i Warunki korzystania."
     ]
 
     let authHelperAuth: [textHelperAuthCompletion.helperAuth:String] = [
-        .clock: "Godzina"
+        .clock: "Godzina",
+        .privacyPolicy: "Tworząc konto, zgadzasz się na naszą Politykę prywatności i Warunki korzystania."
     ]
 
     // MARK: - PolishLanguage - HomeCompletion -
     typealias textHelperHomeCompletion = TextHelper.HomeCompletion
     let home: [textHelperHomeCompletion.home:String] = [
-        .horoscope: "Horoskop",
-        .ascendant: "Ascendent",
+        .aiachy:"Aiachy",
         .compatibility: "Kompatybilność",
         .notUsable: "Niedostępne. Musisz się zapisać.",
         .notHaveAscendant: "Musisz wybrać znak ascendentu."
@@ -190,43 +194,71 @@ struct  PolishLanguage {
     ]
 
     let settingsOracle: [textHelperSettingsCompletion.oracle: String] = [
-        .packageZodiacTitle: "Zodiak",
-        .packageZodiacItem1: "Twoja karta astrologiczna będzie przepełniona kosmiczną mądrością, pomagając Ci lepiej zrozumieć kierunek swojego życia.",
-        .packageZodiacItem2: "Karty Tarota otworzą przed Tobą nowe drzwi i wzmocnią Twoją intuicję",
-        .packageZodiacItem3: "Nowe częstotliwości muzyczne podniosą Twoją duszę i otworzą przed Tobą nowe krajobrazy emocjonalne.",
-        .packageOracleTitle: "Orakulum",
-        .packageOracleItem1: "Będziesz miał dostęp do funkcji wszystkich dostępnych pakietów, dzięki czemu będziesz dobrze wyposażony w każdym obszarze.",
-        .packageOracleItem2: "Innowacyjne funkcje będą na wyciągnięcie ręki, dając Ci krok do przodu przed wszystkimi innymi.",
-        .packageOracleItem3: "Okazana przez Ciebie życzliwość pozostawi trwały ślad w sercach.",
-        .packageOracleItem4: "Ten pakiet będzie niezbędnym narzędziem do podniesienia i ulepszenia Twojej aplikacji."
+        .universalWisdomTitle: "Uniwersalna mądrość",
+        .universalWisdomOccult1: "Zamykając rzekę wiedzy wszechświata, głębsze sekrety będą płynąć do ciebie z tajemniczych królestw.",
+        .universalWisdomOccult2: "Będziesz świadkiem tajemnic jutra z pierwszej ręki, zdobywając zdolność głębszego rozumienia i odczytywania przyszłości.",
+        .universalWisdomOccult3: "Z zdolnością do bardziej szczegółowej obserwacji czakr wzmocnisz swoją zdolność interpretacji swoich dni, zagłębiając się głębiej w przewodnictwo twojej wewnętrznej energii.",
+        .universalWisdomOccult4: "Konkretnie będziesz mógł dokładniej analizować swoje codzienne spostrzeżenia i postrzegać swoje inicjatywy bardziej wyraźnie, uzyskując tym samym możliwość kształtowania swoich rad bardziej szczegółowo.",
+        .universalWisdomOracle1: "Ten specjalny pakiet obejmuje wszystkie funkcje Uniwersalnej Mądrości Okultystycznej.",
+        .universalWisdomOracle2: "Ta święta wsparcie, którą oferujesz, zostanie zapamiętana z wyprzedzeniem i wróci do ciebie z pozytywnymi energiami z tajemnic wszechświata.",
+        .universalWisdomOracle3: "Uzyskasz pierwszy dostęp do nowych funkcji w teście beta, prowadząc drogę z nadchodzącymi ulepszeniami.",
+        .universalWisdomOracle4: "Ekskluzywne wizualizacje najbliższej przyszłości zostaną ci przedstawione przez bramę dostępu.",
+        .thresholdOfTheSoulTitle: "Próg duszy",
+        .thresholdOfTheSoulOccult1: "Nowe muzyczne częstotliwości podniosą twoją duszę i otworzą przed tobą nowe emocjonalne krajobrazy.",
+        .thresholdOfTheSoulOccult2: "Za bramami tajemniczego królestwa czeka na ciebie głębszy dostęp do głębin tarota, fatalnych linii twojej dłoni i tajemnic globu.",
+        .thresholdOfTheSoulOccult3: "Wejdziesz w magiczny świat spersonalizowanych melodii i odkryjesz ukryte melodie przyszłości.",
+        .thresholdOfTheSoulOccult4: "Będziesz mógł zagłębić się głębiej w tajemnicę spersonalizowanych tajemniczych kamieni.",
+        .thresholdOfTheSoulOracle1: "Ten specjalny pakiet obejmuje wszystkie funkcje Progu Duszy Okultystycznej.",
+        .thresholdOfTheSoulOracle2: "Ta święta wsparcie, którą oferujesz, zostanie zapamiętana z wyprzedzeniem i wróci do ciebie z pozytywnymi energiami z tajemnic wszechświata.",
+        .thresholdOfTheSoulOracle3: "Uzyskasz pierwszy dostęp do nowych funkcji w teście beta, prowadząc drogę z nadchodzącymi ulepszeniami.",
+        .thresholdOfTheSoulOracle4: "Ekskluzywne wizualizacje najbliższej przyszłości zostaną ci przedstawione przez bramę dostępu."
     ]
 
     // MARK: - PolishLanguage - ZodiacCompletion -
-    typealias textHelperZodiacCompletion = TextHelper.ZodiacCompletion
-    let zodiac: [textHelperZodiacCompletion.zodiac:String] = [
-        .piscesZodiacName: "Ryby",
+    typealias textHelperSpiritualCompletion = TextHelper.SpiritualCompletion
+    let crystalZodiac: [textHelperSpiritualCompletion.crystal:String] = [
+        .ariesCrystal: "Ametyst",
+        .taurusCrystal: "Oko tygrysa",
+        .geminiCrystal: "Różowy kwarc",
+        .cancerCrystal: "Labradoryt",
+        .leoCrystal: "Granat",
+        .virgoCrystal: "Kamień księżycowy",
+        .libraCrystal: "Lapis lazuli",
+        .scorpioCrystal: "Turmalin",
+        .sagittariusCrystal: "Obsydian",
+        .capricornCrystal: "Krzemień górski",
+        .aquariusCrystal: "Akwamaryn",
+        .piscesCrystal: "Perła"
+    ]
+    
+    let zodiac: [textHelperSpiritualCompletion.zodiac:String] = [
+        .pisces: "Ryby",
+        .aries: "Baran",
+        .aquarius: "Wodnik",
+        .gemini: "Bliźnięta",
+        .libra: "Waga",
+        .virgo: "Panna",
+        .capricorn: "Koziorożec",
+        .sagittarius: "Strzelec",
+        .leo: "Lew",
+        .scorpio: "Skorpion",
+        .taurus: "Byk",
+        .cancer: "Rak"
+    ]
+
+
+    let dateZodiac: [textHelperSpiritualCompletion.dateZodiac:String] = [
         .piscesZodiacDate: "20 lut - 20 mar",
-        .ariesZodiacName: "Baran",
         .ariesZodiacDate: "21 mar - 20 kwi",
-        .aquariusZodiacName: "Wodnik",
         .aquariusZodiacDate: "21 sty - 19 lut",
-        .geminiZodiacName: "Bliźnięta",
         .geminiZodiacDate: "21 maj - 21 cze",
-        .libraZodiacName: "Waga",
         .libraZodiacDate: "24 wrz - 23 paź",
-        .virgoZodiacName: "Panna",
         .virgoZodiacDate: "24 sie - 23 wrz",
-        .capricornZodiacName: "Koziorożec",
         .capricornZodiacDate: "22 gru - 20 sty",
-        .sagittariusZodiacName: "Strzelec",
         .sagittariusZodiacDate: "23 lis - 21 gru",
-        .leoZodiacName: "Lew",
         .leoZodiacDate: "23 lip - 23 sie",
-        .scorpioZodiacName: "Skorpion",
         .scorpioZodiacDate: "24 paź - 22 lis",
-        .taurusZodiacName: "Byk",
         .taurusZodiacDate: "21 kwi - 20 maj",
-        .cancerZodiacName: "Rak",
         .cancerZodiacDate: "22 cze - 22 lip"
     ]
 

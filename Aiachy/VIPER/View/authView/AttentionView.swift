@@ -9,9 +9,16 @@ import SwiftUI
 
 struct AttentionView: View {
     
-    @EnvironmentObject var aiachyState: AiachyState
-    @ObservedObject var presenter = AttentionPresenter()
+    @StateObject var presenter: AttentionPresenter
+    var aiachyState: AiachyState
     let router: AuthRouterPresenter
+    
+    init(aiachy aiachyState: AiachyState,
+         router: AuthRouterPresenter) {
+        self._presenter = StateObject(wrappedValue: AttentionPresenter(aiachy: aiachyState))
+        self.aiachyState = aiachyState
+        self.router = router
+    }
     
     var body: some View {
         ZStack {
@@ -44,9 +51,7 @@ struct AttentionView: View {
 }
 //MARK: AttentionView - Preview
 #Preview {
-    AttentionView(router: AuthRouterPresenter())
-        .background(AuthBackground())
-        .environmentObject(ACY_PREVIEWS_STATE)
+    AttentionView(aiachy: ACY_PREVIEWS_STATE, router: AuthRouterPresenter())
 }
 //MARK: AttentionView - extension
 extension AttentionView {
@@ -62,28 +67,28 @@ extension AttentionView {
     //MARK: AttentionView - Title And Description
     private var titleAndDescription: some View {
         VStack(spacing: 20) {
-            Text(TextHandler.makeAuthString(aiachy: aiachyState, 
-                                            auth: .attentionTitle))
-                .foregroundColor(.makeAiachyColor(aiachyState, 
-                                                  aiachyColor: .firstColor))
-                .font(.aiachyFont(.cinzelBlack20))
+            Text(TextHandler.makeAuthTitleString(aiachy: aiachyState,
+                                            title: .attentionTitle))
+                .foregroundStyle(Color(ColorHandler.makeAiachyColor(aiachyState,
+                                                  aiachyColor: .firstColor)))
+                .font(FontHandler.aiachyFont(.cinzelBlack20))
             
-            Text(TextHandler.makeAuthString(aiachy: aiachyState, 
-                                            auth: .attentionDescription))
-                .foregroundColor(.makeAiachyColor(aiachyState, 
-                                                  aiachyColor: .firstColor))
-                .font(.aiachyFont(.oldBold14))
+            Text(TextHandler.makeAuthDescriptionString(aiachy: aiachyState,
+                                            description: .attentionDescription))
+                .foregroundStyle(Color(ColorHandler.makeAiachyColor(aiachyState,
+                                                  aiachyColor: .firstColor)))
+                .font(FontHandler.aiachyFont(.oldBold14))
         }
         .multilineTextAlignment(.center)
         .padding(.horizontal)
     }
     //MARK: AttentionView - Twitter
     private var twitterDescription: some View {
-        Text(TextHandler.makeAuthString(aiachy: aiachyState, 
-                                        auth: .attentionSecondDescription))
-            .foregroundColor(.makeAiachyColor(aiachyState, 
-                                              aiachyColor: .secondColor))
-            .font(.aiachyFont(.roundedBold16))
+        Text(TextHandler.makeAuthDescriptionString(aiachy: aiachyState,
+                                             description: .attentionSecondDescription))
+            .foregroundStyle(Color(ColorHandler.makeAiachyColor(aiachyState,
+                                              aiachyColor: .secondColor)))
+            .font(FontHandler.aiachyFont(.roundedBold16))
             .multilineTextAlignment(.center)
             .padding(.horizontal)
             .onTapGesture {
@@ -92,7 +97,7 @@ extension AttentionView {
     }
     //MARK: AttentionView - Continue Button
     private var continueButton: some View {
-        ACYButton(text: .continue) {
+        ACYButton(buttonText: .continue) {
             presenter.makeReadyToApp(aiachy: aiachyState) {
                 guard $0 else { return }
                 router.isUserComplateAuthCompletion = true

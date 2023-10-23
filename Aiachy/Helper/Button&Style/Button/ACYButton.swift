@@ -10,28 +10,35 @@ import SwiftUI
 struct ACYButton: View {
     
     @EnvironmentObject var aiachyState: AiachyState
-    let text: TextHelper.GeneralCompletion.button
+    @State var buttonText: TextHelper.GeneralCompletion.button? = nil
+    @State var contentText: TextHelper.GeneralCompletion.contentButton? = nil
     let action: () -> Void
     
     var body: some View {
-        Button {
-            action()
-        } label: {
-            Text(TextHandler.makeGeneralButtonString(aiachy: aiachyState,
-                                                     button: text))
-        }
-        .frame(width: ACYdw(aiachyState, d: ACY_MAX_SIZE),
-               height: ACYdh(aiachyState, d: ACY_MIN_SIZE))
-        .buttonStyle(ACYButtonStyle())
-        .environmentObject(aiachyState)
-        .makeAccessibilitysForUITest(identifier: "ACYButtonID")
+            Button {
+                action()
+            } label: {
+                if let checkedButtonText = buttonText {
+                    Text(TextHandler.makeGeneralButtonString(aiachy: aiachyState,
+                                                             button: checkedButtonText))
+                    .frame(width: ACYdw(aiachyState, d: 0.7))
+                } else if let checkedContentButton = contentText {
+                    Text(TextHandler.makeGeneralContentButtonString(aiachy: aiachyState,
+                                                                    contentButton: checkedContentButton))
+                }
+            }
+            .frame(width: ACYdw(aiachyState, d: 0.78),
+                   height: ACYdh(aiachyState, d: 0.067))
+            .buttonStyle(ACYButtonStyle())
+            .environmentObject(aiachyState)
+            .makeAccessibilitysForUITest(identifier: "ACYButtonID")
     }
 }
 
+
 #Preview {
-    ACYButton(text: .continue) {
+    ACYButton(buttonText: .continue) {
         
     }
     .environmentObject(ACY_PREVIEWS_STATE)
 }
-

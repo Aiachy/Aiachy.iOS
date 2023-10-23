@@ -17,13 +17,15 @@ class AttentionPresenter: ObservableObject {
     
     @Published var acyAlertEntity = ACYAlertEntity()
     @Published var isReadyForApp: Bool
+    var aiachyState: AiachyState
     private let interactor: AttentionInteractor
     private let url = URL(string: "https://twitter.com/AiachyApp")
-
+    
     init(isReadyForApp: Bool = false,
-         interactor: AttentionInteractor = AttentionInteractor()) {
-        self.interactor = AttentionInteractor()
+         aiachy aiachyState: AiachyState) {
         self.isReadyForApp = isReadyForApp
+        self.aiachyState = aiachyState
+        self.interactor = AttentionInteractor(aiachy: aiachyState)
     }
     /// It shows that it is ready by completing all the values and prepares the application usage.
     /// - Parameters:
@@ -32,8 +34,8 @@ class AttentionPresenter: ObservableObject {
     func makeReadyToApp(aiachy aiachyState: AiachyState,completion: @escaping (Bool) -> ()) {
         interactor.makeUser(aiachy: aiachyState) { [self] in
             guard !$0 else {
-                    self.isReadyForApp = true
-                    completion(true)
+                self.isReadyForApp = true
+                completion(true)
                 return
             }
             makeAlert()

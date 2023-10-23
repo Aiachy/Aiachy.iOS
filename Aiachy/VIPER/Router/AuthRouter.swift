@@ -53,13 +53,13 @@ struct AuthRouter: View {
                 case .loginView:
                     LoginView(aiachy: aiachyState, router: authRouter)
                 case .zodiacSelectionView:
-                    ZodiacSelectionView(aiachy: aiachyState, router: authRouter)
+                    CrystalSelectionView(aiachy: aiachyState, router: authRouter)
                 case .registerView:
                     RegisterView(aiachy: aiachyState, router: authRouter)
                 case .ascendantSelectionView:
                     AscendantSelectionView(aiachy: aiachyState, router: authRouter)
                 case .attentionView:
-                    AttentionView(router: authRouter)
+                    AttentionView(aiachy: aiachyState, router: authRouter)
                 }
             }
             .padding(.vertical)

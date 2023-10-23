@@ -10,6 +10,7 @@ import Foundation
 struct ACYTabBarEntity: Identifiable {
     var id: Int
     var isZodiac: Bool?
+    var isProfile: Bool?
     var widthCircle: Double
     var widthImage: Double
     var routering: HomeViewsEnum

@@ -18,15 +18,17 @@ private protocol AttentionInteractorNetworkProtocol {
 //MARK: AttentionInteractor - View
 class AttentionInteractor: ObservableObject {
     
+    var aiachyState: AiachyState
     private let networkMonitorManager: NetworkMonitorManager
-    private let authServerManager: AuthServerManager
+    private let userServerManager: UserServerManager
     private var cancellable: AnyCancellable?
     
-    init(networkMonitorManager: NetworkMonitorManager = NetworkMonitorManager(),
-         authServerManager: AuthServerManager = AuthServerManager())
+    init(aiachy aiachyState: AiachyState,
+         networkMonitorManager: NetworkMonitorManager = NetworkMonitorManager())
     {
+        self.aiachyState = aiachyState
+        self.userServerManager = UserServerManager(aiachy: aiachyState)
         self.networkMonitorManager = networkMonitorManager
-        self.authServerManager = authServerManager
     }
     /// User action is taken after checking the internet.
     /// - Parameters:
@@ -37,7 +39,7 @@ class AttentionInteractor: ObservableObject {
             guard $0 else { return completion(false) }
             makeId(aiachy: aiachyState)
             let createdUserData = aiachyState.user
-            authServerManager.createUser(user: createdUserData)
+            userServerManager.createUser(user: createdUserData)
             completion(true)
         }
     }

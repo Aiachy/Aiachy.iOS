@@ -10,7 +10,9 @@
     "_applicationInternalID" : "6463338494",
     "_developerTeamID" : "MW2482B7WH",
     "_failTransactionsEnabled" : false,
-    "_lastSynchronizedDate" : 714701852.67209995,
+    "_lastSynchronizedDate" : 717938168.58706403,
+    "_locale" : "en_US",
+    "_storefront" : "USA",
     "_storeKitErrors" : [
       {
         "current" : null,
@@ -74,6 +76,31 @@
           "codeOffers" : [
 
           ],
+          "displayPrice" : "5.99",
+          "familyShareable" : false,
+          "groupNumber" : 2,
+          "internalID" : "6468478116",
+          "introductoryOffer" : null,
+          "localizations" : [
+            {
+              "description" : "Abonelik için",
+              "displayName" : "Abone Paketi",
+              "locale" : "tr"
+            }
+          ],
+          "productID" : "Oracle.Occult",
+          "recurringSubscriptionPeriod" : "P1M",
+          "referenceName" : "Occult",
+          "subscriptionGroupID" : "21376840",
+          "type" : "RecurringSubscription"
+        },
+        {
+          "adHocOffers" : [
+
+          ],
+          "codeOffers" : [
+
+          ],
           "displayPrice" : "49.99",
           "familyShareable" : false,
           "groupNumber" : 1,
@@ -94,27 +121,6 @@
           "productID" : "Oracle.Oracle",
           "recurringSubscriptionPeriod" : "P1M",
           "referenceName" : "Oracle",
-          "subscriptionGroupID" : "21376840",
-          "type" : "RecurringSubscription"
-        },
-        {
-          "adHocOffers" : [
-
-          ],
-          "codeOffers" : [
-
-          ],
-          "displayPrice" : "5.99",
-          "familyShareable" : false,
-          "groupNumber" : 2,
-          "internalID" : "6463344302",
-          "introductoryOffer" : null,
-          "localizations" : [
-
-          ],
-          "productID" : "Oracle.Zodiac",
-          "recurringSubscriptionPeriod" : "P1M",
-          "referenceName" : "Zodiac",
           "subscriptionGroupID" : "21376840",
           "type" : "RecurringSubscription"
         }

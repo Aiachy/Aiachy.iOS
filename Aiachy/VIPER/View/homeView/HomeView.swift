@@ -43,7 +43,7 @@ struct HomeView: View {
                 chakraStatusContent
                 Spacer()
             }
-            .ignoresSafeArea(.container, edges: .vertical)
+            .modifier(makeIgnoresSafeArea(isWillBeIgnoring: aiachyState.isAiachyReady))
         }
         .environmentObject(aiachyState)
     }
@@ -55,25 +55,27 @@ struct HomeView_Previews: PreviewProvider {
     }
 }
 
-
 extension HomeView {
+    @ViewBuilder
     //MARK: HomeView - topImage
     private var topImage: some View {
-        ACYHomeImage(currentTime: $presenter.currentTime,
-                 compatibilityEntity: presenter.compatibilityEntity )
+        if aiachyState.isAiachyReady {
+            ACYHomeImage(currentTime: $presenter.currentTime,
+                         compatibilityEntity: presenter.compatibilityEntity )
+        }
     }
     //MARK: HomeView - dateSections
     private var dateSections: some View {
         LazyVStack(alignment: .leading) {
             HStack(spacing: 0)  {
                 DateSection(selectedCurrentTime: $presenter.currentTime, 
-                            isOracled: .constant(true),
+                            isOracled: true,
                             currentTime: .yesterday) { presenter.getZodiacEntityWithDay() }
                 DateSection(selectedCurrentTime: $presenter.currentTime,
-                            isOracled: .constant(true),
+                            isOracled: true,
                             currentTime: .today) { presenter.getZodiacEntityWithDay() }
                 DateSection(selectedCurrentTime: $presenter.currentTime,
-                            isOracled: $presenter.isOracled,
+                            isOracled: aiachyState.user.userOracle.wrappedIsOracled,
                             currentTime: .tomorrow) { presenter.getZodiacEntityWithDay() }
             }
             .padding(.horizontal)
@@ -83,15 +85,16 @@ extension HomeView {
     //MARK : HomeView -  horoscopeComment
     private var horoscopeComment: some View {
         VStack {
-            Text(TextHandler.makeHomeString(aiachy: aiachyState, home: .horoscope) + " " + TextHandler.makeHomeDateString(aiachy: aiachyState, date: presenter.currentTime))
-                .font(.aiachyFont(.cinzelBlack12))
+            Text(TextHandler.makeHomeString(aiachy: aiachyState, home: .aiachy) + " " + TextHandler.makeHomeDateString(aiachy: aiachyState, date: presenter.currentTime))
+                .font(FontHandler.aiachyFont(.cinzelBlack12))
             Text(presenter.comment)
-                .font(.aiachyFont(.oldBold12))
+                .font(FontHandler.aiachyFont(.oldBold12))
                 .multilineTextAlignment(.center)
                 .padding(.horizontal)
         }
         .padding(.vertical)
-        .foregroundStyle(Color.makeAiachyColor(aiachyState, aiachyColor: .fifthColor))
+        .foregroundStyle(Color(ColorHandler.makeAiachyColor(aiachyState,
+                                                            aiachyColor: .fifthColor)))
     }
     @ViewBuilder
     var checkedAscendiantComment: some View {
@@ -104,31 +107,26 @@ extension HomeView {
     
     var ascendiantComment: some View {
         VStack(spacing: 5) {
-                Text(TextHandler.makeHomeString(aiachy: aiachyState, 
-                                                home: .ascendant)
-                     + " " + 
-                     TextHandler.makeHomeDateString(aiachy: aiachyState,
-                                                    date: presenter.currentTime))
-                    .font(.aiachyFont(.cinzelBlack12))
                 Text(presenter.ascendiantComment)
-                    .font(.aiachyFont(.oldBold12))
+                    .font(FontHandler.aiachyFont(.oldItalic10))
                     .multilineTextAlignment(.center)
                     .padding(.horizontal)
         }
-        .foregroundStyle(Color.makeAiachyColor(aiachyState, aiachyColor: .backgroundColor))
+        .foregroundStyle(Color(ColorHandler.makeAiachyColor(aiachyState,
+                                                            aiachyColor: .backgroundColor)))
         .frame(width: ACYdw(aiachyState, d: 0.9))
         .background{
             RoundedRectangle(cornerRadius: 10)
-                .foregroundStyle(Color.makeAiachyColor(aiachyState, aiachyColor: .fourthColor))
+                .foregroundStyle(Color(ColorHandler.makeAiachyColor(aiachyState,
+                                                                    aiachyColor: .fourthColor)))
                 .frame(width: ACYdw(aiachyState, d: 0.9))
                 .padding(.vertical,-5)
         }
-        .overlay{ makeImageWithZodiacInt(aiachy: aiachyState,
-                                         zodiac: aiachyState.user.userZodiac.ascendant!,
-                                         isAlternative: false)
+        .overlay{ makeCrystalImageWithZodiacInt(aiachy: aiachyState,
+                                         crystal: aiachyState.user.userSpiritual.ascendant!)
         .resizable()
         .scaledToFit()
-        .opacity(0.2)
+        .opacity(0.15)
         }
     }
     
@@ -138,15 +136,19 @@ extension HomeView {
                       entity: presenter.chakraStatusEntities)
     }
 }
-/*
 
-Text(presenter.currentEntity?.ascendiant.compactMap({
-    if $0.determinedZodiac == aiachyState {
-        return $0.comment
+fileprivate struct makeIgnoresSafeArea: ViewModifier {
+    
+    var isWillBeIgnoring: Bool
+    
+    func body(content: Content) -> some View {
+        if isWillBeIgnoring {
+            content
+                .ignoresSafeArea()
+        }else {
+            content
+        }
+        
     }
-    return nil
-}).joined(separator: ", ") ?? "Default Text")
-    .font(.aiachyFont(.oldBold12))
-    .multilineTextAlignment(.center)
-    .padding(.horizontal)
-*/
+    
+}

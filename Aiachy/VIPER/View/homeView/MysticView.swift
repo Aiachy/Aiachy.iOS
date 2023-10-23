@@ -9,30 +9,46 @@ import SwiftUI
 //MARK: MysticView - View
 struct MysticView: View {
     
-    @EnvironmentObject var aiachyState: AiachyState
-    @ObservedObject var presenter = MysticPresenter()
+    @StateObject var presenter: MysticPresenter
+    var aiachyState: AiachyState
+    var homeRouter: HomeRouterPresenter
+    var router: MysticRouterPresenter
+    
+    init(aiachy aiachyState: AiachyState,
+         homeRouter: HomeRouterPresenter,
+         router: MysticRouterPresenter) {
+        self._presenter = StateObject(wrappedValue: MysticPresenter(aiachy: aiachyState,
+                                                                    homeRouter: homeRouter,
+                                                                    router: router))
+        self.aiachyState = aiachyState
+        self.homeRouter = homeRouter
+        self.router = router
+    }
     
     var body: some View {
         ZStack {
             HomeBackground()
             VStack{
-                //MARK: MysticView - Tabview
-                tabView
-                    .overlay {
-                        //MARK: MysticView - Starter Index
-                        starterIndex
-                    }
+                if aiachyState.isAiachyReady {
+                    //MARK: MysticView - Tabview
+                    tabView
+                        .overlay {
+                            //MARK: MysticView - Starter Index
+                            starterIndex
+                        }
+                }
             }
         }
         .environmentObject(aiachyState)
     }
 }
-//MARK: MysticView - Preview
+//MARK: - MysticView - Preview -
 #Preview {
-    MysticView()
-        .environmentObject(ACY_PREVIEWS_STATE)
+    MysticView(aiachy: ACY_PREVIEWS_STATE,
+               homeRouter: HomeRouterPresenter(),
+               router: MysticRouterPresenter())
 }
-//MARK: MysticView - extension
+//MARK: - MysticView - extension -
 extension MysticView {
     //MARK: MysticView - Tabview
     private var tabView: some View {

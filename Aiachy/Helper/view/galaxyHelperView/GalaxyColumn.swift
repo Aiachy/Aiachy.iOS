@@ -18,7 +18,7 @@ struct GalaxyColumn: View {
         Button(action: {action()}, label: {
             ZStack {
                 RoundedRectangle(cornerRadius: 20)
-                    .stroke(Color.makeAiachyColor(aiachyState, aiachyColor: .secondColor),lineWidth: 1.5)
+                    .stroke(Color(ColorHandler.makeAiachyColor(aiachyState, aiachyColor: .secondColor)),lineWidth: 1.5)
                 VStack(spacing: 20) {
                     Image(ImageHandler.makeGalaxyString(aiachyState, galaxy: image))
                         .resizable()
@@ -34,7 +34,6 @@ struct GalaxyColumn: View {
                height: ACYdh(aiachyState, d: 0.2))
     }
 }
-
 
 #Preview {
     GalaxyColumn(title: .meditationTitle,

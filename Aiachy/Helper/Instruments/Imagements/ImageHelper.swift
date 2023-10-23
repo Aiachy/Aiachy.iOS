@@ -52,8 +52,6 @@ struct ImageHelper {
     //MARK: - ImageHelper - AuthCompletion -
     struct AuthCompletion {
         enum auth: String {
-            case authBackgroundSymbol1 = "authBackgroundSymbol1"
-            case authBackgroundSymbol2 = "authBackgroundSymbol2"
             case authLoginBackground = "authLoginBackground"
             case ascendantSelectionBackground = "authAscendantSelectionBackground"
             case attention = "attention"
@@ -62,6 +60,12 @@ struct ImageHelper {
             case authHeart = "authHeart"
             case secretStar = "authSecretStar"
             case yourFuture = "authYourFuture"
+        }
+        enum staticBackground: String {
+            case authBackgroundSymbol1 = "authBackgroundSymbol1"
+            case authBackgroundSymbol2 = "authBackgroundSymbol2"
+            case authBackgroundSymbol3 = "authBackgroundSymbol3"
+            case authBackgroundSymbolTest = "authBackgroundSymbolTest"
         }
     }
     //MARK: - ImageHelper - HomeCompletion -
@@ -80,8 +84,7 @@ struct ImageHelper {
             case loveLogoSelected = "loveLogoSelected"
             case galaxyLogoUnSelected = "galaxyLogoUnSelected"
             case galaxyLogoSelected = "galaxyLogoSelected"
-            case settingsLogoUnSelected = "settingsLogoUnSelected"
-            case settingsLogoSelected = "settingsLogoSelected"
+            case crystalLogoUnSelected = "crystalLogoUnSelected"
         }
     }
     //MARK: - ImageHelper - MysticCompletion -
@@ -122,9 +125,13 @@ struct ImageHelper {
             case aicyCashBackground = "aicyCashBackground"
         }
         enum oracle: String {
+            case universalWisdom = "universalWisdom"
+            case thresholdOfTheSoul = "thresholdOfTheSoul"
             case oracleltem = "oracleltem"
+            case oracleltemPlatinum = "oracleltemPlatinum"
+            case oracleltemSpecial = "oracleltemSpecial"
             case oracleOracle = "oracleOracle"
-            case oracleZodiac = "oracleZodiac"
+            case oracleOccult = "oracleOccult"
         }
         enum theme: String {
             case themeDark = "themeDark"
@@ -137,34 +144,52 @@ struct ImageHelper {
             case loveAttention = "loveAttention"
         }
     }
-    //MARK: - ImageHelper - ZodiacCompletion -
-    struct ZodiacCompletion {
-        enum zodiac: String {
-            case aquarius = "Aquarius"
-            case altAquarius = "AquariusAlternative"
-            case aries = "Aries"
-            case altAries = "AriesAlternative"
-            case cancer = "Cancer"
-            case altCancer = "CancerAlternative"
-            case capricorn = "Capricorn"
-            case altCapricorn = "CapricornAlternative"
-            case gemini = "Gemini"
-            case altGemini = "GeminiAlternative"
-            case leo = "Leo"
-            case altLeo = "LeoAlternative"
-            case libra = "Libra"
-            case altLibra = "LibraAlternative"
-            case pisces = "Pisces"
-            case altPisces = "PiscesAlternative"
-            case sagittarius = "Sagittarius"
-            case altSagittarius = "SagittariusAlternative"
-            case scorpion = "Scorpion"
-            case altScorpion = "ScorpionAlternative"
-            case taurus = "Taurus"
-            case altTaurus = "TaurusAlternative"
-            case virgo = "Virgo"
-            case altVirgo = "VirgoAlternative"
+    struct SpiritualCompletion {
+        enum crystalZodiac: String {
+            case ariesCrystal = "ariesCrystal"
+            case taurusCrystal = "taurusCrystal"
+            case geminiCrystal = "geminiCrystal"
+            case cancerCrystal = "cancerCrystal"
+            case leoCrystal = "leoCrystal"
+            case virgoCrystal = "virgoCrystal"
+            case libraCrystal = "libraCrystal"
+            case scorpioCrystal = "scorpioCrystal"
+            case sagittariusCrystal = "sagittariusCrystal"
+            case capricornCrystal = "capricornCrystal"
+            case aquariusCrystal = "aquariusCrystal"
+            case piscesCrystal = "piscesCrystal"
         }
+        
+        enum zodiac: String {
+            case aries = "aries"
+            case taurus = "taurus"
+            case gemini = "gemini"
+            case cancer = "cancer"
+            case leo = "leo"
+            case virgo = "virgo"
+            case libra = "libra"
+            case scorpio = "scorpio"
+            case sagittarius = "sagittarius"
+            case capricorn = "capricorn"
+            case aquarius = "aquarius"
+            case pisces = "pisces"
+        }
+        
+        enum zodiacAlternative: String {
+            case ariesAlternative = "ariesAlternative"
+            case taurusAlternative = "taurusAlternative"
+            case geminiAlternative = "geminiAlternative"
+            case cancerAlternative = "cancerAlternative"
+            case leoAlternative = "leoAlternative"
+            case virgoAlternative = "virgoAlternative"
+            case libraAlternative = "libraAlternative"
+            case scorpioAlternative = "scorpioAlternative"
+            case sagittariusAlternative = "sagittariusAlternative"
+            case capricornAlternative = "capricornAlternative"
+            case aquariusAlternative = "aquariusAlternative"
+            case piscesAlternative = "piscesAlternative"
+        }
+        
     }
 }
 

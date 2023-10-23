@@ -28,8 +28,8 @@ class LoginPresenter: ObservableObject {
          mailPhoneTextField: String = "",
          passwordTextField: String = "",
          aiachy aiachyState: AiachyState,
-         router: AuthRouterPresenter,
-         interactor: LoginInteractor = LoginInteractor()) {
+         router: AuthRouterPresenter) {
+
         self.isUserCanEntryApp = isUserCanEntryApp
         self.isNetworkingChecked = isNetworkingChecked
         self.mailPhoneTextFieldErrorType = mailPhoneTextFieldErrorType
@@ -37,8 +37,8 @@ class LoginPresenter: ObservableObject {
         self.mailPhoneTextField = mailPhoneTextField
         self.passwordTextField = passwordTextField
         self.aiachyState = aiachyState
+        self.interactor = LoginInteractor(aiachy: aiachyState)
         self.router = router
-        self.interactor = interactor
     }
     
     /// Here, when the user makes any mistake when logging in to the textfield fields, it shows an error message. If there is none, the user logs in.

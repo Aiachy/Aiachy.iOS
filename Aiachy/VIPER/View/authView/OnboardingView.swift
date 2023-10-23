@@ -44,7 +44,6 @@ struct OnboardingView: View {
 #Preview {
     OnboardingView(aiachy: ACY_PREVIEWS_STATE, router: AuthRouterPresenter())
 }
-
 //MARK: OnboardingView - extensions
 extension OnboardingView {
     //MARK: OnboardingView - Page Index
@@ -55,21 +54,21 @@ extension OnboardingView {
                 if index == presenter.currentIndex {
                     RoundedRectangle(cornerRadius: 8)
                         .frame(width: 20)
-                        .foregroundColor(Color.makeAiachyColor(aiachyState,
-                                                           aiachyColor: .firstColor))
+                        .foregroundStyle(Color(ColorHandler.makeAiachyColor(aiachyState,
+                                                           aiachyColor: .firstColor)))
                 } else {
                     Circle()
-                        .foregroundColor(Color.makeAiachyColor(aiachyState,
-                                                           aiachyColor: .secondColor))
+                        .foregroundStyle(Color(ColorHandler.makeAiachyColor(aiachyState,
+                                                           aiachyColor: .secondColor)))
                 }
             }
         }
-        .foregroundColor(Color.makeAiachyColor(aiachyState, aiachyColor: .secondColor))
+        .foregroundColor(Color(ColorHandler.makeAiachyColor(aiachyState, aiachyColor: .secondColor)))
         .frame(width: ACYdw(aiachyState, d: 0.15),height: 5)
     }
     //MARK: OnboardingView - Button
     private var navigateToLoginButton: some View {
-        ACYButton(text: .continue) {
+        ACYButton(buttonText: .continue) {
             withAnimation(.linear(duration: ACY_MIN_TIME)) {
                 if presenter.currentIndex < presenter.acyOnboardingEntityData.count - 1 {
                     presenter.currentIndex += 1
@@ -81,12 +80,12 @@ extension OnboardingView {
     }
     //MARK: OnboardingView - privacyPolicy
     private var privacyPolicy: some View {
-        Text(TextHandler.makeAuthOnboardingString(aiachy: aiachyState, onboarding: .privacyPolicy))
+        Text(TextHandler.makeAuthHelperAuthString(aiachy: aiachyState, helperAuth: .privacyPolicy))
             .makeAccessibilitysForUITest(identifier: "PrivacyPolicyButtonID")
             .multilineTextAlignment(.center)
             .padding(.horizontal,ACYdw(aiachyState, d: ACY_SML_SIZE))
-            .font(.aiachyFont(.roundedRegular10))
-            .foregroundColor(.makeAiachyColor(aiachyState, aiachyColor: .firstColor))
+            .font(FontHandler.aiachyFont(.roundedRegular10))
+            .foregroundStyle(Color(ColorHandler.makeAiachyColor(aiachyState, aiachyColor: .firstColor)))
     }
 }
 

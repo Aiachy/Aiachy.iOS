@@ -27,9 +27,10 @@ struct MeditationView: View {
                     .padding(.vertical)
                 //NextPatchTODO: will be deleted
                 Text(TextHandler.makeMysticString(aiachy: aiachyState, mystic: .palmistyrDescription))
-                    .font(.aiachyFont(.cinzelBlack22))
+                    .font(FontHandler.aiachyFont(.cinzelBlack22))
                     .multilineTextAlignment(.center)
-                    .foregroundStyle(Color.makeAiachyColor(aiachyState, aiachyColor: .fifthColor))
+                    .foregroundStyle(Color(ColorHandler.makeAiachyColor(aiachyState,
+                                                                        aiachyColor: .fifthColor)))
                     .opacity(0.8)
                 Spacer()
             }
@@ -42,7 +43,6 @@ struct MeditationView: View {
     MeditationView(router: GalaxyRouterPresenter())
         .environmentObject(ACY_PREVIEWS_STATE)
 }
-
 extension MeditationView {
     //MARK: MeditationView - backButton
     private var backButton: some View {

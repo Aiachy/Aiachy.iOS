@@ -86,40 +86,44 @@ struct TurkishLanguage {
         .passwordCantFound: "Şifreniz yanlış",
         .mailUsedBefore: "Bu e-posta daha önce kullanılmış"
     ]
-
+    
     // MARK: - TurkishLanguage - AuthCompletion -
     typealias textHelperAuthCompletion = TextHelper.AuthCompletion
-    let auth: [textHelperAuthCompletion.auth:String] = [
-        .loginScreenTitle: "Astrolojinin Kapılarını Aç, Aiachy'nin Dünyasına Gir",
-        .zodiacSelectionTitle: "Geleceğini öğrenme zamanı geldi",
-        .registerTitle: "Zodyak Potansiyelini Serbest Bırak",
-        .ascendantSelectionTitle: "İç Işığını Aydınlat",
+    let authTitle: [textHelperAuthCompletion.title:String] = [
+        .loginScreenTitle: "Sihri Ortaya Çıkar, Aiachy'nin Krallığında Yolculuk Yap",
+        .crystalSelectionTitle: "Doğumunun mistik kristalini keşfet",
+        .registerTitle: "Burç Potansiyelini Serbest Bırak",
+        .ascendantSelectionTitle: "İçsel Parıltını Aydınlat",
         .attentionTitle: "DİKKAT",
-        .loginScreenDescription: "Astrolojinin Gizemlerini Aç, Aiachy'nin Büyüleyici Dünyasına Dal ve Zodyak Harikalarının Büyüleyici Krallığına Keşfe Çık",
-        .registerDescription: "Aiachy'ye kişiselleştirilmiş bir burç deneyimi için adım atın! Gizli detaylarınızla zodyak bilgilerinizi özelleştirelim ve sizi benzersiz bir yolculuğa çıkaralım",
-        .ascendantSelectionDescription: "Yükselen Burcunuzla Dönüşümcü Bir Yolculuğa Çıkın, İçinizdeki Gücü Serbest Bırakın",
-        .ascendantSelectionViewGuideDescription: "Doğum tarihi ve saatinizi seçin",
-        .attentionDescription: "Uygulama hala tam olarak çıkış yapmadı. Hatalarla karşılaşmanız çok normal. Eğer karşılaşırsanız ve bir çözüm aramak isterseniz, Bize Yardım bölümünden hızlıca gönderebilirsiniz. Uygulama, desteklerinizle bu türde ilk ve tek kez ortaya çıkacak. Uygulamayı kullanırken eğlenmeyi unutmayın",
+    ]
+
+    let authDescription: [textHelperAuthCompletion.description:String] = [
+        .loginScreenDescription: "Eterin Gizemlerini Çöz, Aiachy'nin Kutsal Sığınağına Adım At ve Göksel Ruhların Dansını Şahit Ol!",
+        .crystalSelectionDescription: "Geleceğini öğrenme zamanı geldi",
+        .registerDescription: "Kişiselleştirilmiş bir burç deneyimi için Aiachy'ye adım at! Burç bilgilerini gizli detaylarınla özelleştirelim ve seni benzersiz bir yolculuğa çıkaralım",
+        .ascendantSelectionDescription: "Yükselen İşaretinle Dönüştürücü Bir Yolculuğa Başla ve İçindeki Gücü Serbest Bırak",
+        .ascendantSelectionViewGuideDescription: "Doğum tarihi ve saatini seçin",
+        .attentionDescription: "Uygulama hala tam olarak çıkış yapmış değil. Hatalarla karşılaşmanız çok normal. Karşılaşırsanız ve bir çözüm aramak isterseniz. Bunu bize Hızlıca Yardım bölümünden gönderebilirsiniz. Uygulama, desteğinizle bu türde ilk ve tek kez görünecektir. Uygulamayı kullanırken eğlenmeyi unutmayın",
         .attentionSecondDescription: "Güncelleme her ayın 21'inde geliyor. Twitter'ımızı Kontrol Edin"
     ]
 
+    
     let authOnboarding: [textHelperAuthCompletion.onboarding:String] = [
-        .heartofAstrologyTitle: "Astrolojinin kalbindesiniz",
+        .heartofMysticTitle: "Mistik evrenin kalbinde olduğun",
         .secretOfTheStarsTitle: "Yıldızların Sırlarını Ortaya Çıkar",
         .yourFutureTitle: "Geleceğinizi bilmek ister misiniz",
-        .heartofAstrologyDescription: "Burcunuzu daha iyi bilmeniz geleceğiniz için daha iyi planlar yapmanızı sağlar",
-        .secretOfTheStarsDescription: "Yıldızların Sırlarını Keşfedin, Astrolojinin Karmaşıklıklarını Ortaya Çıkarın, Hepsi Tek Bir Yerde",
+        .heartofMysticDescription: "Mistik bir dünyanın kapılarını açmak, geleceğinizi daha etkili bir şekilde planlamanıza olanak tanır",
+        .secretOfTheStarsDescription: "Ölümlü Alem'in Perdesinin Ötesinde, Yıldızların Mistik Fısıltılarıyla Dans Edin, Kutsal Kozmosun Sırlarını Çözün",
         .yourFutureDescription: "Aiachy, sizi güzel bir yolda yönlendirecek ve geleceğinizle ilgili küçük ipuçları gösterecek",
-        .privacyPolicy: "Bir hesap oluşturarak, Gizlilik Politikamıza ve Kullanım Şartlarımıza katılmış olursunuz."
     ]
     let authHelperAuth: [textHelperAuthCompletion.helperAuth:String] = [
-        .clock: "Saat"
+        .clock: "Saat",
+        .privacyPolicy: "Bir hesap oluşturarak, Gizlilik Politikamıza ve Kullanım Şartlarımıza katılmış olursunuz."
     ]
     // MARK: - TurkishLanguage - HomeCompletion -
     typealias textHelperHomeCompletion = TextHelper.HomeCompletion
     let home: [textHelperHomeCompletion.home:String] = [
-        .horoscope:"Burç",
-        .ascendant:"Yükselen",
+        .aiachy:"Aiachy",
         .compatibility:"Uyumluluk",
         .notUsable: "Kullanılamaz. Abone olmanız gerekmektedir.",
         .notHaveAscendant: "Yükselen burcunuzu seçmeniz gerekmektedir."
@@ -188,43 +192,71 @@ struct TurkishLanguage {
     ]
 
     let settingsOracle: [textHelperSettingsCompletion.oracle: String] = [
-        .packageZodiacTitle: "Burç",
-        .packageZodiacItem1: "Astrolojik haritanız kozmik bilgelikle dolup taşacak, hayatınızın yönünü daha iyi anlamanıza yardımcı olacak.",
-        .packageZodiacItem2: "Tarot kartları sizin için yeni kapılar açacak ve sezginizi güçlendirecek",
-        .packageZodiacItem3: "Yeni müzikal frekanslar ruhunuzu yükseltecek ve sizin için yeni duygusal manzaralar açacak.",
-        .packageOracleTitle: "Orakel",
-        .packageOracleItem1: "Tüm mevcut paketlerin özelliklerine erişim sağlayacaksınız, sizi her alanda iyi donanımlı yapacak.",
-        .packageOracleItem2: "Yenilikçi özellikler parmaklarınızın ucunda olacak, sizi herkesten bir adım öne çıkaracak.",
-        .packageOracleItem3: "Gösterdiğiniz iyilik, kalplerde kalıcı bir iz bırakacak.",
-        .packageOracleItem4: "Bu paket, uygulamanızı yükseltmek ve geliştirmek için vazgeçilmez bir araç olacak."
+        .universalWisdomTitle: "Evrensel bilgelik",
+        .universalWisdomOccult1: "Evrenin bilgi nehri'ni kapattığınızda, daha derin sırlar gizemli alemlerden size akacak.",
+        .universalWisdomOccult2: "Yarının sırlarına ilk elden tanık olacak, geleceği daha derinlemesine anlama ve şifreleme yeteneği kazanacaksınız.",
+        .universalWisdomOccult3: "Çakraları daha geniş bir şekilde gözlemleme yeteneğiyle, iç enerjinizin rehberliğinde günlerinizi yorumlama yeteneğinizi derinleştireceksiniz.",
+        .universalWisdomOccult4: "Özellikle, günlük içgörülerinizi daha derinlemesine inceleyebilecek ve girişimlerinizi daha net algılayabilecek, böylece tavsiyelerinizi daha ayrıntılı bir şekilde şekillendirme fırsatı elde edeceksiniz.",
+        .universalWisdomOracle1: "Bu özel paket, Okült'ün Evrensel Bilgelik özelliklerinin tümünü kapsamaktadır.",
+        .universalWisdomOracle2: "Sunduğunuz bu kutsal destek, önceden hatırlanacak ve evrenin sırlarından size pozitif enerjilerle geri dönecektir.",
+        .universalWisdomOracle3: "Beta testindeki yeni özelliklere ilk erişimi elde edecek, gelen iyileştirmelerle yolu açacaksınız.",
+        .universalWisdomOracle4: "Erişim kapısı aracılığıyla size yakın geleceğin özel görselleştirmeleri sunulacak.",
+        .thresholdOfTheSoulTitle: "Ruhun Eşiği",
+        .thresholdOfTheSoulOccult1: "Yeni müzik frekansları ruhunuzu yükseltecek ve size yeni duygusal manzaralar açacak.",
+        .thresholdOfTheSoulOccult2: "Gizemli alem'in kapılarının arkasında, tarot'un derinliklerine, elinizin kader çizgilerine ve kürenin sırlarına daha derin bir erişim sizi bekliyor.",
+        .thresholdOfTheSoulOccult3: "Kişiselleştirilmiş melodilerin sihirli dünyasına adım atacak ve geleceğin gizli melodilerini keşfedeceksiniz.",
+        .thresholdOfTheSoulOccult4: "Kişiselleştirilmiş gizemli taşların gizemine daha derinlemesine dalmak için fırsat bulacaksınız.",
+        .thresholdOfTheSoulOracle1: "Bu özel paket, Okült'ün Ruhun Eşiği özelliklerinin tümünü kapsamaktadır.",
+        .thresholdOfTheSoulOracle2: "Sunduğunuz bu kutsal destek, önceden hatırlanacak ve evrenin sırlarından size pozitif enerjilerle geri dönecektir.",
+        .thresholdOfTheSoulOracle3: "Beta testindeki yeni özelliklere ilk erişimi elde edecek, gelen iyileştirmelerle yolu açacaksınız.",
+        .thresholdOfTheSoulOracle4: "Erişim kapısı aracılığıyla size yakın geleceğin özel görselleştirmeleri sunulacak."
     ]
 
+
     // MARK: - TurkishLanguage - ZodiacCompletion -
-    typealias textHelperZodiacCompletion = TextHelper.ZodiacCompletion
-    let zodiac: [textHelperZodiacCompletion.zodiac:String] = [
-        .piscesZodiacName: "Balık",
+    typealias textHelperSpiritualCompletion = TextHelper.SpiritualCompletion
+    let crystalZodiac: [textHelperSpiritualCompletion.crystal:String] = [
+        .ariesCrystal: "Ametist",
+        .taurusCrystal: "Kaplan Gözü",
+        .geminiCrystal: "Gül Kuvars",
+        .cancerCrystal: "Labradorit",
+        .leoCrystal: "Granat",
+        .virgoCrystal: "Ay Taşı",
+        .libraCrystal: "Lapis Lazuli",
+        .scorpioCrystal: "Turmalin",
+        .sagittariusCrystal: "Obsidyen",
+        .capricornCrystal: "Kristal Kuvars",
+        .aquariusCrystal: "Akvamarin",
+        .piscesCrystal: "İnci"
+    ]
+    let zodiac: [textHelperSpiritualCompletion.zodiac:String] = [
+        .pisces: "Balık",
+        .aries: "Koç",
+        .aquarius: "Kova",
+        .gemini: "İkizler",
+        .libra: "Terazi",
+        .virgo: "Başak",
+        .capricorn: "Oğlak",
+        .sagittarius: "Yay",
+        .leo: "Aslan",
+        .scorpio: "Akrep",
+        .taurus: "Boğa",
+        .cancer: "Yengeç"
+    ]
+
+    
+    let dateZodiac: [textHelperSpiritualCompletion.dateZodiac:String] = [
         .piscesZodiacDate: "20 Şub - 20 Mar",
-        .ariesZodiacName: "Koç",
         .ariesZodiacDate: "21 Mar - 20 Nis",
-        .aquariusZodiacName: "Kova",
         .aquariusZodiacDate: "21 Oca - 19 Şub",
-        .geminiZodiacName: "İkizler",
         .geminiZodiacDate: "21 May - 21 Haz",
-        .libraZodiacName: "Terazi",
         .libraZodiacDate: "24 Eyl - 23 Eki",
-        .virgoZodiacName: "Başak",
         .virgoZodiacDate: "24 Ağu - 23 Eyl",
-        .capricornZodiacName: "Oğlak",
         .capricornZodiacDate: "22 Ara - 20 Oca",
-        .sagittariusZodiacName: "Yay",
         .sagittariusZodiacDate: "23 Kas - 21 Ara",
-        .leoZodiacName: "Aslan",
         .leoZodiacDate: "23 Tem - 23 Ağu",
-        .scorpioZodiacName: "Akrep",
         .scorpioZodiacDate: "24 Eki - 22 Kas",
-        .taurusZodiacName: "Boğa",
         .taurusZodiacDate: "21 Nis - 20 May",
-        .cancerZodiacName: "Yengeç",
         .cancerZodiacDate: "22 Haz - 22 Tem"
     ]
 

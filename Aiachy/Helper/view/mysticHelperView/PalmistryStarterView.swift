@@ -32,7 +32,7 @@ struct PalmistryStarterView: View {
                     .opacity(isOnAppear ? 1 : 0)
                     .frame(height: ACYdw(aiachyState, d: 0.5))
             }
-            ACYMysticTitleAndDescriptionText(fontType: .CinzelBlack30, 
+            ACYMysticTitleAndDescriptionText(fontType: .cinzelBlack30, 
                                              title: .palmistryTitle,
                                              description: .palmistyrDescription)
             .opacity(isOnAppear ? 1 : 0)

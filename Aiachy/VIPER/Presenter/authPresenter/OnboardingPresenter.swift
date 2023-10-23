@@ -25,8 +25,8 @@ class OnboardingPresenter: ObservableObject {
     lazy var acyOnboardingEntityData: [ACYAuthOnboardingEntity] = [
         ACYAuthOnboardingEntity(id: 0,
                                 image: .authHeart,
-                                title: .heartofAstrologyTitle,
-                                description: .heartofAstrologyDescription),
+                                title: .heartofMysticTitle,
+                                description: .heartofMysticDescription),
         ACYAuthOnboardingEntity(id: 1,
                                 image: .secretStar,
                                 title: .secretOfTheStarsTitle,

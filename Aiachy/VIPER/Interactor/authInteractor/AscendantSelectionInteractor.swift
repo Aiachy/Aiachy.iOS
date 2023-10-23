@@ -10,21 +10,19 @@ import Foundation
 //MARK: AscendantSelectionInteractor - procotol  - AscendantSelectionInteractorAscendantHandlerProtocol
 private protocol AscendantSelectionInteractorAscendantHandlerProtocol {
     func completionHandlerAscendant(aiachyState: AiachyState)
-    func makeUserAscendant(userZodiac: UserZodiac, userHour: Int) -> Int
+    func makeUserAscendant(userZodiac: UserSpiritual, userHour: Int) -> Int
     func matchZodiac(userZodiac: Int, phaseLevel: Int) -> Int
 }
 
 class AscendantSelectionInteractor: ObservableObject {
     
-    init() {
-        
-    }
+    init() { }
     /// Allows all processes to be started
     /// - Parameter aiachyState: users informations.
     /// - Returns: if turn true setted ascendant or turn false its have problem.
     func setAscendant(aiachyState: AiachyState) -> Bool {
         completionHandlerAscendant(aiachyState: aiachyState)
-        let settedAscendant = aiachyState.user.userZodiac.ascendant
+        let settedAscendant = aiachyState.user.userSpiritual.ascendant
         guard settedAscendant != nil else { return false}
         return true
     }
@@ -38,16 +36,16 @@ extension AscendantSelectionInteractor: AscendantSelectionInteractorAscendantHan
         let userBirthDayClock = aiachyState.user.userInfo.birthDay.clock
         let controlledUserHour = controlUserClock(birthDay: userBirthDayClock)
         
-        let userZodiac = aiachyState.user.userZodiac
-        let newAscendant = makeUserAscendant(userZodiac: userZodiac, userHour: controlledUserHour)
-        aiachyState.user.userZodiac.ascendant = newAscendant
+        let userSpiritual = aiachyState.user.userSpiritual
+        let newAscendant = makeUserAscendant(userZodiac: userSpiritual, userHour: controlledUserHour)
+        aiachyState.user.userSpiritual.ascendant = newAscendant
     }
     /// Creating an ascendant sign.
     /// - Parameters:
     ///   - userZodiac: User's zodiac sign
     ///   - userHour: User selected time
     /// - Returns: We subtract the rising sign as a numerical value.
-    fileprivate func makeUserAscendant(userZodiac: UserZodiac, userHour: Int) -> Int {
+    fileprivate func makeUserAscendant(userZodiac: UserSpiritual, userHour: Int) -> Int {
         guard let checkedUserZodiac = userZodiac.zodiac else { return .zero}
         return matchZodiac(userZodiac: checkedUserZodiac, phaseLevel: userHour)
     }

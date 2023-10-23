@@ -10,6 +10,7 @@ import Foundation
 struct TextHandler {
     
     static let Turkish = TurkishLanguage()
+    static let English = EnglishLanguage()
     static let EnglishUSA = EnglishUSALanguage()
     static let EnglishUK = EnglishUKLanguage()
     static let Romanian = RomanianLanguage()
@@ -27,7 +28,7 @@ struct TextHandler {
     typealias textHelperGeneralCompletion = TextHelper.GeneralCompletion
     // textHelperGeneralCompletion - makeGeneralButton
     static func makeGeneralButtonString(aiachy aiachyState: AiachyState, button: textHelperGeneralCompletion.button) -> String {
-        let localized = aiachyState.user.aiachyInfo.wrappedLanguage
+        let localized = aiachyState.user.aiachyInfo.aiachyLanguageInfo.wrappedLanguage
         
         switch localized {
         case "TR":
@@ -60,9 +61,35 @@ struct TextHandler {
             return EnglishUSA.generalButton[button]!
         }
     }
+    
+    static func makeGeneralContentButtonString(aiachy aiachyState: AiachyState,
+                                                 contentButton: textHelperGeneralCompletion.contentButton) -> String {
+        let localized = aiachyState.user.aiachyInfo.aiachyLanguageInfo.wrappedLanguage
+        
+        switch localized {
+        case "US":
+            return English.generalContentButton[contentButton]!
+        default:
+            return English.generalContentButton[contentButton]!
+        }
+    }
+    
+    static func makeGeneralSectionButtonString(aiachy aiachyState: AiachyState, 
+                                               sectionButton: textHelperGeneralCompletion.sectionButton) -> String {
+        let localized = aiachyState.user.aiachyInfo.aiachyLanguageInfo.wrappedLanguage
+        
+        switch localized {
+        case "US":
+            return English.generalSectionButton[sectionButton]!
+        default:
+            return English.generalSectionButton[sectionButton]!
+        }
+                
+    }
+    
     // textHelperGeneralCompletion - makeGeneralFlag
     static func makeGeneralFlagString(aiachy aiachyState: AiachyState, flag: textHelperGeneralCompletion.flag) -> String {
-        let localized = aiachyState.user.aiachyInfo.wrappedLanguage
+        let localized = aiachyState.user.aiachyInfo.aiachyLanguageInfo.wrappedLanguage
         
         switch localized {
         case "TR":
@@ -99,7 +126,7 @@ struct TextHandler {
     typealias textHelperAlertCompletion = TextHelper.AlertCompletion
     // AlertCompletion - makeAlertButtonString
     static func makeAlertButtonString(aiachy aiachyState: AiachyState,  button: textHelperAlertCompletion.button) -> String {
-        let localized = aiachyState.user.aiachyInfo.wrappedLanguage
+        let localized = aiachyState.user.aiachyInfo.aiachyLanguageInfo.wrappedLanguage
         
         switch localized {
         case "TR":
@@ -134,7 +161,7 @@ struct TextHandler {
     }
     // AlertCompletion - makeAlertString
     static func makeAlertString(aiachy aiachyState: AiachyState, alert: textHelperAlertCompletion.alert) -> String {
-        let localized = aiachyState.user.aiachyInfo.wrappedLanguage
+        let localized = aiachyState.user.aiachyInfo.aiachyLanguageInfo.wrappedLanguage
         
         switch localized {
         case "TR":
@@ -172,7 +199,7 @@ struct TextHandler {
     typealias textHelperTextFieldCompletion = TextHelper.TextFieldCompletion
     // TextFieldCompletion - makeTextField
     static func makeTextFieldString(aiachy aiachyState: AiachyState, textField: textHelperTextFieldCompletion.textField) -> String {
-        let localized = aiachyState.user.aiachyInfo.wrappedLanguage
+        let localized = aiachyState.user.aiachyInfo.aiachyLanguageInfo.wrappedLanguage
         
         switch localized {
         case "TR":
@@ -207,7 +234,7 @@ struct TextHandler {
     }
     // TextFieldCompletion - textFieldError
     static func maketextFieldErrorString(aiachy aiachyState: AiachyState, textFieldError: textHelperTextFieldCompletion.error) -> String {
-        let localized = aiachyState.user.aiachyInfo.wrappedLanguage
+        let localized = aiachyState.user.aiachyInfo.aiachyLanguageInfo.wrappedLanguage
         
         switch localized {
         case "TR":
@@ -242,44 +269,80 @@ struct TextHandler {
     }
     // MARK: -  TextHandler - AuthCompletion -
     typealias textHelperAuthCompletion = TextHelper.AuthCompletion
-    // AuthCompletion - auth
-    static func makeAuthString(aiachy aiachyState: AiachyState, auth: textHelperAuthCompletion.auth) -> String {
-        let localized = aiachyState.user.aiachyInfo.wrappedLanguage
+    // AuthCompletion - auth title
+    static func makeAuthTitleString(aiachy aiachyState: AiachyState, title: textHelperAuthCompletion.title) -> String {
+        let localized = aiachyState.user.aiachyInfo.aiachyLanguageInfo.wrappedLanguage
         
         switch localized {
         case "TR":
-            return Turkish.auth[auth]!
+            return Turkish.authTitle[title]!
         case "DK":
-            return Danish.auth[auth]!
+            return Danish.authTitle[title]!
         case "FR":
-            return French.auth[auth]!
+            return French.authTitle[title]!
         case "DE":
-            return German.auth[auth]!
+            return German.authTitle[title]!
         case "GR":
-            return Greek.auth[auth]!
+            return Greek.authTitle[title]!
         case "GB":
-            return EnglishUSA.auth[auth]!
+            return EnglishUSA.authTitle[title]!
         case "AE":
-            return Arabic.auth[auth]!
+            return Arabic.authTitle[title]!
         case "PL":
-            return Polish.auth[auth]!
+            return Polish.authTitle[title]!
         case "IT":
-            return Italian.auth[auth]!
+            return Italian.authTitle[title]!
         case "RO":
-            return Romanian.auth[auth]!
+            return Romanian.authTitle[title]!
         case "RU":
-            return Russian.auth[auth]!
+            return Russian.authTitle[title]!
         case "UA":
-            return Ukrainian.auth[auth]!
+            return Ukrainian.authTitle[title]!
         case "US":
-            return EnglishUSA.auth[auth]!
+            return EnglishUSA.authTitle[title]!
         default:
-            return EnglishUSA.auth[auth]!
+            return EnglishUSA.authTitle[title]!
         }
     }
+    static func makeAuthDescriptionString(aiachy aiachyState: AiachyState, description: textHelperAuthCompletion.description) -> String {
+        let localized = aiachyState.user.aiachyInfo.aiachyLanguageInfo.wrappedLanguage
+        
+        switch localized {
+        case "TR":
+            return Turkish.authDescription[description]!
+        case "DK":
+            return Danish.authDescription[description]!
+        case "FR":
+            return French.authDescription[description]!
+        case "DE":
+            return German.authDescription[description]!
+        case "GR":
+            return Greek.authDescription[description]!
+        case "GB":
+            return EnglishUSA.authDescription[description]!
+        case "AE":
+            return Arabic.authDescription[description]!
+        case "PL":
+            return Polish.authDescription[description]!
+        case "IT":
+            return Italian.authDescription[description]!
+        case "RO":
+            return Romanian.authDescription[description]!
+        case "RU":
+            return Russian.authDescription[description]!
+        case "UA":
+            return Ukrainian.authDescription[description]!
+        case "US":
+            return EnglishUSA.authDescription[description]!
+        default:
+            return EnglishUSA.authDescription[description]!
+        }
+    }
+    
+    
     // AuthCompletion - AuthOnboarding
     static func makeAuthOnboardingString(aiachy aiachyState: AiachyState, onboarding: textHelperAuthCompletion.onboarding) -> String {
-        let localized = aiachyState.user.aiachyInfo.wrappedLanguage
+        let localized = aiachyState.user.aiachyInfo.aiachyLanguageInfo.wrappedLanguage
         
         switch localized {
         case "TR":
@@ -314,7 +377,7 @@ struct TextHandler {
     }
     // AuthCompletion - AuthHelperAuth
     static func makeAuthHelperAuthString(aiachy aiachyState: AiachyState, helperAuth: textHelperAuthCompletion.helperAuth) -> String {
-        let localized = aiachyState.user.aiachyInfo.wrappedLanguage
+        let localized = aiachyState.user.aiachyInfo.aiachyLanguageInfo.wrappedLanguage
         
         switch localized {
         case "TR":
@@ -350,7 +413,7 @@ struct TextHandler {
     // MARK: -  TextHandler - HomeCompletion -
     typealias textHelperHomeCompletion = TextHelper.HomeCompletion
     static func makeHomeString(aiachy aiachyState: AiachyState, home: textHelperHomeCompletion.home) -> String {
-        let localized = aiachyState.user.aiachyInfo.wrappedLanguage
+        let localized = aiachyState.user.aiachyInfo.aiachyLanguageInfo.wrappedLanguage
         
         switch localized {
         case "TR":
@@ -385,7 +448,7 @@ struct TextHandler {
     }
     
     static func makeHomeDateString(aiachy aiachyState: AiachyState, date: textHelperHomeCompletion.date) -> String {
-        let localized = aiachyState.user.aiachyInfo.wrappedLanguage
+        let localized = aiachyState.user.aiachyInfo.aiachyLanguageInfo.wrappedLanguage
         
         switch localized {
         case "TR":
@@ -420,7 +483,7 @@ struct TextHandler {
     }
     
     static func makeHomeStatusString(aiachy aiachyState: AiachyState, homeStatus: textHelperHomeCompletion.status) -> String {
-        let localized = aiachyState.user.aiachyInfo.wrappedLanguage
+        let localized = aiachyState.user.aiachyInfo.aiachyLanguageInfo.wrappedLanguage
         
         switch localized {
         case "TR":
@@ -458,7 +521,7 @@ struct TextHandler {
     typealias textHelperLoveCompletion = TextHelper.LoveCompletion
     // LoveCompletion - makeLoveString
     static func makeLoveString(aiachy aiachyState: AiachyState, love: textHelperLoveCompletion.love) -> String {
-        let localized = aiachyState.user.aiachyInfo.wrappedLanguage
+        let localized = aiachyState.user.aiachyInfo.aiachyLanguageInfo.wrappedLanguage
         
         switch localized {
         case "TR":
@@ -495,7 +558,7 @@ struct TextHandler {
     typealias textHelperMysticCompletion = TextHelper.MysticCompletion
     // MysticCompletion - makeMysticString
     static func makeMysticString(aiachy aiachyState: AiachyState, mystic: textHelperMysticCompletion.mystic) -> String {
-        let localized = aiachyState.user.aiachyInfo.wrappedLanguage
+        let localized = aiachyState.user.aiachyInfo.aiachyLanguageInfo.wrappedLanguage
         
         switch localized {
         case "TR":
@@ -532,7 +595,7 @@ struct TextHandler {
     typealias textHelperGalaxyCompletion = TextHelper.GalaxyCompletion
     // GalaxyCompletion - makeGalaxy
     static func makeGalaxy(aiachy aiachyState: AiachyState, galaxy: textHelperGalaxyCompletion.galaxy) -> String {
-        let localized = aiachyState.user.aiachyInfo.wrappedLanguage
+        let localized = aiachyState.user.aiachyInfo.aiachyLanguageInfo.wrappedLanguage
         switch localized {
         case "TR":
             return Turkish.galaxy[galaxy]!
@@ -566,7 +629,7 @@ struct TextHandler {
     }
     // GalaxyCompletion - makeGalaxyTune
     static func makeGalaxyTune(aiachy aiachyState: AiachyState, galaxyTune: textHelperGalaxyCompletion.tune) -> String {
-        let localized = aiachyState.user.aiachyInfo.wrappedLanguage
+        let localized = aiachyState.user.aiachyInfo.aiachyLanguageInfo.wrappedLanguage
         
         switch localized {
         case "TR":
@@ -603,7 +666,7 @@ struct TextHandler {
     typealias textHelperSettingsCompletion = TextHelper.SettingsCompletion
     // SettingsCompletion - makeSettingsString
     static func makeSettingsString(aiachy aiachyState: AiachyState, settings: textHelperSettingsCompletion.settings) -> String {
-        let localized = aiachyState.user.aiachyInfo.wrappedLanguage
+        let localized = aiachyState.user.aiachyInfo.aiachyLanguageInfo.wrappedLanguage
         
         switch localized {
         case "TR":
@@ -638,7 +701,7 @@ struct TextHandler {
     }
     // SettingsCompletion - makeSettingsLanguageString
     static func makeSettingsLanguageString(aiachy aiachyState: AiachyState, language: textHelperSettingsCompletion.language) -> String {
-        let localized = aiachyState.user.aiachyInfo.wrappedLanguage
+        let localized = aiachyState.user.aiachyInfo.aiachyLanguageInfo.wrappedLanguage
         
         switch localized {
         case "TR":
@@ -673,7 +736,7 @@ struct TextHandler {
     }
     
     static func makeSettingsOracleString(aiachy aiachyState: AiachyState, oracle: textHelperSettingsCompletion.oracle) -> String {
-        let localized = aiachyState.user.aiachyInfo.wrappedLanguage
+        let localized = aiachyState.user.aiachyInfo.aiachyLanguageInfo.wrappedLanguage
         
         switch localized {
         case "TR":
@@ -707,11 +770,44 @@ struct TextHandler {
         }
     }
     // MARK: - TextHandler - ZodiacCompletion -
-    typealias textHelperZodiacCompletion = TextHelper.ZodiacCompletion
-    // ZodiacCompletion - makeZodiacString
-    static func makeZodiacString(aiachy aiachyState: AiachyState, zodiac: textHelperZodiacCompletion.zodiac) -> String {
-        let localized = aiachyState.user.aiachyInfo.wrappedLanguage
-        
+    typealias textHelperSpiritualCompletion = TextHelper.SpiritualCompletion
+    static func makeCrystalZodiacString(aiachy aiachyState: AiachyState, crystal: textHelperSpiritualCompletion.crystal) -> String {
+        let localized = aiachyState.user.aiachyInfo.aiachyLanguageInfo.wrappedLanguage
+        switch localized {
+        case "TR":
+            return Turkish.crystalZodiac[crystal]!
+        case "DK":
+            return Danish.crystalZodiac[crystal]!
+        case "FR":
+            return French.crystalZodiac[crystal]!
+        case "DE":
+            return German.crystalZodiac[crystal]!
+        case "GR":
+            return Greek.crystalZodiac[crystal]!
+        case "GB":
+            return EnglishUSA.crystalZodiac[crystal]!
+        case "AE":
+            return Arabic.crystalZodiac[crystal]!
+        case "PL":
+            return Polish.crystalZodiac[crystal]!
+        case "IT":
+            return Italian.crystalZodiac[crystal]!
+        case "RO":
+            return Romanian.crystalZodiac[crystal]!
+        case "RU":
+            return Russian.crystalZodiac[crystal]!
+        case "UA":
+            return Ukrainian.crystalZodiac[crystal]!
+        case "US":
+            return EnglishUSA.crystalZodiac[crystal]!
+        default:
+            return EnglishUSA.crystalZodiac[crystal]!
+        }
+    }
+    
+    static func makeZodiacString(aiachy aiachyState: AiachyState, zodiac: textHelperSpiritualCompletion.zodiac) -> String {
+        let localized = aiachyState.user.aiachyInfo.aiachyLanguageInfo.wrappedLanguage
+
         switch localized {
         case "TR":
             return Turkish.zodiac[zodiac]!
@@ -724,7 +820,7 @@ struct TextHandler {
         case "GR":
             return Greek.zodiac[zodiac]!
         case "GB":
-            return EnglishUSA.zodiac[zodiac]!
+            return EnglishUK.zodiac[zodiac]!
         case "AE":
             return Arabic.zodiac[zodiac]!
         case "PL":
@@ -740,42 +836,44 @@ struct TextHandler {
         case "US":
             return EnglishUSA.zodiac[zodiac]!
         default:
-            return EnglishUSA.zodiac[zodiac]!
+            return English.zodiac[zodiac]!
         }
-    }
-
-}
-
-extension TextHandler {
-    static func makeTextWithZodiacInt(aiachy aiachyState: AiachyState, zodiac: Int) -> String {
         
-        switch zodiac {
-        case 0:
-            return TextHandler.makeZodiacString(aiachy: aiachyState, zodiac: .ariesZodiacName)
-        case 1:
-            return TextHandler.makeZodiacString(aiachy: aiachyState, zodiac: .taurusZodiacName)
-        case 2:
-            return TextHandler.makeZodiacString(aiachy: aiachyState, zodiac: .geminiZodiacName)
-        case 3:
-            return TextHandler.makeZodiacString(aiachy: aiachyState, zodiac: .cancerZodiacName)
-        case 4:
-            return TextHandler.makeZodiacString(aiachy: aiachyState, zodiac: .leoZodiacName)
-        case 5:
-            return TextHandler.makeZodiacString(aiachy: aiachyState, zodiac: .virgoZodiacName)
-        case 6:
-            return TextHandler.makeZodiacString(aiachy: aiachyState, zodiac: .libraZodiacName)
-        case 7:
-            return TextHandler.makeZodiacString(aiachy: aiachyState, zodiac: .scorpioZodiacName)
-        case 8:
-            return TextHandler.makeZodiacString(aiachy: aiachyState, zodiac: .sagittariusZodiacName)
-        case 9:
-            return TextHandler.makeZodiacString(aiachy: aiachyState, zodiac: .capricornZodiacName)
-        case 10:
-            return TextHandler.makeZodiacString(aiachy: aiachyState, zodiac: .aquariusZodiacName)
-        case 11:
-            return TextHandler.makeZodiacString(aiachy: aiachyState, zodiac: .piscesZodiacName)
+    }
+    
+    // ZodiacCompletion - makeDateZodiacString
+    static func makeDateZodiacString(aiachy aiachyState: AiachyState, date: textHelperSpiritualCompletion.dateZodiac) -> String {
+        let localized = aiachyState.user.aiachyInfo.aiachyLanguageInfo.wrappedLanguage
+        switch localized {
+        case "TR":
+            return Turkish.dateZodiac[date]!
+        case "DK":
+            return Danish.dateZodiac[date]!
+        case "FR":
+            return French.dateZodiac[date]!
+        case "DE":
+            return German.dateZodiac[date]!
+        case "GR":
+            return Greek.dateZodiac[date]!
+        case "GB":
+            return EnglishUK.dateZodiac[date]!
+        case "AE":
+            return Arabic.dateZodiac[date]!
+        case "PL":
+            return Polish.dateZodiac[date]!
+        case "IT":
+            return Italian.dateZodiac[date]!
+        case "RO":
+            return Romanian.dateZodiac[date]!
+        case "RU":
+            return Russian.dateZodiac[date]!
+        case "UA":
+            return Ukrainian.dateZodiac[date]!
+        case "US":
+            return EnglishUSA.dateZodiac[date]!
         default:
-            return TextHandler.makeZodiacString(aiachy: aiachyState, zodiac: .scorpioZodiacDate)
+            return English.dateZodiac[date]!
         }
     }
+
 }

@@ -12,19 +12,33 @@ struct ACYButtonStyle: ButtonStyle {
     @EnvironmentObject var aiachyState: AiachyState
     
     func makeBody(configuration: Configuration) -> some View {
-        let pressed = configuration.isPressed
-        ZStack {
-            RoundedRectangle(cornerRadius: 10)
-                .stroke(Color.makeAiachyColor(aiachyState,
-                                          aiachyColor: .secondColor),lineWidth: 1)
-            configuration.label
-                .foregroundColor(.makeAiachyColor(aiachyState,
-                                              aiachyColor: .backgroundColor))
-                .font(.aiachyFont(.roundedBold14))
+            ZStack {
+                makeRectangle(with: configuration)
+                makeLabel(with: configuration)
+            }
+            .scaleEffect(configuration.isPressed ? 0.99 : 1.0) // Basıldığında küçülme efekti
         }
-        .background(Color.makeAiachyColor(aiachyState,
-                                      aiachyColor: .firstColor).cornerRadius(10))
-        .offset(x: 0,
-                y: pressed ? 2 : 0)
+}
+
+extension ACYButtonStyle {
+    
+    private func makeRectangle(with configuration: Configuration) -> some View {
+        RoundedRectangle(cornerRadius: 20)
+                .stroke(Color(ColorHandler.makeAiachyColor(aiachyState, aiachyColor: .secondColor)),
+                        lineWidth: 1.5)
+                .foregroundStyle(Color(ColorHandler.makeAiachyColor(aiachyState,
+                                                                    aiachyColor: .fourthColor)))
+                .background(Color(ColorHandler.makeAiachyColor(aiachyState,aiachyColor: .firstColor)).cornerRadius(20))
+                .shadow(color: Color(ColorHandler.makeAiachyColor(aiachyState, aiachyColor: .firstColor)).opacity(0.4), radius: 4, x: 0, y: 3)
+    }
+    
+    private func makeLabel(with configuration: Configuration) -> some View {
+        
+        let isPressed = configuration.isPressed
+        
+        return configuration.label
+            .font(FontHandler.aiachyFont(.roundedBold17))
+            .foregroundStyle(Color(ColorHandler.makeAiachyColor(aiachyState, aiachyColor: isPressed ? .secondColor : .backgroundColor )))
+            .animation(.easeIn(duration: 5), value: isPressed)
     }
 }

@@ -14,10 +14,10 @@ private protocol LoginInteractorSetterProtocol {
 // MARL: LoginInteractor - Interactor
 class LoginInteractor: ObservableObject {
     
-    let authServerManager: AuthServerManager
+    let userServerManager: UserServerManager
     
-    init(authServerManager: AuthServerManager = AuthServerManager()) {
-        self.authServerManager = authServerManager
+    init(aiachy aiachyState: AiachyState) {
+        self.userServerManager = UserServerManager(aiachy: aiachyState)
     }
     /// Checking email
     /// - Parameters:
@@ -29,14 +29,14 @@ class LoginInteractor: ObservableObject {
         /// User Login Info
         let userLoginInfo = UserLoginInfo(email: email, password: password)
         /// Check Login user email
-        authServerManager.checkLoginWithEmail(userLogin: userLoginInfo) { [self] result in
+        userServerManager.checkLoginWithEmail(userLogin: userLoginInfo) { [self] result in
             switch result {
             case .success(let success):
                 aiachyState.user = success
                 setterCompletion(user: success)
                 completion(true)
             case .failure(let failure):
-                print(failure.printDataFetching("LoginInteractor"))
+                print(failure.printAuthError("LoginInteractor"))
                 completion(false)
             }
         }

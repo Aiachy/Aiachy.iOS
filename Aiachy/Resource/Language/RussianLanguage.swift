@@ -91,37 +91,41 @@ struct RussianLanguage {
     
     // MARK: - RussianLanguage - AuthCompletion -
     typealias textHelperAuthCompletion = TextHelper.AuthCompletion
-    let auth: [textHelperAuthCompletion.auth:String] = [
-        .loginScreenTitle: "Откройте ворота астрологии, войдите в мир Aiachy",
-        .zodiacSelectionTitle: "Пришло время узнать ваше будущее",
-        .registerTitle: "Раскройте ваш зодиакальный потенциал",
-        .ascendantSelectionTitle: "Освещение вашей внутренней радиации",
+    let authTitle: [textHelperAuthCompletion.title:String] = [
+        .loginScreenTitle: "Раскройте Магию, Путешествие в Царстве Aiachy",
+        .crystalSelectionTitle: "Раскройте мистический кристалл вашего рождения",
+        .registerTitle: "Освободите ваше зодиакальное потенциал",
+        .ascendantSelectionTitle: "Осветите Ваше Внутреннее Сияние",
         .attentionTitle: "ВНИМАНИЕ",
-        .loginScreenDescription: "Откройте тайны астрологии, окунитесь в очаровательный мир Aiachy и исследуйте удивительный мир зодиакальных чудес",
-        .registerDescription: "Ступите в Aiachy для персонализированного опыта гороскопа! Позвольте нам настроить вашу зодиакальную информацию с вашими конфиденциальными данными и отправить вас в уникальное путешествие",
-        .ascendantSelectionDescription: "Отправьтесь в трансформационное путешествие с вашим восходящим знаком. Раскройте внутреннюю силу",
-        .ascendantSelectionViewGuideDescription: "Выберите дату и время рождения",
-        .attentionDescription: "Приложение все еще не полностью вышло из системы. Встреча с ошибками очень нормальна. Если вы столкнетесь и захотите найти решение, вы можете быстро отправить его нам из раздела Помощь. Приложение появится в этом жанре в первый и единственный раз с вашей поддержкой. Не забудьте получать удовольствие, пока используете приложение",
-        .attentionSecondDescription: "Обновление происходит 21-го числа каждого месяца. Проверьте наш Twitter"
     ]
+
+    let authDescription: [textHelperAuthCompletion.description:String] = [
+        .loginScreenDescription: "Расшифруйте Тайны Эфира, Войдите в Священное Убежище Aiachy и Станьте Свидетелем Танца Небесных Духов!",
+        .crystalSelectionDescription: "Пришло время узнать ваше будущее",
+        .registerDescription: "Войдите в Aiachy для персонализированного гороскопа! Позвольте нам настроить вашу зодиакальную информацию с вашей конфиденциальной информацией и отправить вас в уникальное путешествие",
+        .ascendantSelectionDescription: "Начните Трансформационное Путешествие со Знаком Вашего Восхождения и Освободите Внутреннюю Силу",
+        .ascendantSelectionViewGuideDescription: "Выберите дату и время рождения",
+        .attentionDescription: "Приложение еще не полностью вышло. Встреча с ошибками очень нормальна. Если вы столкнетесь и захотите искать решение. Вы можете быстро отправить его нам из раздела Помощь. Приложение появится впервые и единственный раз в этом жанре с вашей поддержкой. Не забудьте развлекаться, используя приложение",
+        .attentionSecondDescription: "Обновление приходит 21-го числа каждого месяца. Проверьте Наш Twitter"
+    ]
+    
     let authOnboarding: [textHelperAuthCompletion.onboarding:String] = [
-        .heartofAstrologyTitle: "Вы находитесь в самом сердце астрологии",
+        .heartofMysticTitle: "Вы в сердце мистической вселенной",
         .secretOfTheStarsTitle: "Раскройте тайны звезд",
         .yourFutureTitle: "Хотите знать свое будущее",
-        .heartofAstrologyDescription: "Зная ваш гороскоп лучше, вы сможете лучше планировать будущее",
-        .secretOfTheStarsDescription: "Откройте тайны звезд, раскрывая тонкости астрологии, все здесь, в одном месте",
+        .heartofMysticDescription: "Открыв двери в мистический мир, вы сможете более эффективно планировать свое будущее",
+        .secretOfTheStarsDescription: "За Покровом Смертного Царства, Танцуйте с Мистическими Шепотами Звезд, Раскрывая Тайны Священного Космоса",
         .yourFutureDescription: "Aiachy будет направлять вас по красивому пути и показывать маленькие советы о вашем будущем",
-        .privacyPolicy: "Создавая учетную запись, вы соглашаетесь с нашей Политикой конфиденциальности и Условиями использования."
     ]
     let authHelperAuth: [textHelperAuthCompletion.helperAuth:String] = [
-        .clock: "Час"
+        .clock: "Час",
+        .privacyPolicy: "Создавая учетную запись, вы соглашаетесь с нашей Политикой конфиденциальности и Условиями использования."
     ]
     
     // MARK: - RussianLanguage - textHelperHomeCompletion -
     typealias textHelperHomeCompletion = TextHelper.HomeCompletion
     let home: [textHelperHomeCompletion.home:String] = [
-        .horoscope: "Гороскоп",
-        .ascendant: "Асцендент",
+        .aiachy: "Айачи",
         .compatibility: "Совместимость",
         .notUsable: "Недоступно. Вам нужно подписаться.",
         .notHaveAscendant: "Вам нужно выбрать восходящий знак."
@@ -186,44 +190,71 @@ struct RussianLanguage {
         .currentLanguage: "Текущий язык",
         .otherLanguage: "Другой язык"
     ]
-    let settingsOracle: [textHelperSettingsCompletion.oracle:String] = [
-        .packageZodiacTitle: "Зодиак",
-        .packageZodiacItem1: "Ваш астрологический график будет переполнен космической мудростью, помогая вам лучше понимать направление вашей жизни.",
-        .packageZodiacItem2: "Карты Таро откроют перед вами новые двери и укрепят вашу интуицию",
-        .packageZodiacItem3: "Новые музыкальные частоты поднимут вашу душу и откроют перед вами новые эмоциональные пейзажи.",
-        .packageOracleTitle: "Оракул",
-        .packageOracleItem1: "У вас будет доступ ко всем доступным функциям пакетов, что сделает вас хорошо подготовленным в каждой области.",
-        .packageOracleItem2: "Инновационные функции будут у вас под рукой, давая вам шаг впереди всех остальных.",
-        .packageOracleItem3: "Доброта, которую вы проявили, оставит вечный след на сердцах.",
-        .packageOracleItem4: "Этот пакет станет неотъемлемым инструментом для повышения и улучшения вашего приложения."
+    let settingsOracle: [textHelperSettingsCompletion.oracle: String] = [
+        .universalWisdomTitle: "Универсальная мудрость",
+        .universalWisdomOccult1: "Когда вы закрываете реку знаний вселенной, к вам потекут более глубокие тайны из таинственных царств.",
+        .universalWisdomOccult2: "Вы станете свидетелем секретов завтрашнего дня, получив возможность глубже понять и расшифровать будущее.",
+        .universalWisdomOccult3: "Способностью наблюдать чакры более обширно, вы улучшите свою способность трактовать свои дни, углубляясь в руководство вашей внутренней энергией.",
+        .universalWisdomOccult4: "Конкретно, вы сможете более глубоко изучить свои ежедневные взгляды и яснее воспринимать свои инициативы, получая возможность более детально формировать свои советы.",
+        .universalWisdomOracle1: "Этот специальный пакет включает в себя все функции Универсальной мудрости Оккульта.",
+        .universalWisdomOracle2: "Эта священная поддержка, которую вы предлагаете, будет запомнена заранее и вернется к вам с положительными энергиями от секретов вселенной.",
+        .universalWisdomOracle3: "Вы получите первый доступ к новым функциям в бета-тесте, ведя путь с приближающимися улучшениями.",
+        .universalWisdomOracle4: "Эксклюзивные визуализации ближайшего будущего будут представлены вам через ворота доступа.",
+        .thresholdOfTheSoulTitle: "Порог Души",
+        .thresholdOfTheSoulOccult1: "Новые музыкальные частоты поднимут вашу душу и откроют для вас новые эмоциональные пейзажи.",
+        .thresholdOfTheSoulOccult2: "За вратами таинственного царства вас ждет более глубокий доступ к глубинам таро, судьбоносным линиям вашей руки и секретам земного шара.",
+        .thresholdOfTheSoulOccult3: "Вы войдете в волшебный мир персонализированных мелодий и откроете скрытые мелодии будущего.",
+        .thresholdOfTheSoulOccult4: "Вы сможете глубже погрузиться в тайну персонализированных таинственных камней.",
+        .thresholdOfTheSoulOracle1: "Этот специальный пакет включает в себя все функции Порога души Оккульта.",
+        .thresholdOfTheSoulOracle2: "Эта священная поддержка, которую вы предлагаете, будет запомнена заранее и вернется к вам с положительными энергиями от секретов вселенной.",
+        .thresholdOfTheSoulOracle3: "Вы получите первый доступ к новым функциям в бета-тесте, ведя путь с приближающимися улучшениями.",
+        .thresholdOfTheSoulOracle4: "Эксклюзивные визуализации ближайшего будущего будут представлены вам через ворота доступа."
     ]
-    
+
     // MARK: - RussianLanguage - ZodiacCompletion -
-    typealias textHelperZodiacCompletion = TextHelper.ZodiacCompletion
-    let zodiac: [textHelperZodiacCompletion.zodiac:String] = [
-        .piscesZodiacName: "Рыбы",
+    typealias textHelperSpiritualCompletion = TextHelper.SpiritualCompletion
+    let crystalZodiac: [textHelperSpiritualCompletion.crystal:String] = [
+        .ariesCrystal: "Аметист",
+        .taurusCrystal: "Тигровый глаз",
+        .geminiCrystal: "Розовый кварц",
+        .cancerCrystal: "Лабрадорит",
+        .leoCrystal: "Гранат",
+        .virgoCrystal: "Лунный камень",
+        .libraCrystal: "Лазурит",
+        .scorpioCrystal: "Турмалин",
+        .sagittariusCrystal: "Обсидиан",
+        .capricornCrystal: "Горный хрусталь",
+        .aquariusCrystal: "Аквамарин",
+        .piscesCrystal: "Жемчуг"
+    ]
+
+    let zodiac: [textHelperSpiritualCompletion.zodiac:String] = [
+        .pisces: "Рыбы",
+        .aries: "Овен",
+        .aquarius: "Водолей",
+        .gemini: "Близнецы",
+        .libra: "Весы",
+        .virgo: "Дева",
+        .capricorn: "Козерог",
+        .sagittarius: "Стрелец",
+        .leo: "Лев",
+        .scorpio: "Скорпион",
+        .taurus: "Телец",
+        .cancer: "Рак"
+    ]
+
+    let dateZodiac: [textHelperSpiritualCompletion.dateZodiac:String] = [
         .piscesZodiacDate: "20 фев - 20 мар",
-        .ariesZodiacName: "Овен",
         .ariesZodiacDate: "21 мар - 20 апр",
-        .aquariusZodiacName: "Водолей",
         .aquariusZodiacDate: "21 янв - 19 фев",
-        .geminiZodiacName: "Близнецы",
         .geminiZodiacDate: "21 май - 21 июн",
-        .libraZodiacName: "Весы",
         .libraZodiacDate: "24 сен - 23 окт",
-        .virgoZodiacName: "Дева",
         .virgoZodiacDate: "24 авг - 23 сен",
-        .capricornZodiacName: "Козерог",
         .capricornZodiacDate: "22 дек - 20 янв",
-        .sagittariusZodiacName: "Стрелец",
         .sagittariusZodiacDate: "23 ноя - 21 дек",
-        .leoZodiacName: "Лев",
         .leoZodiacDate: "23 июл - 23 авг",
-        .scorpioZodiacName: "Скорпион",
         .scorpioZodiacDate: "24 окт - 22 ноя",
-        .taurusZodiacName: "Телец",
         .taurusZodiacDate: "21 апр - 20 май",
-        .cancerZodiacName: "Рак",
         .cancerZodiacDate: "22 июн - 22 июл"
     ]
 }

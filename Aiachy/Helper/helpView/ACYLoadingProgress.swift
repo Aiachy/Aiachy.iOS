@@ -10,7 +10,6 @@ import SwiftUI
 struct ACYLoadingProgress: View {
     
     @EnvironmentObject var aiachyState: AiachyState
-    @State var rotateDouble: Double = 0.0
     
     var body: some View {
         //MARK: ACYLoadingProgress - Image
@@ -18,12 +17,6 @@ struct ACYLoadingProgress: View {
             .resizable()
             .scaledToFit()
             .frame(width: ACY_UI_WIDTH_SIZE * ACY_LRG_SIZE)
-            .rotate(rotateDouble)
-            .onAppear {
-                withAnimation(.linear(duration: 30)) {
-                    self.rotateDouble = 720
-                }
-            }
     }
 }
 

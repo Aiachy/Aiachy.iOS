@@ -32,14 +32,14 @@ struct CrystalGazingStarterView: View {
                 .frame(width: ACYdw(aiachyState, d: 0.5))
                 .offset(y: isOnAppear ? 0 : ACYdh(aiachyState, d: -0.7))
                 .opacity(isOnAppear ? 1 : 0)
-            ACYMysticTitleAndDescriptionText(fontType: .CinzelBlack30,
+            ACYMysticTitleAndDescriptionText(fontType: .cinzelBlack30,
                                              title: .crystalGazingTitle,
                                              description: .crystalGazingDescription)
             .offset(y: isOnAppear ? ACYdh(aiachyState, d: -0.22) : ACYdh(aiachyState, d: -0.7))
             .opacity(isOnAppear ? 1 : 0)
         }
-        .onAppear { withAnimation(.spring) { isOnAppear = true } }
-        .onDisappear { withAnimation(.spring) { isOnAppear = false } }
+        .onAppear { withAnimation(.spring()) { isOnAppear = true } }
+        .onDisappear { withAnimation(.spring()) { isOnAppear = false } }
         .environmentObject(aiachyState)
     }
 }

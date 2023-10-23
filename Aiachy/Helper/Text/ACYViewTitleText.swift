@@ -14,9 +14,9 @@ struct ACYViewTitleText: View {
     
     var body: some View {
         Text(title)
-            .font(.aiachyFont(.roundedBold20))
-            .foregroundStyle(Color.makeAiachyColor(aiachyState,
-                                                   aiachyColor: .firstColor))
+            .font(FontHandler.aiachyFont(.roundedBold20))
+            .foregroundStyle(Color(ColorHandler.makeAiachyColor(aiachyState,
+                                                   aiachyColor: .firstColor)))
             .multilineTextAlignment(.center)
     }
 }

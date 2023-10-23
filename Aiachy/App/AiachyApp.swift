@@ -11,7 +11,6 @@ import SwiftUI
 struct AiachyApp: App {
     
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
-
     
     var body: some Scene {
         WindowGroup {

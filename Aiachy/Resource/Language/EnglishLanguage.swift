@@ -23,6 +23,17 @@ struct EnglishLanguage {
         .logout: "Logout"
     ]
     
+    let generalContentButton: [textHelperGeneralCompletion.contentButton:String] = [
+        .subscribeOccult: "Subscribe to Occult",
+        .subscribeOracle: "Subscribe to Oracle",
+        .subscribed: "You're Already Subscribed"
+    ]
+    
+    let generalSectionButton: [TextHelper.GeneralCompletion.sectionButton:String] = [
+        .oracle: "Oracle",
+        .occult: "Occult"
+    ]
+    
     let generalFlag: [textHelperGeneralCompletion.flag:String] = [
         .unitedArabEmirates: "United Arab Emirates",
         .germany: "Germany",
@@ -88,36 +99,41 @@ struct EnglishLanguage {
     ]
     // MARK: -  EnglishLanguage - AuthCompletion -
     typealias textHelperAuthCompletion = TextHelper.AuthCompletion
-    let auth: [textHelperAuthCompletion.auth:String] = [
-        .loginScreenTitle: "Unlock Astrology's Gates, Enter Aiachy's World",
-        .zodiacSelectionTitle: "The time has come to learn your future",
+    let authTitle: [textHelperAuthCompletion.title:String] = [
+        .loginScreenTitle: "Unveil the Magic, Journey in Aiachy's Realm",
+        .crystalSelectionTitle: "Unveil the mystic crystal of your birth.",
         .registerTitle: "Unleash Your Zodiac Potential",
         .ascendantSelectionTitle: "Illuminate Your Inner Radiance",
         .attentionTitle: "ATTENTION",
-        .loginScreenDescription: "Unlock the Mysteries of Astrology, Dive into Aiachy's Enchanting World, and Explore the Fascinating Realm of Zodiac Wonders",
+    ]
+    
+    let authDescription: [textHelperAuthCompletion.description:String] = [
+        .loginScreenDescription: "Decipher the Mysteries of the Ether, Step into Aiachy's Sacred Sanctuary, and Witness the Dance of Celestial Spirits!",
+        .crystalSelectionDescription: "The time has come to learn your future",
         .registerDescription: "Step into Aiachy for a personalized horoscope experience! Let us customize your zodiac information with your confidential details and take you on a unique journey",
         .ascendantSelectionDescription: "Embark on a Transformative Journey with Your Ascendant Sign Unleash the Power Within",
         .ascendantSelectionViewGuideDescription: "Select date and time of birth",
         .attentionDescription: "The application is still not fully logged out. It is very normal to encounter bugs. If you encounter and want to look for a solution. You can send it to us quickly from the Help section. The app will appear for the first and only time in this genre with your support. Don't forget to have fun while using the app",
         .attentionSecondDescription: "Update comes on 21st of every month Check Our Twitter"
+        
     ]
+    
     let authOnboarding: [textHelperAuthCompletion.onboarding:String] = [
-        .heartofAstrologyTitle: "You are in the heart of astrology",
+        .heartofMysticTitle: "You are in the heart of mystic universal",
         .secretOfTheStarsTitle: "Unveil the Secrets of the Stars",
         .yourFutureTitle: "Do you want to know your future",
-        .heartofAstrologyDescription: "Knowing your horoscope better allows you to make better plans for the future",
-        .secretOfTheStarsDescription: "Discover the Secrets of the Stars, Unveiling the Intricacies of Astrology, All Here in One Place",
+        .heartofMysticDescription: "Unlocking the doors to a mystical world allows you to plan your future more effectively",
+        .secretOfTheStarsDescription: "Beyond the Veil of the Mortal Realm, Dance with the Mystical Whispers of the Stars, Unraveling the Enigmas of the Sacred Cosmos",
         .yourFutureDescription: "Aiachy will guide you on a beautiful path and show you little tips about your future",
-        .privacyPolicy: "By creating an account, you’re agree to our Privacy policy and Term of use."
     ]
     let authHelperAuth: [textHelperAuthCompletion.helperAuth:String] = [
-        .clock: "Hour"
+        .clock: "Hour",
+        .privacyPolicy: "By creating an account, you’re agree to our Privacy policy and Term of use."
     ]
     // MARK: -  EnglishLanguage - AuthCompletion -
     typealias textHelperHomeCompletion = TextHelper.HomeCompletion
     let home: [textHelperHomeCompletion.home:String] = [
-        .horoscope:"Horoscope",
-        .ascendant:"Ascendant",
+        .aiachy:"aiachy",
         .compatibility:"Compatibility",
         .notUsable: "Not available. You have to subscribe.",
         .notHaveAscendant: "You need to choose the ascendant sign."
@@ -181,43 +197,69 @@ struct EnglishLanguage {
         .otherLanguage: "Other Language"
     ]
     let settingsOracle: [textHelperSettingsCompletion.oracle: String] = [
-        .packageZodiacTitle: "Zodiac",
-        .packageZodiacItem1: "Your astrological chart will overflow with cosmic wisdom, helping you better understand the direction of your life.",
-        .packageZodiacItem2: "The Tarot cards will open new doors for you and strengthen your intuition",
-        .packageZodiacItem3: "New musical frequencies will elevate your soul and open up new emotional landscapes for you.",
-        .packageOracleTitle: "Oracle",
-        .packageOracleItem1: "You will have access to the features of all available packages, making you well-equipped in every area.",
-        .packageOracleItem2: "Innovative features will be at your fingertips, giving you a step ahead of everyone else.",
-        .packageOracleItem3: "The kindness you've shown will leave an everlasting imprint on hearts.",
-        .packageOracleItem4: "This package will be an indispensable tool to elevate and enhance your application."
-        
+        .universalWisdomTitle: "Universal wisdom",
+        .universalWisdomOccult1: "As you close the universe's river of knowledge, deeper secrets will flow to you from the mysterious realms.",
+        .universalWisdomOccult2: "You will witness the secrets of tomorrow firsthand, gaining the ability to understand and decipher the future more deeply. ",
+        .universalWisdomOccult3: "With the capability to observe chakras more extensively, you will enhance your ability to interpret your days, delving deeper into the guidance of your inner energy. ",
+        .universalWisdomOccult4: "Specifically, you will be able to scrutinize your daily insights more profoundly and perceive your initiatives more clearly, thus obtaining the opportunity to shape your advice in more detail. ",
+        .universalWisdomOracle1: "This special package encompasses all of Occult's Universal Wisdom features.",
+        .universalWisdomOracle2: "This sacred support you offer will be remembered ahead of time and will return to you with positive energies from the secrets of the universe.",
+        .universalWisdomOracle3: "You will obtain the first access to the new features in the beta test, leading the way with the incoming enhancements.",
+        .universalWisdomOracle4: "Exclusive visualizations of the near future will be presented to you through the gateway of access.",
+        .thresholdOfTheSoulTitle: "Threshold of the Soul",
+        .thresholdOfTheSoulOccult1: "New musical frequencies will elevate your soul and open up new emotional landscapes for you. ",
+        .thresholdOfTheSoulOccult2: "Behind the gates of the mysterious realm, a deeper access awaits you to the depths of the tarot, the fateful lines of your hand and the secrets of the globe. ",
+        .thresholdOfTheSoulOccult3: "You will step into the magical world of personalized melodies and discover the hidden tunes of the future.",
+        .thresholdOfTheSoulOccult4: "You will be able to dive deeper into the mystery of personalized mysterious stones.",
+        .thresholdOfTheSoulOracle1: "This special package encompasses all of Occult's Threshold of the Soul features.",
+        .thresholdOfTheSoulOracle2: "This sacred support you offer will be remembered ahead of time and will return to you with positive energies from the secrets of the universe. ",
+        .thresholdOfTheSoulOracle3: "You will obtain the first access to the new features in the beta test, leading the way with the incoming enhancements.",
+        .thresholdOfTheSoulOracle4: "Exclusive visualizations of the near future will be presented to you through the gateway of access."
     ]
     // MARK: - EnglishLanguage - ZodiacCompletion -
-    typealias textHelperZodiacCompletion = TextHelper.ZodiacCompletion
-    let zodiac: [textHelperZodiacCompletion.zodiac:String] = [
-        .piscesZodiacName: "Pisces",
+    typealias textHelperSpiritualCompletion = TextHelper.SpiritualCompletion
+    let crystalZodiac: [textHelperSpiritualCompletion.crystal:String] = [
+        .ariesCrystal: "Ametista",
+        .taurusCrystal: "Tigrisoculus",
+        .geminiCrystal: "Rosequartz",
+        .cancerCrystal: "Labradoritus",
+        .leoCrystal: "Granatus",
+        .virgoCrystal: "Lunapis",
+        .libraCrystal: "Lapislazuli",
+        .scorpioCrystal: "Tourmalinus",
+        .sagittariusCrystal: "Obsidianus",
+        .capricornCrystal: "Crystalquartz",
+        .aquariusCrystal: "Aquamarius",
+        .piscesCrystal: "Perna"
+    ]
+    
+    let zodiac: [textHelperSpiritualCompletion.zodiac:String] = [
+        .pisces: "Pisces",
+        .aries: "Aries",
+        .aquarius: "Aquarius",
+        .gemini: "Gemini",
+        .libra: "Libra",
+        .virgo: "Virgo",
+        .capricorn: "Capricorn",
+        .sagittarius: "Sagittarius",
+        .leo: "Leo",
+        .scorpio: "Scorpio",
+        .taurus: "Taurus",
+        .cancer: "Cancer"
+    ]
+    
+    let dateZodiac: [textHelperSpiritualCompletion.dateZodiac:String] = [
         .piscesZodiacDate: "20 Feb - 20 Mar",
-        .ariesZodiacName: "Aries",
         .ariesZodiacDate: "21 Mar - 20 Apr",
-        .aquariusZodiacName: "Aquarius",
         .aquariusZodiacDate: "21 Jan - 19 Feb",
-        .geminiZodiacName: "Gemini",
         .geminiZodiacDate: "21 May - 21 Jun",
-        .libraZodiacName: "Libra",
         .libraZodiacDate: "24 Sept - 23 Oct",
-        .virgoZodiacName: "Virgo",
         .virgoZodiacDate: "24 Aug - 23 Sept",
-        .capricornZodiacName: "Capricorn",
         .capricornZodiacDate: "22 Dec - 20 Jan",
-        .sagittariusZodiacName: "Sagittarius",
         .sagittariusZodiacDate: "23 Nov - 21 Dec",
-        .leoZodiacName: "Leo",
         .leoZodiacDate: "23 Jul - 23 Aug",
-        .scorpioZodiacName: "Scorpio",
         .scorpioZodiacDate: "24 Oct - 22 Nov",
-        .taurusZodiacName: "Taurus",
         .taurusZodiacDate: "21 Apr - 20 May",
-        .cancerZodiacName: "Cancer",
         .cancerZodiacDate: "22 Jun - 22 Jul"
     ]
 }

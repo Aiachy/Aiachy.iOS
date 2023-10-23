@@ -22,33 +22,33 @@ struct RegisterView: View {
     }
     
     var body: some View {
-            
-            VStack {
-                //MARK: RegisterView - Back Button
-                HStack {
-                    ACYPassButton(isItBackButton: true,
-                                  text: .back) {
-                        router.navigate(to: .zodiacSelectionView)
-                    }
-                    Spacer()
+        
+        VStack {
+            //MARK: RegisterView - Back Button
+            HStack {
+                ACYPassButton(isItBackButton: true,
+                              text: .back) {
+                    router.navigate(to: .zodiacSelectionView)
                 }
-                .padding(.horizontal)
-                //MARK: RegisterView - Tittle & Description
-                ACYTitleAndDescriptionText(title: TextHandler.makeAuthString(aiachy: aiachyState,
-                                                                             auth: .registerTitle),
-                                           description: TextHandler.makeAuthString(aiachy: aiachyState,
-                                                                                   auth: .registerDescription))
-                //MARK: RegisterView - Name & Surname Textfields
-                namesTextFields
-                //MARK: RegisterView - Mail Textfield
-                mailTextField
-                //MARK: RegisterView - Password & Password Again Textfields
-                passwordTextFields
                 Spacer()
-                //MARK: RegisterView - Continue Button
-                continueButton
             }
-            .background { backgroundZodiacImage }
+            .padding(.horizontal)
+            //MARK: RegisterView - Tittle & Description
+            ACYTitleAndDescriptionText(title: TextHandler.makeAuthTitleString(aiachy: aiachyState,
+                                                                              title: .registerTitle),
+                                       description: TextHandler.makeAuthDescriptionString(aiachy: aiachyState,
+                                                                                          description: .registerDescription))
+            //MARK: RegisterView - Name & Surname Textfields
+            namesTextFields
+            //MARK: RegisterView - Mail Textfield
+            mailTextField
+            //MARK: RegisterView - Password & Password Again Textfields
+            passwordTextFields
+            Spacer()
+            //MARK: RegisterView - Continue Button
+            continueButton
+        }
+        .background { backgroundZodiacImage }
         .environmentObject(aiachyState)
         .makeAccessibilitysForUITest(identifier: "RegisterViewID")
     }
@@ -108,10 +108,10 @@ extension RegisterView {
         }
         .frame(width: ACYdw(aiachyState, d: 0.9))
     }
-
+    
     //MARK: RegisterView - Continue Button
     private var continueButton: some View {
-        ACYButton(text: .continue) {
+        ACYButton(buttonText: .continue) {
             presenter.checkValues(aiachy: aiachyState) {
                 router.navigate(to: .ascendantSelectionView)
             }
@@ -120,7 +120,7 @@ extension RegisterView {
     
     
     private var backgroundZodiacImage: some View {
-        makeImageWithZodiacInt(aiachy: aiachyState,zodiac: aiachyState.user.userZodiac.wrappedZodiac)
+        makeCrystalImageWithZodiacInt(aiachy: aiachyState,crystal: aiachyState.user.userSpiritual.wrappedZodiac)
             .resizable()
             .scaledToFit()
             .opacity(0.2)

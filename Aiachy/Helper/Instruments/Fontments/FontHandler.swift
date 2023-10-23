@@ -9,74 +9,80 @@ import SwiftUI
 
 struct FontHandler {
     
-    //MARK: FontHandler - CinzelDecorative
-    static var CinzelBold12: Font = .custom(FontHelper().CinzelBold, size: 12)
-    static var CinzelBold14: Font = .custom(FontHelper().CinzelBold, size: 14)
-    
-    static var CinzelBlack12: Font = .custom(FontHelper().CinzelBold, size: 12)
-    static var CinzelBlack20: Font = .custom(FontHelper().CinzelBlack, size: 20)
-    static var CinzelBlack22: Font = .custom(FontHelper().CinzelBlack, size: 22)
-    static var CinzelBlack30: Font = .custom(FontHelper().CinzelBlack, size: 30)
-    static var CinzelBlack50: Font = .custom(FontHelper().CinzelBlack, size: 50)
-    //MARK: FontHandler - OldStandartTT
-    static var OldItalic10: Font = .custom(FontHelper().oldItalic, size: 10)
-    static var OldItalic12: Font = .custom(FontHelper().oldItalic, size: 12)
-    static var OldItalic14: Font = .custom(FontHelper().oldItalic, size: 14)
-    
-    static var OldBold12: Font = .custom(FontHelper().OldBold, size: 12)
-    static var OldBold14: Font = .custom(FontHelper().OldBold, size: 14)
-    
-    static var OldRegular10: Font = .custom(FontHelper().oldRegular, size: 10)
-    
-    //MARK: FontHandler - SF Pro Rounded
-    static var RoundedRegular10: Font = .system(size: 10, weight: .regular, design: .rounded)
-    static var RoundedRegular12: Font = .system(size: 12, weight: .regular, design: .rounded)
-    
-    static var RoundedMedium10: Font = .system(size: 10, weight: .medium, design: .rounded)
-    static var RoundedMedium12: Font = .system(size: 12, weight: .medium, design: .rounded)
-    static var RoundedMedium16: Font = .system(size: 16, weight: .medium, design: .rounded)
-    
-    static let RoundedBold10: Font = .system(size: 10, weight: .bold, design: .rounded)
-    static var RoundedBold12: Font = .system(size: 12, weight: .bold, design: .rounded)
-    static var RoundedBold14: Font = .system(size: 14, weight: .bold, design: .rounded)
-    static var RoundedBold16: Font = .system(size: 16, weight: .bold, design: .rounded)
-    static var RoundedBold20: Font = .system(size: 20, weight: .bold, design: .rounded)
-    
-    static var RoundedBlack8: Font = .system(size: 8, weight: .black, design: .rounded)
-    
-    enum aiachyFontType {
-        //MARK: FontHandler - enum CinzelDecorative
-        case cinzelBold12
-        case cinzelBold14
+    static func aiachyFont(_ fontType: FontHelper.aiachyFontType) -> Font {
+        switch fontType {
         
-        case cinzelBlack12
-        case cinzelBlack20
-        case cinzelBlack22
-        case CinzelBlack30
-        case CinzelBlack50
-        //MARK: FontHandler - enum OldStandartTT
-        case oldItalic10
-        case oldItalic12
-        case oldItalic14
-        
-        case oldBold12
-        case oldBold14
-        
-        case oldRegular10
-        //MARK: FontHandler - enum SF Pro Rounded
-        case roundedRegular10
-        case roundedRegular12
-        
-        case roundedMedium10
-        case roundedMedium12
-        case roundedMedium16
-        
-        case roundedBold10
-        case roundedBold12
-        case roundedBold14
-        case roundedBold16
-        case roundedBold20
-        
-        case roundedBlack8
+        case .cinzelBlack11:
+            return FontHelper.CinzelBlack11
+        case .cinzelBold12:
+            return FontHelper.CinzelBold12
+        case .cinzelBold14:
+            return FontHelper.CinzelBold14
+            
+        case .cinzelBlack12:
+            return FontHelper.CinzelBlack12
+        case .cinzelBlack20:
+            return FontHelper.CinzelBlack20
+        case .cinzelBlack22:
+            return FontHelper.CinzelBlack22
+        case .cinzelBlack25:
+            return FontHelper.CinzelBlack25
+        case .cinzelBlack30:
+            return FontHelper.CinzelBlack30
+        case .cinzelBlack50:
+            return FontHelper.CinzelBlack50
+            
+        case .oldItalic10:
+            return FontHelper.OldItalic10
+        case .oldItalic12:
+            return FontHelper.OldItalic12
+        case .oldItalic14:
+            return FontHelper.OldItalic14
+            
+        case .oldBold12:
+            return FontHelper.OldBold12
+        case .oldBold14:
+            return FontHelper.OldBold14
+            
+            
+        case .oldRegular10:
+            return FontHelper.OldRegular10
+        case .oldRegular13:
+            return FontHelper.OldRegular13
+            
+        case .roundedRegular10:
+            return FontHelper.RoundedRegular10
+        case .roundedRegular12:
+            return FontHelper.RoundedRegular12
+            
+        case .roundedMedium10:
+            return FontHelper.RoundedMedium10
+        case .roundedMedium12:
+            return FontHelper.RoundedMedium12
+        case .roundedMedium16:
+            return FontHelper.RoundedMedium16
+            
+        case .roundedSemiBold12:
+            return FontHelper.RoundedSemiBold12
+            
+        case .roundedBold12:
+            return FontHelper.RoundedBold12
+        case .roundedBold10:
+            return FontHelper.RoundedBold10
+        case .roundedBold13:
+            return FontHelper.RoundedBold13
+        case .roundedBold14:
+            return FontHelper.RoundedBold14
+        case .roundedBold16:
+            return FontHelper.RoundedBold16
+        case .roundedBold17:
+            return FontHelper.RoundedBold17
+        case .roundedBold20:
+            return FontHelper.RoundedBold20
+            
+        case .roundedBlack8:
+            return FontHelper.RoundedBlack8
+
+        }
     }
 }

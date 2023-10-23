@@ -91,38 +91,41 @@ struct RomanianLanguage {
     ]
     // MARK: - RomaniaLanguage - AuthCompletion -
     typealias textHelperAuthCompletion = TextHelper.AuthCompletion
-    let auth: [textHelperAuthCompletion.auth:String] = [
-        .loginScreenTitle: "Deblochează Porțile Astrologiei, Intră în Lumea Aiachy",
-        .zodiacSelectionTitle: "A venit timpul să îți afli viitorul",
-        .registerTitle: "Dezlănțuie-ți Potențialul Zodiacal",
+    let authTitle: [textHelperAuthCompletion.title:String] = [
+        .loginScreenTitle: "Dezvăluie Magia, Călătorește în Regatul lui Aiachy",
+        .crystalSelectionTitle: "Dezvăluie cristalul mistic al nașterii tale",
+        .registerTitle: "Eliberează-ți Potențialul Zodiacal",
         .ascendantSelectionTitle: "Iluminează-ți Radiația Interioară",
         .attentionTitle: "ATENȚIE",
-        .loginScreenDescription: "Deblochează Misterele Astrologiei, Intră în Lumea Fermecătoare a Aiachy și Explorează Fascinantul Regat al Minunilor Zodiacului",
-        .registerDescription: "Paseste în Aiachy pentru o experiență personalizată a horoscopului! Vom personaliza informațiile tale zodiacale cu detaliile tale confidențiale și te vom lua într-o călătorie unică",
-        .ascendantSelectionDescription: "Porniți într-o călătorie transformatoare cu Semnul tău Ascendent. Dezlănțuie Puterea din Interior",
-        .ascendantSelectionViewGuideDescription: "Selectează data și ora nașterii",
-        .attentionDescription: "Aplicația încă nu este complet deconectată. Este foarte normal să întâlnești bug-uri. Dacă întâlnești și vrei să cauți o soluție, ne-o poți trimite rapid din secțiunea Ajutor. Aplicația va apărea pentru prima și singura dată în acest gen cu sprijinul tău. Nu uita să te distrezi în timp ce folosești aplicația",
-        .attentionSecondDescription: "Actualizarea vine în fiecare lună pe data de 21. Verificați Twitterul nostru"
     ]
-
+    
+    let authDescription: [textHelperAuthCompletion.description:String] = [
+        .loginScreenDescription: "Descifrează Misterul Eterului, Pășește în Sanctuarul Sacru al lui Aiachy și Martorizează Dansul Spiritelor Celeste!",
+        .crystalSelectionDescription: "A venit timpul să afli viitorul tău",
+        .registerDescription: "Pas în Aiachy pentru o experiență personalizată a horoscopului! Permite-ne să-ți personalizăm informațiile zodiacale cu detaliile tale confidențiale și să te ducem într-o călătorie unică",
+        .ascendantSelectionDescription: "Începe o Călătorie Transformativă cu Semnul tău Ascendent și Eliberează Puterea din Interior",
+        .ascendantSelectionViewGuideDescription: "Selectează data și ora nașterii",
+        .attentionDescription: "Aplicația nu este încă complet deconectată. Este foarte normal să întâlnești erori. Dacă te confrunți și vrei să cauți o soluție. Ne poți trimite rapid din secțiunea Ajutor. Aplicația va apărea pentru prima și singura dată în acest gen cu sprijinul tău. Nu uita să te distrezi folosind aplicația",
+        .attentionSecondDescription: "Actualizarea vine în data de 21 a fiecărei luni. Verificați Twitter-ul nostru"
+    ]
+    
     let authOnboarding: [textHelperAuthCompletion.onboarding:String] = [
-        .heartofAstrologyTitle: "Ești în inima astrologiei",
+        .heartofMysticTitle: "Ești în inima universului mistic",
         .secretOfTheStarsTitle: "Dezvăluie secretele stelelor",
         .yourFutureTitle: "Vrei să îți cunoști viitorul",
-        .heartofAstrologyDescription: "Cunoașterea mai bună a horoscopului tău îți permite să îți faci planuri mai bune pentru viitor",
-        .secretOfTheStarsDescription: "Descoperă secretele stelelor, dezvăluind complexitățile astrologiei, toate aici, într-un singur loc",
+        .heartofMysticDescription: "Deblocarea ușilor către o lume mistică îți permite să îți planifici viitorul mai eficient",
+        .secretOfTheStarsDescription: "Dincolo de Vălul Regatului Muritor, Dansează cu Șoaptele Mistice ale Stelelor, Dezlegând Enigmele Cosmosului Sacru",
         .yourFutureDescription: "Aiachy te va ghida pe un drum frumos și îți va arăta mici sfaturi despre viitorul tău",
-        .privacyPolicy: "Creând un cont, sunteți de acord cu Politica noastră de confidențialitate și Termenii de utilizare."
     ]
     let authHelperAuth: [textHelperAuthCompletion.helperAuth:String] = [
-        .clock: "Oră"
+        .clock: "Oră",
+        .privacyPolicy: "Creând un cont, sunteți de acord cu Politica noastră de confidențialitate și Termenii de utilizare."
     ]
 
     // RomaniaLanguage - textHelperHomeCompletion -
     typealias textHelperHomeCompletion = TextHelper.HomeCompletion
     let home: [textHelperHomeCompletion.home:String] = [
-        .horoscope: "Horoscop",
-        .ascendant: "Ascendent",
+        .aiachy: "Aiachy",
         .compatibility: "Compatibilitate",
         .notUsable: "Nu este disponibil. Trebuie să vă abonați.",
         .notHaveAscendant: "Trebuie să alegeți semnul ascendent."
@@ -186,44 +189,70 @@ struct RomanianLanguage {
         .currentLanguage: "Limba curentă",
         .otherLanguage: "Altă limbă"
     ]
-    let settingsOracle: [textHelperSettingsCompletion.oracle:String] = [
-        .packageZodiacTitle: "Zodiac",
-        .packageZodiacItem1: "Harta ta astrologică va fi plină de înțelepciune cosmică, ajutându-te să înțelegi mai bine direcția vieții tale.",
-        .packageZodiacItem2: "Cărțile Tarot vor deschide uși noi pentru tine și vor întări intuiția ta",
-        .packageZodiacItem3: "Frecvențe muzicale noi îți vor ridica sufletul și vor deschide noi peisaje emoționale pentru tine.",
-        .packageOracleTitle: "Oracol",
-        .packageOracleItem1: "Vei avea acces la caracteristicile tuturor pachetelor disponibile, făcându-te bine echipat în fiecare domeniu.",
-        .packageOracleItem2: "Funcții inovatoare vor fi la îndemâna ta, oferindu-ți un pas înainte față de toată lumea.",
-        .packageOracleItem3: "Amabilitatea pe care ai arătat-o va lăsa o amprentă eternă pe inimi.",
-        .packageOracleItem4: "Acest pachet va fi un instrument indispensabil pentru a îmbunătăți și îmbogăți aplicația ta."
+    let settingsOracle: [textHelperSettingsCompletion.oracle: String] = [
+        .universalWisdomTitle: "Înțelepciune universală",
+        .universalWisdomOccult1: "Pe măsură ce închizi râul cunoașterii universului, secrete mai profunde îți vor curge din tărâmurile misterioase.",
+        .universalWisdomOccult2: "Vei fi martor la secretele mâinei din prima mână, dobândind capacitatea de a înțelege și descifra viitorul mai adânc.",
+        .universalWisdomOccult3: "Cu capacitatea de a observa chakrele mai extensiv, îți vei îmbunătăți abilitatea de a interpreta zilele tale, aprofundându-te mai mult în îndrumarea energiei tale interioare.",
+        .universalWisdomOccult4: "În mod specific, vei putea să-ți analizezi intuițiile zilnice mai profund și să-ți percepi inițiativele mai clar, obținând astfel oportunitatea de a-ți modela sfaturile în mai multe detalii.",
+        .universalWisdomOracle1: "Acest pachet special cuprinde toate caracteristicile Înțelepciunii Universale ale Ocultului.",
+        .universalWisdomOracle2: "Această susținere sacră pe care o oferi va fi amintită în avans și îți va reveni cu energii pozitive din secretele universului.",
+        .universalWisdomOracle3: "Vei obține primul acces la noile caracteristici în testul beta, deschizând drumul cu îmbunătățirile care vin.",
+        .universalWisdomOracle4: "Vizualizări exclusive ale viitorului apropiat îți vor fi prezentate prin poarta de acces.",
+        .thresholdOfTheSoulTitle: "Pragul sufletului",
+        .thresholdOfTheSoulOccult1: "Noi frecvențe muzicale îți vor ridica sufletul și îți vor deschide noi peisaje emoționale.",
+        .thresholdOfTheSoulOccult2: "În spatele porților tărâmului misterios, te așteaptă un acces mai adânc la adâncimile tarotului, liniile fatale ale mâinii tale și secretele globului.",
+        .thresholdOfTheSoulOccult3: "Vei intra în lumea magică a melodiilor personalizate și vei descoperi melodiile ascunse ale viitorului.",
+        .thresholdOfTheSoulOccult4: "Vei putea să te scufunzi mai adânc în misterul pietrelor misterioase personalizate.",
+        .thresholdOfTheSoulOracle1: "Acest pachet special cuprinde toate caracteristicile Pragului Sufletului al Ocultului.",
+        .thresholdOfTheSoulOracle2: "Această susținere sacră pe care o oferi va fi amintită în avans și îți va reveni cu energii pozitive din secretele universului.",
+        .thresholdOfTheSoulOracle3: "Vei obține primul acces la noile caracteristici în testul beta, deschizând drumul cu îmbunătățirile care vin.",
+        .thresholdOfTheSoulOracle4: "Vizualizări exclusive ale viitorului apropiat îți vor fi prezentate prin poarta de acces."
+    ]
+    // RomaniaLanguage - textHelperZodiacCompletion -
+    typealias textHelperSpiritualCompletion = TextHelper.SpiritualCompletion
+    let crystalZodiac: [textHelperSpiritualCompletion.crystal:String] = [
+        .ariesCrystal: "Ametist",
+        .taurusCrystal: "Ochi de tigru",
+        .geminiCrystal: "Cuarț roz",
+        .cancerCrystal: "Labradorit",
+        .leoCrystal: "Granat",
+        .virgoCrystal: "Piatra lunii",
+        .libraCrystal: "Lapis Lazuli",
+        .scorpioCrystal: "Turmalină",
+        .sagittariusCrystal: "Obsidian",
+        .capricornCrystal: "Cuarț cristal",
+        .aquariusCrystal: "Acvamarin",
+        .piscesCrystal: "Perlă"
     ]
 
-    // RomaniaLanguage - textHelperZodiacCompletion -
-    typealias textHelperZodiacCompletion = TextHelper.ZodiacCompletion
-    let zodiac: [textHelperZodiacCompletion.zodiac:String] = [
-        .piscesZodiacName: "Pești",
+    let zodiac: [textHelperSpiritualCompletion.zodiac:String] = [
+        .pisces: "Pisces",
+        .aries: "Aries",
+        .aquarius: "Aquarius",
+        .gemini: "Gemini",
+        .libra: "Libra",
+        .virgo: "Virgo",
+        .capricorn: "Capricorn",
+        .sagittarius: "Sagittarius",
+        .leo: "Leo",
+        .scorpio: "Scorpio",
+        .taurus: "Taurus",
+        .cancer: "Cancer"
+    ]
+    
+    let dateZodiac: [textHelperSpiritualCompletion.dateZodiac:String] = [
         .piscesZodiacDate: "20 feb - 20 mar",
-        .ariesZodiacName: "Berbec",
         .ariesZodiacDate: "21 mar - 20 apr",
-        .aquariusZodiacName: "Vărsător",
         .aquariusZodiacDate: "21 ian - 19 feb",
-        .geminiZodiacName: "Gemeni",
         .geminiZodiacDate: "21 mai - 21 iun",
-        .libraZodiacName: "Balanță",
         .libraZodiacDate: "24 sept - 23 oct",
-        .virgoZodiacName: "Fecioară",
         .virgoZodiacDate: "24 aug - 23 sept",
-        .capricornZodiacName: "Capricorn",
         .capricornZodiacDate: "22 dec - 20 ian",
-        .sagittariusZodiacName: "Săgetător",
         .sagittariusZodiacDate: "23 nov - 21 dec",
-        .leoZodiacName: "Leu",
         .leoZodiacDate: "23 iul - 23 aug",
-        .scorpioZodiacName: "Scorpion",
         .scorpioZodiacDate: "24 oct - 22 nov",
-        .taurusZodiacName: "Taur",
         .taurusZodiacDate: "21 apr - 20 mai",
-        .cancerZodiacName: "Rac",
         .cancerZodiacDate: "22 iun - 22 iul"
     ]
 }

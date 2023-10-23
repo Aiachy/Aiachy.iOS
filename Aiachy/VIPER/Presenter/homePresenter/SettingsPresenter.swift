@@ -20,17 +20,17 @@ class SettingsPresenter: ObservableObject {
     
     let aiachyState: AiachyState
     let homeRouter: HomeRouterPresenter
-    let router: SettingsRouterPresenter
+    let router: ProfileRouterPresenter
     
     init(aiachyState: AiachyState,
          homeRouter: HomeRouterPresenter,
-         router: SettingsRouterPresenter = SettingsRouterPresenter()) {
+         router: ProfileRouterPresenter = ProfileRouterPresenter()) {
         self.aiachyState = aiachyState
         self.homeRouter = homeRouter
         self.router = router
     }
     
-    func navigateToSettingsView(to navigate: SettingsRouterEnum ) {
+    func navigateToSettingsView(to navigate: ProfileRouterEnum ) {
         
         if aiachyState.isGuest {
               makeAlert()

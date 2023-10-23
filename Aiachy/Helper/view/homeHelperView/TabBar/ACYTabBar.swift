@@ -18,14 +18,14 @@ struct ACYTabBar: View {
             ForEach(ACYTabBarEntityData , id:\.id) { tabBarValue in
                 ACYTabBarCircle(isSelected: (router.currentView == tabBarValue.routering), entity: tabBarValue)
                     .onTapGesture {
-                        withAnimation(.bouncy(duration: 0.3)) {
+                        withAnimation(.linear(duration: 0.3)) {
                             router.navigate(to: tabBarValue.routering)
                         }
                     }
             }
         }
         .frame(width: ACYdw(aiachyState, d: 1),height: ACYdh(aiachyState, d: 0.1))
-        .background{ Color.makeAiachyColor(aiachyState, aiachyColor: .backgroundColor).ignoresSafeArea()}
+        .background{ Color(ColorHandler.makeAiachyColor(aiachyState, aiachyColor: .backgroundColor)).ignoresSafeArea()}
         
     }
     //MARL: ACYTabBar - Data
@@ -54,11 +54,10 @@ struct ACYTabBar: View {
                         selectedImage: .loveLogoSelected,
                         unSelectedImage: .loveLogoUnSelected),
         ACYTabBarEntity(id: 4,
+                        isProfile: true,
                         widthCircle: 0.16,
                         widthImage: 0.065,
-                        routering: .settings,
-                        selectedImage: .settingsLogoSelected,
-                        unSelectedImage: .settingsLogoUnSelected)
+                        routering: .profile)
     ]
 }
 //MARL: ACYTabBar - Preview

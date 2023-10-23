@@ -90,7 +90,7 @@ extension HomePresenter: HandlerProtocol {
     
     /// <#Description#>
     fileprivate func makeAscendiant() {
-        let ascendiant = aiachyState.user.userZodiac.ascendant
+        let ascendiant = aiachyState.user.userSpiritual.ascendant
         let ascendiantEntity = currentEntity?.ascendiant
         
         guard ascendiantEntity?.isEmpty == false else {
@@ -139,7 +139,7 @@ extension HomePresenter: HandlerProtocol {
     ///   - input: <#input description#>
     ///   - completion: <#completion description#>
     fileprivate func makeTranslate(for input: String, completion: @escaping (String) -> ()) {
-        let currentLanguageID = aiachyState.user.aiachyInfo.wrappedLanguageIdentifier
+        let currentLanguageID = aiachyState.user.aiachyInfo.aiachyLanguageInfo.wrappedLanguageIdentifier
         
         SwiftyTranslate.translate(text: input, from: "tr", to: currentLanguageID) { result in
             DispatchQueue.main.async {
@@ -176,7 +176,7 @@ extension HomePresenter: CoreDataProtocol {
     
     fileprivate func filterWithCurrentZodiac(entity userAllEntity: [ACYUserAllEntity]?) -> ACYUserAllEntity? {
         
-        let currentZodiac = aiachyState.user.userZodiac.zodiac
+        let currentZodiac = aiachyState.user.userSpiritual.zodiac
         
         
         let filteredEntity = userAllEntity?.first { entity in

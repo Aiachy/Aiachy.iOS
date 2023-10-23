@@ -12,7 +12,7 @@ import Foundation
 struct User: Codable {
     var userLoginInfo = UserLoginInfo()
     var userInfo = UserInfo()
-    var userZodiac = UserZodiac()
+    var userSpiritual = UserSpiritual()
     var userOracle = UserOracle()
     var aiachyInfo = AiachyInfo()
     var aiachyLove = AiachyLove()
@@ -20,7 +20,6 @@ struct User: Codable {
     var aiachyGalaxy = AiachyGalaxy()
     var deviceInfo = DeviceInfo()
     var userCompletion = UserCompletion()
-    
 }
 
 // MARK  - User - UserLoginInfo -
@@ -43,7 +42,7 @@ struct UserLoginInfo: Codable {
     }
 }
 
-// MARK: UserLoginInfo - PhoneNumber -
+// MARK: - UserLoginInfo - PhoneNumber -
 struct UserNumber: Codable {
     var countryCode: Int?
     var phoneNumber: Int?
@@ -60,7 +59,7 @@ struct UserNumber: Codable {
     }
 }
 
-// MARK: User - UserInfo -
+// MARK: - User - UserInfo -
 struct UserInfo: Codable {
     var id: String?
     var fullName = UserInfoFullName()
@@ -72,7 +71,7 @@ struct UserInfo: Codable {
     }
 }
 
-// MARK: UserInfo - FullName -
+// MARK: - UserInfo - FullName -
 struct UserInfoFullName: Codable {
     var firstName: String?
     var lastName: String?
@@ -89,7 +88,7 @@ struct UserInfoFullName: Codable {
     }
 }
 
-// MARK: UserInfo - BirthDay -
+// MARK: - UserInfo - BirthDay -
 struct UserInfoBirthDay: Codable {
     var year: Int?
     var month: Int?
@@ -110,7 +109,7 @@ struct UserInfoBirthDay: Codable {
         day ?? 00
     }
 }
-// MARK: UserInfo - UserInfoBirthDayClock -
+// MARK: - UserInfo - UserInfoBirthDayClock -
 struct UserInfoBirthDayClock: Codable {
     var hour: Int?
     var minute: Int?
@@ -127,7 +126,7 @@ struct UserInfoBirthDayClock: Codable {
     }
 }
 
-// MARK: UserInfo - Location
+// MARK: - UserInfo - Location -
 struct UserInfoLocation: Codable {
     var cordinates = UserInfoLocationCoordinate()
     var country: String?
@@ -149,7 +148,7 @@ struct UserInfoLocation: Codable {
     }
 }
 
-// MARK: UserInfo - LocationCoordinate
+// MARK: - UserInfo - LocationCoordinate -
 struct UserInfoLocationCoordinate: Codable {
     var longitude: Double?
     var latitude: Double?
@@ -165,8 +164,8 @@ struct UserInfoLocationCoordinate: Codable {
     }
 }
 
-// MARK: User - UserZodiac
-struct UserZodiac: Codable {
+// MARK: - User - UserSpiritual -
+struct UserSpiritual: Codable {
     var zodiac: Int?
     var ascendant: Int?
     
@@ -178,9 +177,10 @@ struct UserZodiac: Codable {
     }
 }
 
-// MARK: User - UserSubscription
+// MARK: - User - UserSubscription -
 struct UserOracle: Codable {
     var isOracled: Bool?
+    var oracledDate: String?
     var oracleMethod: String?
     var oraclePackage: String?
     var aicyCash: Int?
@@ -197,29 +197,51 @@ struct UserOracle: Codable {
     var wrappedAicyCash: Int {
         aicyCash ?? 0
     }
+    
+    var wrappedOracledDate: String {
+        
+        return oracledDate ?? "1923.4.23"
+    }
 }
 
-// MARK: User - Aiachy Info
+// MARK: - User - Aiachy Info -
 struct AiachyInfo: Codable {
     var version: String?
-    var zodiacDataVersion: String?
-    var tuneDataVersion: String?
     var theme: String?
-    var language: String?
-    var languageIdentifier: String?
+    var aiachyLanguageInfo = AiachyLanguageInfo()
+    var aiachyDataInfo = AiachyDataInfo()
+    var aiachyRemoteInfo = AiachyRemoteInfo()
     
     var wrappedVersion: String {
         version ?? ""
     }
+    var wrappedTheme: String {
+        theme ?? "Light"
+    }
+
+}
+
+struct AiachyDataInfo: Codable {
+    var zodiacDataVersion: String?
+    var tuneDataVersion: String?
+    
     var wrappedZodiacDataVersion: String {
         zodiacDataVersion ?? ""
     }
     var wrappedTuneDataVersion: String {
         tuneDataVersion ?? ""
     }
-    var wrappedTheme: String {
-        theme ?? "Light"
-    }
+}
+
+struct AiachyRemoteInfo: Codable {
+    var aiachyRemotedInfo: String?
+    var isAiachyReady: Bool?
+    
+}
+
+struct AiachyLanguageInfo: Codable {
+    var language: String?
+    var languageIdentifier: String?
     var wrappedLanguage: String {
         language ?? "US"
     }
@@ -240,7 +262,7 @@ struct AiachyGalaxy: Codable {
     
 }
 
-// MARK: User - DeviceInfo
+// MARK: - User - DeviceInfo -
 struct DeviceInfo: Codable {
     var phoneWidth: Double?
     var phoneHeight: Double?

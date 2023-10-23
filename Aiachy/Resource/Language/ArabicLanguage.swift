@@ -86,38 +86,44 @@ struct ArabicLanguage {
        ]
     // MARK: -  ArabicLanguage - AuthCompletion -
      typealias textHelperAuthCompletion = TextHelper.AuthCompletion
-     let auth: [textHelperAuthCompletion.auth:String] = [
-         .loginScreenTitle: "افتح بوابات علم الفلك، دخول عالم Aiachy",
-         .zodiacSelectionTitle: "لقد حان الوقت لمعرفة مستقبلك",
-         .registerTitle: "أطلق قوتك الفلكية",
-         .ascendantSelectionTitle: "أضئ رونقك الداخلي",
-         .attentionTitle: "انتباه",
-         .loginScreenDescription: "افتح أسرار علم الفلك، استمتع في عالم Aiachy الساحر، واستكشف عالم عجائب الفلك",
-         .registerDescription: "خطوة إلى Aiachy لتجربة الأبراج الشخصية! دعنا نخصص معلومات الفلك الخاصة بك بتفاصيلك السرية ونأخذك في رحلة فريدة",
-         .ascendantSelectionDescription: "شروع في رحلة محورية مع علامتك الصاعدة تطلق العنان للقوة داخلك",
-         .ascendantSelectionViewGuideDescription: "حدد تاريخ ووقت الولادة",
-         .attentionDescription: "التطبيق لا يزال لم يتم تسجيل الخروج بشكل كامل. من الطبيعي جداً مواجهة الأخطاء. إذا واجهت وترغب في البحث عن حلاً، يمكنك إرساله لنا بسرعة من قسم المساعدة. سيظهر التطبيق للمرة الأولى والوحيدة في هذا النوع بدعمك. لا تنسى أن تستمتع أثناء استخدام التطبيق",
-         .attentionSecondDescription: "يأتي التحديث في 21 من كل شهر تحقق من تويترنا"
-     ]
+    let authTitle: [textHelperAuthCompletion.title:String] = [
+        .loginScreenTitle: "كشف السحر، الرحلة في عالم Aiachy",
+        .crystalSelectionTitle: "كشف الكريستال الغامض لميلادك",
+        .registerTitle: "أطلق قوة برجك الفلكي",
+        .ascendantSelectionTitle: "أضئ بريقك الداخلي",
+        .attentionTitle: "انتباه",
+    ]
+
+    
+    let authDescription: [textHelperAuthCompletion.description:String] = [
+        .loginScreenDescription: "فك شفرات أسرار الإيثر، ادخل إلى الملجأ المقدس لـ Aiachy، وشاهد رقصة الأرواح السماوية!",
+        .crystalSelectionDescription: "لقد حان الوقت لتعرف مستقبلك",
+        .registerDescription: "ادخل إلى Aiachy لتجربة فلكية مُخصصة! دعنا نُخصص معلوماتك الفلكية بتفاصيلك السرية ونأخذك في رحلة فريدة",
+        .ascendantSelectionDescription: "ابدأ رحلة تحويلية مع علامتك الصاعدة وأطلق القوة الداخلية",
+        .ascendantSelectionViewGuideDescription: "حدد تاريخ ووقت الولادة",
+        .attentionDescription: "التطبيق لا يزال لم يتم تسجيل الخروج منه بشكل كامل. من الطبيعي جدًا أن تواجه أخطاء. إذا واجهت وترغب في البحث عن حل. يمكنك إرسالها لنا بسرعة من قسم المساعدة. سيظهر التطبيق لأول وآخر مرة في هذا النوع بدعمك. لا تنسى أن تستمتع أثناء استخدام التطبيق",
+        .attentionSecondDescription: "التحديث يأتي في الواحد والعشرين من كل شهر. تحقق من تويترنا"
+    ]
+
+    
     let authOnboarding: [textHelperAuthCompletion.onboarding:String] = [
-        .heartofAstrologyTitle: "أنت في قلب الفلك",
+        .heartofMysticTitle: "أنت في قلب الكون الصوفي",
         .secretOfTheStarsTitle: "كشف أسرار النجوم",
         .yourFutureTitle: "هل ترغب في معرفة مستقبلك",
-        .heartofAstrologyDescription: "معرفة برجك بشكل أفضل تساعدك على التخطيط للمستقبل بشكل أفضل",
-        .secretOfTheStarsDescription: "اكتشف أسرار النجوم وكشف تفاصيل الفلك، كل ذلك هنا في مكان واحد",
+        .heartofMysticDescription: "فتح الأبواب إلى عالم غامض يتيح لك التخطيط لمستقبلك بشكل أكثر فعالية",
+        .secretOfTheStarsDescription: "وراء حجاب العالم المُميت، ارقص مع الهمسات الغامضة للنجوم، كشف ألغاز الكون المقدس",
         .yourFutureDescription: "سيوجهك Aiachy على مسار جميل ويظهر لك نصائح صغيرة عن مستقبلك",
-        .privacyPolicy: "بإنشاء حساب، أنت توافق على سياسة الخصوصية وشروط الاستخدام الخاصة بنا."
     ]
     let authHelperAuth: [textHelperAuthCompletion.helperAuth:String] = [
-        .clock: "الساعة"
+        .clock: "الساعة",
+        .privacyPolicy: "بإنشاء حساب، أنت توافق على سياسة الخصوصية وشروط الاستخدام الخاصة بنا."
     ]
 
     
     // MARK: -  ArabicLanguage - HomeCompletion -
        typealias textHelperHomeCompletion = TextHelper.HomeCompletion
        let home: [textHelperHomeCompletion.home:String] = [
-           .horoscope: "الأبراج",
-           .ascendant: "الصاعد",
+           .aiachy: "أياشي",
            .compatibility: "التوافق",
            .notUsable: "غير متوفر. يجب عليك الاشتراك.",
            .notHaveAscendant: "تحتاج لاختيار العلامة الصاعدة."
@@ -182,42 +188,70 @@ struct ArabicLanguage {
             .otherLanguage: "لغة أخرى"
         ]
     let settingsOracle: [textHelperSettingsCompletion.oracle: String] = [
-        .packageZodiacTitle: "الفلكي",
-        .packageZodiacItem1: "سيفيض خريطتك الفلكية بالحكمة الكونية، مما سيساعدك على فهم اتجاه حياتك بشكل أفضل.",
-        .packageZodiacItem2: "ستفتح لك البطاقات الفلكية أبوابًا جديدة وتعزز من حدسك",
-        .packageZodiacItem3: "سترفع الترددات الموسيقية الجديدة روحك وتفتح لك مشهدًا عاطفيًا جديدًا.",
-        .packageOracleTitle: "المُعصب",
-        .packageOracleItem1: "سيكون لديك وصول إلى ميزات جميع الحزم المتاحة، مما يجعلك مجهزًا جيدًا في كل المجالات.",
-        .packageOracleItem2: "ستكون الميزات المبتكرة بين يديك، مما يعطيك خطوة قدمًا عن الجميع.",
-        .packageOracleItem3: "اللطف الذي أظهرته سيترك بصمة دائمة على القلوب.",
-        .packageOracleItem4: "ستكون هذه الحزمة أداة لا غنى عنها لرفع وتعزيز تطبيقك."
+        .universalWisdomTitle: "الحكمة العالمية",
+        .universalWisdomOccult1: "عندما تغلق نهر المعرفة الكونية، ستتدفق إليك أسرار أعمق من الممالك الغامضة.",
+        .universalWisdomOccult2: "ستكون شاهدًا على أسرار الغد من اليد الأولى، مكتسبًا القدرة على فهم وفك الشيفرة للمستقبل بشكل أعمق.",
+        .universalWisdomOccult3: "بقدرتك على مراقبة الشاكرات بشكل أوسع، ستعزز قدرتك على تفسير أيامك، مغمرًا أعمق في إرشاد طاقتك الداخلية.",
+        .universalWisdomOccult4: "بشكل محدد، ستتمكن من فحص رؤاك اليومية بشكل أعمق واستيعاب مبادراتك بوضوح أكبر، وبالتالي الحصول على الفرصة لتشكيل نصائحك بمزيد من التفصيل.",
+        .universalWisdomOracle1: "هذه الحزمة الخاصة تشمل جميع ميزات الحكمة العالمية للأوكولت.",
+        .universalWisdomOracle2: "سيتم تذكير هذا الدعم المقدس الذي تقدمه مقدمًا وسيعود إليك بطاقات إيجابية من أسرار الكون.",
+        .universalWisdomOracle3: "ستحصل على الوصول الأول إلى الميزات الجديدة في الاختبار التجريبي، قائدًا الطريق مع التحسينات الواردة.",
+        .universalWisdomOracle4: "سيتم تقديم تصورات حصرية للمستقبل القريب لك من خلال بوابة الوصول.",
+        .thresholdOfTheSoulTitle: "عتبة الروح",
+        .thresholdOfTheSoulOccult1: "سترفع الترددات الموسيقية الجديدة روحك وتفتح لك مناظر عاطفية جديدة.",
+        .thresholdOfTheSoulOccult2: "وراء أبواب المملكة الغامضة، ينتظرك وصول أعمق إلى أعماق التارو، خطوط يدك المشؤومة وأسرار الكرة الأرضية.",
+        .thresholdOfTheSoulOccult3: "ستدخل إلى عالم سحري من الألحان المخصصة وتكتشف الألحان المخفية للمستقبل.",
+        .thresholdOfTheSoulOccult4: "ستتمكن من الغمر بشكل أعمق في لغز الحجارة الغامضة المخصصة.",
+        .thresholdOfTheSoulOracle1: "تشمل هذه الحزمة الخاصة جميع ميزات عتبة الروح للأوكولت.",
+        .thresholdOfTheSoulOracle2: "سيتم تذكير هذا الدعم المقدس الذي تقدمه مقدمًا وسيعود إليك بطاقات إيجابية من أسرار الكون.",
+        .thresholdOfTheSoulOracle3: "ستحصل على الوصول الأول إلى الميزات الجديدة في الاختبار التجريبي، قائدًا الطريق مع التحسينات الواردة.",
+        .thresholdOfTheSoulOracle4: "سيتم تقديم تصورات حصرية للمستقبل القريب لك من خلال بوابة الوصول."
     ]
+
     // MARK: - ArabicLanguage - ZodiacCompletion -
-    typealias textHelperZodiacCompletion = TextHelper.ZodiacCompletion
-    let zodiac: [textHelperZodiacCompletion.zodiac:String] = [
-        .piscesZodiacName: "الحوت",
+    typealias textHelperSpiritualCompletion = TextHelper.SpiritualCompletion
+    let crystalZodiac: [textHelperSpiritualCompletion.crystal:String] = [
+        .ariesCrystal: "عقيق",
+        .taurusCrystal: "عين النمر",
+        .geminiCrystal: "كوارتز وردي",
+        .cancerCrystal: "لابرادوريت",
+        .leoCrystal: "الياقوت الأحمر",
+        .virgoCrystal: "حجر القمر",
+        .libraCrystal: "لازورد",
+        .scorpioCrystal: "تورمالين",
+        .sagittariusCrystal: "أوبسيديان",
+        .capricornCrystal: "كوارتز",
+        .aquariusCrystal: "أكوامارين",
+        .piscesCrystal: "لؤلؤ"
+    ]
+
+    let zodiac: [textHelperSpiritualCompletion.zodiac:String] = [
+        .pisces: "الحوت",
+        .aries: "الحمل",
+        .aquarius: "الدلو",
+        .gemini: "الجمناز",
+        .libra: "الميزان",
+        .virgo: "العذراء",
+        .capricorn: "الجدي",
+        .sagittarius: "القوس",
+        .leo: "الأسد",
+        .scorpio: "العقرب",
+        .taurus: "الثور",
+        .cancer: "السرطان"
+    ]
+
+    let dateZodiac: [textHelperSpiritualCompletion.dateZodiac:String] = [
         .piscesZodiacDate: "20 فبراير - 20 مارس",
-        .ariesZodiacName: "الحمل",
         .ariesZodiacDate: "21 مارس - 20 إبريل",
-        .aquariusZodiacName: "الدلو",
         .aquariusZodiacDate: "21 يناير - 19 فبراير",
-        .geminiZodiacName: "الجمناز",
         .geminiZodiacDate: "21 مايو - 21 يونيو",
-        .libraZodiacName: "الميزان",
         .libraZodiacDate: "24 سبتمبر - 23 أكتوبر",
-        .virgoZodiacName: "العذراء",
         .virgoZodiacDate: "24 أغسطس - 23 سبتمبر",
-        .capricornZodiacName: "الجدي",
         .capricornZodiacDate: "22 ديسمبر - 20 يناير",
-        .sagittariusZodiacName: "القوس",
         .sagittariusZodiacDate: "23 نوفمبر - 21 ديسمبر",
-        .leoZodiacName: "الأسد",
         .leoZodiacDate: "23 يوليو - 23 أغسطس",
-        .scorpioZodiacName: "العقرب",
         .scorpioZodiacDate: "24 أكتوبر - 22 نوفمبر",
-        .taurusZodiacName: "الثور",
         .taurusZodiacDate: "21 إبريل - 20 مايو",
-        .cancerZodiacName: "السرطان",
         .cancerZodiacDate: "22 يونيو - 22 يوليو"
     ]
 }

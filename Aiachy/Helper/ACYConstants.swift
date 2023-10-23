@@ -37,13 +37,12 @@ let ACY_FULL_SIZE: Double = 1
 let ACY_UI_WIDTH_SIZE = UIScreen.main.bounds.width
 let ACY_UI_HEIGHT_SIZE = UIScreen.main.bounds.height
 //MARK: Constant - for previews
-let ACY_PREVIEWS_STATE = AiachyState(user:
-                                        User(userZodiac: UserZodiac(zodiac: 0,ascendant: 0),
-                                             aiachyInfo: AiachyInfo(theme: "Light",
-                                                                    language: "TR"),
-                                             deviceInfo:
-                                                DeviceInfo(phoneWidth: ACY_UI_WIDTH_SIZE,
-                                                           phoneHeight: ACY_UI_HEIGHT_SIZE)))
+let ACY_PREVIEWS_STATE = AiachyState(user:User(userSpiritual: UserSpiritual(zodiac: 5,
+                                                                            ascendant: 0),
+                                               userOracle: UserOracle(isOracled: false), 
+                                               aiachyInfo: AiachyInfo(theme: "Light",aiachyLanguageInfo: AiachyLanguageInfo(language: "US")),
+                                               deviceInfo: DeviceInfo(phoneWidth: ACY_UI_WIDTH_SIZE,
+                                                                      phoneHeight: ACY_UI_HEIGHT_SIZE)))
 //MARK: Constant - firebase collection
 let ACY_USERS_COLLECTION: String = "users"
 
@@ -59,31 +58,31 @@ let ACY_TUNE_COLLECTION: String = "tune"
 let ACY_DATA_INFO_PATH: String = "aiachyDataInfo"
 
 let ACY_ZODIAC_ENTITY_YESTERDAY: ACYUserAllEntity = ACYUserAllEntity(zodiac: ACYZodiacEntity(date: "10.02.2032",
-                                                                                                   zodiac: 0,
-                                                                                                   serialNumber: 00,
-                                                                                                   comment: "313131",
-                                                                                                   zodiacDataVersion: "0.0.1"),
-                                                                  ascendiant: ACY_ASCENDIANT_ENTITY_YESTERDAY,
-                                                                  compatibility: ACY_COMPATIBILITY_ENTITY_YESTERDAY,
-                                                                  chakraStatus: ACY_STATUS_ENTITY_YESTERDAY)
+                                                                                             zodiac: 0,
+                                                                                             serialNumber: 00,
+                                                                                             comment: "313131",
+                                                                                             zodiacDataVersion: "0.0.1"),
+                                                                     ascendiant: ACY_ASCENDIANT_ENTITY_YESTERDAY,
+                                                                     compatibility: ACY_COMPATIBILITY_ENTITY_YESTERDAY,
+                                                                     chakraStatus: ACY_STATUS_ENTITY_YESTERDAY)
 
 let ACY_ZODIAC_ENTITY_TODAY: ACYUserAllEntity = ACYUserAllEntity(zodiac: ACYZodiacEntity(date: "10.02.2032",
-                                                                                               zodiac: 0,
-                                                                                               serialNumber: 00,
-                                                                                               comment: "313131",
-                                                                                               zodiacDataVersion: "0.0.1"),
-                                                         ascendiant: ACY_ASCENDIANT_ENTITY_TODAY,
-                                                         compatibility: ACY_COMPATIBILITY_ENTITY_TODAY,
-                                                         chakraStatus: ACY_CHAKRA_STATUS_ENTITY_TODAY)
+                                                                                         zodiac: 0,
+                                                                                         serialNumber: 00,
+                                                                                         comment: "313131",
+                                                                                         zodiacDataVersion: "0.0.1"),
+                                                                 ascendiant: ACY_ASCENDIANT_ENTITY_TODAY,
+                                                                 compatibility: ACY_COMPATIBILITY_ENTITY_TODAY,
+                                                                 chakraStatus: ACY_CHAKRA_STATUS_ENTITY_TODAY)
 
 let ACY_ZODIAC_ENTITY_TOMORROW: ACYUserAllEntity = ACYUserAllEntity(zodiac: ACYZodiacEntity(date: "10.02.2032",
-                                                                                                  zodiac: 0,
-                                                                                                  serialNumber: 00,
-                                                                                                  comment: "313131",
-                                                                                                  zodiacDataVersion: "0.0.1"),
-                                                                  ascendiant: ACY_ASCENDIANT_ENTITY_TOMORROW,
-                                                                  compatibility: ACY_COMPATIBILITY_ENTITY_TOMORROW,
-                                                                  chakraStatus: ACY_STATUS_ENTITY_TOMORROW)
+                                                                                            zodiac: 0,
+                                                                                            serialNumber: 00,
+                                                                                            comment: "313131",
+                                                                                            zodiacDataVersion: "0.0.1"),
+                                                                    ascendiant: ACY_ASCENDIANT_ENTITY_TOMORROW,
+                                                                    compatibility: ACY_COMPATIBILITY_ENTITY_TOMORROW,
+                                                                    chakraStatus: ACY_STATUS_ENTITY_TOMORROW)
 
 let ACY_STATUS_ENTITY_YESTERDAY: [ACYChakraStatusEntity] = [
     ACYChakraStatusEntity(serialNumber: 00, tier: 0, rate: 0.3, comment: "YESTERDAY Status Descrpiption", statusDataVersion: "0.0.1"),
@@ -93,7 +92,7 @@ let ACY_STATUS_ENTITY_YESTERDAY: [ACYChakraStatusEntity] = [
     ACYChakraStatusEntity(serialNumber: 00, tier: 4, rate: 0.3, comment: "YESTERDAY Status Descrpiption", statusDataVersion: "0.0.1" ),
     ACYChakraStatusEntity(serialNumber: 00, tier: 5, rate: 0.3, comment: "YESTERDAY Status Descrpiption", statusDataVersion: "0.0.1" ),
     ACYChakraStatusEntity(serialNumber: 00, tier: 6, rate: 0.3, comment: "YESTERDAY Status Descrpiption", statusDataVersion: "0.0.1")
-    ]
+]
 
 let ACY_CHAKRA_STATUS_ENTITY_TODAY: [ACYChakraStatusEntity] = [
     ACYChakraStatusEntity(serialNumber: 00, tier: 0, rate: 0.3, comment: "TODAY Status Descrpiption0 TODAY Status Descrpiption0 TODAY Status Descrpiption0 TODAY Status Descrpiption0 TODAY Status Descrpiption0 TODAY Status Descrpiption0 TODAY Status Descrpiption0 TODAY Status Descrpiption0 TODAY Status Descrpiption0 TODAY Status Descrpiption0 TODAY Status Descrpiption0 TODAY Status Descrpiption0 TODAY Status Descrpiption0 ", statusDataVersion: "0.0.1"),
@@ -103,7 +102,7 @@ let ACY_CHAKRA_STATUS_ENTITY_TODAY: [ACYChakraStatusEntity] = [
     ACYChakraStatusEntity(serialNumber: 00, tier: 4, rate: 0.3, comment: "TODAY Status Descrpiption4", statusDataVersion: "0.0.1"),
     ACYChakraStatusEntity(serialNumber: 00, tier: 5, rate: 0.3, comment: "TODAY Status Descrpiption5", statusDataVersion: "0.0.1"),
     ACYChakraStatusEntity(serialNumber: 00, tier: 6, rate: 0.3, comment: "TODAY Status Descrpiption6", statusDataVersion: "0.0.1")
-    ]
+]
 
 let ACY_STATUS_ENTITY_TOMORROW: [ACYChakraStatusEntity] = [
     ACYChakraStatusEntity(serialNumber: 00, tier: 0, rate: 0.3, comment: "TOMORROW Status Descrpiption", statusDataVersion: "0.0.1"),
@@ -113,27 +112,33 @@ let ACY_STATUS_ENTITY_TOMORROW: [ACYChakraStatusEntity] = [
     ACYChakraStatusEntity(serialNumber: 00, tier: 4, rate: 0.3, comment: "TOMORROW Status Descrpiption", statusDataVersion: "0.0.1"),
     ACYChakraStatusEntity(serialNumber: 00, tier: 5, rate: 0.3, comment: "TOMORROW Status Descrpiption", statusDataVersion: "0.0.1"),
     ACYChakraStatusEntity(serialNumber: 00, tier: 6, rate: 0.3, comment: "TOMORROW Status Descrpiption", statusDataVersion: "0.0.1")
-    ]
+]
 
-let ACY_ASCENDIANT_ENTITY_YESTERDAY : [ACYAscendiantEntity] = [ ACYAscendiantEntity(serialNumber: 00, determinedZodiac: 0, comment: "Yesterday ascendiant comment", ascendiantDataVersion: "0.0.1") ]
+let ACY_ASCENDIANT_ENTITY_YESTERDAY : [ACYAscendiantEntity] = [ 
+    ACYAscendiantEntity(serialNumber: 00, determinedZodiac: 0, comment: "Yesterday ascendiant comment", ascendiantDataVersion: "0.0.1") 
+]
 
-let ACY_ASCENDIANT_ENTITY_TODAY : [ACYAscendiantEntity] = [ ACYAscendiantEntity(serialNumber: 00, determinedZodiac: 0, comment: "Today ascendiant comment", ascendiantDataVersion: "0.0.1") ]
+let ACY_ASCENDIANT_ENTITY_TODAY : [ACYAscendiantEntity] = [ 
+    ACYAscendiantEntity(serialNumber: 00, determinedZodiac: 0, comment: "Today ascendiant comment", ascendiantDataVersion: "0.0.1")
+]
 
-let ACY_ASCENDIANT_ENTITY_TOMORROW : [ACYAscendiantEntity] = [ ACYAscendiantEntity(serialNumber: 00, determinedZodiac: 0, comment: "Tomorrow ascendiant comment", ascendiantDataVersion: "0.0.1") ]
+let ACY_ASCENDIANT_ENTITY_TOMORROW : [ACYAscendiantEntity] = [ 
+    ACYAscendiantEntity(serialNumber: 00, determinedZodiac: 0, comment: "Tomorrow ascendiant comment", ascendiantDataVersion: "0.0.1")
+]
 
 
 let ACY_COMPATIBILITY_ENTITY_YESTERDAY: [ACYCompatibilityEntity] = [
     ACYCompatibilityEntity(serialNumber: 00, zodiac: 0, compatibilityDataVersion: "0.0.1"),
-ACYCompatibilityEntity(serialNumber: 00, zodiac: 1, compatibilityDataVersion: "0.0.1")
+    ACYCompatibilityEntity(serialNumber: 00, zodiac: 1, compatibilityDataVersion: "0.0.1")
 ]
 
 let ACY_COMPATIBILITY_ENTITY_TODAY: [ACYCompatibilityEntity] = [
-ACYCompatibilityEntity(serialNumber: 00, zodiac: 2, compatibilityDataVersion: "0.0.1"),
-ACYCompatibilityEntity(serialNumber: 00, zodiac: 3, compatibilityDataVersion: "0.0.1")
+    ACYCompatibilityEntity(serialNumber: 00, zodiac: 2, compatibilityDataVersion: "0.0.1"),
+    ACYCompatibilityEntity(serialNumber: 00, zodiac: 3, compatibilityDataVersion: "0.0.1")
 ]
 
 
 let ACY_COMPATIBILITY_ENTITY_TOMORROW: [ACYCompatibilityEntity] = [
-ACYCompatibilityEntity(serialNumber: 00, zodiac: 4, compatibilityDataVersion: "0.0.1"),
-ACYCompatibilityEntity(serialNumber: 00, zodiac: 5, compatibilityDataVersion: "0.0.1")
+    ACYCompatibilityEntity(serialNumber: 00, zodiac: 4, compatibilityDataVersion: "0.0.1"),
+    ACYCompatibilityEntity(serialNumber: 00, zodiac: 5, compatibilityDataVersion: "0.0.1")
 ]

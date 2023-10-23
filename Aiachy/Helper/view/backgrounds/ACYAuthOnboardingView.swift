@@ -24,13 +24,13 @@ struct ACYAuthOnboardingView: View {
         .makeAccessibilitysForUITest(identifier: "ACYOnboardingID")
     }
 }
-
 #Preview("ACYOnboarding") {
     ACYAuthOnboardingView(selection: .constant(0),
-                  acyAuthOnboardingEntityData: [ACYAuthOnboardingEntity(id: 0, image: .authHeart, title: .heartofAstrologyTitle, description: .heartofAstrologyDescription)])
+                  acyAuthOnboardingEntityData: [ACYAuthOnboardingEntity(id: 0, image: .authHeart,
+                                                                        title: .heartofMysticTitle,
+                                                                        description: .heartofMysticDescription)])
         .environmentObject(ACY_PREVIEWS_STATE)
 }
-
 private struct OnboardingTemplate: View {
     
     @EnvironmentObject var aiachyState: AiachyState
@@ -41,7 +41,7 @@ private struct OnboardingTemplate: View {
             Image(ACYOnboardingEntityData.image.rawValue)
                 .resizable()
                 .scaledToFit()
-                .frame(height: ACYdh(aiachyState, d: ACY_UPMED_SIZE))
+                .frame(height: ACYdh(aiachyState, d: 0.38))
             ACYTitleAndDescriptionText(title: TextHandler.makeAuthOnboardingString(aiachy: aiachyState,
                                                                                    onboarding: ACYOnboardingEntityData.title),
                                        description: TextHandler.makeAuthOnboardingString(aiachy: aiachyState,

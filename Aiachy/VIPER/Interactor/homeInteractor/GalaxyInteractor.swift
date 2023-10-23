@@ -12,8 +12,8 @@ private protocol TuneHandlerProtocol {
 }
 //MARK: GalaxyInteractor - protocol - TuneServerProtocol -
 private protocol TuneServerProtocol {
-    func fillTuneInfoToCoreData(aiachy aiachyState: AiachyState)
-    func checkVersion(aiachy aiachyState: AiachyState, completion: @escaping (Bool) -> ())
+    func fillTuneInfoToCoreData()
+    func checkVersion(completion: @escaping (Bool) -> ())
 }
 //MARK: GalaxyInteractor - protocol - TuneCoreDataProtocol -
 private protocol TuneCoreDataProtocol {
@@ -24,36 +24,38 @@ private protocol TuneCoreDataProtocol {
 
 class GalaxyInteractor: ObservableObject {
     
+    var aiachyState: AiachyState
     private let coreDataManager: CoreDataManager
     private let executiveServerManager: ExecutiveServerManager
     private let tuneServerManager: TuneServerManager
     let errorType: CurrentValueSubject<Int,Error>
     
-    init(coreDataManager: CoreDataManager = CoreDataManager(),
-         executiveServerManager: ExecutiveServerManager = ExecutiveServerManager(),
+    init(aiachy aiachyState: AiachyState,
+         coreDataManager: CoreDataManager = CoreDataManager(),
          tuneServerManager: TuneServerManager = TuneServerManager(),
          errorType: Int = 0) {
+        self.aiachyState = aiachyState
         self.coreDataManager = coreDataManager
-        self.executiveServerManager = executiveServerManager
+        self.executiveServerManager = ExecutiveServerManager(aiachy: aiachyState)
         self.tuneServerManager = tuneServerManager
         self.errorType = CurrentValueSubject(errorType)
     }
     
-    func updateTuneEntityData(aiachy aiachyState: AiachyState, completion: @escaping ([ACYTuneEntity]) -> ()) {
-        checkVersion(aiachy: aiachyState) { [self] isVersionSame in
+    func updateTuneEntityData(completion: @escaping ([ACYTuneEntity]) -> ()) {
+        checkVersion() { [self] isVersionSame in
             if isVersionSame {
                 controlCoreData { [self] isHaveAnyData in
                     if isHaveAnyData {
                         getCoreData { completion($0) }
                     } else {
-                        fillTuneInfoToCoreData(aiachy: aiachyState)
+                        fillTuneInfoToCoreData()
                     }
                 }
             } else {
                 /// new version then result funcs
                 deleteCoreData()
                 deleteAllFilesInAiachyTuneFolder()
-                fillTuneInfoToCoreData(aiachy: aiachyState)
+                fillTuneInfoToCoreData()
             }
         }
     }
@@ -82,7 +84,7 @@ extension GalaxyInteractor: TuneHandlerProtocol {
 extension GalaxyInteractor: TuneServerProtocol {
     /// <#Description#>
     /// - Parameter aiachyState: <#aiachyState description#>
-    fileprivate func fillTuneInfoToCoreData(aiachy aiachyState: AiachyState) {
+    fileprivate func fillTuneInfoToCoreData() {
         tuneServerManager.getTunesInfoFromServer { [self] result in
             switch result {
             case .success(let success):
@@ -97,11 +99,11 @@ extension GalaxyInteractor: TuneServerProtocol {
     /// <#Description#>
     /// - Parameter aiachyState: <#aiachyState description#>
     /// - Returns: <#description#>
-    fileprivate func checkVersion(aiachy aiachyState: AiachyState, completion: @escaping (Bool) -> ()) {
-        executiveServerManager.checkIsSameTuneVersion(aiachy: aiachyState) { [self] isSameTuneVersion in
+    fileprivate func checkVersion(completion: @escaping (Bool) -> ()) {
+        executiveServerManager.checkIsSameTuneVersion() { [self] isSameTuneVersion in
             guard isSameTuneVersion else {
-                executiveServerManager.setLocalUserTuneDataVersion(aiachy: aiachyState)
-                executiveServerManager.updateServerUserTuneDataVersion(aiachy: aiachyState)
+                executiveServerManager.setLocalUserTuneDataVersion()
+                executiveServerManager.updateServerUserTuneDataVersion()
                 completion(false)
                 return }
             completion(true)

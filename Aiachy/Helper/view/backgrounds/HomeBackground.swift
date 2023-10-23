@@ -13,7 +13,7 @@ struct HomeBackground: View {
     
     var body: some View {
         ZStack {
-            Color.makeAiachyColor(aiachyState, aiachyColor: .backgroundColor)
+            Color(ColorHandler.makeAiachyColor(aiachyState, aiachyColor: .backgroundColor))
                 .ignoresSafeArea(.all, edges: .all)
         }
     }

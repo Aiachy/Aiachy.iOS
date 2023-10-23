@@ -17,8 +17,9 @@ struct StarterIndexView: View {
         ZStack {
             //MARK: StarterIndexView - Background
             RoundedRectangle(cornerRadius: 25)
-                .stroke(Color.makeAiachyColor(aiachyState, aiachyColor: .fifthColor))
-                .background(Color.makeAiachyColor(aiachyState, aiachyColor: .backgroundAlternativeColor).clipShape(RoundedRectangle(cornerRadius: 25)))
+                .stroke(Color(ColorHandler.makeAiachyColor(aiachyState, aiachyColor: .fifthColor)))
+                .background(Color(ColorHandler.makeAiachyColor(aiachyState, aiachyColor: .backgroundAlternativeColor))
+                    .clipShape(RoundedRectangle(cornerRadius: 25)))
             //MARK: StarterIndexView - Logo
             HStack {
                 ForEach(entityData, id: \.id) { starterLogo in
@@ -51,26 +52,3 @@ struct StarterIndexView: View {
     .environmentObject(ACY_PREVIEWS_STATE)
 }
 
-
-struct StarterIndexLogo: View {
-    
-    @EnvironmentObject var aiachyState: AiachyState
-    let id: Int?
-    let entity: ACYmysticStarterLogoEntity
-    
-    var body: some View {
-        Circle()
-            .stroke( Color.makeAiachyColor(aiachyState, 
-                                           aiachyColor: entity.id == id ? .backgroundColor : .fifthColor))
-            .background(Color.makeAiachyColor(aiachyState, 
-                                              aiachyColor: entity.id == id ? .fifthColor : .backgroundColor).clipShape(Circle()))
-            .frame(width: ACYdw(aiachyState, d: 0.08))
-            .overlay { Image(ImageHandler.makeMysticStarterString(aiachyState,
-                                                                  starter: entity.id == id ? entity.selectedLogo : entity.unSelectedLogo))
-                    .resizable()
-                    .scaledToFit()
-                    .padding(3)
-                .frame(width: ACYdw(aiachyState, d: 0.06))}
-            .animation(.spring, value: id)
-    }
-}

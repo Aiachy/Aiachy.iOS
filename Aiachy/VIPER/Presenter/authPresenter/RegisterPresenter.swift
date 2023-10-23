@@ -7,13 +7,13 @@
 
 import SwiftUI
 
-//MARK: AscendantSelectionPresenter - procotol  - RegisterPresenterAiachyStateProtocol
-private protocol RegisterPresenterAiachyStateProtocol {
+//MARK: RegisterPresente - procotol  - HandlerProtocol
+private protocol HandlerProtocol {
     func checkValues(aiachy aiachyState: AiachyState, completion: @escaping () -> ())
     func uploadValuesToState(aiachyState: AiachyState)
     func updateValuesFromState(aiachyState: AiachyState)
 }
-//MARK: AscendantSelectionPresenter - Presenter
+//MARK: RegisterPresente - Presenter
 class RegisterPresenter: ObservableObject {
     
     @Published var userName: String
@@ -42,8 +42,7 @@ class RegisterPresenter: ObservableObject {
          userPassword: String = "" ,
          userPasswordAgain: String = "",
          aiachy aiachyState: AiachyState,
-         router: AuthRouterPresenter,
-         interactor: RegisterInteractor = RegisterInteractor()) {
+         router: AuthRouterPresenter) {
         self.userNameErrorType = userNameErrorType
         self.userSurnameErrorType = userSurnameErrorType
         self.userMailErrorType = userMailErrorType
@@ -56,11 +55,14 @@ class RegisterPresenter: ObservableObject {
         self.userPasswordAgain = userPasswordAgain
         self.aiachyState = aiachyState
         self.router = router
-        self.interactor = interactor
+        self.interactor = RegisterInteractor(aiachy: aiachyState)
     }
+    
+    
+    
 }
-//MARK: AscendantSelectionPresenter - extension - RegisterPresenterAiachyStateProtocol
-extension RegisterPresenter: RegisterPresenterAiachyStateProtocol {
+//MARK: RegisterPresente - extension - HandlerProtocol
+extension RegisterPresenter: HandlerProtocol {
     /// we are checking values is it true or false if false error type triggering else nothing else
     /// - Parameter completion: when all cheking values complate that
     func checkValues(aiachy aiachyState: AiachyState, completion: @escaping () -> ()) {
@@ -111,14 +113,9 @@ extension RegisterPresenter: RegisterPresenterAiachyStateProtocol {
             userPasswordAgainErrorType = 8
             return
         }
-        interactor.checkUserInformation(userEmail: mail) { [self] checkedMail in
-            if checkedMail {
-                userMailErrorType = 17
-            } else {
-                completion()
-                uploadValuesToState(aiachyState: aiachyState)
-            }
-        }
+        aiachyState.user.userInfo = UserInfo(fullName: UserInfoFullName(firstName: name, lastName: surname))
+        aiachyState.user.userLoginInfo = UserLoginInfo(email: mail, password: password)
+        completion()
     }
     /// Here we load all the values on the page aiachyState
     /// - Parameter aiachyState: thats for upload values

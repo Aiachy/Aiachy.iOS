@@ -58,8 +58,8 @@ struct ACYTextField: View {
                 //error
                 if isShowingError == true {
                     Text(TextHandler.maketextFieldErrorString(aiachy: aiachyState, textFieldError: errorText!))
-                        .font(.aiachyFont(.roundedMedium10))
-                        .foregroundColor(.makeAiachyColor(aiachyState, aiachyColor: .fourthColor))
+                        .font(FontHandler.aiachyFont(.roundedMedium10))
+                        .foregroundStyle(Color(ColorHandler.makeAiachyColor(aiachyState, aiachyColor: .fourthColor)))
                 }
                 Spacer()
                 //button
@@ -69,12 +69,12 @@ struct ACYTextField: View {
                     } label: {
                         Text(TextHandler.makeTextFieldString(aiachy: aiachyState,
                                                              textField: preferenceText!))
-                            .font(.aiachyFont(.roundedBlack8))
+                            .font(FontHandler.aiachyFont(.roundedBlack8))
                     }
                 }
             }
             .padding(.horizontal,5)
-            .foregroundColor(.makeAiachyColor(aiachyState, aiachyColor: .firstColor))
+            .foregroundStyle(Color(ColorHandler.makeAiachyColor(aiachyState, aiachyColor: .firstColor)))
         }
         .frame(width: ACYdw(aiachyState, d: isHalfTextField ? 0.4 : 0.9 ))
         .onChange(of: errorType) { type in

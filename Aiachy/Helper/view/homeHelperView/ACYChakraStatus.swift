@@ -60,13 +60,13 @@ struct ACYChakraStatus: View {
             .frame(height: ACYdh(aiachyState, d: 0.12))
             .tabViewStyle(.page(indexDisplayMode: .never))
             index
-                .background(Color.makeAiachyColor(aiachyState, aiachyColor: .fifthColor)
+                .background(Color(ColorHandler.makeAiachyColor(aiachyState, aiachyColor: .fifthColor))
                     .cornerRadius(12)
                     .padding(-5))
                 .padding()
         }
         .frame(height: ACYdh(aiachyState, d: 0.2))
-        .animation(.smooth, value: entity.count)
+        .animation(.spring(), value: entity.count)
         .environmentObject(aiachyState)
     }
 }
@@ -83,7 +83,7 @@ extension ACYChakraStatus {
                             statusText: TextHelper.HomeCompletion.status,
                             tier: Int) -> some View {
         ZStack {
-            Color.makeAiachyColor(aiachyState, aiachyColor: .fifthColor)
+            Color(ColorHandler.makeAiachyColor(aiachyState, aiachyColor: .fifthColor))
                 .cornerRadius(10)
                 .frame(width: ACYdw(aiachyState, d: 0.91))
             
@@ -109,7 +109,7 @@ extension ACYChakraStatus {
             //MARK: ACYChakraStatus - chakraStatusCircle
             chakraStatusCircle(rate: rate)
             Text(TextHandler.makeHomeStatusString(aiachy: aiachyState, homeStatus: statusText))
-                .font(.aiachyFont(.roundedBold12))
+                .font(FontHandler.aiachyFont(.roundedBold12))
         }
         .frame(width: ACYdw(aiachyState, d: 0.25),
                height: ACYdh(aiachyState, d: 0.1))
@@ -130,7 +130,7 @@ extension ACYChakraStatus {
                 .rotationEffect(.degrees(90))
             
             Text(Int(100 * rate).description)
-                .font(.aiachyFont(.roundedMedium10))
+                .font(FontHandler.aiachyFont(.roundedMedium10))
             
         }
         .frame(width: ACYdw(aiachyState, d: 0.12))
@@ -140,8 +140,8 @@ extension ACYChakraStatus {
     private func comment(text: String) -> some View {
         ScrollView(.vertical) {
             Text(text)
-                .font(.aiachyFont(.oldRegular10))
-                .foregroundStyle(Color.makeAiachyColor(aiachyState, aiachyColor: .backgroundColor))
+                .font(FontHandler.aiachyFont(.oldRegular10))
+                .foregroundStyle(Color(ColorHandler.makeAiachyColor(aiachyState, aiachyColor: .backgroundColor)))
                 .multilineTextAlignment(.center)
         }
         .frame(width: ACYdw(aiachyState, d: 0.634),height: ACYdh(aiachyState, d: 0.1))
@@ -190,12 +190,12 @@ private struct BlockStatusModifier: ViewModifier {
         content
             .overlay {
                 if !isOracled {
-                    Color.makeAiachyColor(aiachyState, aiachyColor: .fifthColor)
+                    Color(ColorHandler.makeAiachyColor(aiachyState, aiachyColor: .fifthColor))
                         .cornerRadius(8)
                         .opacity(0.8)
                     Text(TextHandler.makeHomeString(aiachy: aiachyState, home: .notUsable))
-                        .foregroundStyle(Color.makeAiachyColor(aiachyState, aiachyColor: .backgroundColor))
-                        .font(.aiachyFont(.cinzelBlack20))
+                        .foregroundStyle(Color(ColorHandler.makeAiachyColor(aiachyState, aiachyColor: .backgroundColor)))
+                        .font(FontHandler.aiachyFont(.cinzelBlack20))
                         .multilineTextAlignment(.center)
                 }
             }

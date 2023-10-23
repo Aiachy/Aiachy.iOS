@@ -16,7 +16,7 @@
 		3401C86F2A117C0A00BD368A /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3401C86E2A117C0A00BD368A /* Color+Extension.swift */; };
 		3401C8712A117C1300BD368A /* Image+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3401C8702A117C1300BD368A /* Image+Extension.swift */; };
 		3401C8732A11D57E00BD368A /* SplashInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3401C8722A11D57E00BD368A /* SplashInteractor.swift */; };
-		3401C8762A11D69A00BD368A /* AuthServerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3401C8752A11D69A00BD368A /* AuthServerManager.swift */; };
+		3401C8762A11D69A00BD368A /* UserServerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3401C8752A11D69A00BD368A /* UserServerManager.swift */; };
 		3401C8862A11EBFB00BD368A /* ColorHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3401C8852A11EBFB00BD368A /* ColorHelper.swift */; };
 		3401C88C2A1293E300BD368A /* ColorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3401C88B2A1293E300BD368A /* ColorHandler.swift */; };
 		3401C88E2A12A30B00BD368A /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3401C88D2A12A30B00BD368A /* OnboardingView.swift */; };
@@ -32,7 +32,6 @@
 		3405C2082A83D17700424FC8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3405C2072A83D17700424FC8 /* GoogleService-Info.plist */; };
 		3405C20C2A84996800424FC8 /* ACYTuneEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3405C20B2A84996800424FC8 /* ACYTuneEntity.swift */; };
 		3407544F2A0FF12800E6B8D4 /* Color.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3407544E2A0FF12800E6B8D4 /* Color.xcassets */; };
-		340754532A0FF18300E6B8D4 /* Horoscope.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 340754522A0FF18300E6B8D4 /* Horoscope.xcassets */; };
 		3407546F2A0FF5DF00E6B8D4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3407546E2A0FF5DF00E6B8D4 /* AppDelegate.swift */; };
 		340754742A100DDD00E6B8D4 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340754732A100DDD00E6B8D4 /* SplashView.swift */; };
 		3407547A2A102B9C00E6B8D4 /* OldStandardTT-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 340754772A102B9C00E6B8D4 /* OldStandardTT-Regular.ttf */; };
@@ -43,13 +42,19 @@
 		340754832A102BBB00E6B8D4 /* CinzelDecorative-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 340754802A102BBB00E6B8D4 /* CinzelDecorative-Black.ttf */; };
 		340754912A10990700E6B8D4 /* AiachyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 340754902A10990700E6B8D4 /* AiachyUITests.swift */; };
 		340754A02A10993100E6B8D4 /* AiachyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3407549F2A10993100E6B8D4 /* AiachyTests.swift */; };
+		341423372AC8E50400F99AD2 /* OracleColumns.swift in Sources */ = {isa = PBXBuildFile; fileRef = 341423362AC8E50400F99AD2 /* OracleColumns.swift */; };
+		341423392AC8EE9300F99AD2 /* ACYOracleColumnsEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 341423382AC8EE9300F99AD2 /* ACYOracleColumnsEntity.swift */; };
 		341A698F2A671B04009177D6 /* AiachyData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 341A698D2A671B04009177D6 /* AiachyData.xcdatamodeld */; };
-		341D3BDC2A67866E00F0F011 /* ZodiacSelect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 341D3BDB2A67866E00F0F011 /* ZodiacSelect.swift */; };
+		341D3BDC2A67866E00F0F011 /* CrystalSelectEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 341D3BDB2A67866E00F0F011 /* CrystalSelectEntity.swift */; };
+		341DBCD92ABCA4640095B5F5 /* Spirituals.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 341DBCD82ABCA4630095B5F5 /* Spirituals.xcassets */; };
+		341DBCDB2ABCAEDA0095B5F5 /* StarterIndexLogo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 341DBCDA2ABCAEDA0095B5F5 /* StarterIndexLogo.swift */; };
+		34321AF42AC9078600D5BCEF /* ACYNextButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34321AF32AC9078600D5BCEF /* ACYNextButton.swift */; };
+		34321AF62AC9078E00D5BCEF /* ACYNextButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34321AF52AC9078E00D5BCEF /* ACYNextButtonStyle.swift */; };
 		343A67D82A84DB6600CF984D /* SplashViewUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 343A67D72A84DB6600CF984D /* SplashViewUITest.swift */; };
 		343A67DC2A84DB8F00CF984D /* OnboardingViewUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 343A67DB2A84DB8F00CF984D /* OnboardingViewUITest.swift */; };
 		343C17F62A16894C000F1E28 /* AuthRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 343C17F52A16894C000F1E28 /* AuthRouter.swift */; };
 		343C17F82A16912F000F1E28 /* AiachyState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 343C17F72A16912F000F1E28 /* AiachyState.swift */; };
-		343FAEFE2A6340A50084DEAD /* ACYAlertMinorButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 343FAEFD2A6340A50084DEAD /* ACYAlertMinorButton.swift */; };
+		343FAEFE2A6340A50084DEAD /* ACYMinorButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 343FAEFD2A6340A50084DEAD /* ACYMinorButton.swift */; };
 		343FAF012A6340D60084DEAD /* ACYMinorButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 343FAF002A6340D60084DEAD /* ACYMinorButtonStyle.swift */; };
 		344479F72A92296A00701FD2 /* ACYAiachyRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 344479F62A92296A00701FD2 /* ACYAiachyRepo.swift */; };
 		344479F92A930EC300701FD2 /* AudioPlayerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 344479F82A930EC300701FD2 /* AudioPlayerManager.swift */; };
@@ -86,14 +91,16 @@
 		34664DBB2A81F6B2007295E5 /* MysticRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34664DBA2A81F6B2007295E5 /* MysticRouter.swift */; };
 		34664DBD2A81F6E9007295E5 /* GalaxyRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34664DBC2A81F6E9007295E5 /* GalaxyRouter.swift */; };
 		34664DBF2A81F6F2007295E5 /* LoveRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34664DBE2A81F6F2007295E5 /* LoveRouter.swift */; };
-		34664DC12A81F6FB007295E5 /* SettingsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34664DC02A81F6FB007295E5 /* SettingsRouter.swift */; };
+		34664DC12A81F6FB007295E5 /* ProfileRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34664DC02A81F6FB007295E5 /* ProfileRouter.swift */; };
+		346A972E2AC81C1600B0B1BB /* ACYSectionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346A972D2AC81C1600B0B1BB /* ACYSectionButton.swift */; };
+		346A97302AC81C1C00B0B1BB /* ACYSectionButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346A972F2AC81C1C00B0B1BB /* ACYSectionButtonStyle.swift */; };
 		3478B3032A6AED6A00D94F67 /* Place.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3478B3022A6AED6A00D94F67 /* Place.swift */; };
 		3478C4D92A8DB9EC003F412D /* GalaxyColumn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3478C4D82A8DB9EC003F412D /* GalaxyColumn.swift */; };
 		3478C4DB2A8DC265003F412D /* MeditationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3478C4DA2A8DC265003F412D /* MeditationView.swift */; };
 		347BD9A22A673ED4001A251B /* ACYUserAllEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347BD9A12A673ED4001A251B /* ACYUserAllEntity.swift */; };
-		347BD9A82A674F84001A251B /* ZodiacSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347BD9A72A674F84001A251B /* ZodiacSelectionView.swift */; };
-		347BD9AA2A674FBA001A251B /* ZodiacSelectionPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347BD9A92A674FBA001A251B /* ZodiacSelectionPresenter.swift */; };
-		347BD9AC2A674FE3001A251B /* ZodiacSelectionInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347BD9AB2A674FE3001A251B /* ZodiacSelectionInteractor.swift */; };
+		347BD9A82A674F84001A251B /* CrystalSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347BD9A72A674F84001A251B /* CrystalSelectionView.swift */; };
+		347BD9AA2A674FBA001A251B /* CrystalSelectionPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347BD9A92A674FBA001A251B /* CrystalSelectionPresenter.swift */; };
+		347BD9AC2A674FE3001A251B /* CrystalSelectionInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347BD9AB2A674FE3001A251B /* CrystalSelectionInteractor.swift */; };
 		347BD9B02A67506D001A251B /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347BD9AF2A67506D001A251B /* RegisterView.swift */; };
 		347BD9B22A6750AE001A251B /* AscendantSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347BD9B12A6750AE001A251B /* AscendantSelectionView.swift */; };
 		347BD9B42A675100001A251B /* AttentionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347BD9B32A675100001A251B /* AttentionView.swift */; };
@@ -116,9 +123,10 @@
 		348D1DC72A1340E700602165 /* OnboardingInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348D1DC62A1340E700602165 /* OnboardingInteractor.swift */; };
 		348D1DC92A1340F400602165 /* LoginInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348D1DC82A1340F400602165 /* LoginInteractor.swift */; };
 		348D7BEC2A8D967F003632D9 /* TuneInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348D7BEB2A8D967F003632D9 /* TuneInteractor.swift */; };
-		348FA5692A676EB500BC51D4 /* ZodiacSelectionTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348FA5682A676EB500BC51D4 /* ZodiacSelectionTemplate.swift */; };
+		348FA5692A676EB500BC51D4 /* CrystalSelectionTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348FA5682A676EB500BC51D4 /* CrystalSelectionTemplate.swift */; };
 		349236D32A99B66E00079636 /* ACYHomeImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349236D22A99B66E00079636 /* ACYHomeImage.swift */; };
 		349236D72A9A53F300079636 /* DateSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349236D62A9A53F200079636 /* DateSection.swift */; };
+		349492DF2ACA4CB20055D007 /* Text+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 349492DE2ACA4CB20055D007 /* Text+Extension.swift */; };
 		349CA6F02A94E38B009F8B27 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 349CA6EF2A94E38B009F8B27 /* FirebaseAuth */; };
 		349CA6F22A94E38B009F8B27 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 349CA6F12A94E38B009F8B27 /* FirebaseFirestore */; };
 		349CA6F42A94E38B009F8B27 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 349CA6F32A94E38B009F8B27 /* FirebaseStorage */; };
@@ -148,12 +156,12 @@
 		34AE9A382A868CCC00560F52 /* SplashViewTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34AE9A372A868CCC00560F52 /* SplashViewTest.swift */; };
 		34AE9A3C2A868D0C00560F52 /* OnboardingViewTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34AE9A3B2A868D0C00560F52 /* OnboardingViewTest.swift */; };
 		34AE9A3F2A868D1A00560F52 /* LoginViewTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34AE9A3E2A868D1A00560F52 /* LoginViewTest.swift */; };
-		34AE9A412A868D2800560F52 /* ZodiacSelectionTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34AE9A402A868D2800560F52 /* ZodiacSelectionTest.swift */; };
+		34AE9A412A868D2800560F52 /* CrystalSelectionTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34AE9A402A868D2800560F52 /* CrystalSelectionTest.swift */; };
 		34AE9A432A868D3400560F52 /* RegisterViewTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34AE9A422A868D3400560F52 /* RegisterViewTest.swift */; };
 		34AE9A452A868D4100560F52 /* AscendantSelectionViewTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34AE9A442A868D4100560F52 /* AscendantSelectionViewTest.swift */; };
 		34AFB0402A77CC1600BBCC9C /* ExecutiveServerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34AFB03F2A77CC1600BBCC9C /* ExecutiveServerManager.swift */; };
 		34AFB0422A77CC7400BBCC9C /* ZodiacServerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34AFB0412A77CC7400BBCC9C /* ZodiacServerManager.swift */; };
-		34AFB0502A77CDD400BBCC9C /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34AFB04F2A77CDD400BBCC9C /* SettingsView.swift */; };
+		34AFB0502A77CDD400BBCC9C /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34AFB04F2A77CDD400BBCC9C /* ProfileView.swift */; };
 		34AFB0522A77CDDA00BBCC9C /* LoveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34AFB0512A77CDDA00BBCC9C /* LoveView.swift */; };
 		34AFB0542A77CDE400BBCC9C /* GalaxyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34AFB0532A77CDE400BBCC9C /* GalaxyView.swift */; };
 		34AFB0562A77CDEA00BBCC9C /* MysticView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34AFB0552A77CDEA00BBCC9C /* MysticView.swift */; };
@@ -176,12 +184,14 @@
 		34C11DA82A64A80A00D1F7DE /* ACYTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34C11DA72A64A80A00D1F7DE /* ACYTextField.swift */; };
 		34C11DAC2A64CF7500D1F7DE /* ACYTextFieldStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34C11DAB2A64CF7500D1F7DE /* ACYTextFieldStyle.swift */; };
 		34C212D32A8EE38400C8EB0A /* TuneServerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34C212D22A8EE38400C8EB0A /* TuneServerManager.swift */; };
+		34C39A662AC4F10800DA69EA /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34C39A652AC4F10800DA69EA /* StoreKit.framework */; };
 		34CA22A42A8E7E7E002817EB /* TuneColumn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34CA22A32A8E7E7E002817EB /* TuneColumn.swift */; };
 		34CC46A02AA11B8E00622526 /* ACYZodiacEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34CC469F2AA11B8E00622526 /* ACYZodiacEntity.swift */; };
+		34DAC0372AA9F00700465D21 /* (0.129)Subscrpition.md in Resources */ = {isa = PBXBuildFile; fileRef = 34DAC0362AA9F00700465D21 /* (0.129)Subscrpition.md */; };
 		34DCD5D32A94D9AC0079C52C /* ACYDualButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34DCD5D22A94D9AC0079C52C /* ACYDualButton.swift */; };
 		34DE3D152A61A69800F45E8F /* ACYAuthBackgroundEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34DE3D142A61A69800F45E8F /* ACYAuthBackgroundEntity.swift */; };
 		34E36B812A84E79B002F8748 /* LoginViewUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34E36B802A84E79B002F8748 /* LoginViewUITest.swift */; };
-		34E36B832A84E7A9002F8748 /* ZodiacSelectionViewUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34E36B822A84E7A9002F8748 /* ZodiacSelectionViewUITest.swift */; };
+		34E36B832A84E7A9002F8748 /* CrystalSelectionViewUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34E36B822A84E7A9002F8748 /* CrystalSelectionViewUITest.swift */; };
 		34E36B852A84E7BC002F8748 /* RegisterViewUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34E36B842A84E7BC002F8748 /* RegisterViewUITest.swift */; };
 		34E36B872A84E7FE002F8748 /* AscendantSelectionViewUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34E36B862A84E7FE002F8748 /* AscendantSelectionViewUITest.swift */; };
 		34E614542A56228400BCEB09 /* ACYErrorCompletion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34E614532A56228400BCEB09 /* ACYErrorCompletion.swift */; };
@@ -232,7 +242,7 @@
 		3401C86E2A117C0A00BD368A /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
 		3401C8702A117C1300BD368A /* Image+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image+Extension.swift"; sourceTree = "<group>"; };
 		3401C8722A11D57E00BD368A /* SplashInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashInteractor.swift; sourceTree = "<group>"; };
-		3401C8752A11D69A00BD368A /* AuthServerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthServerManager.swift; sourceTree = "<group>"; };
+		3401C8752A11D69A00BD368A /* UserServerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserServerManager.swift; sourceTree = "<group>"; };
 		3401C8852A11EBFB00BD368A /* ColorHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorHelper.swift; sourceTree = "<group>"; };
 		3401C88B2A1293E300BD368A /* ColorHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorHandler.swift; sourceTree = "<group>"; };
 		3401C88D2A12A30B00BD368A /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
@@ -249,7 +259,6 @@
 		3405C20B2A84996800424FC8 /* ACYTuneEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ACYTuneEntity.swift; sourceTree = "<group>"; };
 		3405C20D2A8499B100424FC8 /* (0.09)HeartsOfAstrology.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "(0.09)HeartsOfAstrology.md"; sourceTree = "<group>"; };
 		3407544E2A0FF12800E6B8D4 /* Color.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Color.xcassets; sourceTree = "<group>"; };
-		340754522A0FF18300E6B8D4 /* Horoscope.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Horoscope.xcassets; sourceTree = "<group>"; };
 		3407546E2A0FF5DF00E6B8D4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		340754732A100DDD00E6B8D4 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		340754772A102B9C00E6B8D4 /* OldStandardTT-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OldStandardTT-Regular.ttf"; sourceTree = "<group>"; };
@@ -262,13 +271,19 @@
 		340754902A10990700E6B8D4 /* AiachyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AiachyUITests.swift; sourceTree = "<group>"; };
 		3407549D2A10993100E6B8D4 /* AiachyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AiachyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3407549F2A10993100E6B8D4 /* AiachyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AiachyTests.swift; sourceTree = "<group>"; };
+		341423362AC8E50400F99AD2 /* OracleColumns.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OracleColumns.swift; sourceTree = "<group>"; };
+		341423382AC8EE9300F99AD2 /* ACYOracleColumnsEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ACYOracleColumnsEntity.swift; sourceTree = "<group>"; };
 		341A698E2A671B04009177D6 /* Zodiac.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Zodiac.xcdatamodel; sourceTree = "<group>"; };
-		341D3BDB2A67866E00F0F011 /* ZodiacSelect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZodiacSelect.swift; sourceTree = "<group>"; };
+		341D3BDB2A67866E00F0F011 /* CrystalSelectEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrystalSelectEntity.swift; sourceTree = "<group>"; };
+		341DBCD82ABCA4630095B5F5 /* Spirituals.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Spirituals.xcassets; sourceTree = "<group>"; };
+		341DBCDA2ABCAEDA0095B5F5 /* StarterIndexLogo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarterIndexLogo.swift; sourceTree = "<group>"; };
+		34321AF32AC9078600D5BCEF /* ACYNextButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ACYNextButton.swift; sourceTree = "<group>"; };
+		34321AF52AC9078E00D5BCEF /* ACYNextButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ACYNextButtonStyle.swift; sourceTree = "<group>"; };
 		343A67D72A84DB6600CF984D /* SplashViewUITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewUITest.swift; sourceTree = "<group>"; };
 		343A67DB2A84DB8F00CF984D /* OnboardingViewUITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewUITest.swift; sourceTree = "<group>"; };
 		343C17F52A16894C000F1E28 /* AuthRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRouter.swift; sourceTree = "<group>"; };
 		343C17F72A16912F000F1E28 /* AiachyState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AiachyState.swift; sourceTree = "<group>"; };
-		343FAEFD2A6340A50084DEAD /* ACYAlertMinorButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ACYAlertMinorButton.swift; sourceTree = "<group>"; };
+		343FAEFD2A6340A50084DEAD /* ACYMinorButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ACYMinorButton.swift; sourceTree = "<group>"; };
 		343FAF002A6340D60084DEAD /* ACYMinorButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ACYMinorButtonStyle.swift; sourceTree = "<group>"; };
 		344479F62A92296A00701FD2 /* ACYAiachyRepo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ACYAiachyRepo.swift; sourceTree = "<group>"; };
 		344479F82A930EC300701FD2 /* AudioPlayerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayerManager.swift; sourceTree = "<group>"; };
@@ -305,14 +320,16 @@
 		34664DBA2A81F6B2007295E5 /* MysticRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MysticRouter.swift; sourceTree = "<group>"; };
 		34664DBC2A81F6E9007295E5 /* GalaxyRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalaxyRouter.swift; sourceTree = "<group>"; };
 		34664DBE2A81F6F2007295E5 /* LoveRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoveRouter.swift; sourceTree = "<group>"; };
-		34664DC02A81F6FB007295E5 /* SettingsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsRouter.swift; sourceTree = "<group>"; };
+		34664DC02A81F6FB007295E5 /* ProfileRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileRouter.swift; sourceTree = "<group>"; };
+		346A972D2AC81C1600B0B1BB /* ACYSectionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ACYSectionButton.swift; sourceTree = "<group>"; };
+		346A972F2AC81C1C00B0B1BB /* ACYSectionButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ACYSectionButtonStyle.swift; sourceTree = "<group>"; };
 		3478B3022A6AED6A00D94F67 /* Place.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Place.swift; sourceTree = "<group>"; };
 		3478C4D82A8DB9EC003F412D /* GalaxyColumn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalaxyColumn.swift; sourceTree = "<group>"; };
 		3478C4DA2A8DC265003F412D /* MeditationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeditationView.swift; sourceTree = "<group>"; };
 		347BD9A12A673ED4001A251B /* ACYUserAllEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ACYUserAllEntity.swift; sourceTree = "<group>"; };
-		347BD9A72A674F84001A251B /* ZodiacSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZodiacSelectionView.swift; sourceTree = "<group>"; };
-		347BD9A92A674FBA001A251B /* ZodiacSelectionPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZodiacSelectionPresenter.swift; sourceTree = "<group>"; };
-		347BD9AB2A674FE3001A251B /* ZodiacSelectionInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZodiacSelectionInteractor.swift; sourceTree = "<group>"; };
+		347BD9A72A674F84001A251B /* CrystalSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrystalSelectionView.swift; sourceTree = "<group>"; };
+		347BD9A92A674FBA001A251B /* CrystalSelectionPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrystalSelectionPresenter.swift; sourceTree = "<group>"; };
+		347BD9AB2A674FE3001A251B /* CrystalSelectionInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrystalSelectionInteractor.swift; sourceTree = "<group>"; };
 		347BD9AF2A67506D001A251B /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		347BD9B12A6750AE001A251B /* AscendantSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AscendantSelectionView.swift; sourceTree = "<group>"; };
 		347BD9B32A675100001A251B /* AttentionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttentionView.swift; sourceTree = "<group>"; };
@@ -336,9 +353,10 @@
 		348D1DC62A1340E700602165 /* OnboardingInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingInteractor.swift; sourceTree = "<group>"; };
 		348D1DC82A1340F400602165 /* LoginInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInteractor.swift; sourceTree = "<group>"; };
 		348D7BEB2A8D967F003632D9 /* TuneInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TuneInteractor.swift; sourceTree = "<group>"; };
-		348FA5682A676EB500BC51D4 /* ZodiacSelectionTemplate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZodiacSelectionTemplate.swift; sourceTree = "<group>"; };
+		348FA5682A676EB500BC51D4 /* CrystalSelectionTemplate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrystalSelectionTemplate.swift; sourceTree = "<group>"; };
 		349236D22A99B66E00079636 /* ACYHomeImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ACYHomeImage.swift; sourceTree = "<group>"; };
 		349236D62A9A53F200079636 /* DateSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateSection.swift; sourceTree = "<group>"; };
+		349492DE2ACA4CB20055D007 /* Text+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Text+Extension.swift"; sourceTree = "<group>"; };
 		349CA6F52A94E5A0009F8B27 /* ACYDualButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ACYDualButtonStyle.swift; sourceTree = "<group>"; };
 		349CA6F72A95010E009F8B27 /* AicyCashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AicyCashView.swift; sourceTree = "<group>"; };
 		349CA6F92A950124009F8B27 /* OracleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OracleView.swift; sourceTree = "<group>"; };
@@ -365,12 +383,12 @@
 		34AE9A372A868CCC00560F52 /* SplashViewTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewTest.swift; sourceTree = "<group>"; };
 		34AE9A3B2A868D0C00560F52 /* OnboardingViewTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewTest.swift; sourceTree = "<group>"; };
 		34AE9A3E2A868D1A00560F52 /* LoginViewTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewTest.swift; sourceTree = "<group>"; };
-		34AE9A402A868D2800560F52 /* ZodiacSelectionTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZodiacSelectionTest.swift; sourceTree = "<group>"; };
+		34AE9A402A868D2800560F52 /* CrystalSelectionTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrystalSelectionTest.swift; sourceTree = "<group>"; };
 		34AE9A422A868D3400560F52 /* RegisterViewTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewTest.swift; sourceTree = "<group>"; };
 		34AE9A442A868D4100560F52 /* AscendantSelectionViewTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AscendantSelectionViewTest.swift; sourceTree = "<group>"; };
 		34AFB03F2A77CC1600BBCC9C /* ExecutiveServerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExecutiveServerManager.swift; sourceTree = "<group>"; };
 		34AFB0412A77CC7400BBCC9C /* ZodiacServerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZodiacServerManager.swift; sourceTree = "<group>"; };
-		34AFB04F2A77CDD400BBCC9C /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		34AFB04F2A77CDD400BBCC9C /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		34AFB0512A77CDDA00BBCC9C /* LoveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoveView.swift; sourceTree = "<group>"; };
 		34AFB0532A77CDE400BBCC9C /* GalaxyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalaxyView.swift; sourceTree = "<group>"; };
 		34AFB0552A77CDEA00BBCC9C /* MysticView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MysticView.swift; sourceTree = "<group>"; };
@@ -395,14 +413,16 @@
 		34C11DA72A64A80A00D1F7DE /* ACYTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ACYTextField.swift; sourceTree = "<group>"; };
 		34C11DAB2A64CF7500D1F7DE /* ACYTextFieldStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ACYTextFieldStyle.swift; sourceTree = "<group>"; };
 		34C212D22A8EE38400C8EB0A /* TuneServerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TuneServerManager.swift; sourceTree = "<group>"; };
+		34C39A652AC4F10800DA69EA /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		34C44AEF2A10B01E00702720 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		34CA22A32A8E7E7E002817EB /* TuneColumn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TuneColumn.swift; sourceTree = "<group>"; };
 		34CC469F2AA11B8E00622526 /* ACYZodiacEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ACYZodiacEntity.swift; sourceTree = "<group>"; };
 		34D858402AA778DA00560AFA /* UpdatesTemplate.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = UpdatesTemplate.md; sourceTree = "<group>"; };
+		34DAC0362AA9F00700465D21 /* (0.129)Subscrpition.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "(0.129)Subscrpition.md"; sourceTree = "<group>"; };
 		34DCD5D22A94D9AC0079C52C /* ACYDualButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ACYDualButton.swift; sourceTree = "<group>"; };
 		34DE3D142A61A69800F45E8F /* ACYAuthBackgroundEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ACYAuthBackgroundEntity.swift; sourceTree = "<group>"; };
 		34E36B802A84E79B002F8748 /* LoginViewUITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewUITest.swift; sourceTree = "<group>"; };
-		34E36B822A84E7A9002F8748 /* ZodiacSelectionViewUITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZodiacSelectionViewUITest.swift; sourceTree = "<group>"; };
+		34E36B822A84E7A9002F8748 /* CrystalSelectionViewUITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrystalSelectionViewUITest.swift; sourceTree = "<group>"; };
 		34E36B842A84E7BC002F8748 /* RegisterViewUITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewUITest.swift; sourceTree = "<group>"; };
 		34E36B862A84E7FE002F8748 /* AscendantSelectionViewUITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AscendantSelectionViewUITest.swift; sourceTree = "<group>"; };
 		34E614532A56228400BCEB09 /* ACYErrorCompletion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ACYErrorCompletion.swift; sourceTree = "<group>"; };
@@ -446,6 +466,7 @@
 			files = (
 				349CA6F02A94E38B009F8B27 /* FirebaseAuth in Frameworks */,
 				349CA6F22A94E38B009F8B27 /* FirebaseFirestore in Frameworks */,
+				34C39A662AC4F10800DA69EA /* StoreKit.framework in Frameworks */,
 				349CA6F42A94E38B009F8B27 /* FirebaseStorage in Frameworks */,
 				34FE01AA2A9F1E2C008210C6 /* SwiftyTranslate in Frameworks */,
 			);
@@ -498,7 +519,7 @@
 		3401C8742A11D68D00BD368A /* Firebase */ = {
 			isa = PBXGroup;
 			children = (
-				3401C8752A11D69A00BD368A /* AuthServerManager.swift */,
+				3401C8752A11D69A00BD368A /* UserServerManager.swift */,
 				34AFB03F2A77CC1600BBCC9C /* ExecutiveServerManager.swift */,
 				34AFB0412A77CC7400BBCC9C /* ZodiacServerManager.swift */,
 				34C212D22A8EE38400C8EB0A /* TuneServerManager.swift */,
@@ -514,7 +535,7 @@
 				34470E362A87FC35005A9040 /* homeHelperView */,
 				340369C82A8BDCDE004CFA1A /* mysticHelperView */,
 				3478C4D72A8DB9D7003F412D /* galaxyHelperView */,
-				349CA70F2A953E07009F8B27 /* settingsHelperView */,
+				349CA70F2A953E07009F8B27 /* profileHelperView */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -546,6 +567,7 @@
 				340369CE2A8BE08C004CFA1A /* PalmistryStarterView.swift */,
 				340369D02A8C3A27004CFA1A /* CrystalGazingStarterView.swift */,
 				3445AEE42A8CD8DD0066996B /* StarterIndexView.swift */,
+				341DBCDA2ABCAEDA0095B5F5 /* StarterIndexLogo.swift */,
 			);
 			path = mysticHelperView;
 			sourceTree = "<group>";
@@ -564,8 +586,8 @@
 				34828038296BB56000D3BA9F /* General.xcassets */,
 				34B4D7652A8992BD001F2C8E /* Mystic.xcassets */,
 				3407544E2A0FF12800E6B8D4 /* Color.xcassets */,
-				340754522A0FF18300E6B8D4 /* Horoscope.xcassets */,
 				34B4D7682A89933C001F2C8E /* Content.xcassets */,
+				341DBCD82ABCA4630095B5F5 /* Spirituals.xcassets */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
@@ -578,7 +600,7 @@
 				34AFB0472A77CD7E00BBCC9C /* mysticPresenter */,
 				34AFB0492A77CD8600BBCC9C /* galaxyPresenter */,
 				34AFB04A2A77CD8900BBCC9C /* lovePresenter */,
-				34AFB0482A77CD8300BBCC9C /* settingsPresenter */,
+				34AFB0482A77CD8300BBCC9C /* profilePresenter */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -591,7 +613,7 @@
 				34AFB0462A77CD6A00BBCC9C /* mysticInteractor */,
 				34AFB0442A77CD5E00BBCC9C /* galaxyInteractor */,
 				34AFB0432A77CD5A00BBCC9C /* loveInteractor */,
-				34AFB0452A77CD6500BBCC9C /* settingsInteractor */,
+				34AFB0452A77CD6500BBCC9C /* profileInteractor */,
 			);
 			path = Interactor;
 			sourceTree = "<group>";
@@ -604,7 +626,7 @@
 				34AFB04B2A77CDA300BBCC9C /* mysticView */,
 				34AFB04C2A77CDA900BBCC9C /* galaxyView */,
 				34AFB04D2A77CDAD00BBCC9C /* loveView */,
-				34AFB04E2A77CDAE00BBCC9C /* settingsView */,
+				34AFB04E2A77CDAE00BBCC9C /* profileView */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -696,6 +718,7 @@
 				348D1DC22A133CBF00602165 /* View+Extension.swift */,
 				34AE56142A148204009DA69E /* Font+Extension.swift */,
 				345D56D92A166A0B0037F92B /* Double+Extension.swift */,
+				349492DE2ACA4CB20055D007 /* Text+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -724,7 +747,7 @@
 			children = (
 				343A67DB2A84DB8F00CF984D /* OnboardingViewUITest.swift */,
 				34E36B802A84E79B002F8748 /* LoginViewUITest.swift */,
-				34E36B822A84E7A9002F8748 /* ZodiacSelectionViewUITest.swift */,
+				34E36B822A84E7A9002F8748 /* CrystalSelectionViewUITest.swift */,
 				34E36B842A84E7BC002F8748 /* RegisterViewUITest.swift */,
 				34E36B862A84E7FE002F8748 /* AscendantSelectionViewUITest.swift */,
 			);
@@ -737,8 +760,10 @@
 				345D56CC2A14AF160037F92B /* ACYButton.swift */,
 				345EBE902A64212700E3895D /* ACYAlternativeButton.swift */,
 				344BDFA22A645A3F001738B9 /* ACYPassButton.swift */,
-				343FAEFD2A6340A50084DEAD /* ACYAlertMinorButton.swift */,
+				343FAEFD2A6340A50084DEAD /* ACYMinorButton.swift */,
 				34DCD5D22A94D9AC0079C52C /* ACYDualButton.swift */,
+				346A972D2AC81C1600B0B1BB /* ACYSectionButton.swift */,
+				34321AF32AC9078600D5BCEF /* ACYNextButton.swift */,
 			);
 			path = Button;
 			sourceTree = "<group>";
@@ -768,7 +793,7 @@
 				3401C8722A11D57E00BD368A /* SplashInteractor.swift */,
 				348D1DC62A1340E700602165 /* OnboardingInteractor.swift */,
 				348D1DC82A1340F400602165 /* LoginInteractor.swift */,
-				347BD9AB2A674FE3001A251B /* ZodiacSelectionInteractor.swift */,
+				347BD9AB2A674FE3001A251B /* CrystalSelectionInteractor.swift */,
 				347BD9B82A675185001A251B /* RegisterInteractor.swift */,
 				347BD9B62A67516D001A251B /* AscendantSelectionInteractor.swift */,
 				347BD9BA2A675199001A251B /* AttentionInteractor.swift */,
@@ -782,7 +807,7 @@
 				3400E6AE2A10A86600DF32B3 /* SplashPresenter.swift */,
 				3401C88F2A12A32000BD368A /* OnboardingPresenter.swift */,
 				3401C8912A12A34300BD368A /* LoginPresenter.swift */,
-				347BD9A92A674FBA001A251B /* ZodiacSelectionPresenter.swift */,
+				347BD9A92A674FBA001A251B /* CrystalSelectionPresenter.swift */,
 				347BD9C02A6751C2001A251B /* RegisterPresenter.swift */,
 				347BD9BE2A6751B7001A251B /* AscendantSelectionPresenter.swift */,
 				347BD9BC2A6751A9001A251B /* AttentionPresenter.swift */,
@@ -807,6 +832,8 @@
 				344BDFA42A645A4B001738B9 /* ACYPassButtonStyle.swift */,
 				343FAF002A6340D60084DEAD /* ACYMinorButtonStyle.swift */,
 				349CA6F52A94E5A0009F8B27 /* ACYDualButtonStyle.swift */,
+				346A972F2AC81C1C00B0B1BB /* ACYSectionButtonStyle.swift */,
+				34321AF52AC9078E00D5BCEF /* ACYNextButtonStyle.swift */,
 			);
 			path = Style;
 			sourceTree = "<group>";
@@ -824,7 +851,7 @@
 		345D56DB2A1670960037F92B /* authHelperView */ = {
 			isa = PBXGroup;
 			children = (
-				348FA5682A676EB500BC51D4 /* ZodiacSelectionTemplate.swift */,
+				348FA5682A676EB500BC51D4 /* CrystalSelectionTemplate.swift */,
 			);
 			path = authHelperView;
 			sourceTree = "<group>";
@@ -837,7 +864,7 @@
 				34664DBA2A81F6B2007295E5 /* MysticRouter.swift */,
 				34664DBC2A81F6E9007295E5 /* GalaxyRouter.swift */,
 				34664DBE2A81F6F2007295E5 /* LoveRouter.swift */,
-				34664DC02A81F6FB007295E5 /* SettingsRouter.swift */,
+				34664DC02A81F6FB007295E5 /* ProfileRouter.swift */,
 			);
 			path = Router;
 			sourceTree = "<group>";
@@ -870,7 +897,7 @@
 				34AFB0552A77CDEA00BBCC9C /* MysticView.swift */,
 				34AFB0532A77CDE400BBCC9C /* GalaxyView.swift */,
 				34AFB0512A77CDDA00BBCC9C /* LoveView.swift */,
-				34AFB04F2A77CDD400BBCC9C /* SettingsView.swift */,
+				34AFB04F2A77CDD400BBCC9C /* ProfileView.swift */,
 			);
 			path = homeView;
 			sourceTree = "<group>";
@@ -906,6 +933,7 @@
 				3407548F2A10990700E6B8D4 /* AiachyUITests */,
 				3407549E2A10993100E6B8D4 /* AiachyTests */,
 				34828032296BB56000D3BA9F /* Products */,
+				34C39A642AC4F10800DA69EA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -951,20 +979,22 @@
 			path = TabBar;
 			sourceTree = "<group>";
 		};
-		349CA70F2A953E07009F8B27 /* settingsHelperView */ = {
+		349CA70F2A953E07009F8B27 /* profileHelperView */ = {
 			isa = PBXGroup;
 			children = (
 				349CA7102A953E41009F8B27 /* LanguageColumn.swift */,
+				341423362AC8E50400F99AD2 /* OracleColumns.swift */,
 			);
-			path = settingsHelperView;
+			path = profileHelperView;
 			sourceTree = "<group>";
 		};
-		349CA7122A953EFC009F8B27 /* settingsEntity */ = {
+		349CA7122A953EFC009F8B27 /* profileEntity */ = {
 			isa = PBXGroup;
 			children = (
 				349CA7132A953F3E009F8B27 /* ACYLanguageEntity.swift */,
+				341423382AC8EE9300F99AD2 /* ACYOracleColumnsEntity.swift */,
 			);
-			path = settingsEntity;
+			path = profileEntity;
 			sourceTree = "<group>";
 		};
 		349CA7152A9659C1009F8B27 /* Language */ = {
@@ -994,7 +1024,7 @@
 				340754732A100DDD00E6B8D4 /* SplashView.swift */,
 				3401C88D2A12A30B00BD368A /* OnboardingView.swift */,
 				3401C8932A12A34B00BD368A /* LoginView.swift */,
-				347BD9A72A674F84001A251B /* ZodiacSelectionView.swift */,
+				347BD9A72A674F84001A251B /* CrystalSelectionView.swift */,
 				347BD9AF2A67506D001A251B /* RegisterView.swift */,
 				347BD9B12A6750AE001A251B /* AscendantSelectionView.swift */,
 				347BD9B32A675100001A251B /* AttentionView.swift */,
@@ -1025,7 +1055,7 @@
 			children = (
 				34AE9A3B2A868D0C00560F52 /* OnboardingViewTest.swift */,
 				34AE9A3E2A868D1A00560F52 /* LoginViewTest.swift */,
-				34AE9A402A868D2800560F52 /* ZodiacSelectionTest.swift */,
+				34AE9A402A868D2800560F52 /* CrystalSelectionTest.swift */,
 				34AE9A422A868D3400560F52 /* RegisterViewTest.swift */,
 				34AE9A442A868D4100560F52 /* AscendantSelectionViewTest.swift */,
 			);
@@ -1056,7 +1086,7 @@
 			path = galaxyInteractor;
 			sourceTree = "<group>";
 		};
-		34AFB0452A77CD6500BBCC9C /* settingsInteractor */ = {
+		34AFB0452A77CD6500BBCC9C /* profileInteractor */ = {
 			isa = PBXGroup;
 			children = (
 				349CA6FF2A950177009F8B27 /* AicyCashInteractor.swift */,
@@ -1064,7 +1094,7 @@
 				349CA7032A95019C009F8B27 /* LanguageInteractor.swift */,
 				349CA7052A9501A4009F8B27 /* ThemeInteractor.swift */,
 			);
-			path = settingsInteractor;
+			path = profileInteractor;
 			sourceTree = "<group>";
 		};
 		34AFB0462A77CD6A00BBCC9C /* mysticInteractor */ = {
@@ -1087,7 +1117,7 @@
 			path = mysticPresenter;
 			sourceTree = "<group>";
 		};
-		34AFB0482A77CD8300BBCC9C /* settingsPresenter */ = {
+		34AFB0482A77CD8300BBCC9C /* profilePresenter */ = {
 			isa = PBXGroup;
 			children = (
 				349CA7072A9501E0009F8B27 /* AicyCashPresenter.swift */,
@@ -1095,7 +1125,7 @@
 				349CA70B2A9501F3009F8B27 /* LanguagePresenter.swift */,
 				349CA70D2A9501FC009F8B27 /* ThemePresenter.swift */,
 			);
-			path = settingsPresenter;
+			path = profilePresenter;
 			sourceTree = "<group>";
 		};
 		34AFB0492A77CD8600BBCC9C /* galaxyPresenter */ = {
@@ -1139,7 +1169,7 @@
 			path = loveView;
 			sourceTree = "<group>";
 		};
-		34AFB04E2A77CDAE00BBCC9C /* settingsView */ = {
+		34AFB04E2A77CDAE00BBCC9C /* profileView */ = {
 			isa = PBXGroup;
 			children = (
 				349CA6F72A95010E009F8B27 /* AicyCashView.swift */,
@@ -1147,7 +1177,7 @@
 				349CA6FB2A95012B009F8B27 /* LanguageView.swift */,
 				349CA6FD2A950133009F8B27 /* ThemeView.swift */,
 			);
-			path = settingsView;
+			path = profileView;
 			sourceTree = "<group>";
 		};
 		34B156142A70BAEB00E95B8C /* ACYRoadMap */ = {
@@ -1168,7 +1198,7 @@
 				34DE3D142A61A69800F45E8F /* ACYAuthBackgroundEntity.swift */,
 				34AE56082A1474D1009DA69E /* ACYAuthOnboardingEntity.swift */,
 				3478B3022A6AED6A00D94F67 /* Place.swift */,
-				341D3BDB2A67866E00F0F011 /* ZodiacSelect.swift */,
+				341D3BDB2A67866E00F0F011 /* CrystalSelectEntity.swift */,
 			);
 			path = authEntity;
 			sourceTree = "<group>";
@@ -1206,6 +1236,14 @@
 			path = Style;
 			sourceTree = "<group>";
 		};
+		34C39A642AC4F10800DA69EA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				34C39A652AC4F10800DA69EA /* StoreKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		34CD40882A85142F007186CE /* SpecialViewUITest */ = {
 			isa = PBXGroup;
 			children = (
@@ -1218,6 +1256,7 @@
 		34D8583F2AA7784900560AFA /* Updates */ = {
 			isa = PBXGroup;
 			children = (
+				34DAC0362AA9F00700465D21 /* (0.129)Subscrpition.md */,
 				3405C20D2A8499B100424FC8 /* (0.09)HeartsOfAstrology.md */,
 				34D858402AA778DA00560AFA /* UpdatesTemplate.md */,
 			);
@@ -1251,7 +1290,7 @@
 				34BE8D972A894573007361D0 /* homeEntity */,
 				3445AEE32A8CD8760066996B /* mysticEntity */,
 				3405C20E2A84AC2A00424FC8 /* galaxyEntity */,
-				349CA7122A953EFC009F8B27 /* settingsEntity */,
+				349CA7122A953EFC009F8B27 /* profileEntity */,
 			);
 			path = ViewEntity;
 			sourceTree = "<group>";
@@ -1400,13 +1439,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				34DAC0372AA9F00700465D21 /* (0.129)Subscrpition.md in Resources */,
 				3482803C296BB56000D3BA9F /* Preview Assets.xcassets in Resources */,
+				341DBCD92ABCA4640095B5F5 /* Spirituals.xcassets in Resources */,
 				3407547B2A102B9C00E6B8D4 /* OldStandardTT-Italic.ttf in Resources */,
 				34B4D7662A8992BD001F2C8E /* Mystic.xcassets in Resources */,
 				3405C2082A83D17700424FC8 /* GoogleService-Info.plist in Resources */,
 				3407547C2A102B9C00E6B8D4 /* OldStandardTT-Bold.ttf in Resources */,
 				3407544F2A0FF12800E6B8D4 /* Color.xcassets in Resources */,
-				340754532A0FF18300E6B8D4 /* Horoscope.xcassets in Resources */,
 				34B4D7692A89933C001F2C8E /* Content.xcassets in Resources */,
 				3401B3A82A98316000D6831D /* Oracle.storekit in Resources */,
 				340754812A102BBB00E6B8D4 /* CinzelDecorative-Bold.ttf in Resources */,
@@ -1430,7 +1470,7 @@
 				34E36B872A84E7FE002F8748 /* AscendantSelectionViewUITest.swift in Sources */,
 				343A67DC2A84DB8F00CF984D /* OnboardingViewUITest.swift in Sources */,
 				34BE64F12A862A4C003FDF17 /* TextHelper.swift in Sources */,
-				34E36B832A84E7A9002F8748 /* ZodiacSelectionViewUITest.swift in Sources */,
+				34E36B832A84E7A9002F8748 /* CrystalSelectionViewUITest.swift in Sources */,
 				34E36B852A84E7BC002F8748 /* RegisterViewUITest.swift in Sources */,
 				343A67D82A84DB6600CF984D /* SplashViewUITest.swift in Sources */,
 				34BF0CCA2A8664EF0027F985 /* AiachyUITestsHelper.swift in Sources */,
@@ -1445,7 +1485,7 @@
 				340754A02A10993100E6B8D4 /* AiachyTests.swift in Sources */,
 				34AE9A432A868D3400560F52 /* RegisterViewTest.swift in Sources */,
 				34AE9A452A868D4100560F52 /* AscendantSelectionViewTest.swift in Sources */,
-				34AE9A412A868D2800560F52 /* ZodiacSelectionTest.swift in Sources */,
+				34AE9A412A868D2800560F52 /* CrystalSelectionTest.swift in Sources */,
 				34AE9A3C2A868D0C00560F52 /* OnboardingViewTest.swift in Sources */,
 				34AE9A3F2A868D1A00560F52 /* LoginViewTest.swift in Sources */,
 				34AE9A382A868CCC00560F52 /* SplashViewTest.swift in Sources */,
@@ -1464,12 +1504,12 @@
 				344BDFA32A645A3F001738B9 /* ACYPassButton.swift in Sources */,
 				349CA6F62A94E5A0009F8B27 /* ACYDualButtonStyle.swift in Sources */,
 				34C212D32A8EE38400C8EB0A /* TuneServerManager.swift in Sources */,
-				343FAEFE2A6340A50084DEAD /* ACYAlertMinorButton.swift in Sources */,
+				343FAEFE2A6340A50084DEAD /* ACYMinorButton.swift in Sources */,
 				349CA7172A9659D3009F8B27 /* EnglishLanguage.swift in Sources */,
 				34AE560F2A147B05009DA69E /* FontHelper.swift in Sources */,
 				3445AEE72A8CDC380066996B /* ACYmysticStarterLogoEntity.swift in Sources */,
 				34FE01AC2A9F58F2008210C6 /* TarotInteractor.swift in Sources */,
-				341D3BDC2A67866E00F0F011 /* ZodiacSelect.swift in Sources */,
+				341D3BDC2A67866E00F0F011 /* CrystalSelectEntity.swift in Sources */,
 				34AFB0622A77CE3100BBCC9C /* GalaxyPresenter.swift in Sources */,
 				34AFB0542A77CDE400BBCC9C /* GalaxyView.swift in Sources */,
 				34470E382A87FC58005A9040 /* ACYTabBar.swift in Sources */,
@@ -1483,8 +1523,9 @@
 				34AFB0582A77CE0400BBCC9C /* MysticInteractor.swift in Sources */,
 				34664DBF2A81F6F2007295E5 /* LoveRouter.swift in Sources */,
 				3461DEA92A967B37002EA6A2 /* EnglishUKLanguage.swift in Sources */,
-				348FA5692A676EB500BC51D4 /* ZodiacSelectionTemplate.swift in Sources */,
-				34AFB0502A77CDD400BBCC9C /* SettingsView.swift in Sources */,
+				348FA5692A676EB500BC51D4 /* CrystalSelectionTemplate.swift in Sources */,
+				349492DF2ACA4CB20055D007 /* Text+Extension.swift in Sources */,
+				34AFB0502A77CDD400BBCC9C /* ProfileView.swift in Sources */,
 				34AFB0602A77CE2900BBCC9C /* MysticPresenter.swift in Sources */,
 				343C17F62A16894C000F1E28 /* AuthRouter.swift in Sources */,
 				348D7BEC2A8D967F003632D9 /* TuneInteractor.swift in Sources */,
@@ -1508,22 +1549,23 @@
 				34FE01A72A9D11CB008210C6 /* ACYStatusEntity.swift in Sources */,
 				340369D12A8C3A27004CFA1A /* CrystalGazingStarterView.swift in Sources */,
 				344994342A17606A0042CF01 /* HomeView.swift in Sources */,
-				347BD9AC2A674FE3001A251B /* ZodiacSelectionInteractor.swift in Sources */,
+				347BD9AC2A674FE3001A251B /* CrystalSelectionInteractor.swift in Sources */,
 				34EE1D8E2A72916C002F2FE2 /* CoreDataManager.swift in Sources */,
 				349CA7142A953F3E009F8B27 /* ACYLanguageEntity.swift in Sources */,
 				340369CB2A8BDCF5004CFA1A /* TarotStarterView.swift in Sources */,
 				345D56D02A1621B70037F92B /* ACYButtonStyle.swift in Sources */,
 				34C11DA82A64A80A00D1F7DE /* ACYTextField.swift in Sources */,
 				347BD9A22A673ED4001A251B /* ACYUserAllEntity.swift in Sources */,
-				347BD9A82A674F84001A251B /* ZodiacSelectionView.swift in Sources */,
+				347BD9A82A674F84001A251B /* CrystalSelectionView.swift in Sources */,
 				3461DEA52A967B19002EA6A2 /* ArabicLanguage.swift in Sources */,
 				345EBE932A64217200E3895D /* ACYAlternativeButtonStyle.swift in Sources */,
 				348D1DBD2A13163800602165 /* AuthBackground.swift in Sources */,
 				348D1DC32A133CBF00602165 /* View+Extension.swift in Sources */,
-				347BD9AA2A674FBA001A251B /* ZodiacSelectionPresenter.swift in Sources */,
+				347BD9AA2A674FBA001A251B /* CrystalSelectionPresenter.swift in Sources */,
+				346A972E2AC81C1600B0B1BB /* ACYSectionButton.swift in Sources */,
 				34C11DAC2A64CF7500D1F7DE /* ACYTextFieldStyle.swift in Sources */,
 				344994362A17608C0042CF01 /* HomeRouter.swift in Sources */,
-				34664DC12A81F6FB007295E5 /* SettingsRouter.swift in Sources */,
+				34664DC12A81F6FB007295E5 /* ProfileRouter.swift in Sources */,
 				3461DEAF2A967B62002EA6A2 /* GermanLanguage.swift in Sources */,
 				34BC51602A12E32200455842 /* ACYPrintCompletion.swift in Sources */,
 				349CA6FA2A950124009F8B27 /* OracleView.swift in Sources */,
@@ -1548,10 +1590,13 @@
 				34AE560C2A1475F8009DA69E /* TextHelper.swift in Sources */,
 				34EA337F2A18D4000042C1D6 /* ACYAlertView.swift in Sources */,
 				349CA7192A965E2A009F8B27 /* TurkishLanguage.swift in Sources */,
+				341423372AC8E50400F99AD2 /* OracleColumns.swift in Sources */,
 				347BD9BF2A6751B7001A251B /* AscendantSelectionPresenter.swift in Sources */,
 				3461DEA72A967B22002EA6A2 /* DanishLanguage.swift in Sources */,
 				34FE01A32A9D0143008210C6 /* ACYAscendiantEntity.swift in Sources */,
-				3401C8762A11D69A00BD368A /* AuthServerManager.swift in Sources */,
+				341423392AC8EE9300F99AD2 /* ACYOracleColumnsEntity.swift in Sources */,
+				3401C8762A11D69A00BD368A /* UserServerManager.swift in Sources */,
+				341DBCDB2ABCAEDA0095B5F5 /* StarterIndexLogo.swift in Sources */,
 				349CA70C2A9501F3009F8B27 /* LanguagePresenter.swift in Sources */,
 				3461DEB92A967BA2002EA6A2 /* GreekLanguage.swift in Sources */,
 				347BD9B72A67516D001A251B /* AscendantSelectionInteractor.swift in Sources */,
@@ -1602,6 +1647,7 @@
 				34FE01B82A9F59AA008210C6 /* TarotPresenter.swift in Sources */,
 				3400E6AF2A10A86600DF32B3 /* SplashPresenter.swift in Sources */,
 				34664DBD2A81F6E9007295E5 /* GalaxyRouter.swift in Sources */,
+				34321AF42AC9078600D5BCEF /* ACYNextButton.swift in Sources */,
 				34AFB0662A77CE3E00BBCC9C /* SettingsPresenter.swift in Sources */,
 				3461DEAB2A967B47002EA6A2 /* EnglishUSALanguage.swift in Sources */,
 				3478B3032A6AED6A00D94F67 /* Place.swift in Sources */,
@@ -1610,10 +1656,12 @@
 				34AFB05A2A77CE0E00BBCC9C /* GalaxyInteractor.swift in Sources */,
 				340369CD2A8BDD75004CFA1A /* ACYMysticTitleAndDescriptionText.swift in Sources */,
 				347BD9C12A6751C2001A251B /* RegisterPresenter.swift in Sources */,
+				346A97302AC81C1C00B0B1BB /* ACYSectionButtonStyle.swift in Sources */,
 				3401B3AC2A987E2500D6831D /* ACYStoreEntity.swift in Sources */,
 				3478C4D92A8DB9EC003F412D /* GalaxyColumn.swift in Sources */,
 				348D1DBF2A1318C900602165 /* ImageHandler.swift in Sources */,
 				347BD9B92A675185001A251B /* RegisterInteractor.swift in Sources */,
+				34321AF62AC9078E00D5BCEF /* ACYNextButtonStyle.swift in Sources */,
 				3401C86F2A117C0A00BD368A /* Color+Extension.swift in Sources */,
 				347BD9B42A675100001A251B /* AttentionView.swift in Sources */,
 			);
@@ -1835,7 +1883,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_ASSET_PATHS = "\"Aiachy/Preview Content\"";
 				DEVELOPMENT_TEAM = MW2482B7WH;
 				ENABLE_PREVIEWS = YES;
@@ -1853,7 +1901,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.09;
+				MARKETING_VERSION = 0.1.21;
 				PRODUCT_BUNDLE_IDENTIFIER = Azman.Aiachy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -1872,7 +1920,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_ASSET_PATHS = "\"Aiachy/Preview Content\"";
 				DEVELOPMENT_TEAM = MW2482B7WH;
 				ENABLE_PREVIEWS = YES;
@@ -1890,7 +1938,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.09;
+				MARKETING_VERSION = 0.1.21;
 				PRODUCT_BUNDLE_IDENTIFIER = Azman.Aiachy;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";

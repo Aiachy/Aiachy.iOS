@@ -56,7 +56,8 @@ struct ACYPrintCompletion {
         case zodiacDataVersionFetch
         case zodiacDataVersionSame
         case zodiacDataVersionUpdated
-        func printDataFetching() -> String {
+        case storeKitProductsFetching
+        func printDataFetching(data fetchedData: String? = nil) -> String {
             switch self {
             case .userFound:
                 return "AiachySystem: The user's information successful found on our servers."
@@ -72,6 +73,8 @@ struct ACYPrintCompletion {
                 return "AiachySystem: Daily zodiac data version is no need updated."
             case .zodiacDataVersionUpdated:
                 return "AiachySystem: Zodiac version updated"
+            case .storeKitProductsFetching:
+                return "AiachySystem: Fetched StoreKit product \(fetchedData ?? "NO DATA")"
             }
         }
     }
@@ -115,11 +118,11 @@ struct ACYPrintCompletion {
         }
     }
     /// UserZodaic Print
-    enum UserZodiacPrint {
+    enum UserSpiritualPrint {
         case zodiac
         case ascendant
         func printUserZodiac(_ T: AiachyState) -> String {
-            let newT = T.user.userZodiac
+            let newT = T.user.userSpiritual
             switch self {
             case .zodiac:
                 return "AiachySystem: User zodiac is \(newT.wrappedZodiac)"
@@ -153,7 +156,7 @@ struct ACYPrintCompletion {
             case .version:
                 return "AiachyStytem: User Aiachy info version is \(newT.wrappedVersion)"
             case .zodiacDataVersion:
-                return "AiachyStytem: User Aiachy info zodiac data version is \(newT.wrappedZodiacDataVersion)"
+                return "AiachyStytem: User Aiachy info zodiac data version is \(newT.aiachyDataInfo.wrappedZodiacDataVersion)"
             case .theme:
                 return "AiachyStytem: User Aiachy info is theme \(newT.wrappedTheme)"
             }

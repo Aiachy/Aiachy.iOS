@@ -22,6 +22,18 @@ struct TextHelper {
             case preRegistration
             case logout
         }
+        
+        enum contentButton {
+            case subscribed
+            case subscribeOracle
+            case subscribeOccult
+        }
+        
+        enum sectionButton {
+            case oracle
+            case occult
+        }
+        
         // GeneralCompletion - flag
         enum flag {
             case unitedArabEmirates
@@ -97,40 +109,44 @@ struct TextHelper {
     }
     //MARK:  TextHelper - AuthCompletion -
     struct AuthCompletion {
-        // AuthCompletion - Auth
-        enum auth {
+        //NextPatchTODO: Make groub title & description
+        // AuthCompletion - Title
+        enum title {
             case loginScreenTitle
-            case zodiacSelectionTitle
+            case crystalSelectionTitle
             case registerTitle
             case ascendantSelectionTitle
             case attentionTitle
+        }
+        // AuthCompletion - Description
+        enum description {
+            case crystalSelectionDescription
             case loginScreenDescription
-            case registerDescription
             case ascendantSelectionDescription
             case ascendantSelectionViewGuideDescription
+            case registerDescription
             case attentionDescription
             case attentionSecondDescription
         }
         // AuthCompletion - Onboarding
         enum onboarding {
-            case heartofAstrologyTitle
+            case heartofMysticTitle
+            case heartofMysticDescription
             case secretOfTheStarsTitle
-            case yourFutureTitle
-            case heartofAstrologyDescription
             case secretOfTheStarsDescription
+            case yourFutureTitle
             case yourFutureDescription
-            case privacyPolicy
         }
         enum helperAuth {
             case clock
+            case privacyPolicy
         }
     }
     //MARK: - TextHelper - HomeCompletion -
     struct HomeCompletion {
         // HomeCompletion - home
         enum home {
-            case horoscope
-            case ascendant
+            case aiachy
             case compatibility
             case notUsable
             case notHaveAscendant
@@ -204,45 +220,71 @@ struct TextHelper {
         }
         
         enum oracle {
-            case packageZodiacTitle
-            case packageZodiacItem1
-            case packageZodiacItem2
-            case packageZodiacItem3
-            case packageZodiacPrice
-            case packageOracleTitle
-            case packageOracleItem1
-            case packageOracleItem2
-            case packageOracleItem3
-            case packageOracleItem4
+            case universalWisdomTitle
+            case universalWisdomOccult1
+            case universalWisdomOccult2
+            case universalWisdomOccult3
+            case universalWisdomOccult4
+            case universalWisdomOracle1
+            case universalWisdomOracle2
+            case universalWisdomOracle3
+            case universalWisdomOracle4
+            case thresholdOfTheSoulTitle
+            case thresholdOfTheSoulOccult1
+            case thresholdOfTheSoulOccult2
+            case thresholdOfTheSoulOccult3
+            case thresholdOfTheSoulOccult4
+            case thresholdOfTheSoulOracle1
+            case thresholdOfTheSoulOracle2
+            case thresholdOfTheSoulOracle3
+            case thresholdOfTheSoulOracle4
         }
     }
     // MARK: - TextHelper - ZodiacCompletion -
-    struct ZodiacCompletion {
+    struct SpiritualCompletion {
+        // ZodiacCompletion - Crystal
+        enum crystal {
+            case ariesCrystal
+            case taurusCrystal
+            case geminiCrystal
+            case cancerCrystal
+            case leoCrystal
+            case virgoCrystal
+            case libraCrystal
+            case scorpioCrystal
+            case sagittariusCrystal
+            case capricornCrystal
+            case aquariusCrystal
+            case piscesCrystal
+        }
         // ZodiacCompletion - Zodiac
         enum zodiac {
-            case piscesZodiacName
+            case aries
+            case taurus
+            case gemini
+            case cancer
+            case leo
+            case virgo
+            case libra
+            case scorpio
+            case sagittarius
+            case capricorn
+            case aquarius
+            case pisces
+        }
+        // ZodiacCompletion - DateZodiac
+        enum dateZodiac {
             case piscesZodiacDate
-            case ariesZodiacName
             case ariesZodiacDate
-            case aquariusZodiacName
             case aquariusZodiacDate
-            case geminiZodiacName
             case geminiZodiacDate
-            case libraZodiacName
             case libraZodiacDate
-            case virgoZodiacName
             case virgoZodiacDate
-            case capricornZodiacName
             case capricornZodiacDate
-            case sagittariusZodiacName
             case sagittariusZodiacDate
-            case leoZodiacName
             case leoZodiacDate
-            case scorpioZodiacName
             case scorpioZodiacDate
-            case taurusZodiacName
             case taurusZodiacDate
-            case cancerZodiacName
             case cancerZodiacDate
         }
     }

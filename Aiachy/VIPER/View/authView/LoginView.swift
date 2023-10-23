@@ -48,6 +48,7 @@ struct LoginView: View {
         .makeAccessibilitysForUITest(identifier: "LoginViewID")
     }
 }
+
 //MARK: LoginView - Previews
 #Preview {
     LoginView(aiachy: ACY_PREVIEWS_STATE,
@@ -70,10 +71,10 @@ extension LoginView {
     }
     //MARK: LoginView - Title & Description
     private var titleAndDescription: some View {
-        ACYTitleAndDescriptionText(title: TextHandler.makeAuthString(aiachy: aiachyState,
-                                                                     auth: .loginScreenTitle),
-                                   description: TextHandler.makeAuthString(aiachy: aiachyState,
-                                                                           auth: .loginScreenDescription))
+        ACYTitleAndDescriptionText(title: TextHandler.makeAuthTitleString(aiachy: aiachyState,
+                                                                     title: .loginScreenTitle),
+                                   description: TextHandler.makeAuthDescriptionString(aiachy: aiachyState,
+                                                                           description: .loginScreenDescription))
     }
     
     //MARK: LoginView - textfields
@@ -100,7 +101,7 @@ extension LoginView {
     }
     //MARK: LoginView - loginButton
     private var loginButton: some View {
-        ACYButton(text: .login) {
+        ACYButton(buttonText: .login) {
             presenter.checkForLogin(aiachy: aiachyState) {
                 router.isUserComplateAuthCompletion = true
             }
@@ -110,15 +111,15 @@ extension LoginView {
     var registerButton: some View {
         VStack(spacing: 10) {
             Rectangle()
-                .foregroundColor(.makeAiachyColor(aiachyState, aiachyColor: .firstColor))
+                .foregroundStyle(Color(ColorHandler.makeAiachyColor(aiachyState, aiachyColor: .firstColor)))
                 .frame(height: 1)
                 .padding(.horizontal, ACYdw(aiachyState, d: 0.1))
             Button {
                 router.navigate(to: .zodiacSelectionView)
             } label: {
                 Text(TextHandler.makeGeneralButtonString(aiachy: aiachyState, button: .register))
-                    .font(.aiachyFont(.cinzelBold12))
-                    .foregroundColor(.makeAiachyColor(aiachyState, aiachyColor: .secondColor))
+                    .font(FontHandler.aiachyFont(.cinzelBold12))
+                    .foregroundStyle(Color(ColorHandler.makeAiachyColor(aiachyState, aiachyColor: .secondColor)))
             }
             .makeAccessibilitysForUITest(identifier: "RegisterButtonID")
         }

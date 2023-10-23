@@ -43,7 +43,7 @@ struct AscendantSelectionView: View {
                 hourAndMinutePicker
                 Spacer()
                 //MARK: AscendantSelectionView - Upload value button
-                ACYButton(text: .continue) {
+                ACYButton(buttonText: .continue) {
                     print(presenter.userHour)
                     presenter.checkValues(aiachyState: aiachyState) {
                         router.navigate(to: .attentionView)
@@ -86,10 +86,10 @@ extension AscendantSelectionView {
     }
     //MARK: AscendantSelectionView - Tittle & Description
     private var titleAndDescription: some View {
-        ACYTitleAndDescriptionText(title: TextHandler.makeAuthString(aiachy: aiachyState,
-                                                                     auth: .ascendantSelectionTitle),
-                                   description: TextHandler.makeAuthString(aiachy: aiachyState,
-                                                                           auth: .ascendantSelectionDescription))
+        ACYTitleAndDescriptionText(title: TextHandler.makeAuthTitleString(aiachy: aiachyState,
+                                                                     title: .ascendantSelectionTitle),
+                                   description: TextHandler.makeAuthDescriptionString(aiachy: aiachyState,
+                                                                           description: .ascendantSelectionDescription))
     }
     //MARK: AscendantSelectionView - Choose Location
     private var chooseLocation: some View {
@@ -104,7 +104,7 @@ extension AscendantSelectionView {
             DatePicker("", selection: $presenter.userDate,
                        displayedComponents: .date)
             .datePickerStyle(.wheel)
-            .tint(.makeAiachyColor(aiachyState, aiachyColor: .firstColor))
+            .tint(Color(ColorHandler.makeAiachyColor(aiachyState, aiachyColor: .firstColor)))
             .padding(.horizontal)
         }
     }
@@ -112,7 +112,7 @@ extension AscendantSelectionView {
     private var hourAndMinutePicker: some View {
         HStack {
             Text(TextHandler.makeAuthHelperAuthString(aiachy: aiachyState, helperAuth: .clock))
-                .font(.aiachyFont(.roundedBold16))
+                .font(FontHandler.aiachyFont(.roundedBold16))
             Spacer()
             Picker("Hour", selection: $presenter.userHour) {
                 ForEach(0..<24) { hour in
@@ -133,8 +133,8 @@ extension AscendantSelectionView {
             .makeAccessibilitysForUITest(identifier: "hourAndMinutePickerMINUTEID")
         }
         .padding(.horizontal)
-        .foregroundColor(Color.makeAiachyColor(aiachyState, aiachyColor: .fifthColor))
-        .tint(Color.makeAiachyColor(aiachyState, aiachyColor: .fifthColor))
+        .foregroundStyle(Color(ColorHandler.makeAiachyColor(aiachyState, aiachyColor: .fifthColor)))
+        .tint(Color(ColorHandler.makeAiachyColor(aiachyState, aiachyColor: .fifthColor)))
     }
 }
 
@@ -143,7 +143,7 @@ extension AscendantSelectionView {
     @ViewBuilder
     var sheetView: some View {
         ZStack {
-            Color.makeAiachyColor(aiachyState, aiachyColor: .backgroundColor)
+            Color(ColorHandler.makeAiachyColor(aiachyState, aiachyColor: .backgroundColor))
                 .ignoresSafeArea()
             ScrollView(.vertical, showsIndicators: true) {
                 ACYTextField(textfieldString: $presenter.searchText, errorType: .constant(0), textFieldTitle: .place)
@@ -154,11 +154,11 @@ extension AscendantSelectionView {
                 ForEach(presenter.places) { place in
                     VStack(alignment: .leading) {
                         RoundedRectangle(cornerRadius: 20)
-                            .stroke(Color.makeAiachyColor(aiachyState, aiachyColor: .thirdColor))
+                            .stroke(Color(ColorHandler.makeAiachyColor(aiachyState, aiachyColor: .thirdColor)))
                             .frame(height: 50)
                             .overlay {
                                 Text("\(place.town),\(place.city),\(place.country)")
-                                    .foregroundColor(.makeAiachyColor(aiachyState, aiachyColor: .thirdColor))
+                                    .foregroundStyle(Color(ColorHandler.makeAiachyColor(aiachyState, aiachyColor: .thirdColor)))
                             }
                             .onTapGesture {
                                 presenter.userCountry = place.country

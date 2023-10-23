@@ -1,7 +1,14 @@
-# Server Data
+# DataFlows
 
-## AiachyServerInfo
-    - zodiacDataVersion
+## Executive
+
+### aiachyInfo 
+    - aiachyInfo (String)
+    - isAiachyReady (Bool)
+
+### aiachyDataInfo
+    - zodiacDataVersion (String)
+    - tuneDataVersion (String)
 
 /-------/
 

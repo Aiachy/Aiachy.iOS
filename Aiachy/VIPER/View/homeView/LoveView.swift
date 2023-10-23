@@ -43,15 +43,15 @@ struct LoveView: View {
         .environmentObject(aiachyState)
     }
 }
-//MARK: LoveView - Preview
+//MARK: - LoveView - Preview -
 #Preview {
     LoveView(aiachy: ACY_PREVIEWS_STATE,homeRouter: HomeRouterPresenter(), router: LoveRouterPresenter())
 }
-
+//MARK: - LoveView - extension -
 extension LoveView {
     var button: some View {
         //MARK: LoveView - Button
-        ACYButton(text: .preRegistration) {
+        ACYButton(buttonText: .preRegistration) {
             presenter.makeAlert()
         }
     }

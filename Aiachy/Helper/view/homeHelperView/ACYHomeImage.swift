@@ -56,8 +56,8 @@ extension ACYHomeImage {
             Text(TextHandler.makeHomeString(aiachy: aiachyState, home: .compatibility))
         }
         .padding(.horizontal,5)
-        .font(.aiachyFont(.roundedBold14))
-        .foregroundStyle(Color.makeAiachyColor(aiachyState, aiachyColor: .backgroundColor))
+        .font(FontHandler.aiachyFont(.roundedBold14))
+        .foregroundStyle(Color(ColorHandler.makeAiachyColor(aiachyState, aiachyColor: .backgroundColor)))
     }
     @ViewBuilder
     //MARK: ACYHomeImage - compatibilityZodiacs
@@ -73,40 +73,41 @@ extension ACYHomeImage {
         compatibilityZodiacBackground
             .overlay {
                 HStack(spacing:10) {
-                    compatibilityZodiacImage(compatibilityInt: compatibilityInt)
-                    compatibilityZodiacText(compatibilityInt: compatibilityInt)
+                    compatibilityZodiacImage(zodiac: compatibilityInt)
+                    compatibilityZodiacText(zodiac: compatibilityInt)
                 }
                 .frame(width: ACYdw(aiachyState, d: 0.27), height: ACYdh(aiachyState, d: 0.05))
             }
     }
     //MARK: ACYHomeImage - compatibilityZodiacImage
-    private func compatibilityZodiacImage(compatibilityInt: Int) -> some View {
-        makeImageWithZodiacInt(aiachy: aiachyState, zodiac: compatibilityInt)
+    private func compatibilityZodiacImage(zodiac compatibilityInt: Int) -> some View {
+        makeZodiacImageWithZodiacInt(aiachy: aiachyState, zodiac: compatibilityInt)
             .resizable()
             .scaledToFit()
             .frame(height: ACYdh(aiachyState, d: 0.025))
             .background {
                 Circle()
-                    .stroke(Color.makeAiachyColor(aiachyState, aiachyColor: .fifthColor),lineWidth: 0.3)
+                    .stroke(Color(ColorHandler.makeAiachyColor(aiachyState, aiachyColor: .fifthColor)),lineWidth: 0.3)
                     .frame(width: ACYdh(aiachyState, d: 0.04),height: ACYdh(aiachyState, d: 0.04))
             }
             .frame(width: ACYdh(aiachyState, d: 0.04),height: ACYdh(aiachyState, d: 0.04))
     }
     //MARK: ACYHomeImage - compatibilityZodiacText
-    private func compatibilityZodiacText(compatibilityInt: Int) -> some View {
-        Text(TextHandler.makeTextWithZodiacInt(aiachy: aiachyState, zodiac: compatibilityInt))
-            .font(.aiachyFont(.roundedMedium12))
-            .foregroundStyle(Color.makeAiachyColor(aiachyState, aiachyColor: .fifthColor))
+    private func compatibilityZodiacText(zodiac compatibilityInt: Int) -> some View {
+        Text.makeZodiacTextWithZodiacInt(aiachy: aiachyState, zodiac: compatibilityInt)
+            .font(FontHandler.aiachyFont(.roundedMedium12))
+            .foregroundStyle(Color(ColorHandler.makeAiachyColor(aiachyState, aiachyColor: .fifthColor)))
     }
     //MARK: ACYHomeImage - compatibilityZodiacBackground
     private var compatibilityZodiacBackground: some View {
         RoundedRectangle(cornerRadius: 36)
-            .stroke(Color.makeAiachyColor(aiachyState, aiachyColor: .secondColor), lineWidth: 1)
-            .background{ 
-                Color.makeAiachyColor(aiachyState,
-                                      aiachyColor: .backgroundAlternativeColor).cornerRadius(36)
-                    .frame(width: ACYdw(aiachyState, d: 0.28),
-                           height: ACYdh(aiachyState, d: 0.05))
+            .stroke(Color(ColorHandler.makeAiachyColor(aiachyState, aiachyColor: .secondColor)), lineWidth: 1)
+            .background{
+                Color(ColorHandler.makeAiachyColor(aiachyState,
+                                      aiachyColor: .backgroundAlternativeColor))
+                .cornerRadius(36)
+                .frame(width: ACYdw(aiachyState, d: 0.28),
+                       height: ACYdh(aiachyState, d: 0.05))
                 .scaledToFit()}
             .frame(width: ACYdw(aiachyState, d: 0.28), height: ACYdh(aiachyState, d: 0.05))
     }

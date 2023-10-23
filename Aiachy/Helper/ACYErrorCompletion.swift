@@ -10,6 +10,7 @@ import Foundation
 typealias ACYErrorAppInfo = ACYErrorCompletion.AppInfoErrorPrint
 typealias ACYErrorUserInfo = ACYErrorCompletion.UserInfoErrorPrint
 typealias ACYErrorDataFetching = ACYErrorCompletion.DataFetchingErrorPrint
+typealias ACYErrorAuth = ACYErrorCompletion.AuthErrorPrint
 
 struct ACYErrorCompletion {
     /// App Info Error
@@ -53,9 +54,26 @@ struct ACYErrorCompletion {
             }
         }
     }
+    enum AuthErrorPrint: Error {
+        case notWorkingServer
+        case notFoundUser
+        case passwordNotSame
+        case cannotBeExplained
+        func printAuthError(_ viewName: String) -> String {
+            switch self {
+            case .notWorkingServer:
+                return "AiachySystemError view: \(viewName): Server not working."
+            case .notFoundUser:
+                return "AiachySystemError view: \(viewName): User not found on our servers."
+            case .passwordNotSame:
+                return "AiachySystemError view: \(viewName): Password not same."
+            case .cannotBeExplained:
+                return "AiachySystemError view: \(viewName): Cannot be explained."
+            }
+        }
+    }
     /// Data fetching error
     enum DataFetchingErrorPrint: Error {
-        case notFoundUser
         case cantFetchUser
         case cantFetcingZodiacData
         case cantFetchZodiacDataVersion
@@ -65,8 +83,7 @@ struct ACYErrorCompletion {
         case noZodiacLeftToBring
         func printDataFetching(_ viewName: String) -> String {
             switch self {
-            case .notFoundUser:
-                return "AiachySystemError view: \(viewName): User not found on our servers."
+
             case .cantFetchUser:
                 return "AiachySystemError view: \(viewName): The user's information could not be pulled from our servers."
             case .cantFetcingZodiacData:

@@ -11,4 +11,12 @@ struct ACYStoreEntity {
     var product: Product?
     var productID: String?
     var price: String?
+    
+    func makeSubscriptionMethod() -> String {
+        if productID == "Oracle.Oracle" || productID == "Oracle.Occult" {
+            return "Monthly Subscription"
+        } else {
+            return ""
+        }
+    }
 }

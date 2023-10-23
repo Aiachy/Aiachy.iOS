@@ -92,38 +92,41 @@ struct GreekLanguage {
     ]
     // MARK: - GreekLanguage - AuthCompletion -
     typealias textHelperAuthCompletion = TextHelper.AuthCompletion
-    let auth: [textHelperAuthCompletion.auth:String] = [
-        .loginScreenTitle: "Ξεκλειδώστε τις Πύλες της Αστρολογίας, Εισέλθετε στον Κόσμο της Aiachy",
-        .zodiacSelectionTitle: "Έχει έρθει η ώρα να μάθετε το μέλλον σας",
-        .registerTitle: "Απελευθερώστε το Δυναμικό του Ζωδίου σας",
+    let authTitle: [textHelperAuthCompletion.title:String] = [
+        .loginScreenTitle: "Αποκαλύψτε τη Μαγεία, Ταξιδέψτε στο Βασίλειο του Aiachy",
+        .crystalSelectionTitle: "Αποκαλύψτε το μυστηριώδες κρύσταλλο της γέννησής σας",
+        .registerTitle: "Απελευθερώστε το Δυναμικό του Ζωδιακού σας",
         .ascendantSelectionTitle: "Φωτίστε την Εσωτερική σας Λάμψη",
         .attentionTitle: "ΠΡΟΣΟΧΗ",
-        .loginScreenDescription: "Ξεκλειδώστε τα Μυστήρια της Αστρολογίας, Βουτήξτε στον Εντυπωσιακό Κόσμο της Aiachy και Εξερευνήστε το Συναρπαστικό Σύμπαν των Ζωδιακών Θαυμάτων",
-        .registerDescription: "Βήμα στην Aiachy για μια προσωποποιημένη εμπειρία οροσκόπιου! Ας προσαρμόσουμε τις πληροφορίες του ζωδίου σας με τα εμπιστευτικά στοιχεία σας και να σας πάρει σε ένα μοναδικό ταξίδι",
-        .ascendantSelectionDescription: "Εναρκολογήστε ένα Μετασχηματιστικό Ταξίδι με το Ανυψωτικό σας Σημείο Απελευθερώστε τη Δύναμη Εντός",
-        .ascendantSelectionViewGuideDescription: "Επιλέξτε ημερομηνία και ώρα γέννησης",
-        .attentionDescription: "Η εφαρμογή δεν έχει αποσυνδεθεί πλήρως ακόμη. Είναι πολύ φυσιολογικό να συναντήσετε σφάλματα. Αν συναντήσετε και θέλετε να αναζητήσετε μια λύση, μπορείτε να το στείλετε γρήγορα σε εμάς από το τμήμα Βοήθειας. Η εφαρμογή θα εμφανιστεί για πρώτη και μοναδική φορά σε αυτό το είδος με τη στήριξή σας. Μην ξεχάσετε να διασκεδάσετε ενώ χρησιμοποιείτε την εφαρμογή",
-        .attentionSecondDescription: "Η ενημέρωση έρχεται στις 21 κάθε μήνα Ελέγξτε το Twitter μας"
     ]
-
+    
+    let authDescription: [textHelperAuthCompletion.description:String] = [
+        .loginScreenDescription: "Αποκρυπτογραφήστε τα Μυστήρια του Αιθέρα, Βαδίστε στο Ιερό Καταφύγιο του Aiachy και Παρακολουθήστε τον Χορό των Ουράνιων Πνευμάτων!",
+        .crystalSelectionDescription: "Ήρθε η ώρα να μάθετε το μέλλον σας",
+        .registerDescription: "Βαδίστε στο Aiachy για μια προσαρμοσμένη εμπειρία ζωδιακού! Επιτρέψτε μας να προσαρμόσουμε τις πληροφορίες σας με τα εμπιστευτικά σας στοιχεία και να σας πάρουμε σε ένα μοναδικό ταξίδι",
+        .ascendantSelectionDescription: "Ξεκινήστε ένα Μετασχηματιστικό Ταξίδι με το Αναδυόμενο Σας Σημάδι και Απελευθερώστε την Εσωτερική Δύναμη",
+        .ascendantSelectionViewGuideDescription: "Επιλέξτε ημερομηνία και ώρα γέννησης",
+        .attentionDescription: "Η εφαρμογή δεν έχει αποσυνδεθεί ακόμη πλήρως. Είναι πολύ φυσιολογικό να αντιμετωπίζετε σφάλματα. Εάν αντιμετωπίσετε και θέλετε να ψάξετε για μια λύση. Μπορείτε να το στείλετε γρήγορα σε εμάς από το τμήμα Βοήθειας. Η εφαρμογή θα εμφανιστεί για πρώτη και μοναδική φορά σε αυτό το είδος με την υποστήριξή σας. Μην ξεχάσετε να διασκεδάσετε χρησιμοποιώντας την εφαρμογή",
+        .attentionSecondDescription: "Η ενημέρωση έρχεται στις 21 του κάθε μήνα. Ελέγξτε το Twitter μας"
+    ]
+    
     let authOnboarding: [textHelperAuthCompletion.onboarding:String] = [
-        .heartofAstrologyTitle: "Βρίσκεστε στην καρδιά της αστρολογίας",
+        .heartofMysticTitle: "Είσαι στην καρδιά του μυστικού σύμπαντος",
         .secretOfTheStarsTitle: "Αποκαλύψτε τα Μυστικά των Αστέρων",
         .yourFutureTitle: "Θέλετε να γνωρίσετε το μέλλον σας;",
-        .heartofAstrologyDescription: "Γνωρίζοντας καλύτερα το ορόσκοπό σας σας επιτρέπει να κάνετε καλύτερα σχέδια για το μέλλον",
-        .secretOfTheStarsDescription: "Ανακαλύψτε τα Μυστικά των Αστέρων, Αποκαλύπτοντας τις Πολυπλοκότητες της Αστρολογίας, Όλα Εδώ σε Ένα Μέρος",
+        .heartofMysticDescription: "Ξεκλειδώνοντας τις πόρτες σε έναν μυστικό κόσμο σας επιτρέπει να σχεδιάσετε το μέλλον σας πιο αποτελεσματικά",
+        .secretOfTheStarsDescription: "Πέρα από το Πέπλο του Θνητού Βασιλείου, Χορεύτε με τους Μυστικιστικούς Ψιθύρους των Αστέρων, Ξετυλίγοντας τα Αινίγματα του Ιερού Κόσμου",
         .yourFutureDescription: "Η Aiachy θα σας οδηγήσει σε έναν όμορφο δρόμο και θα σας δείξει μικρές συμβουλές για το μέλλον σας",
-        .privacyPolicy: "Δημιουργώντας έναν λογαριασμό, συμφωνείτε με την Πολιτική Απορρήτου και τους Όρους Χρήσης μας."
     ]
 
     let authHelperAuth: [textHelperAuthCompletion.helperAuth:String] = [
-        .clock: "Ώρα"
+        .clock: "Ώρα",
+        .privacyPolicy: "Δημιουργώντας έναν λογαριασμό, συμφωνείτε με την Πολιτική Απορρήτου και τους Όρους Χρήσης μας."
     ]
     // MARK: - GreekLanguage - HomeCompletion -
     typealias textHelperHomeCompletion = TextHelper.HomeCompletion
     let home: [textHelperHomeCompletion.home:String] = [
-        .horoscope: "Ωροσκόπιο",
-        .ascendant: "Άνοδος",
+        .aiachy:"Αιαχυ",
         .compatibility: "Συμβατότητα",
         .notUsable: "Δεν είναι διαθέσιμο. Πρέπει να εγγραφείτε.",
         .notHaveAscendant: "Χρειάζεστε να επιλέξετε τον άνοδο."
@@ -189,42 +192,70 @@ struct GreekLanguage {
         .otherLanguage: "Άλλη Γλώσσα"
     ]
     let settingsOracle: [textHelperSettingsCompletion.oracle: String] = [
-        .packageZodiacTitle: "Ζώδιο",
-        .packageZodiacItem1: "Ο αστρολογικός σας χάρτης θα πλημμυρίσει με κοσμική σοφία, βοηθώντας σας να κατανοήσετε καλύτερα την κατεύθυνση της ζωής σας.",
-        .packageZodiacItem2: "Οι κάρτες Ταρώ θα ανοίξουν νέες πόρτες για εσάς και θα ενισχύσουν τη διαίσθησή σας",
-        .packageZodiacItem3: "Νέες μουσικές συχνότητες θα ανυψώσουν την ψυχή σας και θα ανοίξουν νέα συναισθηματικά τοπία για εσάς.",
-        .packageOracleTitle: "Οράκουλο",
-        .packageOracleItem1: "Θα έχετε πρόσβαση στις λειτουργίες όλων των διαθέσιμων πακέτων, καθιστώντας σας καλά εξοπλισμένους σε κάθε τομέα.",
-        .packageOracleItem2: "Καινοτόμα χαρακτηριστικά θα είναι στα δάχτυλά σας, δίνοντάς σας ένα βήμα μπροστά από όλους τους άλλους.",
-        .packageOracleItem3: "Η καλοσύνη που έχετε δείξει θα αφήσει ένα αιώνιο αποτύπωμα στις καρδιές.",
-        .packageOracleItem4: "Αυτό το πακέτο θα είναι ένα απαραίτητο εργαλείο για την ανύψωση και τη βελτίωση της εφαρμογής σας."
+        .universalWisdomTitle: "Παγκόσμια σοφία",
+        .universalWisdomOccult1: "Καθώς κλείνετε τον ποταμό της γνώσης του σύμπαντος, βαθύτερα μυστικά θα ρέουν προς εσάς από τα μυστηριώδη βασίλεια.",
+        .universalWisdomOccult2: "Θα γίνετε μάρτυρας των μυστικών του αύριο από πρώτο χέρι, αποκτώντας τη δυνατότητα να κατανοείτε και να αποκρυπτογραφείτε το μέλλον πιο βαθιά.",
+        .universalWisdomOccult3: "Με τη δυνατότητα να παρατηρείτε τα τσάκρα πιο εκτεταμένα, θα ενισχύσετε την ικανότητά σας να ερμηνεύετε τις ημέρες σας, βαθαίνοντας περισσότερο στην καθοδήγηση της εσωτερικής σας ενέργειας.",
+        .universalWisdomOccult4: "Συγκεκριμένα, θα μπορείτε να εξετάζετε τις καθημερινές σας διορατικότητες πιο βαθιά και να αντιλαμβάνεστε τις πρωτοβουλίες σας πιο καθαρά, αποκτώντας έτσι την ευκαιρία να διαμορφώνετε τις συμβουλές σας με περισσότερες λεπτομέρειες.",
+        .universalWisdomOracle1: "Αυτό το ειδικό πακέτο περιλαμβάνει όλα τα χαρακτηριστικά της Παγκόσμιας Σοφίας του Οκκουλτισμού.",
+        .universalWisdomOracle2: "Αυτή η ιερή υποστήριξη που προσφέρετε θα θυμάται εκ των προτέρων και θα επιστρέφει σε εσάς με θετικές ενέργειες από τα μυστικά του σύμπαντος.",
+        .universalWisdomOracle3: "Θα αποκτήσετε την πρώτη πρόσβαση στα νέα χαρακτηριστικά στη δοκιμή beta, ηγούμενοι του δρόμου με τις επερχόμενες βελτιώσεις.",
+        .universalWisdomOracle4: "Αποκλειστικές οπτικοποιήσεις του κοντινού μέλλοντος θα σας παρουσιαστούν μέσω της πύλης πρόσβασης.",
+        .thresholdOfTheSoulTitle: "Κατώφλι της ψυχής",
+        .thresholdOfTheSoulOccult1: "Νέες μουσικές συχνότητες θα ανυψώσουν την ψυχή σας και θα ανοίξουν νέα συναισθηματικά τοπία για εσάς.",
+        .thresholdOfTheSoulOccult2: "Πίσω από τις πύλες του μυστηριώδους βασιλείου, ένας βαθύτερος πρόσβαση σας περιμένει στα βάθη του ταρώ, τις μοιραίες γραμμές του χεριού σας και τα μυστικά του γλόμπου.",
+        .thresholdOfTheSoulOccult3: "Θα μπείτε στον μαγικό κόσμο των προσαρμοσμένων μελωδιών και θα ανακαλύψετε τις κρυμμένες μελωδίες του μέλλοντος.",
+        .thresholdOfTheSoulOccult4: "Θα μπορείτε να βουτήξετε βαθύτερα στο μυστήριο των προσαρμοσμένων μυστηριώδων πετρών.",
+        .thresholdOfTheSoulOracle1: "Αυτό το ειδικό πακέτο περιλαμβάνει όλα τα χαρακτηριστικά του Κατωφλίου της Ψυχής του Οκκουλτισμού.",
+        .thresholdOfTheSoulOracle2: "Αυτή η ιερή υποστήριξη που προσφέρετε θα θυμάται εκ των προτέρων και θα επιστρέφει σε εσάς με θετικές ενέργειες από τα μυστικά του σύμπαντος.",
+        .thresholdOfTheSoulOracle3: "Θα αποκτήσετε την πρώτη πρόσβαση στα νέα χαρακτηριστικά στη δοκιμή beta, ηγούμενοι του δρόμου με τις επερχόμενες βελτιώσεις.",
+        .thresholdOfTheSoulOracle4: "Αποκλειστικές οπτικοποιήσεις του κοντινού μέλλοντος θα σας παρουσιαστούν μέσω της πύλης πρόσβασης."
     ]
+
     // MARK: - GreekLanguage - ZodiacCompletion -
-    typealias textHelperZodiacCompletion = TextHelper.ZodiacCompletion
-    let zodiac: [textHelperZodiacCompletion.zodiac:String] = [
-        .piscesZodiacName: "Ιχθύες",
+    typealias textHelperSpiritualCompletion = TextHelper.SpiritualCompletion
+    let crystalZodiac: [textHelperSpiritualCompletion.crystal:String] = [
+        .ariesCrystal: "Αμέθυστος",
+        .taurusCrystal: "Μάτι τίγρης",
+        .geminiCrystal: "Ροζ Κουαρτζ",
+        .cancerCrystal: "Λαμπραδόριτης",
+        .leoCrystal: "Γρανάτης",
+        .virgoCrystal: "Λίθος της σελήνης",
+        .libraCrystal: "Λάπις λαζουλί",
+        .scorpioCrystal: "Τουρμαλίνη",
+        .sagittariusCrystal: "Οψιδιανός",
+        .capricornCrystal: "Κρυστάλλινο κουαρτζ",
+        .aquariusCrystal: "Ακουαμαρίνα",
+        .piscesCrystal: "Πέρλα"
+    ]
+
+    let zodiac: [textHelperSpiritualCompletion.zodiac:String] = [
+        .pisces: "Ιχθύες",
+        .aries: "Κριός",
+        .aquarius: "Υδροχόος",
+        .gemini: "Δίδυμοι",
+        .libra: "Ζυγός",
+        .virgo: "Παρθένος",
+        .capricorn: "Αιγόκερως",
+        .sagittarius: "Τοξότης",
+        .leo: "Λέων",
+        .scorpio: "Σκορπιός",
+        .taurus: "Ταύρος",
+        .cancer: "Καρκίνος"
+    ]
+    
+    let dateZodiac: [textHelperSpiritualCompletion.dateZodiac:String] = [
         .piscesZodiacDate: "20 Φεβ - 20 Μαρ",
-        .ariesZodiacName: "Κριός",
         .ariesZodiacDate: "21 Μαρ - 20 Απρ",
-        .aquariusZodiacName: "Υδροχόος",
         .aquariusZodiacDate: "21 Ιαν - 19 Φεβ",
-        .geminiZodiacName: "Δίδυμοι",
         .geminiZodiacDate: "21 Μαϊ - 21 Ιουν",
-        .libraZodiacName: "Ζυγός",
         .libraZodiacDate: "24 Σεπ - 23 Οκτ",
-        .virgoZodiacName: "Παρθένος",
         .virgoZodiacDate: "24 Αυγ - 23 Σεπ",
-        .capricornZodiacName: "Αιγόκερως",
         .capricornZodiacDate: "22 Δεκ - 20 Ιαν",
-        .sagittariusZodiacName: "Τοξότης",
         .sagittariusZodiacDate: "23 Νοε - 21 Δεκ",
-        .leoZodiacName: "Λέων",
         .leoZodiacDate: "23 Ιουλ - 23 Αυγ",
-        .scorpioZodiacName: "Σκορπιός",
         .scorpioZodiacDate: "24 Οκτ - 22 Νοε",
-        .taurusZodiacName: "Ταύρος",
         .taurusZodiacDate: "21 Απρ - 20 Μαϊ",
-        .cancerZodiacName: "Καρκίνος",
         .cancerZodiacDate: "22 Ιουν - 22 Ιουλ"
     ]
 

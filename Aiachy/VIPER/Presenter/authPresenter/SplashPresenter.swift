@@ -14,10 +14,6 @@ private protocol HandlerProtocol {
     func setIdFromCache()
     func setDeviceInfo()
 }
-//MARK: - SplashPresenter - protocol - StoreProtocol -
-private protocol StoreProtocol {
-    
-}
 //MARK: - SplashPresenter - protocol - PrintProtocol -
 private protocol PrintProtocol {
     func makePrintCompletion()
@@ -38,17 +34,15 @@ class SplashPresenter: ObservableObject {
     init(isCurrentUser: Bool = false,
          isNewUser: Bool = false ,
          cycleErrorCount: Int = 0,
-         aiachy aiachyState: AiachyState,
-         interactor: SplashInteractor = SplashInteractor())
+         aiachy aiachyState: AiachyState)
     {
+        self.interactor = SplashInteractor(aiachy: aiachyState)
         self.isCurrentUser = isCurrentUser
         self.isNewUser = isNewUser
         self.cycleErrorCount = cycleErrorCount
         self.aiachyState = aiachyState
-        self.interactor = interactor
         
-        interactor.fetchProducts(aiachy: aiachyState)
-        checkUserSubscription()
+        
     }
     /// The user is downloading the data, the user is to find out if it is new or old, and CoreData is for uploading the data.
     /// - Parameters:
@@ -60,7 +54,7 @@ class SplashPresenter: ObservableObject {
         
         interactor.checkNetwork { [self] isCheckedNetwork in
             setterCompletion(color: colorScheme)
-            self.interactor.controlUser(aiachy: aiachyState) { [self] result in
+            self.interactor.controlUser() { [self] result in
                 if result {
                     DispatchQueue.main.asyncAfter(deadline: .now() + 1 ) {
                         self.isCurrentUser = true
@@ -74,7 +68,7 @@ class SplashPresenter: ObservableObject {
     }
     /// help to startApp function
     func handeledError(colorScheme: ColorScheme) {
-        
+        //NextPatchTODO: Fix ethernet problem / not workin when not connected ethernet
         cancellable = interactor.isHaveError
             .removeDuplicates()
             .subscribe(on: DispatchQueue.main)
@@ -184,14 +178,8 @@ extension SplashPresenter: HandlerProtocol {
     fileprivate func setLangauge() {
         let userID = aiachyState.user.userInfo.id
         guard userID == nil else { return }
-        aiachyState.user.aiachyInfo.language = String(Locale.current.identifier.suffix(2))
-        aiachyState.user.aiachyInfo.languageIdentifier = String(Locale.current.identifier)
-    }
-}
-//MARK: - SplashPresenter - StoreProtocol -
-extension SplashPresenter: StoreProtocol {
-    func checkUserSubscription() {
-        interactor.fetchProducts(aiachy: aiachyState)
+        aiachyState.user.aiachyInfo.aiachyLanguageInfo.language = String(Locale.current.identifier.suffix(2))
+        aiachyState.user.aiachyInfo.aiachyLanguageInfo.languageIdentifier = String(Locale.current.identifier)
     }
 }
 //MARK: - SplashPresenter - extension - PrintProtocol -

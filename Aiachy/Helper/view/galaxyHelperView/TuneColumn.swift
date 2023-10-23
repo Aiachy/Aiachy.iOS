@@ -53,7 +53,6 @@ struct TuneColumn: View {
         .buttonStyle(PlainButtonStyle())
     }
 }
-
 #Preview {
     TuneColumn(playingTune: .constant(""),
                isPlaying: false,
@@ -62,39 +61,38 @@ struct TuneColumn: View {
                                             determinedZodiac: 1)) { }
         .environmentObject(ACY_PREVIEWS_STATE)
 }
-
 extension TuneColumn {
     @ViewBuilder
     //MARK: TuneColumn - imageAndText
     var imageAndText: some View {
-        makeImageWithZodiacInt(aiachy: aiachyState, zodiac: acyTuneEntity.determinedZodiac!,isAlternative: false)
+        makeCrystalImageWithZodiacInt(aiachy: aiachyState, crystal: acyTuneEntity.determinedZodiac!)
             .resizable()
             .scaledToFit()
             .frame(width: ACYdw(aiachyState, d: 0.1))
         Text(acyTuneEntity.name!)
-            .foregroundStyle(Color.makeAiachyColor(aiachyState, aiachyColor: .backgroundColor))
-            .font(.aiachyFont(.cinzelBlack22))
-            .shadow(color: Color.makeAiachyColor(aiachyState, aiachyColor: .backgroundColor).opacity(0.5), radius: 4, x: 0, y: 4)
+            .foregroundStyle(Color(ColorHandler.makeAiachyColor(aiachyState, aiachyColor: .backgroundColor)))
+            .font(FontHandler.aiachyFont(.cinzelBlack22))
+            .shadow(color: Color(ColorHandler.makeAiachyColor(aiachyState, aiachyColor: .backgroundColor)).opacity(0.5), radius: 4, x: 0, y: 4)
     }
     //MARK: TuneColumn - backgroundCloumn
     var backgroundCloumn: some View {
         RoundedRectangle(cornerRadius: 20)
-            .stroke(Color.makeAiachyColor(aiachyState, aiachyColor: .backgroundAlternativeColor), lineWidth: 2)
-            .background(Color.makeAiachyColor(aiachyState, aiachyColor: .fifthColor)
+            .stroke(Color(ColorHandler.makeAiachyColor(aiachyState, aiachyColor: .backgroundAlternativeColor)), lineWidth: 2)
+            .background(Color(ColorHandler.makeAiachyColor(aiachyState, aiachyColor: .fifthColor))
                 .clipShape(RoundedRectangle(cornerRadius: 20))
-                .shadow(color: Color.makeAiachyColor(aiachyState, aiachyColor: .firstColor), radius: 4, x: 0, y: 4))
+                .shadow(color: Color(ColorHandler.makeAiachyColor(aiachyState, aiachyColor: .firstColor)), radius: 4, x: 0, y: 4))
     }
     @ViewBuilder
     //MARK: TuneColumn - playPauseText
     var playPauseText: some View {
         if isPlaying {
             Text(TextHandler.makeGalaxyTune(aiachy: aiachyState, galaxyTune: .stop))
-                .foregroundStyle(Color.makeAiachyColor(aiachyState, aiachyColor: .backgroundColor))
-                .font(.aiachyFont(.roundedBlack8))
+                .foregroundStyle(Color(ColorHandler.makeAiachyColor(aiachyState, aiachyColor: .backgroundColor)))
+                .font(FontHandler.aiachyFont(.roundedBlack8))
         } else {
             Text(TextHandler.makeGalaxyTune(aiachy: aiachyState, galaxyTune: .play))
-                .foregroundStyle(Color.makeAiachyColor(aiachyState, aiachyColor: .backgroundColor))
-                .font(.aiachyFont(.roundedBlack8))
+                .foregroundStyle(Color(ColorHandler.makeAiachyColor(aiachyState, aiachyColor: .backgroundColor)))
+                .font(FontHandler.aiachyFont(.roundedBlack8))
         }
     }
 }

@@ -7,3 +7,4 @@
 * //NeedRefator: \we will change code syntax/
 * //FutureUpdate: \It is for next updates./
 * //MARK: (viewName) ReadMe - (decription) \thats mean this func or published value what we gone recive & what will mean comin. /
+* //WillBeAdded: 

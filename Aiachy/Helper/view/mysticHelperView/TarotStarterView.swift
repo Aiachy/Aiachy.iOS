@@ -35,19 +35,18 @@ struct TarotStarterView: View {
                 }
                 .padding(.leading, ACYdw(aiachyState, d: -0.1))
                 
-                ACYMysticTitleAndDescriptionText(fontType: .CinzelBlack50,
+                ACYMysticTitleAndDescriptionText(fontType: .cinzelBlack50,
                                                  title: .tarotTitle,
                                                  description: .tarotDescription)
                 .offset(x: isOnAppear ? 0 : ACYdw(aiachyState, d: 0.5))
                     .opacity(isOnAppear ? 1 : 0)
             }
         }
-        .onAppear { withAnimation(.spring(duration: 0.5)) { isOnAppear = true } }
-        .onDisappear { withAnimation(.spring(duration: 0.5)) { isOnAppear = false } }
+        .onAppear { withAnimation(.spring()) { isOnAppear = true } }
+        .onDisappear { withAnimation(.spring()) { isOnAppear = false } }
         .environmentObject(aiachyState)
     }
 }
-
 
 #Preview {
     TarotStarterView(isOnAppear: true)

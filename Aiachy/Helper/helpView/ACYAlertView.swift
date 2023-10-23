@@ -15,8 +15,8 @@ struct ACYAlertView: View {
     var body: some View {
         ZStack {            
             //MARK: ACYAlert - Blurbackground
-            Color.makeAiachyColor(aiachyState,
-                              aiachyColor: .backgroundBlurColor)
+            Color(ColorHandler.makeAiachyColor(aiachyState,
+                              aiachyColor: .backgroundBlurColor))
             .ignoresSafeArea(.all, edges: .all)
             Group{
                 if acyAlertEntity.typeError == 0 {
@@ -31,6 +31,7 @@ struct ACYAlertView: View {
                     descriptionImageButtonView
                 }
             }
+            .padding(.vertical)
             .background {
                 background
             }
@@ -42,14 +43,9 @@ struct ACYAlertView: View {
 }
 
 #Preview("AlertView") {
-    ACYAlertView(acyAlertEntity: ACYAlertEntity(description: .notReady, image: .notReady, firstButtonText: .okey, isShowingAlert: true, typeError: 4, firstAction: {
-        
-    }, secondAction: {
-        
-    }))
+    ACYAlertView(acyAlertEntity: ACYAlertEntity(description: .notReady, image: .notReady, firstButtonText: .okey, isShowingAlert: true, typeError: 4, firstAction: { }, secondAction: { }))
         .environmentObject(ACY_PREVIEWS_STATE)
 }
-
 extension ACYAlertView {
     
     var titleButtonView: some View {
@@ -71,8 +67,8 @@ extension ACYAlertView {
                 secondButton
             }
         }
-        .frame(width: ACYdw(aiachyState, d: ACY_MAX_SIZE),
-               height: ACYdh(aiachyState, d: ACY_MED_SIZE))
+        .frame(width: ACYdw(aiachyState, d: 0.8),
+               height: ACYdh(aiachyState, d: 0.3))
     }
     
     var titleImageButtonView: some View {
@@ -81,8 +77,8 @@ extension ACYAlertView {
             image
             firstButton
         }
-        .frame(width: ACYdw(aiachyState, d: ACY_MAX_SIZE),
-               height: ACYdh(aiachyState, d: ACY_MED_SIZE))
+        .frame(width: ACYdw(aiachyState, d: 0.8),
+               height: ACYdh(aiachyState, d: 0.3))
     }
     
     var titleImageTwoButtonView: some View {
@@ -94,8 +90,8 @@ extension ACYAlertView {
                 secondButton
             }
         }
-        .frame(width: ACYdw(aiachyState, d: ACY_MAX_SIZE),
-               height: ACYdh(aiachyState, d: ACY_MED_SIZE))
+        .frame(width: ACYdw(aiachyState, d: 0.8),
+               height: ACYdh(aiachyState, d: 0.3))
     }
     
     var descriptionImageButtonView: some View {
@@ -104,8 +100,9 @@ extension ACYAlertView {
             image
             firstButton
         }
+        .frame(width: ACYdw(aiachyState, d: 0.8),
+               height: ACYdh(aiachyState, d: 0.3))
     }
-    
 }
 
 extension ACYAlertView {
@@ -115,7 +112,8 @@ extension ACYAlertView {
     private var title: some View {
         Text(TextHandler.makeAlertString(aiachy: aiachyState, alert: acyAlertEntity.title!))
             .padding(.horizontal)
-            .font(.aiachyFont(.cinzelBold14))
+            .font(FontHandler.aiachyFont(.cinzelBold14))
+            .foregroundStyle(Color(ColorHandler.makeAiachyColor(aiachyState, aiachyColor: .firstColor)))
             .multilineTextAlignment(.center)
 
     }
@@ -124,17 +122,17 @@ extension ACYAlertView {
         Text(TextHandler.makeAlertString(aiachy: aiachyState,
                                          alert: acyAlertEntity.description!))
         .padding(.horizontal)
-        .font(.aiachyFont(.roundedMedium16))
+        .font(FontHandler.aiachyFont(.roundedMedium16))
         .multilineTextAlignment(.center)
     }
     //MARK: ACYAlertView - first Button
     private var firstButton: some View {
-        ACYAlertMinorButton(text: acyAlertEntity.firstButtonText!) 
+        ACYMinorButton(text: acyAlertEntity.firstButtonText!) 
         {   acyAlertEntity.firstAction!()   }
     }
     //MARK: ACYAlertView - second Button
     private var secondButton: some View {
-        ACYAlertMinorButton(text: acyAlertEntity.secondButtonText!)
+        ACYMinorButton(text: acyAlertEntity.secondButtonText!)
         {   acyAlertEntity.secondAction!()  }
     }
     //MARK: ACYAlertView - image
@@ -143,16 +141,17 @@ extension ACYAlertView {
                                            alert: acyAlertEntity.image!))
             .resizable()
             .scaledToFit()
-            .frame(width: ACYdw(aiachyState, d: ACY_LNG_SIZE), height: ACYdh(aiachyState, d: 0.15))
+            .frame(width: ACYdw(aiachyState, d: ACY_LNG_SIZE))
             .padding(.vertical)
     }
     //MARK: ACYAlertView - Alert View background
     private var background: some View {
         RoundedRectangle(cornerRadius: 15)
-            .stroke(Color.makeAiachyColor(aiachyState,
-                                      aiachyColor: .secondColor),lineWidth: 1)
+            .stroke(Color(ColorHandler.makeAiachyColor(aiachyState,
+                                      aiachyColor: .secondColor)),
+                    lineWidth: 1)
             .background {
-                Color.makeAiachyColor(aiachyState, aiachyColor: .backgroundColor)
+                Color(ColorHandler.makeAiachyColor(aiachyState, aiachyColor: .backgroundColor))
                     .padding(.all,1)
                     .cornerRadius(15)
             }

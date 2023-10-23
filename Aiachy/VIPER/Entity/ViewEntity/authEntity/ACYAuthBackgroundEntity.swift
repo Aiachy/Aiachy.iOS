@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ACYAuthBackgroundEntity {
     var id: Int
-    var image: ImageHelper.AuthCompletion.auth
+    var image: ImageHelper.AuthCompletion.staticBackground
     var frameW: CGFloat
     var framwH: CGFloat
     var positionX: CGFloat

@@ -18,10 +18,9 @@ class GalaxyPresenter: ObservableObject {
     let columns: [GridItem]
     
     init(aiachyState: AiachyState,
-         interactor: GalaxyInteractor = GalaxyInteractor(),
          columns: [GridItem] = Array(repeating: .init(.flexible()), count: 2)) {
         self.aiachyState = aiachyState
-        self.interactor = interactor
+        self.interactor = GalaxyInteractor(aiachy: aiachyState)
         self.columns = columns
         
         updateTuneEntityData(aiachy: aiachyState)
@@ -32,7 +31,7 @@ class GalaxyPresenter: ObservableObject {
 extension GalaxyPresenter: AiachyStateHandlerProtocol {
     func updateTuneEntityData(aiachy aiachyState: AiachyState) {
         if !aiachyState.isGuest {
-            interactor.updateTuneEntityData(aiachy: aiachyState) { aiachyState.acyAiachyRepo.acyTuneEntityRepo = $0 }
+            interactor.updateTuneEntityData() { aiachyState.acyAiachyRepo.acyTuneEntityRepo = $0 }
         }
     }
 }

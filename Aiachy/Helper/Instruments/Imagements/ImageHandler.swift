@@ -15,16 +15,13 @@ struct ImageHandler {
                                           app: imageHelperGeneralCompletion.app) -> String {
         switchValueWithThemeToString(aiachy: aiachyState, with: app.rawValue)
     }
-    
     static func makeGeneralFlagString(flag: imageHelperGeneralCompletion.flag) -> String {
         flag.rawValue
     }
-    
     static func makeGeneralButtonString(_ aiachyState: AiachyState,
                                              button: imageHelperGeneralCompletion.button) -> String {
         switchValueWithThemeToString(aiachy: aiachyState, with: button.rawValue)
     }
-    
     //MARK: - ImageHandler - AlertCompletion -
     typealias imageHelperAlertCompletion = ImageHelper.AlertCompletion
     static func makeAlertString(_ aiachyState: AiachyState,
@@ -41,6 +38,10 @@ struct ImageHandler {
     static func makeAuthOnboardingString(_ aiachyState: AiachyState,
                                               onboarding: imageHelperAuthCompletion.onboarding) -> String {
         switchValueWithThemeToString(aiachy: aiachyState, with: onboarding.rawValue)
+    }
+    static func makeAuthStaticBackground(_ aiachyState: AiachyState,
+                                         staticBackground: imageHelperAuthCompletion.staticBackground) -> String {
+        switchValueWithThemeToString(aiachy: aiachyState, with: staticBackground.rawValue)
     }
     //MARK: - ImageHandler - MysticCompletion -
     typealias imageHelperHomeCompletion = ImageHelper.HomeCompletion
@@ -86,13 +87,22 @@ struct ImageHandler {
     static func makeSettingsThemeString(_ aiachyState: AiachyState,theme: imageHelperSettingsCompletion.theme) -> String {
         switchValueWithThemeToString(aiachy: aiachyState, with: theme.rawValue)
     }
-    //MARK: - ImageHandler - ZodiacCompletion -
-    typealias imageHelperZodiacCompletion = ImageHelper.ZodiacCompletion
-    static func makeZodiacString(_ aiachyState: AiachyState,
-                                   zodiac: imageHelperZodiacCompletion.zodiac) -> String {
+    //MARK: - ImageHandler - SpiritualCompletion -
+    typealias imageHelperSpiritualCompletion = ImageHelper.SpiritualCompletion
+    static func makeCrystalZodiacString(_ aiachyState: AiachyState,
+                                   crystal: imageHelperSpiritualCompletion.crystalZodiac) -> String {
+        crystal.rawValue
+    }
+    static func makeZodiacString(_ aiachyState: AiachyState,zodiac: imageHelperSpiritualCompletion.zodiac) -> String {
         switchValueWithThemeToString(aiachy: aiachyState, with: zodiac.rawValue)
     }
+    
+    static func makeAlternativeZodiacString(_ aiachyState: AiachyState, alternative: imageHelperSpiritualCompletion.zodiacAlternative) -> String {
+        switchValueWithThemeToString(aiachy: aiachyState, with: alternative.rawValue)
+    }
+    
 }
+
 extension ImageHandler {
     static func switchValueWithThemeToString(aiachy aiachyState: AiachyState, with value: String) -> String  {
         let aiachyTheme = aiachyState.user.aiachyInfo.wrappedTheme
